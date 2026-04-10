@@ -96,5 +96,41 @@ public function getUsersByRole(Request $request)
 
         return $this->SuccessResponse($users, "All {$role} users fetched successfully", 200);
     }
+public function toggleUserStatus(Request $request)
+    {
+        $admin = auth()->user();
+        if (!$admin || $admin->role !== 'admin') {
+            return $this->ErrorResponse('Unauthorized. Only admins can access this', 401);
+        }
+
+        $validation = Validator::make($request->all(), [
+            'user_id' => 'required|exists:users,id',
+            'status'  => 'required|boolean'
+        ]);
+
+        if ($validation->fails()) {
+            return $this->ErrorResponse($validation->errors(), 422);
+        }
+
+        $user = User::find($request->user_id);
+
+        if ($user->id === $admin->id) {
+            return $this->ErrorResponse('You cannot toggle your own status.', 403);
+        }
+
+        // FILTER_VALIDATE_BOOLEAN ليقوم بذكاء بتحويل كل هذه الصيغ المختلفة إلى true أو false فعليين
+        // تحويل القيمة إلى Boolean صريح للمقارنة
+        $newStatus = filter_var($request->status, FILTER_VALIDATE_BOOLEAN);
+
+        if ($user->account_status == $newStatus) {
+            $currentStatusText = $newStatus ? 'active' : 'suspended';
+            return $this->ErrorResponse("This account is already $currentStatusText", 400);
+        }
+
+        $user->update(['account_status' => $request->status]);
+
+        $msg = $request->status ? 'activated' : 'suspended';
+        return $this->SuccessResponse($user, "User account has been $msg successfully", 200);
+    }
 
 }
