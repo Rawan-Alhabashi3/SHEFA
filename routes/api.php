@@ -26,3 +26,6 @@ Route::controller(AuthController::class)->group(function () {
     Route::get('/get-my-profile', 'getMyProfile')->middleware('auth:sanctum');
     Route::post('/update-my-profile', 'updateMyProfile')->middleware('auth:sanctum');
 });
+Route::controller(AdminController::class)->middleware('auth:sanctum')->group(function () {
+    Route::get('/get-dashboard-stats', 'getDashboardStats');
+});
