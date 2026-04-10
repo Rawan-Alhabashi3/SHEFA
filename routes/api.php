@@ -29,4 +29,5 @@ Route::controller(AuthController::class)->group(function () {
 Route::controller(AdminController::class)->middleware('auth:sanctum')->group(function () {
     Route::get('/get-dashboard-stats', 'getDashboardStats');
     Route::post('/get-users-by-role', 'getUsersByRole');
+    Route::post('/toggle-user-status', 'toggleUserStatus');
 });
