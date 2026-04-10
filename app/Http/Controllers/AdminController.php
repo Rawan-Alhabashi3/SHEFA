@@ -63,4 +63,38 @@ class AdminController extends Controller
 
         return $this->SuccessResponse($stats, 'Complete dashboard statistics fetched successfully', 200);
     }
+public function getUsersByRole(Request $request)
+    {
+        $admin = auth()->user();
+        if (!$admin || $admin->role !== 'admin') {
+            return $this->ErrorResponse('Unauthorized. Only admins can access this', 401);
+        }
+
+        $validation = Validator::make($request->all(), [
+            'role' => 'required|in:citizen,pharmacy,specialist,delivery,admin'
+        ]);
+
+        if ($validation->fails()) {
+            return $this->ErrorResponse($validation->errors(), 422);
+        }
+
+        $role = $request->role;
+
+        // جلب المستخدمين مع فحص وجود العلاقة
+        $query = User::where('role', $role);
+
+        // للتحقق من انها توجد علاقة في مودل User
+        if (method_exists(User::class, $role)) {
+            $query->with($role);
+        }
+
+        $users = $query->latest()->get();
+
+        if ($users->isEmpty()) {
+            return $this->SuccessResponse([], "No {$role} users found till now", 200);
+        }
+
+        return $this->SuccessResponse($users, "All {$role} users fetched successfully", 200);
+    }
+
 }
