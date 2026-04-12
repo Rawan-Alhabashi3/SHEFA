@@ -35,4 +35,5 @@ Route::controller(AdminController::class)->middleware('auth:sanctum')->group(fun
     Route::post('/search-user', 'searchUser');
     Route::post('/search-medicine-in-ads', 'searchMedicineInAds');
     Route::post('/add-user', 'addUser');
+    Route::post('/delete-user', 'deleteUser');
 });

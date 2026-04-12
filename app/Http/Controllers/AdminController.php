@@ -289,5 +289,28 @@ public function manageExchangeAds(Request $request)
             return $this->ErrorResponse('Creation failed: ' . $e->getMessage(), 500);
         }
     }
-    
+    public function deleteUser(Request $request)
+    {
+        $admin = auth()->user();
+        if (!$admin || $admin->role !== 'admin') {
+            return $this->ErrorResponse('Unauthorized. Only admins can access this', 401);
+        }
+
+        $validator = Validator::make($request->all(), [
+            'user_id' => 'required|integer|exists:users,id'
+        ]);
+
+        if ($validator->fails()) {
+            return $this->ErrorResponse($validator->errors(), 422);
+        }
+
+        $user = User::find($request->user_id);
+
+        if ($user->id === $admin->id) {
+            return $this->ErrorResponse('You cannot delete your own account', 403);
+        }
+
+        $user->delete();
+        return $this->SuccessResponse(null, 'User deleted successfully', 200);
+    }
 }
