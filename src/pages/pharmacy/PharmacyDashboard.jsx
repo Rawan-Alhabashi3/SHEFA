@@ -15,13 +15,23 @@ import LocalPharmacyIcon from "@mui/icons-material/LocalPharmacy";
 import AssignmentIcon from "@mui/icons-material/Assignment";
 import InventoryIcon from "@mui/icons-material/Inventory";
 import PaidIcon from "@mui/icons-material/Paid";
+import { useOrders } from "../../context/OrderContext";
+import Button from "@mui/material/Button";
 
 export default function PharmacyDashboard() {
-  const recentOrders = [
-    { id: 101, customer: "Ahmad", status: "Processing" },
-    { id: 102, customer: "Sara", status: "Delivered" },
-    { id: 103, customer: "Omar", status: "Cancelled" },
-  ];
+  const { orders, setOrders } = useOrders();
+
+  const recentOrders = orders;
+
+  const handleAccept = (id) => {
+    setOrders((prev) =>
+      prev.map((order) =>
+        order.id === id
+          ? { ...order, status: "Ready for Pickup" }
+          : order
+      )
+    );
+  };
 
   const getStatusChip = (status) => {
     switch (status) {
@@ -31,6 +41,8 @@ export default function PharmacyDashboard() {
         return <Chip label="Processing" color="warning" />;
       case "Cancelled":
         return <Chip label="Cancelled" color="error" />;
+      case "Pending":
+        return <Chip label="Pending" color="info" />;
       default:
         return <Chip label={status} />;
     }
@@ -46,7 +58,7 @@ export default function PharmacyDashboard() {
         <Grid item xs={12} md={3}>
           <StatsCard
             title="Total Orders"
-            value="128"
+            value={orders.length}
             icon={<AssignmentIcon color="primary" fontSize="large" />}
           />
         </Grid>
@@ -89,14 +101,30 @@ export default function PharmacyDashboard() {
                   <TableCell>Order ID</TableCell>
                   <TableCell>Customer</TableCell>
                   <TableCell>Status</TableCell>
+                  <TableCell>Action</TableCell>
                 </TableRow>
               </TableHead>
+
               <TableBody>
                 {recentOrders.map((order) => (
                   <TableRow key={order.id}>
                     <TableCell>#{order.id}</TableCell>
                     <TableCell>{order.customer}</TableCell>
-                    <TableCell>{getStatusChip(order.status)}</TableCell>
+                    <TableCell>
+                      {getStatusChip(order.status)}
+                    </TableCell>
+
+                    <TableCell>
+                      {order.status === "Pending" && (
+                        <Button
+                          variant="contained"
+                          size="small"
+                          onClick={() => handleAccept(order.id)}
+                        >
+                          Accept
+                        </Button>
+                      )}
+                    </TableCell>
                   </TableRow>
                 ))}
               </TableBody>

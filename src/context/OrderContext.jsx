@@ -1,14 +1,17 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 
 const OrderContext = createContext();
 
 export function OrderProvider({ children }) {
-  const [orders, setOrders] = useState([
-    { id: 101, customer: "Ahmad", total: 45, status: "Pending", assigned: false },
-    { id: 102, customer: "Sara", total: 120, status: "Pending", assigned: false },
-  ]);
+  const [orders, setOrders] = useState(() => {
+    return JSON.parse(localStorage.getItem("orders")) || [];
+  });
 
-  // ✅ إضافة طلب
+  // 🔥 حفظ تلقائي
+  useEffect(() => {
+    localStorage.setItem("orders", JSON.stringify(orders));
+  }, [orders]);
+
   const addOrder = (order) => {
     setOrders((prev) => [...prev, order]);
   };
@@ -17,6 +20,7 @@ export function OrderProvider({ children }) {
     <OrderContext.Provider
       value={{
         orders,
+        setOrders,
         addOrder,
       }}
     >
@@ -25,5 +29,4 @@ export function OrderProvider({ children }) {
   );
 }
 
-// ✅ Hook
 export const useOrders = () => useContext(OrderContext);

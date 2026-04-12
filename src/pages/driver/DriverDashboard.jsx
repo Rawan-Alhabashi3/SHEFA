@@ -1,89 +1,120 @@
-import { Box, Typography, Paper, Divider } from "@mui/material";
-import { useParams } from "react-router-dom";
+import {
+  Grid,
+  Paper,
+  Typography,
+  Table,
+  TableHead,
+  TableRow,
+  TableCell,
+  TableBody,
+  Chip,
+  Box,
+  Button,
+} from "@mui/material";
+import StatsCard from "../../components/StatsCard";
+import AssignmentIcon from "@mui/icons-material/Assignment";
+import LocalShippingIcon from "@mui/icons-material/LocalShipping";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { useOrders } from "../../context/OrderContext";
 
-export default function OrderDetails() {
-  const { id } = useParams();
-  const { orders } = useOrders();
+export default function DriverDashboard() {
+  const { orders, setOrders } = useOrders();
 
-  // 🔍 نجيب الطلب
-  const order = orders.find((o) => o.id.toString() === id);
+  // 🟢 الطلبات يلي جاهزة للدرايفر
+  const driverOrders = orders.filter(
+    (o) => o.status === "Processing"
+  );
 
-  // ❌ إذا ما موجود
-  if (!order) {
-    return (
-      <Box sx={{ p: 4 }}>
-        <Typography>Order not found</Typography>
-      </Box>
+  const handleDeliver = (id) => {
+    setOrders((prev) =>
+      prev.map((order) =>
+        order.id === id
+          ? { ...order, status: "Delivered" }
+          : order
+      )
     );
-  }
+  };
+
+  const getStatusChip = (status) => {
+    switch (status) {
+      case "Processing":
+        return <Chip label="Processing" color="warning" />;
+      case "Delivered":
+        return <Chip label="Delivered" color="success" />;
+      default:
+        return <Chip label={status} />;
+    }
+  };
 
   return (
-    <Box sx={{ p: 4 }}>
-      <Typography variant="h4" mb={3} fontWeight={700}>
-        Order Details 📦
-      </Typography>
+    <Box sx={{ p: 3 }}>
+      <Grid container spacing={3} mb={3}>
+        <Grid item xs={12} md={4}>
+          <StatsCard
+            title="Assigned Orders"
+            value={driverOrders.length}
+            icon={<AssignmentIcon color="primary" fontSize="large" />}
+          />
+        </Grid>
 
+        <Grid item xs={12} md={4}>
+          <StatsCard
+            title="In Progress"
+            value={driverOrders.length}
+            icon={<LocalShippingIcon color="warning" fontSize="large" />}
+          />
+        </Grid>
+
+        <Grid item xs={12} md={4}>
+          <StatsCard
+            title="Delivered Today"
+            value={
+              orders.filter((o) => o.status === "Delivered").length
+            }
+            icon={<CheckCircleIcon color="success" fontSize="large" />}
+          />
+        </Grid>
+      </Grid>
+
+      {/* 🚚 Orders Table */}
       <Paper sx={{ p: 3, borderRadius: 3 }}>
-
-        {/* 🧾 معلومات الطلب */}
-        <Typography mb={1}>
-          <b>Order ID:</b> {order.id}
-        </Typography>
-
-        <Typography mb={1}>
-          <b>Status:</b> {order.status}
-        </Typography>
-
-        <Typography mb={1}>
-          <b>Total:</b> ${order.total}
-        </Typography>
-
-        <Typography mb={1}>
-          <b>Payment:</b> {order.paymentMethod}
-        </Typography>
-
-        <Typography mb={1}>
-          <b>Pharmacy:</b> {order.pharmacy}
-        </Typography>
-
-        <Typography mb={1}>
-          <b>Driver:</b>{" "}
-          {order.driver ? order.driver : "Not assigned yet"}
-        </Typography>
-
-        <Typography mb={2}>
-          <b>Address:</b> {order.address}
-        </Typography>
-
-        <Divider sx={{ my: 2 }} />
-
-        {/* 🛒 المنتجات */}
         <Typography variant="h6" mb={2}>
-          Items:
+          Assigned Orders
         </Typography>
 
-        {order.items && order.items.length > 0 ? (
-          order.items.map((item, index) => (
-            <Box
-              key={index}
-              sx={{
-                display: "flex",
-                justifyContent: "space-between",
-                mb: 1,
-                p: 1,
-                borderRadius: 2,
-                backgroundColor: "#f5f5f5",
-              }}
-            >
-              <Typography>{item.name}</Typography>
-              <Typography>${item.price}</Typography>
-            </Box>
-          ))
-        ) : (
-          <Typography>No items found</Typography>
-        )}
+        <Table>
+          <TableHead>
+            <TableRow>
+              <TableCell>Order ID</TableCell>
+              <TableCell>Customer</TableCell>
+              <TableCell>Status</TableCell>
+              <TableCell>Action</TableCell>
+            </TableRow>
+          </TableHead>
 
+          <TableBody>
+            {driverOrders.map((order) => (
+              <TableRow key={order.id}>
+                <TableCell>#{order.id}</TableCell>
+                <TableCell>{order.customer}</TableCell>
+                <TableCell>
+                  {getStatusChip(order.status)}
+                </TableCell>
+
+                <TableCell>
+                  <Button
+                    variant="contained"
+                    color="success"
+                    size="small"
+                    onClick={() => handleDeliver(order.id)}
+                  >
+                    Mark as Delivered
+                  </Button>
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
       </Paper>
     </Box>
   );

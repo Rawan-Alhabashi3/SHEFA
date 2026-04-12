@@ -10,19 +10,16 @@ export default function Checkout() {
 
   const handleOrder = () => {
     const order = {
-      id: Date.now(),
-      items: cart,
+  id: Date.now(),
+  items: cart,
+  total: cart.reduce((sum, item) => sum + item.price, 0),
+  paymentMethod: "Cash",
+  pharmacy: cart[0]?.pharmacy,
+  address: "Damascus",
+  status: "Pending",
 
-      total: cart.reduce((sum, item) => sum + item.price, 0),
-
-      paymentMethod: "Cash", // ✅ مهم
-      pharmacy: cart[0]?.pharmacy, // ✅ مهم
-
-      address: "Damascus", // مؤقت
-
-      status: "pending",
-      driver: null,
-    };
+  driverId: null, // 🔥 مهم
+};
 
     addOrder(order);
     clearCart();
