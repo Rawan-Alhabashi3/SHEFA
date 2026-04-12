@@ -216,4 +216,78 @@ public function manageExchangeAds(Request $request)
         $count = $ads->count();
         return $this->SuccessResponse($ads, "Successfully found $count medicine ad(s) matching your search", 200);
     }
+    public function addUser(Request $request)
+    {
+        $admin = auth()->user();
+        if (!$admin || $admin->role !== 'admin') {
+            return $this->ErrorResponse('Unauthorized. Only admins can access this', 401);
+        }
+
+        if ($request->has('governorate')) {
+            // تحويلها لشكل مقروء مثل "Rif Dimashq" قبل الـ Validator لضمان مطابقة الـ in:Damasucs
+            // تحويل "homs" إلى "Homs" أو "rif dimashq" إلى "Rif Dimashq"
+            $request->merge([
+                'governorate' => ucwords(strtolower($request->governorate))
+            ]);
+        }
+
+        $rules = [
+            'username' => 'required|string|unique:users,username|max:255',
+            'email' => 'nullable|string|email|unique:users,email',
+            'password' => 'required|string|min:6|confirmed',
+            'phone' => 'nullable|string|unique:users,phone',
+            'role' => 'required|in:admin,citizen,pharmacy,specialist,delivery',
+            'governorate' => 'required|in:damascus,Aleppo,Homs,Hama,Lattakia,Tartous,Daraa,Deir ez-Zor,Hasakah,Raqqa,Suwayda,Quneitra,Rif Dimashq',
+        ];
+
+        if ($request->role === 'citizen') {
+            $rules['address'] = 'required|string';
+        }
+
+        if ($request->role === 'pharmacy') {
+            $rules['pharmacy_name'] = 'required|string';
+        }
+
+        if ($request->role === 'specialist') {
+            $rules['pharmacy_name'] = 'required|string';
+            $rules['pharmacy_address'] = 'required|string';
+        }
+
+        $validation = Validator::make($request->all(), $rules);
+        if ($validation->fails()) {
+            return $this->ErrorResponse($validation->errors(), 422);
+        }
+
+        try {
+            return DB::transaction(function () use ($request) {
+                $governorate = strtolower(str_replace([' ', '-'], '_', $request->governorate));
+                $user = User::create([
+                    'username' => $request->username,
+                    'password' => bcrypt($request->password),
+                    'email' => $request->email,
+                    'phone' => $request->phone,
+                    'role' => $request->role,
+                    'governorate' => $governorate,
+                    'account_status' => 1
+                ]);
+
+                if ($request->role === 'citizen') {
+                    $user->citizen()->create(['address' => $request->address]);
+                } elseif ($request->role === 'pharmacy') {
+                    $user->pharmacy()->create(['pharmacy_name' => $request->pharmacy_name, 'governorate' => $request->governorate]);
+                } elseif ($request->role === 'specialist') {
+                    $user->specialist()->create(['pharmacy_name' => $request->pharmacy_name, 'pharmacy_address' => $request->pharmacy_address, 'governorate' => $request->governorate]);
+                } elseif ($request->role === 'delivery') {
+                    $user->delivery()->create(['governorate' => $request->governorate, 'availability_status' => 0]);
+                } elseif ($request->role === 'admin') {
+                    $user->admin()->create();
+                }
+
+                return $this->SuccessResponse($user->load($request->role), 'User created successfully', 201);
+            });
+        } catch (\Exception $e) {
+            return $this->ErrorResponse('Creation failed: ' . $e->getMessage(), 500);
+        }
+    }
+    
 }

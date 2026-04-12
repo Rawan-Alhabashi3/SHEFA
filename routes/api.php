@@ -34,4 +34,5 @@ Route::controller(AdminController::class)->middleware('auth:sanctum')->group(fun
     Route::get('/manage-exchange-ads', 'manageExchangeAds');
     Route::post('/search-user', 'searchUser');
     Route::post('/search-medicine-in-ads', 'searchMedicineInAds');
+    Route::post('/add-user', 'addUser');
 });
