@@ -32,4 +32,5 @@ Route::controller(AdminController::class)->middleware('auth:sanctum')->group(fun
     Route::post('/get-users-by-role', 'getUsersByRole');
     Route::post('/toggle-user-status', 'toggleUserStatus');
     Route::get('/manage-exchange-ads', 'manageExchangeAds');
+    Route::post('/search-user', 'searchUser');
 });
