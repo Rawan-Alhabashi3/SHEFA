@@ -132,5 +132,31 @@ public function toggleUserStatus(Request $request)
         $msg = $request->status ? 'activated' : 'suspended';
         return $this->SuccessResponse($user, "User account has been $msg successfully", 200);
     }
+public function manageExchangeAds(Request $request)
+    {
+        $admin = auth()->user();
+        if (!$admin || $admin->role !== 'admin') {
+            return $this->ErrorResponse('Unauthorized. Only admins can access this', 401);
+        }
 
+        $validation = Validator::make($request->all(), [
+            'status'  => 'nullable|in:0,1'
+        ]);
+
+        if ($validation->fails()) {
+            return $this->ErrorResponse($validation->errors(), 422);
+        }
+
+        $query = ExchangeAd::with([
+            'user:id,username',
+            'specialist:id,pharmacy_name'
+        ]);
+
+        if ($request->filled('status')) {
+            $query->where('security_check_status', $request->status);
+        }
+
+        $ads = $query->latest()->get();
+        return $this->SuccessResponse($ads, 'Exchange ads fetched for moderation', 200);
+    }
 }

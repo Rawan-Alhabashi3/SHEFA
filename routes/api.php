@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use App\Http\Controllers\Auth\AuthController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,4 +31,5 @@ Route::controller(AdminController::class)->middleware('auth:sanctum')->group(fun
     Route::get('/get-dashboard-stats', 'getDashboardStats');
     Route::post('/get-users-by-role', 'getUsersByRole');
     Route::post('/toggle-user-status', 'toggleUserStatus');
+    Route::get('/manage-exchange-ads', 'manageExchangeAds');
 });
