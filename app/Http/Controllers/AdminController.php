@@ -187,4 +187,33 @@ public function manageExchangeAds(Request $request)
         $count = $users->count();
         return $this->SuccessResponse($users, "Found $count user(s) matching your search", 200);
     }
+    public function searchMedicineInAds(Request $request)
+    {
+        $admin = auth()->user();
+
+        if (!$admin || $admin->role !== 'admin') {
+            return $this->ErrorResponse('Unauthorized. Only admins can access this', 401);
+        }
+
+        $validation = Validator::make($request->all(), [
+            'search' => 'required|string'
+        ]);
+
+        if ($validation->fails()) {
+            return $this->ErrorResponse($validation->errors(), 422);
+        }
+
+        $search = $request->search;
+
+        $ads = ExchangeAd::where('medicine_name', 'like', "%$search%")
+            ->limit(10)
+            ->get();
+
+        if ($ads->isEmpty()) {
+            return $this->SuccessResponse([], "No medicine ads found matching '$search'", 200);
+        }
+
+        $count = $ads->count();
+        return $this->SuccessResponse($ads, "Successfully found $count medicine ad(s) matching your search", 200);
+    }
 }
