@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Auth\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CitizenController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,3 +38,5 @@ Route::controller(AdminController::class)->middleware('auth:sanctum')->group(fun
     Route::post('/add-user', 'addUser');
     Route::post('/delete-user', 'deleteUser');
 });
+Route::controller(CitizenController::class)->group(function () {
+    Route::post('/get-all-medicines', 'getAllMedicines'); });
