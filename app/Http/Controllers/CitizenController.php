@@ -197,4 +197,63 @@ class CitizenController extends Controller
             return $this->ErrorResponse('Process failed: ' . $e->getMessage(), 500);
         }
     }
+    public function cancelOrder(Request $request)
+    {
+        $user = auth()->user();
+
+        if (!$user || $user->role !== 'citizen') {
+            return $this->ErrorResponse('Unauthorized. Only citizens can access this', 401);
+        }
+
+        $validation = Validator::make($request->all(), [
+            'order_id' => 'required|integer|exists:orders,id'
+        ]);
+
+        if ($validation->fails()) {
+            return $this->ErrorResponse($validation->errors()->first(), 422);
+        }
+
+        $order = Order::with(['orderItems', 'payment'])
+            ->where('id', $request->order_id)
+            ->where('user_id', $user->id)
+            ->first();
+
+        if (!$order) {
+            return $this->ErrorResponse('This order could not be found.', 404);
+        }
+
+        if ($order->ph_approval_status !== 'pending' || $order->order_status !== 'pending') {
+            return $this->ErrorResponse('Cannot cancel: Order is already processed.', 400);
+        }
+
+        try {
+            DB::transaction(function () use ($order, $user) {
+                // إعادة الكميات للمخزن
+                foreach ($order->orderItems as $item) {
+                    Medicine::where('id', $item->medicine_id)
+                        ->increment('quantity_available', $item->desired_quantity);
+                }
+
+                // تحديث حالة الطلب
+                $order->update(['order_status' => 'cancelled']);
+
+                if ($order->coupon_code) {
+                    Coupon::where('code', $order->coupon_code)
+                        ->where('user_id', $user->id)
+                        ->where('pharmacy_id', $order->pharmacy_id)
+                        ->update(['is_used' => false]);
+                }
+
+                // تحديث حالة الدفع إن وجدت
+                if ($order->payment) {
+                    $newStatus = ($order->payment->payment_method === 'electronic') ? 'failed' : 'failed';
+                    $order->payment->update(['payment_status' => $newStatus]);
+                }
+            });
+
+            return $this->SuccessResponse(null, 'Order cancelled and coupon returned.', 200);
+        } catch (\Exception $e) {
+            return $this->ErrorResponse('An error occurred during cancellation', 500);
+        }
+    }
 }
