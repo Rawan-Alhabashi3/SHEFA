@@ -39,4 +39,5 @@ Route::controller(AdminController::class)->middleware('auth:sanctum')->group(fun
     Route::post('/delete-user', 'deleteUser');
 });
 Route::controller(CitizenController::class)->group(function () {
-    Route::post('/get-all-medicines', 'getAllMedicines'); });
+    Route::post('/get-all-medicines', 'getAllMedicines');
+    Route::post('/create-order-for-pharmacist', 'createOrderForPharmacist')->middleware('auth:sanctum'); });
