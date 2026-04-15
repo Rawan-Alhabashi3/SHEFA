@@ -256,4 +256,42 @@ class CitizenController extends Controller
             return $this->ErrorResponse('An error occurred during cancellation', 500);
         }
     }
+    public function getMyOrderHistory(Request $request)
+    {
+        $user = auth()->user();
+
+        if (!$user || $user->role !== 'citizen') {
+            return $this->ErrorResponse('Unauthorized. Only citizens can access this', 401);
+        }
+
+        $validation = Validator::make($request->all(), [
+            'status' => 'nullable|string|in:pending,in_process,picked_up,delivered,cancelled'
+        ]);
+
+        if ($validation->fails()) {
+            return $this->ErrorResponse($validation->errors(), 422);
+        }
+
+        // جلب الطلبات مع العلاقات الأساسية
+        $query = Order::with(['orderItems.medicine', 'pharmacy.user', 'payment'])
+            ->where('user_id', $user->id)
+            ->latest();
+
+        if ($request->filled('status')) {
+            $query->where('order_status', $request->status);
+        }
+
+        $orders = $query->get();
+
+        if ($orders->isEmpty()) {
+            return $this->SuccessResponse([], 'You haven\'t placed any orders yet.', 200);
+        }
+
+        $formattedHistory = [
+            'active_orders' => $orders->whereIn('order_status', ['pending', 'in_process', 'picked_up'])->values(),
+            'past_orders'   => $orders->whereIn('order_status', ['delivered', 'cancelled'])->values(),
+        ];
+
+        return $this->SuccessResponse($formattedHistory, 'Order history retrieved successfully.', 200);
+    }
 }
