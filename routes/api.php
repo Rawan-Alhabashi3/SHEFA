@@ -42,4 +42,5 @@ Route::controller(CitizenController::class)->group(function () {
     Route::post('/get-all-medicines', 'getAllMedicines');
     Route::post('/create-order-for-pharmacist', 'createOrderForPharmacist')->middleware('auth:sanctum');
     Route::post('/cancel-order', 'cancelOrder')->middleware('auth:sanctum');
-    Route::post('/get-my-order-history', 'getMyOrderHistory')->middleware('auth:sanctum'); });
+    Route::post('/get-my-order-history', 'getMyOrderHistory')->middleware('auth:sanctum');
+    Route::get('get-my-coupons', 'getMyCoupons')->middleware('auth:sanctum'); });

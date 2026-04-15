@@ -294,4 +294,38 @@ class CitizenController extends Controller
 
         return $this->SuccessResponse($formattedHistory, 'Order history retrieved successfully.', 200);
     }
+    public function getMyCoupons()
+    {
+        $user = auth()->user();
+
+        if (!$user || $user->role !== 'citizen') {
+            return $this->ErrorResponse('Unauthorized. Only citizens can access this', 401);
+        }
+
+        // جلب الكوبونات غير المستخدمة والتي لم تنته صلاحيتها بعد
+        $coupons = Coupon::with(['pharmacy' => function ($query) {
+            $query->select('id', 'pharmacy_name');
+        }])
+            ->where('user_id', $user->id)
+            ->where('is_used', false)
+            ->where('valid_until', '>', now())
+            ->orderBy('valid_until', 'asc')
+            ->get();
+
+        if ($coupons->isEmpty()) {
+            return $this->SuccessResponse([], 'You have no available coupons at the moment. Keep ordering to get more gifts!', 200);
+        }
+
+        $coupons->map(function ($coupon) {
+            // يحسب الفرق بالأيام باستخدام diffInDays
+            // days_left هو حقل وهمي .. وهو ناتج طرح التاريخ الحالي من تاريخ انتهاء الكوبون
+            // { "id": 1, "code": "SAVE10", "valid_until": "2026-04-10" }
+            // { "id": 1, "code": "SAVE10", "valid_until": "2026-04-10", "days_left": 7 }
+            // ال false مهمتها: النتيجة -4 (رقم سالب يعني مضى على انتهاء الكوبون 4 ايام)
+            $coupon->days_left = now()->diffInDays($coupon->valid_until, false);
+            return $coupon; // إعادة الكوبون بحلته الجديدة
+        });
+
+        return $this->SuccessResponse($coupons, 'Available coupons retrieved successfully', 200);
+    }
 }
