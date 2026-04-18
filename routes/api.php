@@ -57,3 +57,6 @@ Route::controller(CitizenController::class)->group(function () {
     Route::post('/accept-order', 'acceptOrder')->middleware('auth:sanctum');
     Route::post('/reject-order', 'rejectOrder')->middleware('auth:sanctum');
     });
+    Route::controller(ReviewController::class)->group(function () {
+    Route::post('/add-review', 'addReview')->middleware('auth:sanctum');
+    });
