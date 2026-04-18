@@ -59,4 +59,5 @@ Route::controller(CitizenController::class)->group(function () {
     });
     Route::controller(ReviewController::class)->group(function () {
     Route::post('/add-review', 'addReview')->middleware('auth:sanctum');
+     Route::post('/delete-review', 'deleteReview')->middleware('auth:sanctum');
     });
