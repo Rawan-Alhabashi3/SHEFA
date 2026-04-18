@@ -12,7 +12,9 @@ class Pharmacy extends Model
     protected $fillable = [
         'user_id',
         'pharmacy_name',
-        'governorate'
+        'governorate',
+        'license_image',
+        'is_specialist'
     ];
 
     public function user()
@@ -39,4 +41,5 @@ class Pharmacy extends Model
     {
         return $this->hasMany(Coupon::class, 'pharmacy_id');
     }
+
 }

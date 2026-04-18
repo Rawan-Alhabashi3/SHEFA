@@ -18,7 +18,8 @@ class Medicine extends Model
         'quantity_available',
         'expiration_date',
         'description',
-        'last_notified_at'
+        'last_notified_at',
+        'requires_prescription'
     ];
 
     protected $casts = [
