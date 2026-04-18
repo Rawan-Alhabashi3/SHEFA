@@ -48,4 +48,6 @@ Route::controller(CitizenController::class)->group(function () {
     Route::get('get-my-coupons', 'getMyCoupons')->middleware('auth:sanctum'); 
     });
     Route::controller(MedicineController::class)->group(function () {
-    Route::post('/add-medicine', 'addMedicine')->middleware('auth:sanctum');});
+    Route::post('/add-medicine', 'addMedicine')->middleware('auth:sanctum');
+    Route::post('/update-medicine', 'updateMedicine')->middleware('auth:sanctum');
+    });
