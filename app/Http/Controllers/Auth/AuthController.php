@@ -174,7 +174,11 @@ class AuthController extends Controller
                 $rules = array_merge($rules, ['address' => 'nullable|string']);
                 break;
             case 'pharmacy':
-                $rules = array_merge($rules, ['pharmacy_name' => 'nullable|string|max:255']);
+                $rules = array_merge($rules, [
+                    'pharmacy_name' => 'nullable|string|max:255',
+                    'license_image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+                    'is_specialist' => 'nullable|boolean'
+                ]);
                 break;
             case 'specialist':
                 $rules = array_merge($rules, [
@@ -196,7 +200,14 @@ class AuthController extends Controller
                 if ($user->role === 'citizen' && $user->citizen) {
                     $user->citizen->update($request->only(['address']));
                 } elseif ($user->role === 'pharmacy' && $user->pharmacy) {
-                    $user->pharmacy->update($request->only(['pharmacy_name', 'governorate']));
+                    $data = $request->only(['pharmacy_name', 'governorate', 'is_specialist']);
+
+                    if ($request->hasFile('license_image')) {
+                        $path = $request->file('license_image')->store('licenses', 'public');
+                        $data['license_image'] = $path;
+                    }
+
+                    $user->pharmacy->update($data);
                 } elseif ($user->role === 'specialist' && $user->specialist) {
                     $user->specialist->update($request->only(['pharmacy_name', 'pharmacy_address', 'governorate']));
                 } elseif ($user->role === 'delivery' && $user->delivery) {

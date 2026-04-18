@@ -26,6 +26,7 @@ class MedicineController extends Controller
             'expiration_date' => 'required|date|after:today',
             'description' => 'nullable|string',
             'category' => 'required|in:medicine,cosmetic',
+
         ]);
 
         if ($validation->fails()) {

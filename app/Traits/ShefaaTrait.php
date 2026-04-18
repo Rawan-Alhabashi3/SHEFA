@@ -49,14 +49,16 @@ trait ShefaaTrait
 
     private function checkAndGenerateLoyaltyCoupon($userId, $pharmacyId)
     {
-        $ordersCountFromThisPharmacy = Order::where('user_id', $userId)
+        // (مكتملة و سعرها >= 50,000)
+        $qualifiedOrdersCount = Order::where('user_id', $userId)
             ->where('pharmacy_id', $pharmacyId)
             ->where('order_status', 'delivered')
+            ->where('total_price', '>=', 50000)
             ->count();
 
-        if ($ordersCountFromThisPharmacy > 0 && $ordersCountFromThisPharmacy % 2 == 0) {
+        if ($qualifiedOrdersCount > 0 && $qualifiedOrdersCount % 2 == 0) {
 
-            $code = 'PH' . $pharmacyId . 'U' . $userId . 'R' . rand(100, 999);
+            $code = 'LOYAL' . $pharmacyId . 'U' . $userId . 'V' . rand(100, 999);
 
             Coupon::create([
                 'user_id' => $userId,
@@ -64,7 +66,7 @@ trait ShefaaTrait
                 'code' => $code,
                 'discount_percentage' => 20,
                 'is_used' => false,
-                'valid_until' => now()->addMonth(),
+                'valid_until' => now()->addDays(30),
             ]);
 
             return $code;
