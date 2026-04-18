@@ -50,7 +50,10 @@ class CitizenController extends Controller
             $query->where('pharmacy_id', $request->pharmacy_id);
         }
 
-        $medicines = $query->orderBy('expiration_date', 'asc')->get();
+        $medicines = $query->select('id', 'name', 'price', 'image', 'category', 'requires_prescription', 'pharmacy_id')
+                   ->orderBy('expiration_date', 'asc')
+                   ->get();
+        
 
         // إذا كان هناك تصنيف محدد نختار اسمه، وإذا لم يوجد نسميها "Products"
         if (!$request->filled('category')) {
@@ -116,7 +119,12 @@ class CitizenController extends Controller
 
                 foreach ($request->items as $itemData) {
                     // lockForUpdate: وظيفتها حجز الدواء حتى انتهاء ال transaction الحالية
+                   
                     $medicine = Medicine::lockForUpdate()->find($itemData['medicine_id']);
+                       // منع طلب دواء اونلاين يحتاج وصفة طبية
+       if ($medicine->requires_prescription) {
+              throw new \Exception("This medication ({$medicine->name}) requires a prescription and cannot be ordered online. Please visit a pharmacy.");
+       }
 
                     if ($medicine->quantity_available < $itemData['desired_quantity']) {
                         throw new \Exception("Insufficient stock for: {$medicine->name}");
@@ -129,7 +137,7 @@ class CitizenController extends Controller
                     } else {
                         $medicinesSubtotal += $itemTotalPrice;
                     }
-
+                      
                     // تجهيز البيانات لإنشائها لاحقاً
                     $itemsToCreate[] = [
                         'medicine_id' => $medicine->id,
@@ -327,5 +335,51 @@ class CitizenController extends Controller
         });
 
         return $this->SuccessResponse($coupons, 'Available coupons retrieved successfully', 200);
+    }
+    public function toggleFavorite(Request $request)
+    {
+        $user = auth()->user();
+        
+        if (!$user || $user->role !== 'citizen') {
+            return $this->ErrorResponse('Unauthorized. Only citizens can have favorites', 401);
+        }
+
+        $validation = Validator::make($request->all(), [
+            'medicine_id' => 'required|integer|exists:medicines,id',
+        ]);
+
+        if ($validation->fails()) {
+            return $this->ErrorResponse($validation->errors(), 422);
+        }
+
+        // إذا كان موجوداً يحذفه، وإذا لم يكن يضيفه
+        $status = $user->favorites()->toggle($request->medicine_id);
+
+        if (count($status['attached']) > 0) {
+            return $this->SuccessResponse(null, 'Medicine added to favorites', 200);
+        }
+
+        return $this->SuccessResponse(null, 'Medicine removed from favorites', 200);
+    }
+    public function getMyFavorites()
+    {
+        $user = auth()->user();
+
+        if (!$user || $user->role !== 'citizen') {
+            return $this->ErrorResponse('Unauthorized. Only citizens can have favorites', 401);
+        }
+
+        // جلب الأدوية مع بيانات الصيدلية المرتبطة بها
+        $favorites = $user->favorites()
+            ->with('pharmacy:id,pharmacy_name')
+            ->select('medicines.id', 'name', 'price', 'image', 'category', 'requires_prescription')
+            ->latest()
+            ->get();
+
+        if ($favorites->isEmpty()) {
+            return $this->SuccessResponse([], 'Your favorites list is empty', 200);
+        }
+
+        return $this->SuccessResponse($favorites, 'Favorites fetched successfully', 200);
     }
 }

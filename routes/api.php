@@ -45,7 +45,10 @@ Route::controller(CitizenController::class)->group(function () {
     Route::post('/create-order-for-pharmacist', 'createOrderForPharmacist')->middleware('auth:sanctum');
     Route::post('/cancel-order', 'cancelOrder')->middleware('auth:sanctum');
     Route::post('/get-my-order-history', 'getMyOrderHistory')->middleware('auth:sanctum');
-    Route::get('get-my-coupons', 'getMyCoupons')->middleware('auth:sanctum'); 
+    Route::post('/create-my-medicine-favorite', 'toggleFavorite')->middleware('auth:sanctum'); 
+    Route::get('/get-my-coupons', 'getMyCoupons')->middleware('auth:sanctum'); 
+    Route::get('/get-my-favorites', 'getMyFavorites')->middleware('auth:sanctum');
+
     });
     Route::controller(MedicineController::class)->group(function () {
     Route::post('/add-medicine', 'addMedicine')->middleware('auth:sanctum');

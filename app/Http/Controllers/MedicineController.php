@@ -26,7 +26,7 @@ class MedicineController extends Controller
             'expiration_date' => 'required|date|after:today',
             'description' => 'nullable|string',
             'category' => 'required|in:medicine,cosmetic',
-
+            'requires_prescription' => 'required|boolean',
         ]);
 
         if ($validation->fails()) {
@@ -56,6 +56,7 @@ class MedicineController extends Controller
             'expiration_date' => $request->expiration_date,
             'description' => $request->description,
             'category' => $request->category,
+            'requires_prescription' => $request->requires_prescription,
         ]);
 
         return $this->SuccessResponse($medicine, 'Medicine added successfully to your inventory', 201);
@@ -75,7 +76,8 @@ class MedicineController extends Controller
             'quantity_available' => 'sometimes|integer|min:0',
             'description' => 'sometimes|string',
             'expiration_date' => 'sometimes|date|after:today',
-            'category' => 'sometimes|in:medicine,cosmetic'
+            'category' => 'sometimes|in:medicine,cosmetic',
+            'requires_prescription' => 'sometimes|boolean'
         ]);
 
         if ($validation->fails()) {
@@ -97,7 +99,7 @@ class MedicineController extends Controller
             return $this->ErrorResponse('Medicine not found or unauthorized access', 404);
         }
 
-        $updateData = $request->only(['name', 'price', 'category', 'expiration_date','quantity_available', 'description']);
+        $updateData = $request->only(['name', 'price', 'category', 'expiration_date','quantity_available', 'description', 'requires_prescription']);
 
         if ($request->hasFile('image')) {
             // حذف الصورة القديمة من التخزين لتوفير المساحة
