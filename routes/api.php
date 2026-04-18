@@ -50,4 +50,5 @@ Route::controller(CitizenController::class)->group(function () {
     Route::controller(MedicineController::class)->group(function () {
     Route::post('/add-medicine', 'addMedicine')->middleware('auth:sanctum');
     Route::post('/update-medicine', 'updateMedicine')->middleware('auth:sanctum');
+    Route::post('/delete-medicine', 'deleteMedicine')->middleware('auth:sanctum');
     });

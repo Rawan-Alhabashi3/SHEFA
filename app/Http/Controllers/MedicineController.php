@@ -115,4 +115,42 @@ class MedicineController extends Controller
 
         return $this->SuccessResponse($medicine->fresh(), 'Medicine updated successfully', 200);
     }
+    public function deleteMedicine(Request $request)
+    {
+        $user = auth()->user();
+        if (!$user) {
+            return $this->ErrorResponse('Unauthorized. Only pharmacies can access this', 401);
+        }
+
+        $validation = Validator::make($request->all(), [
+            'medicine_id' => 'required|integer|exists:medicines,id'
+        ]);
+
+        if ($validation->fails()) {
+            return $this->ErrorResponse($validation->errors(), 422);
+        }
+
+        $pharmacy = Pharmacy::where('user_id', $user->id)->first();
+
+        if (!$pharmacy) {
+            return $this->ErrorResponse('Pharmacy profile not found', 404);
+        }
+
+        $medicine = Medicine::where('id', $request->medicine_id)
+            ->where('pharmacy_id', $pharmacy->id)
+            ->first();
+
+        if (!$medicine) {
+            return $this->ErrorResponse('Medicine not found in your inventory', 404);
+        }
+
+        if ($medicine->image) {
+            $path = str_replace(asset('storage/'), '', $medicine->image);
+            Storage::disk('public')->delete($path);
+        }
+
+        $medicine->delete();
+
+        return $this->SuccessResponse(null, 'Medicine removed from inventory', 200);
+    }
 }
