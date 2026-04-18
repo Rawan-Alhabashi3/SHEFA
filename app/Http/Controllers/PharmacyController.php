@@ -44,4 +44,30 @@ class PharmacyController extends Controller
 
         return $this->SuccessResponse($inventory, 'Inventory fetched successfully', 200);
     }
+    public function getPharmacyReviews()
+    {
+        $user = auth()->user();
+
+        if (!$user || $user->role !== 'pharmacy') {
+            return $this->ErrorResponse('Unauthorized. Only pharmacies can access this', 401);
+        }
+
+        $pharmacy = Pharmacy::where('user_id', $user->id)->first();
+
+        if (!$pharmacy) {
+            return $this->ErrorResponse('Pharmacy profile not found', 404);
+        }
+
+        $reviews = Review::with('user:id,username')
+            ->where('pharmacy_id', $pharmacy->id)
+            ->latest()
+            ->get();
+
+        if ($reviews->isEmpty()) {
+            return $this->SuccessResponse([], 'No reviews found to you till now', 200);
+        }
+
+        return $this->SuccessResponse($reviews, 'Reviews fetched successfully', 200);
+    }
+
 }

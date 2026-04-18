@@ -54,4 +54,5 @@ Route::controller(CitizenController::class)->group(function () {
     });
     Route::controller(PharmacyController::class)->group(function () {
     Route::get('/get-my-orders', 'getMyOrders')->middleware('auth:sanctum');
+    Route::post('/accept-order', 'acceptOrder')->middleware('auth:sanctum');
     });
