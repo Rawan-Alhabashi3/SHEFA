@@ -35,13 +35,15 @@ class AuthController extends Controller
             case 'pharmacy':
                 $rules = array_merge($rules, [
                     'pharmacy_name' => 'required|string|max:255',
+                    'license_image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+                    'is_specialist' => 'nullable|boolean',
                 ]);
                 break;
 
             case 'specialist':
                 $rules = array_merge($rules, [
-                    'pharmacy_name' => 'nullable|string|max:255',
-                    'pharmacy_address' => 'nullable|string|max:255',
+                    'pharmacy_name' => 'required|string|max:255',
+                    'pharmacy_address' => 'required|string|max:255',
                 ]);
                 break;
         }
@@ -67,9 +69,16 @@ class AuthController extends Controller
                         'address' => $request->address,
                     ]);
                 } elseif ($request->role === 'pharmacy') {
+                    $licensePath = null;
+                    if ($request->hasFile('license_image')) {
+                        $licensePath = $request->file('license_image')->store('licenses', 'public');
+                    }
+
                     $user->pharmacy()->create([
                         'pharmacy_name' => $request->pharmacy_name,
                         'governorate' => $request->governorate,
+                        'license_image' => $licensePath,
+                        'is_specialist' => $request->boolean('is_specialist', false),
                     ]);
                 } elseif ($request->role === 'specialist') {
                     $user->specialist()->create([

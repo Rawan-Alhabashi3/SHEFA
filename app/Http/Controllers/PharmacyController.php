@@ -40,7 +40,9 @@ class PharmacyController extends Controller
             $query->where('category', $request->category);
         }
 
-        $inventory = $query->orderBy('created_at', 'desc')->get();
+        $inventory = $query->select('id', 'name', 'price', 'category', 'quantity_available', 'requires_prescription')
+            ->orderBy('created_at', 'desc')
+            ->get();
 
         return $this->SuccessResponse($inventory, 'Inventory fetched successfully', 200);
     }
