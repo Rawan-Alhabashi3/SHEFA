@@ -182,8 +182,8 @@ class AuthController extends Controller
                 break;
             case 'specialist':
                 $rules = array_merge($rules, [
-                    'pharmacy_name' => 'nullable|string|max:255',
-                    'pharmacy_address' => 'nullable|string|max:255'
+                    'pharmacy_name' =>'required|string|max:255',
+                    'pharmacy_address' => 'required|string|max:255'
                 ]);
                 break;
         }
