@@ -6,9 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Traits\ShefaaTrait;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Facades\DB;
 
 class AuthController extends Controller
 {
@@ -35,6 +35,7 @@ class AuthController extends Controller
             case 'pharmacy':
                 $rules = array_merge($rules, [
                     'pharmacy_name' => 'required|string|max:255',
+                    'pharmacy_address' => 'required|string|max:255',
                     'license_image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
                     'is_specialist' => 'nullable|boolean',
                 ]);
@@ -61,7 +62,7 @@ class AuthController extends Controller
                     'email' => $request->email,
                     'phone' => $request->phone,
                     'role' => $request->role,
-                    'governorate' => $request->governorate
+                    'governorate' => $request->governorate,
                 ]);
 
                 if ($request->role === 'citizen') {
@@ -95,10 +96,11 @@ class AuthController extends Controller
                 }
 
                 $token = $user->createToken('auth_token')->plainTextToken;
+
                 return $this->SuccessResponse(['token' => $token, 'user' => $user], 'User registered successfully', 201);
             });
         } catch (\Exception $e) {
-            return $this->ErrorResponse('Registration failed: ' . $e->getMessage(), 500);
+            return $this->ErrorResponse('Registration failed: '.$e->getMessage(), 500);
         }
     }
 
@@ -107,7 +109,7 @@ class AuthController extends Controller
         $validation = Validator::make($request->all(), [
             'username' => 'required|string',
             'password' => 'required|string|min:6',
-            'fcm_token' => 'nullable|string'
+            'fcm_token' => 'nullable|string',
         ]);
 
         if ($validation->fails()) {
@@ -116,7 +118,7 @@ class AuthController extends Controller
 
         $user = User::where('username', $request->username)->first();
 
-        if (!$user || !Hash::check($request->password, $user->password)) {
+        if (! $user || ! Hash::check($request->password, $user->password)) {
             return $this->ErrorResponse('Invalid username or password', 401);
         }
 
@@ -137,7 +139,7 @@ class AuthController extends Controller
     {
         $user = auth()->user();
 
-        if (!$user) {
+        if (! $user) {
             return $this->ErrorResponse('Unauthorized', 401);
         }
 
@@ -151,6 +153,7 @@ class AuthController extends Controller
         };
 
         $userData = User::with($relation)->find($user->id);
+
         return $this->SuccessResponse($userData, 'Your profile', 200);
     }
 
@@ -158,14 +161,14 @@ class AuthController extends Controller
     {
         $user = auth()->user();
 
-        if (!$user) {
+        if (! $user) {
             return $this->ErrorResponse('Unauthorized', 401);
         }
 
         $rules = [
-            'username' => 'sometimes|string|unique:users,username,' . $user->id,
-            'phone' => 'sometimes|string|max:20|unique:users,phone,' . $user->id,
-            'email' => 'sometimes|string|email|unique:users,email,' . $user->id,
+            'username' => 'sometimes|string|unique:users,username,'.$user->id,
+            'phone' => 'sometimes|string|max:20|unique:users,phone,'.$user->id,
+            'email' => 'sometimes|string|email|unique:users,email,'.$user->id,
             'governorate' => 'sometimes|in:Damascus,Aleppo,Homs,Hama,Lattakia,Tartous,Daraa,Deir ez-Zor,Hasakah,Raqqa,Suwayda,Quneitra,Rif Dimashq',
         ];
 
@@ -176,14 +179,15 @@ class AuthController extends Controller
             case 'pharmacy':
                 $rules = array_merge($rules, [
                     'pharmacy_name' => 'nullable|string|max:255',
+                    'pharmacy_address' => 'nullable|string|max:255',
                     'license_image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
-                    'is_specialist' => 'nullable|boolean'
+                    'is_specialist' => 'nullable|boolean',
                 ]);
                 break;
             case 'specialist':
                 $rules = array_merge($rules, [
-                    'pharmacy_name' =>'required|string|max:255',
-                    'pharmacy_address' => 'required|string|max:255'
+                    'pharmacy_name' => 'nullable|string|max:255',
+                    'pharmacy_address' => 'nullable|string|max:255',
                 ]);
                 break;
         }
@@ -200,7 +204,7 @@ class AuthController extends Controller
                 if ($user->role === 'citizen' && $user->citizen) {
                     $user->citizen->update($request->only(['address']));
                 } elseif ($user->role === 'pharmacy' && $user->pharmacy) {
-                    $data = $request->only(['pharmacy_name', 'governorate', 'is_specialist']);
+                    $data = $request->only(['pharmacy_name', 'pharmacy_address', 'governorate', 'is_specialist']);
 
                     if ($request->hasFile('license_image')) {
                         $path = $request->file('license_image')->store('licenses', 'public');
@@ -217,7 +221,7 @@ class AuthController extends Controller
 
             return $this->SuccessResponse($user->load($user->role), 'Profile updated successfully', 200);
         } catch (\Exception $e) {
-            return $this->ErrorResponse('Update failed: ' . $e->getMessage(), 500);
+            return $this->ErrorResponse('Update failed: '.$e->getMessage(), 500);
         }
     }
 }
