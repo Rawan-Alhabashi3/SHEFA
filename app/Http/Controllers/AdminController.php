@@ -8,8 +8,8 @@ use App\Models\Payment;
 use App\Models\User;
 use App\Traits\ShefaaTrait;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 
 class AdminController extends Controller
 {
@@ -18,7 +18,7 @@ class AdminController extends Controller
     public function getDashboardStats()
     {
         $admin = auth()->user();
-        if (!$admin || $admin->role !== 'admin') {
+        if (! $admin || $admin->role !== 'admin') {
             return $this->ErrorResponse('Unauthorized. Only admins can access this', 401);
         }
 
@@ -34,24 +34,22 @@ class AdminController extends Controller
             'ads_stats' => [
                 'total_ads' => ExchangeAd::count(),
                 'published' => ExchangeAd::where('is_showing', 1)->count(),
-                'pending_verification' => ExchangeAd::whereNull('security_check_status')->count(), // المعلقة
-                'completed_exchanges' => ExchangeAd::where('is_showing', 0)->where('security_check_status', 1)->count(), // تم تسليمها
+                'pending_verification' => ExchangeAd::whereNull('security_check_status')->count(),
+                'completed_exchanges' => ExchangeAd::where('is_showing', 0)->where('security_check_status', 1)->count(),
                 'rejected_ads' => ExchangeAd::where('security_check_status', 0)->count(), // إعلانات مرفوضة لأسباب طبية
             ],
             'orders_stats' => [
                 'total_orders' => Order::count(),
                 'pending_orders' => Order::where('order_status', 'pending')->count(),
-                'processing' => Order::whereIn('order_status', ['in_process', 'picked_up'])->count(),
+                'processing' => Order::whereIn('order_status', ['accepted', 'picked_up'])->count(),
                 'completed_orders' => Order::where('order_status', 'delivered')->count(),
                 'canceled_orders' => Order::where('order_status', 'canceled')->count(),
             ],
             'financial_overview' => [
                 'total_paid_orders' => Payment::where('payment_status', 'paid')->count(),
-                // تجميع الإيرادات حسب العملة
+                // تجميع الإيرادات حسب العملة (لا تظهره كمجموع واحد لضمان الدقة)
                 'revenue_by_currency' => Payment::where('payment_status', 'paid')
-                    // جمع قيم حقل ال amount التابعة للعملة الواحدة باسم مستعار وهو total
-                    ->select('currency', DB::raw('SUM(amount) as total')) // DB لاستخدام دالة ال sum
-                    // group by لمعرفة كل total لأي عملة تابع
+                    ->select('currency', DB::raw('SUM(amount) as total'))
                     ->groupBy('currency')
                     ->get(),
             ],
@@ -63,15 +61,16 @@ class AdminController extends Controller
 
         return $this->SuccessResponse($stats, 'Complete dashboard statistics fetched successfully', 200);
     }
-public function getUsersByRole(Request $request)
+
+    public function getUsersByRole(Request $request)
     {
         $admin = auth()->user();
-        if (!$admin || $admin->role !== 'admin') {
+        if (! $admin || $admin->role !== 'admin') {
             return $this->ErrorResponse('Unauthorized. Only admins can access this', 401);
         }
 
         $validation = Validator::make($request->all(), [
-            'role' => 'required|in:citizen,pharmacy,specialist,delivery,admin'
+            'role' => 'required|in:citizen,pharmacy,specialist,delivery,admin',
         ]);
 
         if ($validation->fails()) {
@@ -83,7 +82,7 @@ public function getUsersByRole(Request $request)
         // جلب المستخدمين مع فحص وجود العلاقة
         $query = User::where('role', $role);
 
-        // للتحقق من انها توجد علاقة في مودل User
+        // تأكد أن لديك علاقة في مودل User بهذا الاسم، وإلا قم بإزالة هذا الشرط
         if (method_exists(User::class, $role)) {
             $query->with($role);
         }
@@ -96,16 +95,17 @@ public function getUsersByRole(Request $request)
 
         return $this->SuccessResponse($users, "All {$role} users fetched successfully", 200);
     }
-public function toggleUserStatus(Request $request)
+
+    public function toggleUserStatus(Request $request)
     {
         $admin = auth()->user();
-        if (!$admin || $admin->role !== 'admin') {
+        if (! $admin || $admin->role !== 'admin') {
             return $this->ErrorResponse('Unauthorized. Only admins can access this', 401);
         }
 
         $validation = Validator::make($request->all(), [
             'user_id' => 'required|exists:users,id',
-            'status'  => 'required|boolean'
+            'status' => 'required|boolean',
         ]);
 
         if ($validation->fails()) {
@@ -118,29 +118,31 @@ public function toggleUserStatus(Request $request)
             return $this->ErrorResponse('You cannot toggle your own status.', 403);
         }
 
-        // FILTER_VALIDATE_BOOLEAN ليقوم بذكاء بتحويل كل هذه الصيغ المختلفة إلى true أو false فعليين
         // تحويل القيمة إلى Boolean صريح للمقارنة
         $newStatus = filter_var($request->status, FILTER_VALIDATE_BOOLEAN);
 
         if ($user->account_status == $newStatus) {
             $currentStatusText = $newStatus ? 'active' : 'suspended';
+
             return $this->ErrorResponse("This account is already $currentStatusText", 400);
         }
 
         $user->update(['account_status' => $request->status]);
 
         $msg = $request->status ? 'activated' : 'suspended';
+
         return $this->SuccessResponse($user, "User account has been $msg successfully", 200);
     }
-public function manageExchangeAds(Request $request)
+
+    public function manageExchangeAds(Request $request)
     {
         $admin = auth()->user();
-        if (!$admin || $admin->role !== 'admin') {
+        if (! $admin || $admin->role !== 'admin') {
             return $this->ErrorResponse('Unauthorized. Only admins can access this', 401);
         }
 
         $validation = Validator::make($request->all(), [
-            'status'  => 'nullable|in:0,1'
+            'status' => 'nullable|in:0,1',
         ]);
 
         if ($validation->fails()) {
@@ -149,7 +151,7 @@ public function manageExchangeAds(Request $request)
 
         $query = ExchangeAd::with([
             'user:id,username',
-            'specialist:id,pharmacy_name'
+            'specialist:id,pharmacy_name,pharmacy_address',
         ]);
 
         if ($request->filled('status')) {
@@ -157,17 +159,19 @@ public function manageExchangeAds(Request $request)
         }
 
         $ads = $query->latest()->get();
+
         return $this->SuccessResponse($ads, 'Exchange ads fetched for moderation', 200);
     }
+
     public function searchUser(Request $request)
     {
         $admin = auth()->user();
-        if (!$admin || $admin->role !== 'admin') {
+        if (! $admin || $admin->role !== 'admin') {
             return $this->ErrorResponse('Unauthorized. Only admins can access this', 401);
         }
 
         $validation = Validator::make($request->all(), [
-            'search' => 'required|string'
+            'search' => 'required|string',
         ]);
 
         if ($validation->fails()) {
@@ -177,6 +181,7 @@ public function manageExchangeAds(Request $request)
         $search = $request->search;
 
         $users = User::where('username', 'like', "%$search%")
+            ->orWhere('phone', 'like', "%$search%")
             ->limit(10)
             ->get();
 
@@ -185,18 +190,20 @@ public function manageExchangeAds(Request $request)
         }
 
         $count = $users->count();
+
         return $this->SuccessResponse($users, "Found $count user(s) matching your search", 200);
     }
+
     public function searchMedicineInAds(Request $request)
     {
         $admin = auth()->user();
 
-        if (!$admin || $admin->role !== 'admin') {
+        if (! $admin || $admin->role !== 'admin') {
             return $this->ErrorResponse('Unauthorized. Only admins can access this', 401);
         }
 
         $validation = Validator::make($request->all(), [
-            'search' => 'required|string'
+            'search' => 'required|string',
         ]);
 
         if ($validation->fails()) {
@@ -214,20 +221,21 @@ public function manageExchangeAds(Request $request)
         }
 
         $count = $ads->count();
+
         return $this->SuccessResponse($ads, "Successfully found $count medicine ad(s) matching your search", 200);
     }
+
     public function addUser(Request $request)
     {
         $admin = auth()->user();
-        if (!$admin || $admin->role !== 'admin') {
+        if (! $admin || $admin->role !== 'admin') {
             return $this->ErrorResponse('Unauthorized. Only admins can access this', 401);
         }
 
         if ($request->has('governorate')) {
-            // تحويلها لشكل مقروء مثل "Rif Dimashq" قبل الـ Validator لضمان مطابقة الـ in:Damasucs
             // تحويل "homs" إلى "Homs" أو "rif dimashq" إلى "Rif Dimashq"
             $request->merge([
-                'governorate' => ucwords(strtolower($request->governorate))
+                'governorate' => ucwords(strtolower($request->governorate)),
             ]);
         }
 
@@ -237,7 +245,7 @@ public function manageExchangeAds(Request $request)
             'password' => 'required|string|min:6|confirmed',
             'phone' => 'nullable|string|unique:users,phone',
             'role' => 'required|in:admin,citizen,pharmacy,specialist,delivery',
-            'governorate' => 'required|in:damascus,Aleppo,Homs,Hama,Lattakia,Tartous,Daraa,Deir ez-Zor,Hasakah,Raqqa,Suwayda,Quneitra,Rif Dimashq',
+            'governorate' => 'required|in:Damascus,Aleppo,Homs,Hama,Lattakia,Tartous,Daraa,Deir ez-Zor,Hasakah,Raqqa,Suwayda,Quneitra,Rif Dimashq',
         ];
 
         if ($request->role === 'citizen') {
@@ -246,6 +254,7 @@ public function manageExchangeAds(Request $request)
 
         if ($request->role === 'pharmacy') {
             $rules['pharmacy_name'] = 'required|string';
+            $rules['pharmacy_address'] = 'required|string';
         }
 
         if ($request->role === 'specialist') {
@@ -268,13 +277,13 @@ public function manageExchangeAds(Request $request)
                     'phone' => $request->phone,
                     'role' => $request->role,
                     'governorate' => $governorate,
-                    'account_status' => 1
+                    'account_status' => 1,
                 ]);
 
                 if ($request->role === 'citizen') {
                     $user->citizen()->create(['address' => $request->address]);
                 } elseif ($request->role === 'pharmacy') {
-                    $user->pharmacy()->create(['pharmacy_name' => $request->pharmacy_name, 'governorate' => $request->governorate]);
+                    $user->pharmacy()->create(['pharmacy_name' => $request->pharmacy_name, 'pharmacy_address' => $request->pharmacy_address, 'governorate' => $request->governorate]);
                 } elseif ($request->role === 'specialist') {
                     $user->specialist()->create(['pharmacy_name' => $request->pharmacy_name, 'pharmacy_address' => $request->pharmacy_address, 'governorate' => $request->governorate]);
                 } elseif ($request->role === 'delivery') {
@@ -286,20 +295,18 @@ public function manageExchangeAds(Request $request)
                 return $this->SuccessResponse($user->load($request->role), 'User created successfully', 201);
             });
         } catch (\Exception $e) {
-            return $this->ErrorResponse('Creation failed: ' . $e->getMessage(), 500);
+            return $this->ErrorResponse('Creation failed: '.$e->getMessage(), 500);
         }
     }
+
     public function deleteUser(Request $request)
     {
         $admin = auth()->user();
-        if (!$admin || $admin->role !== 'admin') {
+        if (! $admin || $admin->role !== 'admin') {
             return $this->ErrorResponse('Unauthorized. Only admins can access this', 401);
         }
 
-        $validator = Validator::make($request->all(), [
-            'user_id' => 'required|integer|exists:users,id'
-        ]);
-
+        $validator = Validator::make($request->all(), ['user_id' => 'required|integer|exists:users,id']);
         if ($validator->fails()) {
             return $this->ErrorResponse($validator->errors(), 422);
         }
@@ -311,6 +318,7 @@ public function manageExchangeAds(Request $request)
         }
 
         $user->delete();
+
         return $this->SuccessResponse(null, 'User deleted successfully', 200);
     }
 }

@@ -16,14 +16,13 @@ class CitizenController extends Controller
 
     public function getAllMedicines(Request $request)
     {
-        $user = auth()->user();
+        $user = auth('sanctum')->user();
 
         // جلب الأدوية مع معلومات الصيدلية والمحافظة
         $query = Medicine::with(['pharmacy.user'])
             ->where('expiration_date', '>', now()->toDateString())
             ->where('quantity_available', '>', 0);
 
-        //دوا أو مستحضر
         if ($request->filled('category')) {
             $query->where('category', $request->category);
         }
@@ -33,15 +32,13 @@ class CitizenController extends Controller
         $targetGovernorate = $request->governorate ?? ($user ? $user->governorate : null);
 
         if ($targetGovernorate) {
-            // وظيفة str_replace('_', ' ', هي تبديل ال _ الى مسافة.... مثلا بالداتا بيز هيي saudi_arabia بتنعرض للمستخدم saudi arabia
-            // strtolower وظيفتها تحويل الاحرف الى احرف صغيرة
-            // ucwords تحويل اول حرف من كل كلمة الى capital
             $formattedGov = ucwords(strtolower(str_replace('_', ' ', $targetGovernorate)));
 
             $query->whereHas('pharmacy', function ($q) use ($formattedGov) {
                 $q->where('governorate', $formattedGov);
             });
         }
+
         if ($request->has('name')) {
             $query->where('name', 'like', '%' . $request->name . '%');
         }
@@ -51,16 +48,10 @@ class CitizenController extends Controller
         }
 
         $medicines = $query->select('id', 'name', 'price', 'image', 'category', 'requires_prescription', 'pharmacy_id')
-                   ->orderBy('expiration_date', 'asc')
-                   ->get();
-        
+            ->orderBy('expiration_date', 'asc')
+            ->get();
 
-        // إذا كان هناك تصنيف محدد نختار اسمه، وإذا لم يوجد نسميها "Products"
-        if (!$request->filled('category')) {
-            $categoryLabel = 'Products';
-        } else {
-            $categoryLabel = $request->category === 'cosmetic' ? 'Cosmetics' : 'Medicines';
-        }
+        $categoryLabel = $request->category === 'cosmetic' ? 'Cosmetics' : 'Medicines';
 
         if ($medicines->isEmpty()) {
             return $this->SuccessResponse([], "No {$categoryLabel} found in " . ($targetGovernorate ?? 'your area'), 200);
@@ -68,6 +59,7 @@ class CitizenController extends Controller
 
         return $this->SuccessResponse($medicines, "{$categoryLabel} fetched successfully", 200);
     }
+
     public function createOrderForPharmacist(Request $request)
     {
         $user = auth()->user();
@@ -118,13 +110,12 @@ class CitizenController extends Controller
                 $itemsToCreate = [];
 
                 foreach ($request->items as $itemData) {
-                    // lockForUpdate: وظيفتها حجز الدواء حتى انتهاء ال transaction الحالية
-                   
                     $medicine = Medicine::lockForUpdate()->find($itemData['medicine_id']);
-                       // منع طلب دواء اونلاين يحتاج وصفة طبية
-       if ($medicine->requires_prescription) {
-              throw new \Exception("This medication ({$medicine->name}) requires a prescription and cannot be ordered online. Please visit a pharmacy.");
-       }
+
+                    // منع طلب دواء اونلاين يحتاج وصفة طبية
+                    if ($medicine->requires_prescription) {
+                        throw new \Exception("This medication ({$medicine->name}) requires a prescription and cannot be ordered online. Please visit a pharmacy.");
+                    }
 
                     if ($medicine->quantity_available < $itemData['desired_quantity']) {
                         throw new \Exception("Insufficient stock for: {$medicine->name}");
@@ -133,11 +124,11 @@ class CitizenController extends Controller
                     $itemTotalPrice = $medicine->price * $itemData['desired_quantity'];
 
                     if ($medicine->category === 'cosmetic') {
-                        $cosmeticsSubtotal += $itemTotalPrice;   //4000
+                        $cosmeticsSubtotal += $itemTotalPrice;
                     } else {
                         $medicinesSubtotal += $itemTotalPrice;
                     }
-                      
+
                     // تجهيز البيانات لإنشائها لاحقاً
                     $itemsToCreate[] = [
                         'medicine_id' => $medicine->id,
@@ -205,6 +196,7 @@ class CitizenController extends Controller
             return $this->ErrorResponse('Process failed: ' . $e->getMessage(), 500);
         }
     }
+
     public function cancelOrder(Request $request)
     {
         $user = auth()->user();
@@ -264,6 +256,7 @@ class CitizenController extends Controller
             return $this->ErrorResponse('An error occurred during cancellation', 500);
         }
     }
+
     public function getMyOrderHistory(Request $request)
     {
         $user = auth()->user();
@@ -302,6 +295,7 @@ class CitizenController extends Controller
 
         return $this->SuccessResponse($formattedHistory, 'Order history retrieved successfully.', 200);
     }
+
     public function getMyCoupons()
     {
         $user = auth()->user();
@@ -312,7 +306,7 @@ class CitizenController extends Controller
 
         // جلب الكوبونات غير المستخدمة والتي لم تنته صلاحيتها بعد
         $coupons = Coupon::with(['pharmacy' => function ($query) {
-            $query->select('id', 'pharmacy_name');
+            $query->select('id', 'pharmacy_name','pharmacy_address');
         }])
             ->where('user_id', $user->id)
             ->where('is_used', false)
@@ -325,21 +319,17 @@ class CitizenController extends Controller
         }
 
         $coupons->map(function ($coupon) {
-            // يحسب الفرق بالأيام باستخدام diffInDays
-            // days_left هو حقل وهمي .. وهو ناتج طرح التاريخ الحالي من تاريخ انتهاء الكوبون
-            // { "id": 1, "code": "SAVE10", "valid_until": "2026-04-10" }
-            // { "id": 1, "code": "SAVE10", "valid_until": "2026-04-10", "days_left": 7 }
-            // ال false مهمتها: النتيجة -4 (رقم سالب يعني مضى على انتهاء الكوبون 4 ايام)
             $coupon->days_left = now()->diffInDays($coupon->valid_until, false);
-            return $coupon; // إعادة الكوبون بحلته الجديدة
+            return $coupon;
         });
 
         return $this->SuccessResponse($coupons, 'Available coupons retrieved successfully', 200);
     }
+
     public function toggleFavorite(Request $request)
     {
         $user = auth()->user();
-        
+
         if (!$user || $user->role !== 'citizen') {
             return $this->ErrorResponse('Unauthorized. Only citizens can have favorites', 401);
         }
@@ -361,6 +351,7 @@ class CitizenController extends Controller
 
         return $this->SuccessResponse(null, 'Medicine removed from favorites', 200);
     }
+
     public function getMyFavorites()
     {
         $user = auth()->user();
@@ -371,7 +362,7 @@ class CitizenController extends Controller
 
         // جلب الأدوية مع بيانات الصيدلية المرتبطة بها
         $favorites = $user->favorites()
-            ->with('pharmacy:id,pharmacy_name')
+            ->with('pharmacy:id,pharmacy_name','pharmacy_address')
             ->select('medicines.id', 'name', 'price', 'image', 'category', 'requires_prescription')
             ->latest()
             ->get();
