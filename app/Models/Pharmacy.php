@@ -14,7 +14,8 @@ class Pharmacy extends Model
         'pharmacy_name',
         'governorate',
         'license_image',
-        'is_specialist'
+        'is_specialist',
+        'pharmacy_address'
     ];
 
     public function user()

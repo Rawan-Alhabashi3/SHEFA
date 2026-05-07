@@ -35,7 +35,7 @@ class PharmacyController extends Controller
             $query->where('name', 'like', '%' . $request->search . '%');
         }
 
-        // فلترة بالفئة
+//  فلترة بالفئة
         if ($request->has('category')) {
             $query->where('category', $request->category);
         }
