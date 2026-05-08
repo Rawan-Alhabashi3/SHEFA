@@ -77,6 +77,7 @@ class AuthController extends Controller
 
                     $user->pharmacy()->create([
                         'pharmacy_name' => $request->pharmacy_name,
+                        'pharmacy_address' => $request->pharmacy_address,
                         'governorate' => $request->governorate,
                         'license_image' => $licensePath,
                         'is_specialist' => $request->boolean('is_specialist', false),
