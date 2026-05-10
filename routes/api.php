@@ -72,4 +72,5 @@ Route::controller(CitizenController::class)->group(function () {
     Route::controller(DeliveryController::class)->group(function () {
     Route::post('/accept-delivery', 'acceptDelivery')->middleware('auth:sanctum');
     Route::post('/reject-delivery', 'rejectDelivery')->middleware('auth:sanctum');
+    Route::post('/pick-up-order', 'pickUpOrder')->middleware('auth:sanctum');
     });
