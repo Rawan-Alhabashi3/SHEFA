@@ -5,7 +5,12 @@ use App\Http\Controllers\Auth\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CitizenController;
+use App\Http\Controllers\PharmacyController;
+use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\DeliveryController;
 use App\Http\Controllers\MedicineController;
+
+
 
 
 /*
@@ -66,4 +71,5 @@ Route::controller(CitizenController::class)->group(function () {
     });
     Route::controller(DeliveryController::class)->group(function () {
     Route::post('/accept-delivery', 'acceptDelivery')->middleware('auth:sanctum');
+    Route::post('/reject-delivery', 'rejectDelivery')->middleware('auth:sanctum');
     });

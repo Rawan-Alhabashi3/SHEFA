@@ -60,4 +60,46 @@ class DeliveryController extends Controller
             return $this->ErrorResponse('Failed to accept order: ' . $e->getMessage(), 500);
         }
     }
+    public function rejectDelivery(Request $request)
+    {
+        $user = auth()->user();
+        if (!$user || $user->role !== 'delivery') {
+            return $this->ErrorResponse('Unauthorized. Only deliveries can access this', 401);
+        }
+
+        $delivery = Delivery::where('user_id', $user->id)->first();
+
+        $validation = Validator::make($request->all(), [
+            'order_id' => 'required|integer|exists:orders,id'
+        ]);
+
+        if ($validation->fails()) {
+            return $this->ErrorResponse($validation->errors(), 422);
+        }
+
+        $order = Order::where('id', $request->order_id)
+            ->where('delivery_id', $delivery->id)
+            ->where('delivery_approval_status', 'assigned')
+            ->first();
+
+        if (!$order) {
+            return $this->ErrorResponse('Order not found or cannot be rejected now', 404);
+        }
+
+        try {
+            DB::transaction(function () use ($order, $delivery) {
+                $order->update([
+                    'delivery_id' => null,
+                    'delivery_approval_status' => 'pending',
+                ]);
+                $delivery->update(['availability_status' => 1]);
+            });
+
+            $this->autoAssignDelivery($order, $user->id);
+
+            return $this->SuccessResponse(null, 'Order rejected. Searching for another delivery person in the same area', 200);
+        } catch (\Exception $e) {
+            return $this->ErrorResponse('Error during rejection: ' . $e->getMessage(), 500);
+        }
+    }
 }
