@@ -143,4 +143,60 @@ class DeliveryController extends Controller
             return $this->ErrorResponse('Failed to update pickup status: ' . $e->getMessage(), 500);
         }
     }
+    public function updateAvailabilityStatus(Request $request)
+    {
+        $user = auth()->user();
+
+        if (!$user || $user->role !== 'delivery') {
+            return $this->ErrorResponse('Unauthorized. Only deliveries can access this', 401);
+        }
+
+        $validation = Validator::make($request->all(), [
+            'availability_status' => 'required|boolean'
+        ]);
+
+        if ($validation->fails()) {
+            return $this->ErrorResponse($validation->errors(), 422);
+        }
+
+        $delivery = Delivery::where('user_id', $user->id)->first();
+
+        if ($request->availability_status == 0) {
+            $hasActive = Order::where('delivery_id', $delivery->id)
+                ->whereIn('order_status', ['in_process', 'picked_up'])
+                ->exists();
+            if ($hasActive) {
+                return $this->ErrorResponse('Finish your active orders first', 400);
+            }
+        }
+
+        $delivery->update([
+            'availability_status' => $request->availability_status
+        ]);
+
+        return $this->SuccessResponse($delivery, 'Status updated successfully', 200);
+    }
+
+    public function getMyAssignedOrders()
+    {
+        $user = auth()->user();
+
+        if (!$user || $user->role !== 'delivery') {
+            return $this->ErrorResponse('Unauthorized. Only deliveries can access this', 401);
+        }
+
+        $delivery = Delivery::where('user_id', $user->id)->first();
+
+        $myOrders = Order::with(['pharmacy.user', 'orderItems.medicine', 'payment'])
+            ->where('delivery_id', $delivery->id)
+            ->where('delivery_approval_status', 'assigned')
+            ->latest()
+            ->get();
+
+        if ($myOrders->isEmpty()) {
+            return $this->SuccessResponse([], 'No new orders assigned to you at the moment', 200);
+        }
+
+        return $this->SuccessResponse($myOrders, 'Assigned orders fetched', 200);
+    }
 }
