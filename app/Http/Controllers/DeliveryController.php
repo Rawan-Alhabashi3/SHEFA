@@ -199,4 +199,37 @@ class DeliveryController extends Controller
 
         return $this->SuccessResponse($myOrders, 'Assigned orders fetched', 200);
     }
+    public function getOrderDetails(Request $request)
+    {
+        $user = auth()->user();
+
+        if (!$user || $user->role !== 'delivery') {
+            return $this->ErrorResponse('Unauthorized. Only deliveries can access this', 401);
+        }
+
+        $delivery = Delivery::where('user_id', $user->id)->first();
+
+        $validation = Validator::make($request->all(), [
+            'order_id' => 'required|integer|exists:orders,id'
+        ]);
+
+        if ($validation->fails()) {
+            return $this->ErrorResponse($validation->errors(), 422);
+        }
+
+        $order = Order::with([
+            'orderItems.medicine:id,name,price',
+            'pharmacy.user:id,username,phone',
+            'payment',
+            'user:id,username,phone'
+        ])
+            ->where('id', $request->order_id)
+            ->where('delivery_id', $delivery->id)
+            ->first();
+
+        if (!$order) {
+            return $this->ErrorResponse('Unable to access order details. Ensure the order is assigned to you', 403);
+        }
+        return $this->SuccessResponse($order, 'Order details retrieved successfully', 200);
+    }
 }

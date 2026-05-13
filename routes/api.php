@@ -74,4 +74,5 @@ Route::controller(CitizenController::class)->group(function () {
     Route::post('/reject-delivery', 'rejectDelivery')->middleware('auth:sanctum');
     Route::post('/pick-up-order', 'pickUpOrder')->middleware('auth:sanctum');
     Route::post('/update-availability-status', 'updateAvailabilityStatus')->middleware('auth:sanctum');
+    Route::get('/get-my-assigned-orders', 'getMyAssignedOrders')->middleware('auth:sanctum');
     });
