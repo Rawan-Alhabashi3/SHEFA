@@ -143,6 +143,58 @@ class DeliveryController extends Controller
             return $this->ErrorResponse('Failed to update pickup status: ' . $e->getMessage(), 500);
         }
     }
+
+
+
+    public function deliverOrder(Request $request)
+    {
+        $user = auth()->user();
+
+        if (!$user || $user->role !== 'delivery') {
+            return $this->ErrorResponse('Unauthorized. Only deliveries can access this', 401);
+        }
+
+        $delivery = Delivery::where('user_id', $user->id)->first();
+
+        $validation = Validator::make($request->all(), [
+            'order_id' => 'required|integer|exists:orders,id'
+        ]);
+
+        if ($validation->fails()) {
+            return $this->ErrorResponse($validation->errors(), 422);
+        }
+
+        $order = Order::with(['user', 'pharmacy.user', 'payment'])
+            ->where('id', $request->order_id)
+            ->where('delivery_id', $delivery->id)
+            ->where('order_status', 'picked_up')
+            ->first();
+
+        if (!$order) {
+            return $this->ErrorResponse('Order not found or not picked up yet', 400);
+        }
+
+        try {
+            DB::transaction(function () use ($order, $user) {
+                $order->update(['order_status' => 'delivered']);
+
+                if ($order->payment) {
+                    $order->payment->update(['payment_status' => 'paid']);
+                }
+
+                Delivery::where('user_id', $user->id)->update(['availability_status' => 1]);
+
+                // منطق الكوبون
+                $this->checkAndGenerateLoyaltyCoupon($order->user_id, $order->pharmacy_id);
+
+                return $order;
+            });
+
+            return $this->SuccessResponse(null, 'Delivery completed successfully', 200);
+        } catch (\Exception $e) {
+            return $this->ErrorResponse('Error: ' . $e->getMessage(), 500);
+        }
+    }
     public function updateAvailabilityStatus(Request $request)
     {
         $user = auth()->user();
