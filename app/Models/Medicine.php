@@ -15,11 +15,11 @@ class Medicine extends Model
         'price',
         'image',
         'category',
+        'requires_prescription',
         'quantity_available',
         'expiration_date',
         'description',
         'last_notified_at',
-        'requires_prescription'
     ];
 
     protected $casts = [
@@ -34,5 +34,10 @@ class Medicine extends Model
     public function orderItems()
     {
         return $this->hasMany(OrderItem::class, 'medicine_id');
+    }
+
+    public function favoritedBy()
+    {
+        return $this->belongsToMany(User::class, 'favorites');
     }
 }

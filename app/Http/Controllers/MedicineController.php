@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Validator;
 
 class MedicineController extends Controller
 {
+    use ShefaaTrait;
+
     public function addMedicine(Request $request)
     {
         $user = auth()->user();
@@ -61,6 +63,7 @@ class MedicineController extends Controller
 
         return $this->SuccessResponse($medicine, 'Medicine added successfully to your inventory', 201);
     }
+
     public function updateMedicine(Request $request)
     {
         $user = auth()->user();
@@ -99,7 +102,7 @@ class MedicineController extends Controller
             return $this->ErrorResponse('Medicine not found or unauthorized access', 404);
         }
 
-        $updateData = $request->only(['name', 'price', 'category', 'expiration_date','quantity_available', 'description', 'requires_prescription']);
+        $updateData = $request->only(['name', 'price', 'category', 'expiration_date','quantity_available', 'description','requires_prescription']);
 
         if ($request->hasFile('image')) {
             // حذف الصورة القديمة من التخزين لتوفير المساحة
@@ -107,7 +110,7 @@ class MedicineController extends Controller
                 $oldPath = str_replace(asset('storage/'), '', $medicine->image);
                 Storage::disk('public')->delete($oldPath);
             }
-            
+
             $category = $request->category ?? $medicine->category;
             $folderName = ($category === 'cosmetic') ? 'cosmetics' : 'medicines';
             $path = $request->file('image')->store($folderName, 'public');
@@ -118,6 +121,7 @@ class MedicineController extends Controller
 
         return $this->SuccessResponse($medicine->fresh(), 'Medicine updated successfully', 200);
     }
+
     public function deleteMedicine(Request $request)
     {
         $user = auth()->user();

@@ -306,7 +306,7 @@ class CitizenController extends Controller
 
         // جلب الكوبونات غير المستخدمة والتي لم تنته صلاحيتها بعد
         $coupons = Coupon::with(['pharmacy' => function ($query) {
-            $query->select('id', 'pharmacy_name','pharmacy_address');
+            $query->select('id', 'pharmacy_name');
         }])
             ->where('user_id', $user->id)
             ->where('is_used', false)
@@ -362,7 +362,7 @@ class CitizenController extends Controller
 
         // جلب الأدوية مع بيانات الصيدلية المرتبطة بها
         $favorites = $user->favorites()
-            ->with('pharmacy:id,pharmacy_name','pharmacy_address')
+            ->with('pharmacy:id,pharmacy_name')
             ->select('medicines.id', 'name', 'price', 'image', 'category', 'requires_prescription')
             ->latest()
             ->get();
