@@ -6,7 +6,7 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\MedicineController;
 use App\Http\Controllers\CitizenController;
 use App\Http\Controllers\DeliveryController;
-use App\Http\Controllers\ExchangeAdController;
+use App\Http\Controllers\ExchangedAdController;
 use App\Http\Controllers\PharmacyController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\SpecialistController;
@@ -81,4 +81,7 @@ Route::controller(CitizenController::class)->group(function () {
     Route::post('/get-order-details', 'getOrderDetails')->middleware('auth:sanctum');
     Route::post('/update-availability-status', 'updateAvailabilityStatus')->middleware('auth:sanctum');
     Route::get('/get-my-assigned-orders', 'getMyAssignedOrders')->middleware('auth:sanctum');
+    });
+    Route::controller(ExchangedAdController::class)->group(function () {
+    Route::post('/create-ad', 'createAd')->middleware('auth:sanctum');
     });
