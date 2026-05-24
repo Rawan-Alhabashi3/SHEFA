@@ -84,4 +84,5 @@ Route::controller(CitizenController::class)->group(function () {
     });
     Route::controller(ExchangedAdController::class)->group(function () {
     Route::post('/create-ad', 'createAd')->middleware('auth:sanctum');
+    Route::get('/get-all-my-ads', 'getAllMyAds')->middleware('auth:sanctum');
     });

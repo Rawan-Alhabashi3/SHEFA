@@ -107,4 +107,105 @@ class ExchangedAdController extends Controller
             return $this->ErrorResponse('Failed to submit the ad: '.$e->getMessage(), 500);
         }
     }
+    public function getAllMyAds()
+    {
+        $user = auth()->user();
+
+        if (! $user || $user->role !== 'citizen') {
+            return $this->ErrorResponse('Unauthorized. Only citizens can access this.', 401);
+        }
+
+        $myAds = ExchangeAd::with(['specialist.user.pharmacy'])
+            ->where('user_id', $user->id)
+            ->latest()
+            ->get();
+
+        if ($myAds->isEmpty()) {
+            return $this->SuccessResponse([], 'No ads found for you.', 200);
+        }
+
+        $formattedAds = $myAds->map(function ($ad) {
+            $specialistRecord = $ad->specialist;
+            $userRecord = $specialistRecord->user;
+
+            $isPharmacy = ($userRecord->role === 'pharmacy' && $userRecord->pharmacy);
+
+            return [
+                'id' => $ad->id,
+                'medicine_name' => $ad->medicine_name,
+                'image' => $ad->image,
+                'price' => $ad->price,
+                'ad_type' => $ad->ad_type,
+                'status' => is_null($ad->security_check_status) ? 'pending' : ($ad->security_check_status ? 'verified' : 'rejected'),
+                'availability' => $ad->is_showing === 1 ? 'available' : 'taken/hidden',
+
+                'specialist_at' => $isPharmacy
+                    ? $userRecord->pharmacy->pharmacy_name
+                    : ($specialistRecord->pharmacy_name ?? $userRecord->username),
+
+                'location' => $isPharmacy
+                    ? $userRecord->pharmacy->pharmacy_address
+                    : ($specialistRecord->pharmacy_address ?? $ad->governorate),
+
+                'created_at' => $ad->created_at->diffForHumans(),
+            ];
+        });
+
+        return $this->SuccessResponse($formattedAds, 'Your ads history fetched successfully.', 200);
+    }
+
+    public function getAllConfirmAds(Request $request)
+    {
+        $query = ExchangeAd::with(['specialist.user.pharmacy'])
+            ->where('security_check_status', true)
+            ->where('is_showing', 1)
+            ->latest();
+
+        $governorate = $request->governorate ?? (auth()->user() ? auth()->user()->governorate : null);
+
+        if ($governorate) {
+            $query->where('governorate', $governorate);
+        }
+
+        if ($request->filled('medicine_name')) {
+            $query->where('medicine_name', 'like', '%'.$request->medicine_name.'%');
+        }
+
+        if ($request->filled('ad_type')) {
+            $query->where('ad_type', $request->ad_type);
+        }
+
+        $ads = $query->get();
+
+        if ($ads->isEmpty()) {
+            return $this->SuccessResponse([], 'No confirmed medicine ads found in '.($governorate ?? 'this area'), 200);
+        }
+
+        $formattedAds = $ads->map(function ($ad) {
+            $specialistRecord = $ad->specialist;
+            $userRecord = $specialistRecord->user;
+
+            $isPharmacy = ($userRecord->role === 'pharmacy' && $userRecord->pharmacy);
+
+            return [
+                'id' => $ad->id,
+                'medicine_name' => $ad->medicine_name,
+                'image' => $ad->image,
+                'price' => $ad->price == 0 ? 'Free (Donation)' : $ad->price,
+                'ad_type' => $ad->ad_type,
+                'governorate' => $ad->governorate,
+                'notes' => $ad->notes,
+                'verification' => 'Verified by authorized specialist',
+
+                'collect_from' => $isPharmacy ? $userRecord->pharmacy->pharmacy_name : ($specialistRecord->pharmacy_name ?? $userRecord->username),
+
+                'address' => $isPharmacy ? $userRecord->pharmacy->pharmacy_address : ($specialistRecord->pharmacy_address ?? $ad->governorate),
+
+                'availability' => $ad->is_showing === 1 ? 'Available' : 'Taken',
+                'posted_at' => $ad->created_at->diffForHumans(),
+            ];
+        });
+
+        return $this->SuccessResponse($formattedAds, 'Confirmed medicine ads fetched successfully.', 200);
+    }
 }
