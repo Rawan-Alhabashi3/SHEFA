@@ -208,4 +208,41 @@ class ExchangedAdController extends Controller
 
         return $this->SuccessResponse($formattedAds, 'Confirmed medicine ads fetched successfully.', 200);
     }
+    public function deletePendingAd(Request $request)
+    {
+        $user = auth()->user();
+
+        if (! $user || $user->role !== 'citizen') {
+            return $this->ErrorResponse('Unauthorized. Only citizens can access this.', 401);
+        }
+
+        $validation = Validator::make($request->all(), [
+            'ad_id' => 'required|integer|exists:exchange_ads,id',
+        ]);
+
+        if ($validation->fails()) {
+            return $this->ErrorResponse($validation->errors(), 422);
+        }
+
+        $ad = ExchangeAd::where('id', $request->ad_id)
+            ->where('user_id', $user->id)
+            ->first();
+
+        if (! $ad) {
+            return $this->ErrorResponse('Ad not found.', 404);
+        }
+
+        if ($ad->security_check_status !== null) {
+            return $this->ErrorResponse('Cannot delete an ad that has already been processed.', 400);
+        }
+
+        if ($ad->image) {
+            $path = str_replace(asset('storage/'), '', $ad->image);
+            Storage::disk('public')->delete($path);
+        }
+
+        $ad->delete();
+
+        return $this->SuccessResponse(null, 'Ad deleted successfully.', 200);
+    }
 }
