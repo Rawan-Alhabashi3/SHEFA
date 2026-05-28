@@ -88,3 +88,8 @@ Route::controller(CitizenController::class)->group(function () {
     Route::post('/get-all-confirm-ads', 'getAllConfirmAds');
     Route::post('/delete-pending-ad', 'deletePendingAd')->middleware('auth:sanctum');
     });
+
+    Route::controller(SpecialistController::class)->group(function () {
+    Route::get('/get-my-pending-ads', 'getMyPendingAds')->middleware('auth:sanctum');
+    
+});
