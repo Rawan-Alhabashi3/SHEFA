@@ -155,5 +155,50 @@ public function markAdAsTaken(Request $request)
 
         return $this->SuccessResponse($ad, 'Medicine marked as taken successfully; ad is now hidden from public view', 200);
     }
+public function getMyActionHistory()
+    {
+        $user = auth()->user();
 
+        $isRoleSpecialist = ($user->role === 'specialist');
+        $isPharmacistSpecialist = ($user->role === 'pharmacy' && $user->pharmacy && $user->pharmacy->is_specialist == 1);
+
+        if (! $user || ! ($isRoleSpecialist || $isPharmacistSpecialist)) {
+            return $this->ErrorResponse('Unauthorized. This page is restricted to authorized specialists only', 401);
+        }
+
+        $specialist = Specialist::where('user_id', $user->id)->first();
+
+        if (! $specialist) {
+            return $this->ErrorResponse('Specialist profile not found for your account', 404);
+        }
+
+        $history = ExchangeAd::with('user:id,username,phone')
+            ->where('specialist_id', $specialist->id)
+            ->whereNotNull('security_check_status')
+            ->latest()
+            ->get();
+
+        if ($history->isEmpty()) {
+            return $this->SuccessResponse([], 'Your action history is currently empty', 200);
+        }
+
+        $formattedHistory = $history->map(function ($ad) {
+            return [
+                'id' => $ad->id,
+                'medicine_name' => $ad->medicine_name,
+                'image' => $ad->image,
+                'ad_type' => $ad->ad_type,
+                'owner_name' => $ad->user->username,
+                'owner_phone' => $ad->user->phone,
+                'verification_status' => $ad->security_check_status ? 'Approved' : 'Rejected',
+                'delivery_status' => $ad->is_showing === 0 && $ad->security_check_status == 1 ? 'Handed Over' : 'Available',
+                'specialist_notes' => $ad->notes,
+                'action_date' => $ad->updated_at->diffForHumans(),
+            ];
+        });
+
+        return $this->SuccessResponse($formattedHistory, 'Action history fetched successfully', 200);
+    }
 }
+
+
