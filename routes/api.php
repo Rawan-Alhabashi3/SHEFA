@@ -1,14 +1,18 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Auth\AuthController;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\MedicineController;
 use App\Http\Controllers\CitizenController;
+use App\Http\Controllers\DeliveryController;
+use App\Http\Controllers\ExchangeAdController;
 use App\Http\Controllers\PharmacyController;
 use App\Http\Controllers\ReviewController;
-use App\Http\Controllers\DeliveryController;
-use App\Http\Controllers\MedicineController;
+use App\Http\Controllers\SpecialistController;
+use Illuminate\Support\Facades\Route;
+
+
 
 
 
