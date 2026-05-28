@@ -92,4 +92,5 @@ Route::controller(CitizenController::class)->group(function () {
     Route::controller(SpecialistController::class)->group(function () {
     Route::get('/get-my-pending-ads', 'getMyPendingAds')->middleware('auth:sanctum');
      Route::post('/verify-ad', 'verifyAd')->middleware('auth:sanctum');
+     Route::post('/mark-ad-as-taken', 'markAdAsTaken')->middleware('auth:sanctum');
 });

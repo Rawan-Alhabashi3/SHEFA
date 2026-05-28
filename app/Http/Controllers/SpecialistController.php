@@ -111,5 +111,49 @@ class SpecialistController extends Controller
             return $this->ErrorResponse('An error occurred while processing the ad: '.$e->getMessage(), 500);
         }
     }
+public function markAdAsTaken(Request $request)
+    {
+        $user = auth()->user();
+
+        $isRoleSpecialist = ($user->role === 'specialist');
+        $isPharmacistSpecialist = ($user->role === 'pharmacy' && $user->pharmacy && $user->pharmacy->is_specialist == 1);
+
+        if (! $user || ! ($isRoleSpecialist || $isPharmacistSpecialist)) {
+            return $this->ErrorResponse('Unauthorized. This action is restricted to authorized specialists only', 401);
+        }
+
+        $specialist = Specialist::where('user_id', $user->id)->first();
+
+        if (! $specialist) {
+            return $this->ErrorResponse('Specialist profile not found for your account', 404);
+        }
+
+        $validation = Validator::make($request->all(), [
+            'ad_id' => 'required|integer|exists:exchange_ads,id',
+        ]);
+
+        if ($validation->fails()) {
+            return $this->ErrorResponse($validation->errors(), 422);
+        }
+
+        $ad = ExchangeAd::where('id', $request->ad_id)
+            ->where('specialist_id', $specialist->id)
+            ->where('security_check_status', 1)
+            ->first();
+
+        if (! $ad) {
+            return $this->ErrorResponse('Ad not found, not verified yet, or not assigned to you', 404);
+        }
+
+        if ($ad->is_showing === 0) {
+            return $this->ErrorResponse('This medicine is already marked as taken and is currently hidden', 400);
+        }
+
+        $ad->update([
+            'is_showing' => 0,
+        ]);
+
+        return $this->SuccessResponse($ad, 'Medicine marked as taken successfully; ad is now hidden from public view', 200);
+    }
 
 }
