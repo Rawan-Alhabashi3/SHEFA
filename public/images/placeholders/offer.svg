@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520">
+  <rect width="1200" height="520" fill="#cffafe"/>
+  <rect x="70" y="60" width="1060" height="400" rx="32" fill="#0f766e"/>
+  <circle cx="220" cy="180" r="70" fill="#99f6e4"/>
+  <circle cx="980" cy="340" r="90" fill="#99f6e4"/>
+  <rect x="360" y="155" width="500" height="70" rx="14" fill="#ecfeff"/>
+  <rect x="360" y="255" width="360" height="58" rx="12" fill="#ecfeff"/>
+  <text x="600" y="430" text-anchor="middle" font-family="Arial, sans-serif" font-size="44" fill="#ecfeff">Shifa Health Offer</text>
+</svg>

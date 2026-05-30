@@ -1,0 +1,33 @@
+const medicines = {
+  "12 medicines per page": "12 دواء في الصفحة",
+  "Governorate": "المحافظة",
+  "Low stock:": "منخفض المخزون:",
+  "Medicine": "الدواء",
+  "My Community Medicines": "My المجتمع الأدوية",
+  "Name: A - Z": "الاسم: A - Z",
+  "Name: Z - A": "الاسم: Z - A",
+  "Newest": "الأحدث",
+  "No": "لا",
+  "No community listings yet": "لا توجد إعلانات مجتمعية بعد",
+  "No featured medicines": "لا توجد أدوية مميزة",
+  "No medicines found": "لم يتم العثور على أدوية",
+  "No medicines found.": "لم يتم العثور على أدوية.",
+  "Prescription": "الوصفة",
+  "Prescription Required": "الوصفة مطلوب",
+  "Price: High to Low": "السعر: من الأعلى إلى الأقل",
+  "Price: Low to High": "السعر: من الأقل إلى الأعلى",
+  "Resale": "إعادة البيع",
+  "Search by medicine name...": "بحث بواسطة الدواء الاسم",
+  "Search medicines...": "بحث الأدوية",
+  "Showing": "عرض",
+  "Stock": "المخزون",
+  "Submit Listing": "إرسال الإعلان",
+  "This medicine belongs to a pharmacy in a different area. Adding it will create a separate delivery group.": "ينتمي هذا الدواء إلى صيدلية في منطقة مختلفة. ستؤدي إضافته إلى إنشاء مجموعة توصيل منفصلة.",
+  "View Pharmacy": "عرض الصيدلية",
+  "Workflow timeline": " ",
+  "left": "متبقي",
+  "medicines": "أدوية",
+  "of": "من"
+};
+
+export default medicines;

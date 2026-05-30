@@ -1,0 +1,31 @@
+const coupons = {
+  "% off eligible cosmetics & care": "% خصم على مستحضرات العناية المؤهلة",
+  "/ redeemed": "/ مستخدمة",
+  "Categories:": "التصنيفات:",
+  "Expired": "منتهية",
+  "Loading…": "جار تحميل ...",
+  "Loyalty": "الولاء",
+  "Minimum order amount (USD)": "الحد الأدنى الطلب المبلغ (USD)",
+  "My coupons": "My القسائم",
+  "New campaign": "حملة جديدة",
+  "No active coupons. Shop cosmetics from participating pharmacies to earn rewards.": "لا توجد قسائم نشطة. تسوق مستحضرات العناية من الصيدليات المشاركة لكسب المكافآت.",
+  "No campaigns yet. Create one above — it will appear here after saving.": "لا توجد حملات بعد. أنشئ واحدة أعلاه وستظهر هنا بعد الحفظ.",
+  "No coupons in this tab yet. Reward coupons appear here after customers meet campaign rules and orders are delivered.": "لا توجد قسائم في هذا التبويب بعد. تظهر قسائم المكافآت هنا بعد استيفاء العملاء لقواعد الحملة وتسليم الطلبات.",
+  "No expired unused coupons.": "لا توجد قسائم منتهية غير مستخدمة.",
+  "No redemption history yet.": "لا يوجد سجل استخدام بعد.",
+  "Order": "الطلب",
+  "Pharmacy-issued cosmetics & care discounts. Medicines are never discounted with these codes.": "خصومات مستحضرات العناية الصادرة من الصيدلية. لا تُخصم الأدوية بهذه الرموز أبداً.",
+  "Redeemed": "مستخدمة",
+  "Required delivered orders": "الطلبات المسلمة المطلوبة",
+  "Reward": "المكافآت",
+  "Reward % (cosmetics & care)": "المكافآت % (مستحضرات العناية و العناية)",
+  "Rule": "القاعدة",
+  "Search…": "بحث ",
+  "Toggle": "تبديل",
+  "Valid until": "صالح ",
+  "cosmetics, skincare, beauty": "مستحضرات العناية, العناية بالبشرة, الجمال",
+  "days left": "أيام متبقية",
+  "orders ≥": "الطلبات ≥"
+};
+
+export default coupons;

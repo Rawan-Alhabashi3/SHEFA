@@ -1,0 +1,130 @@
+const about = {
+  hero: {
+    badge: "Trusted Healthcare Marketplace",
+    title: "Fast, safe, and reliable medicine ordering across Shifa.",
+    description: "Shifa connects customers with verified pharmacies, transparent cosmetics reward programs, and dependable delivery operations to make healthcare access simpler every day.",
+    buttons: {
+      browseMedicines: "Browse Medicines",
+      explorePharmacies: "Explore Pharmacies",
+    },
+    whyChoose: {
+      title: "Why customers choose Shifa",
+      fastFulfillment: "Fast medicine fulfillment workflow",
+      verifiedEcosystem: "Verified pharmacy ecosystem",
+      saferStandards: "Safer healthcare ordering standards",
+    },
+  },
+  mission: {
+    eyebrow: "About Shifa",
+    title: "A healthcare platform built for trust, speed, and better patient access.",
+    vision: "Our vision is to modernize healthcare commerce by unifying pharmacies, customers, and delivery teams under one seamless marketplace. Shifa focuses on verified inventory, transparent pricing, strong pharmacy partnerships, and professional digital experiences that reduce friction in daily medicine access.",
+    commitment: "We are committed to safer ordering, better communication, and dependable delivery outcomes. Through smart filters, grouped delivery logic, role-based workflows, and customer feedback channels, we continuously improve quality while keeping service human-centered.",
+  },
+  features: {
+    eyebrow: "Core Features",
+    title: "Everything needed for a modern healthcare marketplace.",
+    verifiedPharmacies: {
+      title: "Verified Pharmacies",
+      description: "Only trusted pharmacies are listed to keep medicine quality and service standards high.",
+    },
+    fastDelivery: {
+      title: "Fast Delivery",
+      description: "Optimized delivery flow helps customers receive urgent medicines with reliable tracking.",
+    },
+    prescriptionSupport: {
+      title: "Prescription Support",
+      description: "Prescription-only products are clearly identified to protect safe ordering behavior.",
+    },
+    securePayments: {
+      title: "Secure Payments",
+      description: "Checkout and payment flows are protected with production-ready backend validation.",
+    },
+    pharmacyRewards: {
+      title: "Pharmacy rewards",
+      description: "Customers earn cosmetics-only coupons from verified pharmacies after qualifying purchases.",
+    },
+    customerSupport: {
+      title: "Customer Support",
+      description: "Feedback and support channels help resolve customer issues quickly and clearly.",
+    },
+  },
+  workflow: {
+    eyebrow: "How It Works",
+    title: "Simple journey from search to doorstep.",
+    step: "Step",
+    steps: {
+      browsePharmacies: "Browse Pharmacies",
+      selectMedicines: "Select Medicines",
+      placeOrder: "Place Order",
+      pharmacyPrepares: "Pharmacy Prepares",
+      driverDelivers: "Driver Delivers",
+    },
+  },
+  statistics: {
+    eyebrow: "Live Platform Stats",
+    title: "Real numbers from the marketplace.",
+    totalPharmacies: "Total Pharmacies",
+    medicinesAvailable: "Medicines Available",
+    ordersDelivered: "Orders Delivered",
+    happyCustomers: "Happy Customers",
+  },
+  trust: {
+    eyebrow: "Trust & Quality",
+    title: "Healthcare quality standards we operate by.",
+    pillars: [
+      "Trusted pharmacy network and verified listings",
+      "Secure platform architecture and protected APIs",
+      "Quality-focused medicine availability and handling",
+      "Dedicated care for complaints, support, and suggestions",
+    ],
+  },
+  feedback: {
+    eyebrow: "Customer Feedback",
+    title: "Ratings, complaints, and suggestions.",
+    description: "Share your experience to help us improve service quality across pharmacies, order flow, and customer support.",
+    form: {
+      fullName: "Full name",
+      fullNamePlaceholder: "Your full name",
+      email: "Email",
+      emailPlaceholder: "you@domain.com",
+      type: "Type",
+      feedback: "Feedback",
+      complaint: "Complaint",
+      suggestion: "Suggestion",
+      supportIssue: "Support issue",
+      orderReference: "Order reference (optional)",
+      orderReferencePlaceholder: "e.g. ORD-12345",
+      subject: "Subject",
+      subjectPlaceholder: "Brief subject",
+      message: "Message",
+      messagePlaceholder: "Describe your feedback, complaint, or suggestion...",
+      rating: "Rating (optional)",
+      ratingSelected: "/ 5 selected",
+      noRatingSelected: "No rating selected",
+      submit: "Submit Feedback",
+      sending: "Sending...",
+    },
+    errors: {
+      completeRequired: "Please complete all required fields.",
+      messageTooShort: "Message should be at least 12 characters.",
+      submitted: "Your message has been received. Thank you for helping us improve.",
+      unableToSubmit: "Unable to submit your message right now.",
+    },
+    reviews: {
+      eyebrow: "Public Reviews",
+      title: "What customers are saying.",
+      loading: "Loading testimonials...",
+      noReviews: "No public testimonials yet. Be the first to share your experience.",
+      notice: "Customer feedback is reviewed by our team to improve platform reliability and service quality.",
+    },
+  },
+  cta: {
+    supportTeam: "Support Team",
+    title: "Need help right now?",
+    description: "Our support team is ready to help with delivery issues, order concerns, and pharmacy-related questions.",
+    contactSupport: "Contact Support",
+    browseMedicines: "Browse Medicines",
+  },
+};
+
+export default about;

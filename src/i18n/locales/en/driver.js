@@ -1,0 +1,203 @@
+const driver = {
+  overview: "Overview",
+  assignedMissions: "Assigned Missions",
+  activeMissions: "Active Missions",
+  missionHistory: "Mission History",
+  earnings: "Earnings",
+  analytics: "Analytics",
+  notifications: "Notifications",
+  profile: "Profile",
+  settings: "Settings",
+  dashboard: {
+    title: "Driver Dashboard",
+    description: "Live mission workflow, earnings insights, and operational performance.",
+    cards: {
+      totalMissions: "Total Missions",
+      activeMissions: "Active Missions",
+      pendingTasks: "Pending Tasks",
+      completedMissions: "Completed Missions",
+      cancelledMissions: "Cancelled Missions",
+      todayEarnings: "Today Earnings",
+      monthlyEarnings: "Monthly Earnings",
+      averageRating: "Average Rating",
+      onlineOfflineStatus: "Online / Offline Status",
+    },
+    charts: {
+      earningsLast7Days: "Earnings Last 7 Days",
+      missionsPerDay: "Missions Per Day",
+      monthlyRevenue: "Monthly Revenue",
+      activeMissions: "Active Missions",
+    },
+    status: {
+      online: "Online",
+      busy: "Busy",
+      offline: "Offline",
+    },
+    errors: {
+      failedToLoad: "Failed to load dashboard.",
+    },
+  },
+  orders: {
+    title: "Delivery Missions",
+    description: "Browse available grouped tasks, claim ready missions, and manage assigned pharmacy pickups.",
+    tabs: {
+      available: "Available",
+      assigned: "Assigned",
+      completed: "Completed",
+    },
+    mission: {
+      missionNumber: "Mission #",
+      pharmacies: "Pharmacies:",
+      medicines: "Medicines:",
+      total: "Total:",
+      area: "Area:",
+      governorate: "Governorate:",
+      phone: "Phone:",
+      payment: "Payment:",
+      paymentStatus: "Payment status:",
+      codDue: "COD due:",
+      approved: "Approved:",
+      address: "Address:",
+      notes: "Notes:",
+      waitingForApproval: "Waiting for all pharmacies to approve before driver pickup.",
+      pickupPharmacies: "Pickup pharmacies",
+      pickupPoints: "Pickup points",
+      destination: "Destination:",
+      pharmacyNumber: "Pharmacy #",
+      noMedicineSummary: "No medicine summary",
+    },
+    steps: {
+      assigned: "Assigned",
+      pickedUp: "Picked up",
+      onWay: "On way",
+      delivered: "Delivered",
+    },
+    buttons: {
+      claimAccept: "Claim & Accept",
+      acceptMission: "Accept Mission",
+      startPickup: "Start Pickup",
+      startPickingUp: "Start Picking Up",
+      startDelivery: "Start Delivery",
+      startDelivering: "Start Delivering",
+      markDelivered: "Mark Delivered",
+      releaseTask: "Release Task",
+    },
+    emptyStates: {
+      noMissions: "No",
+      missionsRightNow: "missions right now.",
+    },
+    errors: {
+      failedToLoad: "Failed to load delivery missions.",
+      unableToUpdate: "Unable to update this mission.",
+    },
+  },
+  deliveries: {
+    title: "Active Missions",
+    description: "Each mission can include multiple pharmacy pickups with one destination.",
+    emptyStates: {
+      noActiveMissions: "No active missions right now.",
+    },
+    errors: {
+      failedToLoad: "Failed to load missions.",
+      unableToUpdate: "Unable to update this mission.",
+    },
+  },
+  history: {
+    title: "Mission History",
+    description: "Review completed and cancelled missions.",
+    buttons: {
+      export: "Export",
+    },
+    table: {
+      mission: "Mission",
+      orders: "Orders",
+      status: "Status",
+      destination: "Destination",
+      date: "Date",
+    },
+  },
+  analytics: {
+    title: "Driver Analytics",
+    description: "Operational insights for acceptance, cancellation, delivery speed, and partner performance.",
+    metrics: {
+      acceptanceRate: "Acceptance Rate",
+      cancellationRate: "Cancellation Rate",
+      avgDeliveryTime: "Average Delivery Time",
+      busiestDay: "Busiest Day",
+      topPharmacyPartner: "Top Pharmacy Partner",
+      completedDeliveriesTrend: "Completed Deliveries Trend",
+    },
+  },
+  earnings: {
+    title: "Earnings",
+    description: "Comprehensive earnings analytics and delivery revenue trends.",
+    cards: {
+      todayEarnings: "Today Earnings",
+      weeklyEarnings: "Weekly Earnings",
+      monthlyEarnings: "Monthly Earnings",
+      totalEarnings: "Total Earnings",
+      avgDeliveryFee: "Average Delivery Fee",
+    },
+    charts: {
+      earningsLast7Days: "Earnings Last 7 Days",
+      monthlyRevenue: "Monthly Revenue",
+      deliveriesPerDay: "Deliveries Per Day",
+      deliverySuccessRate: "Delivery Success Rate",
+    },
+  },
+  notifications: {
+    title: "Notifications",
+    description: "Order assignments, delivery updates, payment events, and pharmacy/customer alerts.",
+    buttons: {
+      markRead: "Mark Read",
+    },
+  },
+  profile: {
+    title: "Driver Profile",
+    description: "Manage profile information, vehicle details, status, and credentials.",
+    form: {
+      fullName: "Full Name",
+      phone: "Phone",
+      email: "Email",
+      city: "City",
+      vehicleType: "Vehicle Type",
+      vehiclePlateNumber: "Vehicle Plate Number",
+      availabilityStatus: "Availability Status",
+      password: "Password",
+      confirmPassword: "Confirm Password",
+    },
+    status: {
+      online: "Online",
+      busy: "Busy",
+      offline: "Offline",
+    },
+    buttons: {
+      saveProfile: "Save Profile",
+    },
+    success: {
+      profileUpdated: "Profile updated successfully.",
+    },
+  },
+  settings: {
+    title: "Driver Settings",
+    description: "Control availability state and delivery preferences.",
+    status: {
+      onlineOfflineStatus: "Online / Offline Status",
+    },
+    buttons: {
+      setOnline: "Set Online",
+      setBusy: "Set Busy",
+      setOffline: "Set Offline",
+    },
+    success: {
+      availabilityUpdated: "Availability updated to",
+    },
+  },
+  common: {
+    mission: "Mission",
+    loading: "Loading...",
+    no: "No",
+  },
+};
+
+export default driver;

@@ -1,0 +1,33 @@
+const medicines = {
+  "12 medicines per page": "12 medicines per page",
+  "Governorate": "Governorate",
+  "Low stock:": "Low stock:",
+  "Medicine": "Medicine",
+  "My Community Medicines": "My Community Medicines",
+  "Name: A - Z": "Name: A - Z",
+  "Name: Z - A": "Name: Z - A",
+  "Newest": "Newest",
+  "No": "No",
+  "No community listings yet": "No community listings yet",
+  "No featured medicines": "No featured medicines",
+  "No medicines found": "No medicines found",
+  "No medicines found.": "No medicines found.",
+  "Prescription": "Prescription",
+  "Prescription Required": "Prescription Required",
+  "Price: High to Low": "Price: High to Low",
+  "Price: Low to High": "Price: Low to High",
+  "Resale": "Resale",
+  "Search by medicine name...": "Search by medicine name...",
+  "Search medicines...": "Search medicines...",
+  "Showing": "Showing",
+  "Stock": "Stock",
+  "Submit Listing": "Submit Listing",
+  "This medicine belongs to a pharmacy in a different area. Adding it will create a separate delivery group.": "This medicine belongs to a pharmacy in a different area. Adding it will create a separate delivery group.",
+  "View Pharmacy": "View Pharmacy",
+  "Workflow timeline": "Workflow timeline",
+  "left": "left",
+  "medicines": "medicines",
+  "of": "of"
+};
+
+export default medicines;
