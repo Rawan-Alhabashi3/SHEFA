@@ -1,0 +1,30 @@
+const donation = {
+  "/ Expires:": "/ ينتهي:",
+  "Call": "اتصال",
+  "Governorate": "المحافظة",
+  "Handled by": "تمت المعالجة بواسطة بواسطة",
+  "Images": "الصور",
+  "Listing": "الإعلان",
+  "Listing type": "الإعلان النوع",
+  "Medicine Donation Hub": "الدواء التبرع المركز",
+  "Medicine name...": "الدواء الاسم...",
+  "Medicine/product name": "الدواء/المنتج الاسم",
+  "My Listings": "My الإعلانات",
+  "No published community medicines": "لا توجد منشورة المجتمع الأدوية",
+  "Original package available": "العبوة الأصلية متوفرة",
+  "Pharmacies in the same area will review before publication.": "ستراجع الصيدليات في المنطقة نفسها قبل النشر.",
+  "Pharmacist verified": "الصيدلي الموثقة",
+  "Pickup notes": "الاستلام الملاحظات",
+  "Quantity:": "الكمية:",
+  "Reason": "السبب",
+  "Requested price": "المطلوب السعر",
+  "Resale": "إعادة البيع",
+  "Reset filters": "إعادة ضبط الفلاتر",
+  "Select area": "اختر المنطقة",
+  "Submit Listing": "إرسال الإعلان",
+  "Submit a listing": "إرسال a الإعلان",
+  "WhatsApp": "WhatsApp",
+  "Working hours": "العمل الساعات"
+};
+
+export default donation;

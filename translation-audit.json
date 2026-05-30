@@ -1,0 +1,4496 @@
+[
+  {
+    "text": "/ Expires:",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx"
+    ]
+  },
+  {
+    "text": "/ redeemed",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/CouponCampaignsPage.jsx"
+    ]
+  },
+  {
+    "text": "% · cosmetics & care only",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Marketplace/index.jsx"
+    ]
+  },
+  {
+    "text": "% care",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/ui/HomeRewardCampaignsSection.jsx"
+    ]
+  },
+  {
+    "text": "% off eligible cosmetics & care",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/MyCoupons/index.jsx"
+    ]
+  },
+  {
+    "text": "09xxxxxxxx",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/RegisterPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Checkout/index.jsx"
+    ]
+  },
+  {
+    "text": "12 medicines per page",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Medicines/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Pharmacies/Details.jsx"
+    ]
+  },
+  {
+    "text": "500mg",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/pharmacy/MedicineFormModal.jsx"
+    ]
+  },
+  {
+    "text": "A healthcare platform built for trust, speed, and better patient access.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx"
+    ]
+  },
+  {
+    "text": "About",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/constants/siteConfig.js"
+    ]
+  },
+  {
+    "text": "Accept",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/OrdersPage.jsx"
+    ]
+  },
+  {
+    "text": "Accept Mission",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/ActiveDeliveriesPage.jsx"
+    ]
+  },
+  {
+    "text": "Acceptance Rate",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/AnalyticsPage.jsx"
+    ]
+  },
+  {
+    "text": "account_status",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/UsersPage.jsx"
+    ]
+  },
+  {
+    "text": "Actions",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/admin/AdminModulePage.jsx"
+    ]
+  },
+  {
+    "text": "Active",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/CouponCampaignsPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/MyCoupons/index.jsx"
+    ]
+  },
+  {
+    "text": "Active campaigns",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/CouponCampaignsPage.jsx"
+    ]
+  },
+  {
+    "text": "Active coupons",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/CouponCampaignsPage.jsx"
+    ]
+  },
+  {
+    "text": "active grouping records",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Orders/index.jsx"
+    ]
+  },
+  {
+    "text": "Active Missions",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/layouts/DriverLayout.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/ActiveDeliveriesPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/DashboardPage.jsx"
+    ]
+  },
+  {
+    "text": "Active Users",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/ui/StatisticsSection.jsx"
+    ]
+  },
+  {
+    "text": "Add Medicine",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/MedicinesPage.jsx"
+    ]
+  },
+  {
+    "text": "Added as a separate delivery group",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/layout/GlobalToastListener.jsx"
+    ]
+  },
+  {
+    "text": "Added to cart",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/layout/GlobalToastListener.jsx"
+    ]
+  },
+  {
+    "text": "Added to favorites",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/layout/GlobalToastListener.jsx"
+    ]
+  },
+  {
+    "text": "Address",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/RegisterPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx"
+    ]
+  },
+  {
+    "text": "Address:",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/OrdersPage.jsx"
+    ]
+  },
+  {
+    "text": "Admin accounts are created internally.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/RegisterPage.jsx"
+    ]
+  },
+  {
+    "text": "Admin Dashboard",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/DashboardPage.jsx"
+    ]
+  },
+  {
+    "text": "Admin Panel",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/layouts/AdminLayout.jsx"
+    ]
+  },
+  {
+    "text": "Aleppo",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/RegisterPage.jsx"
+    ]
+  },
+  {
+    "text": "All",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/medicines/MedicineFilters.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Notifications/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Pharmacies/Details.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Pharmacies/index.jsx"
+    ]
+  },
+  {
+    "text": "All Categories",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/MedicinesPage.jsx"
+    ]
+  },
+  {
+    "text": "All Cities",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/ui/SearchSection.jsx"
+    ]
+  },
+  {
+    "text": "All governorates",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Marketplace/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Medicines/index.jsx"
+    ]
+  },
+  {
+    "text": "All pharmacies",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Medicines/index.jsx"
+    ]
+  },
+  {
+    "text": "All stock",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Medicines/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Pharmacies/Details.jsx"
+    ]
+  },
+  {
+    "text": "Already have an account?",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/RegisterPage.jsx"
+    ]
+  },
+  {
+    "text": "Amount",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/PaymentsPage.jsx"
+    ]
+  },
+  {
+    "text": "Analytics",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/layouts/DriverLayout.jsx"
+    ]
+  },
+  {
+    "text": "Apply",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/CouponCampaignsPage.jsx"
+    ]
+  },
+  {
+    "text": "Apply Filters",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/MedicinesPage.jsx"
+    ]
+  },
+  {
+    "text": "Approve",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/ExchangeAdsPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/PharmaciesPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/ExchangeRequestsPage.jsx"
+    ]
+  },
+  {
+    "text": "Approve or reject incoming orders and track delivery flow.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/OrdersPage.jsx"
+    ]
+  },
+  {
+    "text": "Approved",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/OrdersPage.jsx"
+    ]
+  },
+  {
+    "text": "Approved donation and resale listings will appear here after pharmacy receipt.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/ui/HomeRewardCampaignsSection.jsx"
+    ]
+  },
+  {
+    "text": "Approved:",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/OrdersPage.jsx"
+    ]
+  },
+  {
+    "text": "Area",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/DeliveryMissionsPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/RegisterPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Checkout/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Marketplace/index.jsx"
+    ]
+  },
+  {
+    "text": "Area (optional)",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Pharmacies/index.jsx"
+    ]
+  },
+  {
+    "text": "Area:",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/ActiveDeliveriesPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/OrdersPage.jsx"
+    ]
+  },
+  {
+    "text": "Assigned Missions",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/layouts/DriverLayout.jsx"
+    ]
+  },
+  {
+    "text": "Assigned pharmacy",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/MyCommunityMedicines/index.jsx"
+    ]
+  },
+  {
+    "text": "Availability",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/DriversPage.jsx"
+    ]
+  },
+  {
+    "text": "Availability Status",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/ProfilePage.jsx"
+    ]
+  },
+  {
+    "text": "Available in pharmacy only. Requires physical prescription.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/medicines/MedicineCard.jsx"
+    ]
+  },
+  {
+    "text": "Average Delivery Fee",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/EarningsPage.jsx"
+    ]
+  },
+  {
+    "text": "Average Delivery Time",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/AnalyticsPage.jsx"
+    ]
+  },
+  {
+    "text": "Baby Care",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/data/categories.js"
+    ]
+  },
+  {
+    "text": "Baby Care Drops",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/data/medicines.js"
+    ]
+  },
+  {
+    "text": "Back to cart",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Checkout/index.jsx"
+    ]
+  },
+  {
+    "text": "Back to Home",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/LoginPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/RegisterPage.jsx"
+    ]
+  },
+  {
+    "text": "Brief subject",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx"
+    ]
+  },
+  {
+    "text": "Browse all medicines",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/ui/FeaturedMedicinesSection.jsx"
+    ]
+  },
+  {
+    "text": "Browse and order medicines quickly.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/data/services.js"
+    ]
+  },
+  {
+    "text": "Browse available grouped tasks, claim ready missions, and manage assigned pharmacy pickups.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/OrdersPage.jsx"
+    ]
+  },
+  {
+    "text": "Browse By Category",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/ui/CategoriesSection.jsx"
+    ]
+  },
+  {
+    "text": "Browse campaigns, cosmetics catalogues, and verified sellers.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/ui/HomeRewardCampaignsSection.jsx"
+    ]
+  },
+  {
+    "text": "Browse marketplace",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/ui/HomeRewardCampaignsSection.jsx"
+    ]
+  },
+  {
+    "text": "Browse Medicines",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/ui/HeroSection.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Favorites/index.jsx"
+    ]
+  },
+  {
+    "text": "Browse pharmacies",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Checkout/index.jsx"
+    ]
+  },
+  {
+    "text": "Browse Pharmacies",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Marketplace/index.jsx"
+    ]
+  },
+  {
+    "text": "Busiest Day",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/AnalyticsPage.jsx"
+    ]
+  },
+  {
+    "text": "Busy",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/ProfilePage.jsx"
+    ]
+  },
+  {
+    "text": "Call",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx"
+    ]
+  },
+  {
+    "text": "Campaign",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/CouponCampaignsPage.jsx"
+    ]
+  },
+  {
+    "text": "Campaign active",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/CouponCampaignsPage.jsx"
+    ]
+  },
+  {
+    "text": "Campaign title",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/CouponCampaignsPage.jsx"
+    ]
+  },
+  {
+    "text": "Campaigns",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/CouponCampaignsPage.jsx"
+    ]
+  },
+  {
+    "text": "Campaigns with the strongest cosmetics discount.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Marketplace/index.jsx"
+    ]
+  },
+  {
+    "text": "Cancel",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/medicines/MedicineCard.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/pharmacy/MedicineFormModal.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/CouponCampaignsPage.jsx"
+    ]
+  },
+  {
+    "text": "Cancellation Rate",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/AnalyticsPage.jsx"
+    ]
+  },
+  {
+    "text": "Car",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/RegisterPage.jsx"
+    ]
+  },
+  {
+    "text": "Card holder name",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Checkout/index.jsx"
+    ]
+  },
+  {
+    "text": "Card number",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Checkout/index.jsx"
+    ]
+  },
+  {
+    "text": "Cart cleared",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/layout/GlobalToastListener.jsx"
+    ]
+  },
+  {
+    "text": "Cart updated",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/layout/GlobalToastListener.jsx"
+    ]
+  },
+  {
+    "text": "Cash on Delivery",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Checkout/index.jsx"
+    ]
+  },
+  {
+    "text": "Categories",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/common/SearchDropdown.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/layouts/AdminLayout.jsx"
+    ]
+  },
+  {
+    "text": "Categories Management",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/CategoriesPage.jsx"
+    ]
+  },
+  {
+    "text": "Categories will appear once medicines are available.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/ui/CategoriesSection.jsx"
+    ]
+  },
+  {
+    "text": "Categories:",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/MyCoupons/index.jsx"
+    ]
+  },
+  {
+    "text": "category",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/CategoriesPage.jsx"
+    ]
+  },
+  {
+    "text": "Category",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/pharmacy/MedicineFormModal.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/CategoriesPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/MedicinesPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Pharmacies/Details.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/MedicinesPage.jsx"
+    ]
+  },
+  {
+    "text": "Category label",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/pharmacy/MedicineFormModal.jsx"
+    ]
+  },
+  {
+    "text": "Category Label",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/CategoriesPage.jsx"
+    ]
+  },
+  {
+    "text": "Checkout and payment flows are protected with production-ready backend validation.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx"
+    ]
+  },
+  {
+    "text": "Checkout completed.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Orders/index.jsx"
+    ]
+  },
+  {
+    "text": "Choose how you want to pay for this grouped checkout.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Checkout/index.jsx"
+    ]
+  },
+  {
+    "text": "Cities Covered",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/data/statistics.js"
+    ]
+  },
+  {
+    "text": "City",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/DriversPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/PharmaciesPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/UsersPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/RegisterPage.jsx"
+    ]
+  },
+  {
+    "text": "Clear cart",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Cart/index.jsx"
+    ]
+  },
+  {
+    "text": "Close",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/common/Modal.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx"
+    ]
+  },
+  {
+    "text": "Close sidebar overlay",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/layouts/DashboardShell.jsx"
+    ]
+  },
+  {
+    "text": "COD due:",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/OrdersPage.jsx"
+    ]
+  },
+  {
+    "text": "Code",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/CouponsPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/MyCoupons/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/CouponCampaignsPage.jsx"
+    ]
+  },
+  {
+    "text": "Comment",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/ReviewsPage.jsx"
+    ]
+  },
+  {
+    "text": "Community listings are reviewed by pharmacies in the same area before they become public, keeping the workflow safe and pharmacist-mediated.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx"
+    ]
+  },
+  {
+    "text": "Community Requests",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/layouts/PharmacyLayout.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/ExchangeRequestsPage.jsx"
+    ]
+  },
+  {
+    "text": "Complaint",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx"
+    ]
+  },
+  {
+    "text": "Complete",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/ExchangeRequestsPage.jsx"
+    ]
+  },
+  {
+    "text": "Complete your order",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Checkout/index.jsx"
+    ]
+  },
+  {
+    "text": "Completed Deliveries Trend",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/AnalyticsPage.jsx"
+    ]
+  },
+  {
+    "text": "Comprehensive earnings analytics and delivery revenue trends.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/EarningsPage.jsx"
+    ]
+  },
+  {
+    "text": "Condition",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/ExchangeRequestsPage.jsx"
+    ]
+  },
+  {
+    "text": "Confirm password",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/RegisterPage.jsx"
+    ]
+  },
+  {
+    "text": "Confirm Password",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/ProfilePage.jsx"
+    ]
+  },
+  {
+    "text": "Contact",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/layout/Footer.jsx"
+    ]
+  },
+  {
+    "text": "Contact Support",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx"
+    ]
+  },
+  {
+    "text": "Continue",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/medicines/MedicineCard.jsx"
+    ]
+  },
+  {
+    "text": "Continue as Guest",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/LoginPage.jsx"
+    ]
+  },
+  {
+    "text": "Continue Shopping",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Orders/index.jsx"
+    ]
+  },
+  {
+    "text": "Continue to Checkout",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Cart/index.jsx"
+    ]
+  },
+  {
+    "text": "Control availability state and delivery preferences.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/SettingsPage.jsx"
+    ]
+  },
+  {
+    "text": "Conversion Rate",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/ReportsPage.jsx"
+    ]
+  },
+  {
+    "text": "Cosmetic",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/pharmacy/MedicineFormModal.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/MedicinesPage.jsx"
+    ]
+  },
+  {
+    "text": "Cosmetics & care coupons you can earn from pharmacies.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Marketplace/index.jsx"
+    ]
+  },
+  {
+    "text": "Cosmetics & care only",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/ui/HomeRewardCampaignsSection.jsx"
+    ]
+  },
+  {
+    "text": "cosmetics, skincare, beauty",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/CouponCampaignsPage.jsx"
+    ]
+  },
+  {
+    "text": "Could not update favorites. Please try again.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/layout/GlobalToastListener.jsx"
+    ]
+  },
+  {
+    "text": "Coupon campaigns",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/layouts/AdminLayout.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/layouts/PharmacyLayout.jsx"
+    ]
+  },
+  {
+    "text": "Coupon code (optional)",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Checkout/index.jsx"
+    ]
+  },
+  {
+    "text": "Coupon reward campaigns",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/CouponCampaignsPage.jsx"
+    ]
+  },
+  {
+    "text": "Coupon valid",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/ui/HomeRewardCampaignsSection.jsx"
+    ]
+  },
+  {
+    "text": "Coupon valid for (days)",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/CouponCampaignsPage.jsx"
+    ]
+  },
+  {
+    "text": "Coupons",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/layouts/AdminLayout.jsx"
+    ]
+  },
+  {
+    "text": "Coupons are generated automatically for customers after delivered orders meet your rules. Discounts apply only to cosmetics and care items — never medicines.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/CouponCampaignsPage.jsx"
+    ]
+  },
+  {
+    "text": "Coupons issued",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/CouponCampaignsPage.jsx"
+    ]
+  },
+  {
+    "text": "Coupons Management",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/CouponsPage.jsx"
+    ]
+  },
+  {
+    "text": "Create",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/admin/AdminModulePage.jsx"
+    ]
+  },
+  {
+    "text": "Create account",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/LoginPage.jsx"
+    ]
+  },
+  {
+    "text": "Create Account",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Marketplace/index.jsx"
+    ]
+  },
+  {
+    "text": "Create your account.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/RegisterPage.jsx"
+    ]
+  },
+  {
+    "text": "Create, update, and manage inventory stock.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/MedicinesPage.jsx"
+    ]
+  },
+  {
+    "text": "Created",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/DeliveryMissionsPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/ExchangeRequestsPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/NotificationsPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/OrdersPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/CouponCampaignsPage.jsx"
+    ]
+  },
+  {
+    "text": "Currency",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/PaymentsPage.jsx"
+    ]
+  },
+  {
+    "text": "Customer",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/DeliveryMissionsPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/OrdersPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/RegisterPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/CouponCampaignsPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/ExchangeRequestsPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/OrdersPage.jsx"
+    ]
+  },
+  {
+    "text": "Customer feedback and ratings for your pharmacy.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/ReviewsPage.jsx"
+    ]
+  },
+  {
+    "text": "Customer feedback is reviewed by our team to improve platform reliability and service quality.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx"
+    ]
+  },
+  {
+    "text": "Customer information",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Checkout/index.jsx"
+    ]
+  },
+  {
+    "text": "Customer Support",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx"
+    ]
+  },
+  {
+    "text": "Customers earn cosmetics-only coupons from verified pharmacies after qualifying purchases.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx"
+    ]
+  },
+  {
+    "text": "CVV",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Checkout/index.jsx"
+    ]
+  },
+  {
+    "text": "Damascus",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/RegisterPage.jsx"
+    ]
+  },
+  {
+    "text": "Daraa",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/RegisterPage.jsx"
+    ]
+  },
+  {
+    "text": "Dashboard",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/layout/Navbar.jsx"
+    ]
+  },
+  {
+    "text": "Dashboard Overview",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/DashboardPage.jsx"
+    ]
+  },
+  {
+    "text": "Date",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/HistoryPage.jsx"
+    ]
+  },
+  {
+    "text": "days · cosmetics & care only",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/ui/HomeRewardCampaignsSection.jsx"
+    ]
+  },
+  {
+    "text": "days left",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/MyCoupons/index.jsx"
+    ]
+  },
+  {
+    "text": "Decrease quantity",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Cart/index.jsx"
+    ]
+  },
+  {
+    "text": "Define purchase rules; Shifa issues secure pharmacy coupons for cosmetics & care only.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/CouponCampaignsPage.jsx"
+    ]
+  },
+  {
+    "text": "Deir ez-Zor",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/RegisterPage.jsx"
+    ]
+  },
+  {
+    "text": "Delete",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/admin/AdminModulePage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/MedicinesPage.jsx"
+    ]
+  },
+  {
+    "text": "Delete notification",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Notifications/index.jsx"
+    ]
+  },
+  {
+    "text": "Delete pending listing",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/MyCommunityMedicines/index.jsx"
+    ]
+  },
+  {
+    "text": "Delivered",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Orders/index.jsx"
+    ]
+  },
+  {
+    "text": "Deliveries Management",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/DriversPage.jsx"
+    ]
+  },
+  {
+    "text": "Deliveries Per Day",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/EarningsPage.jsx"
+    ]
+  },
+  {
+    "text": "Delivery",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/OrdersPage.jsx"
+    ]
+  },
+  {
+    "text": "delivery group",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Checkout/index.jsx"
+    ]
+  },
+  {
+    "text": "Delivery group",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Orders/index.jsx"
+    ]
+  },
+  {
+    "text": "Delivery Group",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Cart/index.jsx"
+    ]
+  },
+  {
+    "text": "Delivery grouping will appear after checkout creates a mission.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Orders/index.jsx"
+    ]
+  },
+  {
+    "text": "Delivery groups",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Orders/index.jsx"
+    ]
+  },
+  {
+    "text": "Delivery Missions",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/layouts/AdminLayout.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/OrdersPage.jsx"
+    ]
+  },
+  {
+    "text": "Delivery notes, preferred time, or pharmacy instructions",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Checkout/index.jsx"
+    ]
+  },
+  {
+    "text": "Delivery Success Rate",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/EarningsPage.jsx"
+    ]
+  },
+  {
+    "text": "Demo card payment with backend payment records.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Checkout/index.jsx"
+    ]
+  },
+  {
+    "text": "Demo payments are validated by the API. Card data is not stored.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Checkout/index.jsx"
+    ]
+  },
+  {
+    "text": "Describe your feedback, complaint, or suggestion...",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx"
+    ]
+  },
+  {
+    "text": "Description",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/pharmacy/MedicineFormModal.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/CouponCampaignsPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/ExchangeRequestsPage.jsx"
+    ]
+  },
+  {
+    "text": "Destination",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/HistoryPage.jsx"
+    ]
+  },
+  {
+    "text": "Destination:",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/ActiveDeliveriesPage.jsx"
+    ]
+  },
+  {
+    "text": "Detailed address",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Checkout/index.jsx"
+    ]
+  },
+  {
+    "text": "Diabetes",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/data/categories.js"
+    ]
+  },
+  {
+    "text": "Different area delivery",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/medicines/MedicineCard.jsx"
+    ]
+  },
+  {
+    "text": "Discount %",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/CouponsPage.jsx"
+    ]
+  },
+  {
+    "text": "Discounts",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Cart/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Checkout/index.jsx"
+    ]
+  },
+  {
+    "text": "Discover pharmacies & rewards",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/ui/HomeRewardCampaignsSection.jsx"
+    ]
+  },
+  {
+    "text": "Discover verified pharmacies and pharmacy-owned coupon rewards.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Marketplace/index.jsx"
+    ]
+  },
+  {
+    "text": "Don’t have an account?",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/LoginPage.jsx"
+    ]
+  },
+  {
+    "text": "Donate & Resell",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/constants/siteConfig.js"
+    ]
+  },
+  {
+    "text": "Donate or resell safely",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/ui/HomeRewardCampaignsSection.jsx"
+    ]
+  },
+  {
+    "text": "Donate or safely resell medicines through verified pharmacies.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx"
+    ]
+  },
+  {
+    "text": "Donation",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx"
+    ]
+  },
+  {
+    "text": "Donation & Resale",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/ui/HeroSection.jsx"
+    ]
+  },
+  {
+    "text": "Donation & resale listings",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/MyCommunityMedicines/index.jsx"
+    ]
+  },
+  {
+    "text": "Dosage",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/pharmacy/MedicineFormModal.jsx"
+    ]
+  },
+  {
+    "text": "Driver",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/DriversPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/RegisterPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Orders/index.jsx"
+    ]
+  },
+  {
+    "text": "Driver Analytics",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/AnalyticsPage.jsx"
+    ]
+  },
+  {
+    "text": "Driver Dashboard",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/DashboardPage.jsx"
+    ]
+  },
+  {
+    "text": "Driver Panel",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/layouts/DriverLayout.jsx"
+    ]
+  },
+  {
+    "text": "Driver Profile",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/ProfilePage.jsx"
+    ]
+  },
+  {
+    "text": "Driver Settings",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/SettingsPage.jsx"
+    ]
+  },
+  {
+    "text": "Drivers",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/layouts/AdminLayout.jsx"
+    ]
+  },
+  {
+    "text": "e.g. Al Maliki",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/RegisterPage.jsx"
+    ]
+  },
+  {
+    "text": "e.g. ORD-12345",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx"
+    ]
+  },
+  {
+    "text": "Each mission can include multiple pharmacy pickups with one destination.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/ActiveDeliveriesPage.jsx"
+    ]
+  },
+  {
+    "text": "Earnings",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/layouts/DriverLayout.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/EarningsPage.jsx"
+    ]
+  },
+  {
+    "text": "Earnings Last 7 Days",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/DashboardPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/EarningsPage.jsx"
+    ]
+  },
+  {
+    "text": "Edit",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/MedicinesPage.jsx"
+    ]
+  },
+  {
+    "text": "Electronic Payment",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Checkout/index.jsx"
+    ]
+  },
+  {
+    "text": "Eligible product categories (comma-separated)",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/CouponCampaignsPage.jsx"
+    ]
+  },
+  {
+    "text": "Eligible:",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/ui/HomeRewardCampaignsSection.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Marketplace/index.jsx"
+    ]
+  },
+  {
+    "text": "Email",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/UsersPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/LoginPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/RegisterPage.jsx"
+    ]
+  },
+  {
+    "text": "Email and password are required.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/LoginPage.jsx"
+    ]
+  },
+  {
+    "text": "Everything needed for a modern healthcare marketplace.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx"
+    ]
+  },
+  {
+    "text": "Everything You Need, One Platform",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/services/ServicesSection.jsx"
+    ]
+  },
+  {
+    "text": "Excellent",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx"
+    ]
+  },
+  {
+    "text": "Exchange Ads",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/layouts/AdminLayout.jsx"
+    ]
+  },
+  {
+    "text": "Exchange Ads Management",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/ExchangeAdsPage.jsx"
+    ]
+  },
+  {
+    "text": "Exchange Requests",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/layouts/AdminLayout.jsx"
+    ]
+  },
+  {
+    "text": "Exchange Review Requests",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/ExchangeRequestsPage.jsx"
+    ]
+  },
+  {
+    "text": "Executive-level platform reporting snapshot for business reviews.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/ReportsPage.jsx"
+    ]
+  },
+  {
+    "text": "Expiration",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/MyCommunityMedicines/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/ExchangeRequestsPage.jsx"
+    ]
+  },
+  {
+    "text": "Expiration date",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/pharmacy/MedicineFormModal.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx"
+    ]
+  },
+  {
+    "text": "Expired",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/MyCoupons/index.jsx"
+    ]
+  },
+  {
+    "text": "Expired medicines and dangerous controlled products are blocked. Publication requires pharmacist approval and physical receipt.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx"
+    ]
+  },
+  {
+    "text": "Expiry date",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Checkout/index.jsx"
+    ]
+  },
+  {
+    "text": "Explore Marketplace",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/ui/HeroSection.jsx"
+    ]
+  },
+  {
+    "text": "Explore Pharmacies",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx"
+    ]
+  },
+  {
+    "text": "Explore trusted pharmacies, cosmetics reward campaigns, and community feedback in one professional discovery hub.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Marketplace/index.jsx"
+    ]
+  },
+  {
+    "text": "Explore verified pharmacies, cosmetics loyalty programs, and partner with Shifa to reach more customers.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Marketplace/index.jsx"
+    ]
+  },
+  {
+    "text": "Export",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/HistoryPage.jsx"
+    ]
+  },
+  {
+    "text": "Fast Delivery",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/data/services.js",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx"
+    ]
+  },
+  {
+    "text": "Fast medicine fulfillment workflow",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx"
+    ]
+  },
+  {
+    "text": "Fast pain relief tablets",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/data/medicines.js"
+    ]
+  },
+  {
+    "text": "Fast, safe, and reliable medicine ordering across Shifa.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx"
+    ]
+  },
+  {
+    "text": "Favorites",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/layout/Navbar.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Favorites/index.jsx"
+    ]
+  },
+  {
+    "text": "Featured",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Marketplace/index.jsx"
+    ]
+  },
+  {
+    "text": "Featured Medicines",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/ui/FeaturedMedicinesSection.jsx"
+    ]
+  },
+  {
+    "text": "Feedback",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx"
+    ]
+  },
+  {
+    "text": "Feedback and support channels help resolve customer issues quickly and clearly.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx"
+    ]
+  },
+  {
+    "text": "Final total",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Checkout/index.jsx"
+    ]
+  },
+  {
+    "text": "Find medicines, compare pharmacies, and get rapid doorstep delivery from trusted providers.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/ui/HeroSection.jsx"
+    ]
+  },
+  {
+    "text": "Find Pharmacies Near You",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/ui/NearbyPharmaciesSection.jsx"
+    ]
+  },
+  {
+    "text": "Forgot password?",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/LoginPage.jsx"
+    ]
+  },
+  {
+    "text": "Free items only",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx"
+    ]
+  },
+  {
+    "text": "Full name",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/RegisterPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Checkout/index.jsx"
+    ]
+  },
+  {
+    "text": "Generic name",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/pharmacy/MedicineFormModal.jsx"
+    ]
+  },
+  {
+    "text": "Gentle nutrition support",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/data/medicines.js"
+    ]
+  },
+  {
+    "text": "Get medicines delivered in minutes.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/data/services.js"
+    ]
+  },
+  {
+    "text": "Good",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx"
+    ]
+  },
+  {
+    "text": "Governorate",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/DeliveryMissionsPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Checkout/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Marketplace/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Medicines/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Pharmacies/index.jsx"
+    ]
+  },
+  {
+    "text": "Governorate:",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/ActiveDeliveriesPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/OrdersPage.jsx"
+    ]
+  },
+  {
+    "text": "Grouped Delivery Missions",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/DeliveryMissionsPage.jsx"
+    ]
+  },
+  {
+    "text": "Grouped pharmacies",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Orders/index.jsx"
+    ]
+  },
+  {
+    "text": "Hama",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/RegisterPage.jsx"
+    ]
+  },
+  {
+    "text": "Handled by",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx"
+    ]
+  },
+  {
+    "text": "Happy Customers",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/data/statistics.js",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx"
+    ]
+  },
+  {
+    "text": "Hasakah",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/RegisterPage.jsx"
+    ]
+  },
+  {
+    "text": "Health Plus Pharmacy",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/data/pharmacies.js"
+    ]
+  },
+  {
+    "text": "Healthcare Campaigns",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Marketplace/index.jsx"
+    ]
+  },
+  {
+    "text": "Healthcare quality standards we operate by.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx"
+    ]
+  },
+  {
+    "text": "Heart and brain support",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/data/medicines.js"
+    ]
+  },
+  {
+    "text": "Heart Health",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/data/categories.js"
+    ]
+  },
+  {
+    "text": "Highly rated pharmacies from customer reviews.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Marketplace/index.jsx"
+    ]
+  },
+  {
+    "text": "History",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/MyCoupons/index.jsx"
+    ]
+  },
+  {
+    "text": "Home",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/constants/siteConfig.js"
+    ]
+  },
+  {
+    "text": "Home glucose tracking",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/data/medicines.js"
+    ]
+  },
+  {
+    "text": "Homs",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/RegisterPage.jsx"
+    ]
+  },
+  {
+    "text": "Hydrating daily treatment",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/data/medicines.js"
+    ]
+  },
+  {
+    "text": "ID",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/CategoriesPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/CouponCampaignsPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/CouponsPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/DriversPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/ExchangeAdsPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/MedicinesPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/NotificationsPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/PaymentsPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/PharmaciesPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/ReviewsPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/UsersPage.jsx"
+    ]
+  },
+  {
+    "text": "Images",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx"
+    ]
+  },
+  {
+    "text": "Immune support formula",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/data/medicines.js"
+    ]
+  },
+  {
+    "text": "In stock",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/medicines/MedicineCard.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Medicines/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Pharmacies/Details.jsx"
+    ]
+  },
+  {
+    "text": "Increase quantity",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Cart/index.jsx"
+    ]
+  },
+  {
+    "text": "Insulin Monitor Kit",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/data/medicines.js"
+    ]
+  },
+  {
+    "text": "is_active",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/CouponCampaignsPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/MedicinesPage.jsx"
+    ]
+  },
+  {
+    "text": "is_used",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/CouponsPage.jsx"
+    ]
+  },
+  {
+    "text": "Issued",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/CouponCampaignsPage.jsx"
+    ]
+  },
+  {
+    "text": "Issued coupons",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/CouponCampaignsPage.jsx"
+    ]
+  },
+  {
+    "text": "Item removed from cart",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/layout/GlobalToastListener.jsx"
+    ]
+  },
+  {
+    "text": "items",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/ui/CategoriesSection.jsx"
+    ]
+  },
+  {
+    "text": "Join Shifa",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/RegisterPage.jsx"
+    ]
+  },
+  {
+    "text": "Join the trusted pharmacy marketplace network.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Marketplace/index.jsx"
+    ]
+  },
+  {
+    "text": "Laila Noor",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/data/testimonials.js"
+    ]
+  },
+  {
+    "text": "Latest Donation & Resale Listings",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/ui/HomeRewardCampaignsSection.jsx"
+    ]
+  },
+  {
+    "text": "Latest Orders",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/DashboardPage.jsx"
+    ]
+  },
+  {
+    "text": "Lattakia",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/RegisterPage.jsx"
+    ]
+  },
+  {
+    "text": "left",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/medicines/MedicineCard.jsx"
+    ]
+  },
+  {
+    "text": "License image",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/RegisterPage.jsx"
+    ]
+  },
+  {
+    "text": "Listing",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx"
+    ]
+  },
+  {
+    "text": "Listing submitted to same-area pharmacies for review.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx"
+    ]
+  },
+  {
+    "text": "Listing type",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx"
+    ]
+  },
+  {
+    "text": "Live mission workflow, earnings insights, and operational performance.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/DashboardPage.jsx"
+    ]
+  },
+  {
+    "text": "Live platform analytics, operational insights, and management controls.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/DashboardPage.jsx"
+    ]
+  },
+  {
+    "text": "Loading campaigns...",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Marketplace/index.jsx"
+    ]
+  },
+  {
+    "text": "Loading favorites...",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Favorites/index.jsx"
+    ]
+  },
+  {
+    "text": "Loading notifications...",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/layout/Navbar.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Notifications/index.jsx"
+    ]
+  },
+  {
+    "text": "Loading pharmacies...",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Pharmacies/index.jsx"
+    ]
+  },
+  {
+    "text": "Loading pharmacy...",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Pharmacies/Details.jsx"
+    ]
+  },
+  {
+    "text": "Loading reward campaigns…",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/ui/HomeRewardCampaignsSection.jsx"
+    ]
+  },
+  {
+    "text": "Loading testimonials...",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx"
+    ]
+  },
+  {
+    "text": "Loading your coupons…",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/MyCoupons/index.jsx"
+    ]
+  },
+  {
+    "text": "Loading...",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/MedicinesPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/OrdersPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/ReviewsPage.jsx"
+    ]
+  },
+  {
+    "text": "Loading…",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/CouponCampaignsPage.jsx"
+    ]
+  },
+  {
+    "text": "Location",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx"
+    ]
+  },
+  {
+    "text": "Log in to track orders, manage medicines, or handle deliveries based on your role.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/LoginPage.jsx"
+    ]
+  },
+  {
+    "text": "Login",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/layout/Navbar.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/LoginPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/RegisterPage.jsx"
+    ]
+  },
+  {
+    "text": "Logout",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/layout/DashboardSidebar.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/layout/Navbar.jsx"
+    ]
+  },
+  {
+    "text": "Low stock:",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/medicines/MedicineCard.jsx"
+    ]
+  },
+  {
+    "text": "Loyalty",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/CouponCampaignsPage.jsx"
+    ]
+  },
+  {
+    "text": "Manage profile information, vehicle details, status, and credentials.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/ProfilePage.jsx"
+    ]
+  },
+  {
+    "text": "Manufacturer",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/pharmacy/MedicineFormModal.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/CategoriesPage.jsx"
+    ]
+  },
+  {
+    "text": "Mark all as read",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Notifications/index.jsx"
+    ]
+  },
+  {
+    "text": "Mark all read",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/layout/Navbar.jsx"
+    ]
+  },
+  {
+    "text": "Mark as Received",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/ExchangeRequestsPage.jsx"
+    ]
+  },
+  {
+    "text": "Mark Cancelled",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/DeliveryMissionsPage.jsx"
+    ]
+  },
+  {
+    "text": "Mark Delivered",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/ActiveDeliveriesPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/OrdersPage.jsx"
+    ]
+  },
+  {
+    "text": "Mark Pending",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/DeliveryMissionsPage.jsx"
+    ]
+  },
+  {
+    "text": "Mark read",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Notifications/index.jsx"
+    ]
+  },
+  {
+    "text": "Mark Read",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/NotificationsPage.jsx"
+    ]
+  },
+  {
+    "text": "Marketplace",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/constants/siteConfig.js"
+    ]
+  },
+  {
+    "text": "Medical Devices",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/data/categories.js"
+    ]
+  },
+  {
+    "text": "Medicine",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/pharmacy/MedicineFormModal.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/CategoriesPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/ExchangeAdsPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/MedicinesPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/MedicinesPage.jsx"
+    ]
+  },
+  {
+    "text": "Medicine Donation Hub",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx"
+    ]
+  },
+  {
+    "text": "Medicine name",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/pharmacy/MedicineFormModal.jsx"
+    ]
+  },
+  {
+    "text": "Medicine name...",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx"
+    ]
+  },
+  {
+    "text": "Medicine Ordering",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/data/services.js"
+    ]
+  },
+  {
+    "text": "Medicine/product name",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx"
+    ]
+  },
+  {
+    "text": "medicines",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/pharmacies/PharmacyCard.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Medicines/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Pharmacies/Details.jsx"
+    ]
+  },
+  {
+    "text": "Medicines",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/common/SearchDropdown.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/layouts/AdminLayout.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/layouts/PharmacyLayout.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Medicines/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/MedicinesPage.jsx"
+    ]
+  },
+  {
+    "text": "Medicines Available",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/ui/StatisticsSection.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx"
+    ]
+  },
+  {
+    "text": "Medicines Management",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/MedicinesPage.jsx"
+    ]
+  },
+  {
+    "text": "Medicines:",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/ActiveDeliveriesPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/OrdersPage.jsx"
+    ]
+  },
+  {
+    "text": "Message",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/NotificationsPage.jsx"
+    ]
+  },
+  {
+    "text": "Message should be at least 12 characters.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx"
+    ]
+  },
+  {
+    "text": "Method",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/PaymentsPage.jsx"
+    ]
+  },
+  {
+    "text": "Min order",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/CouponCampaignsPage.jsx"
+    ]
+  },
+  {
+    "text": "Minimum order amount (USD)",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/CouponCampaignsPage.jsx"
+    ]
+  },
+  {
+    "text": "Mission",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/HistoryPage.jsx"
+    ]
+  },
+  {
+    "text": "Mission #",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/ActiveDeliveriesPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/OrdersPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Orders/index.jsx"
+    ]
+  },
+  {
+    "text": "Mission History",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/layouts/DriverLayout.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/HistoryPage.jsx"
+    ]
+  },
+  {
+    "text": "Mission ID",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/DeliveryMissionsPage.jsx"
+    ]
+  },
+  {
+    "text": "Missions Per Day",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/DashboardPage.jsx"
+    ]
+  },
+  {
+    "text": "missions right now.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/OrdersPage.jsx"
+    ]
+  },
+  {
+    "text": "MM/YY",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Checkout/index.jsx"
+    ]
+  },
+  {
+    "text": "Monthly Earnings",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/EarningsPage.jsx"
+    ]
+  },
+  {
+    "text": "Monthly Revenue",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/ReportsPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/DashboardPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/EarningsPage.jsx"
+    ]
+  },
+  {
+    "text": "Most reward campaigns",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Pharmacies/index.jsx"
+    ]
+  },
+  {
+    "text": "Motorbike",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/RegisterPage.jsx"
+    ]
+  },
+  {
+    "text": "My Community Medicines",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/MyCommunityMedicines/index.jsx"
+    ]
+  },
+  {
+    "text": "My coupons",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/MyCoupons/index.jsx"
+    ]
+  },
+  {
+    "text": "My Coupons",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/layout/Navbar.jsx"
+    ]
+  },
+  {
+    "text": "My Listings",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx"
+    ]
+  },
+  {
+    "text": "My Orders",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/layout/Navbar.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Orders/index.jsx"
+    ]
+  },
+  {
+    "text": "Name",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/UsersPage.jsx"
+    ]
+  },
+  {
+    "text": "Name on card",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Checkout/index.jsx"
+    ]
+  },
+  {
+    "text": "Name: A - Z",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Medicines/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Pharmacies/Details.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Pharmacies/index.jsx"
+    ]
+  },
+  {
+    "text": "Name: Z - A",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Medicines/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Pharmacies/Details.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Pharmacies/index.jsx"
+    ]
+  },
+  {
+    "text": "Need help right now?",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx"
+    ]
+  },
+  {
+    "text": "New campaign",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/CouponCampaignsPage.jsx"
+    ]
+  },
+  {
+    "text": "Newest",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Medicines/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Pharmacies/Details.jsx"
+    ]
+  },
+  {
+    "text": "Next",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/admin/AdminModulePage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/common/Pagination.jsx"
+    ]
+  },
+  {
+    "text": "No",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/OrdersPage.jsx"
+    ]
+  },
+  {
+    "text": "No active coupons. Shop cosmetics from participating pharmacies to earn rewards.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/MyCoupons/index.jsx"
+    ]
+  },
+  {
+    "text": "No active missions right now.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/ActiveDeliveriesPage.jsx"
+    ]
+  },
+  {
+    "text": "No active orders right now.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/OrdersPage.jsx"
+    ]
+  },
+  {
+    "text": "No active reward campaigns",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Marketplace/index.jsx"
+    ]
+  },
+  {
+    "text": "No campaigns in this filter yet.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Marketplace/index.jsx"
+    ]
+  },
+  {
+    "text": "No campaigns yet. Create one above — it will appear here after saving.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/CouponCampaignsPage.jsx"
+    ]
+  },
+  {
+    "text": "No comment provided.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/ReviewsPage.jsx"
+    ]
+  },
+  {
+    "text": "No community listings yet",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/MyCommunityMedicines/index.jsx"
+    ]
+  },
+  {
+    "text": "No community requests",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/ExchangeRequestsPage.jsx"
+    ]
+  },
+  {
+    "text": "No coupons in this tab yet. Reward coupons appear here after customers meet campaign rules and orders are delivered.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/CouponCampaignsPage.jsx"
+    ]
+  },
+  {
+    "text": "No expired unused coupons.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/MyCoupons/index.jsx"
+    ]
+  },
+  {
+    "text": "No favorites yet",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Favorites/index.jsx"
+    ]
+  },
+  {
+    "text": "No featured medicines",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/ui/FeaturedMedicinesSection.jsx"
+    ]
+  },
+  {
+    "text": "No medicines available",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Pharmacies/Details.jsx"
+    ]
+  },
+  {
+    "text": "No medicines found",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Medicines/index.jsx"
+    ]
+  },
+  {
+    "text": "No medicines found.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/MedicinesPage.jsx"
+    ]
+  },
+  {
+    "text": "No notifications yet",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Notifications/index.jsx"
+    ]
+  },
+  {
+    "text": "No notifications yet.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/layout/Navbar.jsx"
+    ]
+  },
+  {
+    "text": "No orders yet",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Orders/index.jsx"
+    ]
+  },
+  {
+    "text": "No pharmacies available",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/ui/NearbyPharmaciesSection.jsx"
+    ]
+  },
+  {
+    "text": "No pharmacies found",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Pharmacies/index.jsx"
+    ]
+  },
+  {
+    "text": "No public campaigns yet",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/ui/HomeRewardCampaignsSection.jsx"
+    ]
+  },
+  {
+    "text": "No public testimonials yet. Be the first to share your experience.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx"
+    ]
+  },
+  {
+    "text": "No published community medicines",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx"
+    ]
+  },
+  {
+    "text": "No records found",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/admin/AdminModulePage.jsx"
+    ]
+  },
+  {
+    "text": "No redemption history yet.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/MyCoupons/index.jsx"
+    ]
+  },
+  {
+    "text": "No reviews yet.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/ReviewsPage.jsx"
+    ]
+  },
+  {
+    "text": "Notes (optional)",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Checkout/index.jsx"
+    ]
+  },
+  {
+    "text": "Notes:",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/ActiveDeliveriesPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/OrdersPage.jsx"
+    ]
+  },
+  {
+    "text": "Notifications",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/layout/Navbar.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/layouts/AdminLayout.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/layouts/DriverLayout.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/NotificationsPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Notifications/index.jsx"
+    ]
+  },
+  {
+    "text": "Notifications Center",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/DashboardPage.jsx"
+    ]
+  },
+  {
+    "text": "Notifications Management",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/NotificationsPage.jsx"
+    ]
+  },
+  {
+    "text": "of",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Medicines/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Orders/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Pharmacies/Details.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Pharmacies/index.jsx"
+    ]
+  },
+  {
+    "text": "Offline",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/ProfilePage.jsx"
+    ]
+  },
+  {
+    "text": "Omar Khalid",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/data/testimonials.js"
+    ]
+  },
+  {
+    "text": "Omega-3 Plus",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/data/medicines.js"
+    ]
+  },
+  {
+    "text": "On the way",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Orders/index.jsx"
+    ]
+  },
+  {
+    "text": "Online",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/ProfilePage.jsx"
+    ]
+  },
+  {
+    "text": "Online / Offline Status",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/SettingsPage.jsx"
+    ]
+  },
+  {
+    "text": "Online Consultation",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/data/services.js"
+    ]
+  },
+  {
+    "text": "Only customer accounts can contact pharmacies for community listings.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx"
+    ]
+  },
+  {
+    "text": "Only customer accounts can submit community medicine listings.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx"
+    ]
+  },
+  {
+    "text": "Only trusted pharmacies are listed to keep medicine quality and service standards high.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx"
+    ]
+  },
+  {
+    "text": "Open",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/layout/Navbar.jsx"
+    ]
+  },
+  {
+    "text": "Open donation hub",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/ui/HomeRewardCampaignsSection.jsx"
+    ]
+  },
+  {
+    "text": "Operational insights for acceptance, cancellation, delivery speed, and partner performance.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/AnalyticsPage.jsx"
+    ]
+  },
+  {
+    "text": "Optimized delivery flow helps customers receive urgent medicines with reliable tracking.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx"
+    ]
+  },
+  {
+    "text": "Order",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/PaymentsPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/MyCoupons/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/OrdersPage.jsx"
+    ]
+  },
+  {
+    "text": "Order #",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/DashboardPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Orders/index.jsx"
+    ]
+  },
+  {
+    "text": "Order assignments, delivery updates, payment events, and pharmacy/customer alerts.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/NotificationsPage.jsx"
+    ]
+  },
+  {
+    "text": "Order ID",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/OrdersPage.jsx"
+    ]
+  },
+  {
+    "text": "Order reference (optional)",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx"
+    ]
+  },
+  {
+    "text": "Order Status",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/OrdersPage.jsx"
+    ]
+  },
+  {
+    "text": "Order summary",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Checkout/index.jsx"
+    ]
+  },
+  {
+    "text": "Order updates, delivery events, pharmacy announcements, and coupon rewards.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Notifications/index.jsx"
+    ]
+  },
+  {
+    "text": "order_status",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/OrdersPage.jsx"
+    ]
+  },
+  {
+    "text": "Orders",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/layouts/AdminLayout.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/layouts/PharmacyLayout.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/HistoryPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/OrdersPage.jsx"
+    ]
+  },
+  {
+    "text": "Orders (Last 14 Days)",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/DashboardPage.jsx"
+    ]
+  },
+  {
+    "text": "orders ≥",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Marketplace/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/CouponCampaignsPage.jsx"
+    ]
+  },
+  {
+    "text": "Orders are created per pharmacy and grouped into delivery missions by area.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Cart/index.jsx"
+    ]
+  },
+  {
+    "text": "Orders by Status",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/DashboardPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/DashboardPage.jsx"
+    ]
+  },
+  {
+    "text": "Orders Delivered",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx"
+    ]
+  },
+  {
+    "text": "orders from this pharmacy over",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/ui/HomeRewardCampaignsSection.jsx"
+    ]
+  },
+  {
+    "text": "Orders Last 30 Days",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/DashboardPage.jsx"
+    ]
+  },
+  {
+    "text": "Orders Management",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/OrdersPage.jsx"
+    ]
+  },
+  {
+    "text": "Orders tracking",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Orders/index.jsx"
+    ]
+  },
+  {
+    "text": "Original package available",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx"
+    ]
+  },
+  {
+    "text": "Our support team is ready to help with delivery issues, order concerns, and pharmacy-related questions.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx"
+    ]
+  },
+  {
+    "text": "Out of stock",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/medicines/MedicineCard.jsx"
+    ]
+  },
+  {
+    "text": "Overview",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/layouts/AdminLayout.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/layouts/DriverLayout.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/layouts/PharmacyLayout.jsx"
+    ]
+  },
+  {
+    "text": "Owner",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/PharmaciesPage.jsx"
+    ]
+  },
+  {
+    "text": "Pain Relief",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/pharmacy/MedicineFormModal.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/data/categories.js"
+    ]
+  },
+  {
+    "text": "Paracetamol 500mg",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/data/medicines.js"
+    ]
+  },
+  {
+    "text": "Partially Used",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx"
+    ]
+  },
+  {
+    "text": "Partner network with top-rated pharmacies.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/data/services.js"
+    ]
+  },
+  {
+    "text": "Partner Pharmacies",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/data/statistics.js"
+    ]
+  },
+  {
+    "text": "Password",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/LoginPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/RegisterPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/ProfilePage.jsx"
+    ]
+  },
+  {
+    "text": "Pay to the driver when your medicines arrive.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Checkout/index.jsx"
+    ]
+  },
+  {
+    "text": "Payment",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Orders/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/OrdersPage.jsx"
+    ]
+  },
+  {
+    "text": "Payment method",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Checkout/index.jsx"
+    ]
+  },
+  {
+    "text": "Payment Methods Distribution",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/DashboardPage.jsx"
+    ]
+  },
+  {
+    "text": "Payment status will be recorded as pending cash until the driver collects payment.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Checkout/index.jsx"
+    ]
+  },
+  {
+    "text": "Payment status:",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/ActiveDeliveriesPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/OrdersPage.jsx"
+    ]
+  },
+  {
+    "text": "payment_status",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/PaymentsPage.jsx"
+    ]
+  },
+  {
+    "text": "Payment:",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/ActiveDeliveriesPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/OrdersPage.jsx"
+    ]
+  },
+  {
+    "text": "Payments",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/layouts/AdminLayout.jsx"
+    ]
+  },
+  {
+    "text": "Payments Management",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/PaymentsPage.jsx"
+    ]
+  },
+  {
+    "text": "Pending listing deleted.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/MyCommunityMedicines/index.jsx"
+    ]
+  },
+  {
+    "text": "pharmacies",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Pharmacies/index.jsx"
+    ]
+  },
+  {
+    "text": "Pharmacies",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/common/SearchDropdown.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/constants/siteConfig.js",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/layouts/AdminLayout.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Pharmacies/index.jsx"
+    ]
+  },
+  {
+    "text": "pharmacies approved",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Orders/index.jsx"
+    ]
+  },
+  {
+    "text": "pharmacies approved this grouped order.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Orders/index.jsx"
+    ]
+  },
+  {
+    "text": "Pharmacies are in different areas within the same governorate, so separate delivery groups will be created.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Checkout/index.jsx"
+    ]
+  },
+  {
+    "text": "Pharmacies in the same area will review before publication.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx"
+    ]
+  },
+  {
+    "text": "Pharmacies Management",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/PharmaciesPage.jsx"
+    ]
+  },
+  {
+    "text": "Pharmacies running the most reward campaigns.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Marketplace/index.jsx"
+    ]
+  },
+  {
+    "text": "pharmacies,",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Checkout/index.jsx"
+    ]
+  },
+  {
+    "text": "Pharmacies:",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/ActiveDeliveriesPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/OrdersPage.jsx"
+    ]
+  },
+  {
+    "text": "Pharmacist notes",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/ExchangeRequestsPage.jsx"
+    ]
+  },
+  {
+    "text": "Pharmacist verified",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx"
+    ]
+  },
+  {
+    "text": "Pharmacy",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/CouponCampaignsPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/PharmaciesPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/ReviewsPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/RegisterPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Medicines/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/MyCoupons/index.jsx"
+    ]
+  },
+  {
+    "text": "Pharmacy address (optional)",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/RegisterPage.jsx"
+    ]
+  },
+  {
+    "text": "Pharmacy coupon campaigns",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/ui/HomeRewardCampaignsSection.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/CouponCampaignsPage.jsx"
+    ]
+  },
+  {
+    "text": "Pharmacy name",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/RegisterPage.jsx"
+    ]
+  },
+  {
+    "text": "Pharmacy name...",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Pharmacies/index.jsx"
+    ]
+  },
+  {
+    "text": "Pharmacy not found",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Pharmacies/Details.jsx"
+    ]
+  },
+  {
+    "text": "Pharmacy Notes",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/ExchangeRequestsPage.jsx"
+    ]
+  },
+  {
+    "text": "pharmacy orders were grouped into",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Orders/index.jsx"
+    ]
+  },
+  {
+    "text": "Pharmacy Panel",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/layouts/PharmacyLayout.jsx"
+    ]
+  },
+  {
+    "text": "Pharmacy phone (optional)",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/RegisterPage.jsx"
+    ]
+  },
+  {
+    "text": "Pharmacy rewards",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx"
+    ]
+  },
+  {
+    "text": "Pharmacy-issued cosmetics & care discounts. Medicines are never discounted with these codes.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/MyCoupons/index.jsx"
+    ]
+  },
+  {
+    "text": "Phone",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/PharmaciesPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/RegisterPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx"
+    ]
+  },
+  {
+    "text": "Phone number",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Checkout/index.jsx"
+    ]
+  },
+  {
+    "text": "Phone:",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/ActiveDeliveriesPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/OrdersPage.jsx"
+    ]
+  },
+  {
+    "text": "Picked up",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Orders/index.jsx"
+    ]
+  },
+  {
+    "text": "Pickup notes",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx"
+    ]
+  },
+  {
+    "text": "Pickup pharmacies",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/OrdersPage.jsx"
+    ]
+  },
+  {
+    "text": "Pickup points",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/ActiveDeliveriesPage.jsx"
+    ]
+  },
+  {
+    "text": "Placed",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Orders/index.jsx"
+    ]
+  },
+  {
+    "text": "Please complete all required fields.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx"
+    ]
+  },
+  {
+    "text": "Please correct the highlighted fields.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/pharmacy/MedicineFormModal.jsx"
+    ]
+  },
+  {
+    "text": "Please enter a valid email address.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/LoginPage.jsx"
+    ]
+  },
+  {
+    "text": "Preparing",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Orders/index.jsx"
+    ]
+  },
+  {
+    "text": "Prescription",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/MedicinesPage.jsx"
+    ]
+  },
+  {
+    "text": "Prescription required",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/pharmacy/MedicineFormModal.jsx"
+    ]
+  },
+  {
+    "text": "Prescription Required",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/medicines/MedicineCard.jsx"
+    ]
+  },
+  {
+    "text": "Prescription Support",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx"
+    ]
+  },
+  {
+    "text": "Prescription Upload",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/data/services.js"
+    ]
+  },
+  {
+    "text": "Prescription-only medicines were removed from cart.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/layout/GlobalToastListener.jsx"
+    ]
+  },
+  {
+    "text": "Prescription-only products are clearly identified to protect safe ordering behavior.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx"
+    ]
+  },
+  {
+    "text": "Prev",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/admin/AdminModulePage.jsx"
+    ]
+  },
+  {
+    "text": "Previous",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/common/Pagination.jsx"
+    ]
+  },
+  {
+    "text": "Price",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/pharmacy/MedicineFormModal.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/ExchangeAdsPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/MedicinesPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/MedicinesPage.jsx"
+    ]
+  },
+  {
+    "text": "Price: High to Low",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Medicines/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Pharmacies/Details.jsx"
+    ]
+  },
+  {
+    "text": "Price: Low to High",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Medicines/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Pharmacies/Details.jsx"
+    ]
+  },
+  {
+    "text": "Profile",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/layouts/DriverLayout.jsx"
+    ]
+  },
+  {
+    "text": "Published customer reviews will appear here.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/ui/TestimonialsSection.jsx"
+    ]
+  },
+  {
+    "text": "Published to delivery queue",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/OrdersPage.jsx"
+    ]
+  },
+  {
+    "text": "Quantity",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/MyCommunityMedicines/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/ExchangeRequestsPage.jsx"
+    ]
+  },
+  {
+    "text": "Quantity:",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx"
+    ]
+  },
+  {
+    "text": "Quick Links",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/layout/Footer.jsx"
+    ]
+  },
+  {
+    "text": "Quneitra",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/RegisterPage.jsx"
+    ]
+  },
+  {
+    "text": "Raqqa",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/RegisterPage.jsx"
+    ]
+  },
+  {
+    "text": "Rating",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/ReviewsPage.jsx"
+    ]
+  },
+  {
+    "text": "Rating (optional)",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx"
+    ]
+  },
+  {
+    "text": "Ratings, complaints, and suggestions.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx"
+    ]
+  },
+  {
+    "text": "Read",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/layout/Navbar.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Notifications/index.jsx"
+    ]
+  },
+  {
+    "text": "Ready",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Orders/index.jsx"
+    ]
+  },
+  {
+    "text": "Ready For Pickup",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/OrdersPage.jsx"
+    ]
+  },
+  {
+    "text": "Real numbers from the marketplace.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx"
+    ]
+  },
+  {
+    "text": "Real-time performance and inventory insights.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/DashboardPage.jsx"
+    ]
+  },
+  {
+    "text": "Reason",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx"
+    ]
+  },
+  {
+    "text": "Reason and pickup notes",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/ExchangeRequestsPage.jsx"
+    ]
+  },
+  {
+    "text": "Redeemed",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/MyCoupons/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/CouponCampaignsPage.jsx"
+    ]
+  },
+  {
+    "text": "Refresh",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Orders/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/ExchangeRequestsPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/OrdersPage.jsx"
+    ]
+  },
+  {
+    "text": "Register",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/RegisterPage.jsx"
+    ]
+  },
+  {
+    "text": "Register as a customer, pharmacy, or driver and start using the platform.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/RegisterPage.jsx"
+    ]
+  },
+  {
+    "text": "Reject",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/ExchangeAdsPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/PharmaciesPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/ExchangeRequestsPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/OrdersPage.jsx"
+    ]
+  },
+  {
+    "text": "Release Task",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/OrdersPage.jsx"
+    ]
+  },
+  {
+    "text": "Reliable and encrypted payment options.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/data/services.js"
+    ]
+  },
+  {
+    "text": "Remember me",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/LoginPage.jsx"
+    ]
+  },
+  {
+    "text": "Remove item",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Cart/index.jsx"
+    ]
+  },
+  {
+    "text": "Removed from favorites",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/layout/GlobalToastListener.jsx"
+    ]
+  },
+  {
+    "text": "Reports",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/layouts/AdminLayout.jsx"
+    ]
+  },
+  {
+    "text": "Reports & Analytics",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/ReportsPage.jsx"
+    ]
+  },
+  {
+    "text": "Request ID",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/ExchangeRequestsPage.jsx"
+    ]
+  },
+  {
+    "text": "Requested price",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/ExchangeRequestsPage.jsx"
+    ]
+  },
+  {
+    "text": "Requested price is required for resale listings.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx"
+    ]
+  },
+  {
+    "text": "Required delivered orders",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/CouponCampaignsPage.jsx"
+    ]
+  },
+  {
+    "text": "Resale",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx"
+    ]
+  },
+  {
+    "text": "Reset",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Marketplace/index.jsx"
+    ]
+  },
+  {
+    "text": "Reset filters",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Pharmacies/index.jsx"
+    ]
+  },
+  {
+    "text": "Revenue (Last 14 Days)",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/DashboardPage.jsx"
+    ]
+  },
+  {
+    "text": "Revenue Last 12 Months",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/DashboardPage.jsx"
+    ]
+  },
+  {
+    "text": "Review completed and cancelled missions.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/HistoryPage.jsx"
+    ]
+  },
+  {
+    "text": "Review same-area donation and resale requests, then publish after physical receipt.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/ExchangeRequestsPage.jsx"
+    ]
+  },
+  {
+    "text": "Reviewing",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Orders/index.jsx"
+    ]
+  },
+  {
+    "text": "Reviews",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/layouts/AdminLayout.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/layouts/PharmacyLayout.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/ReviewsPage.jsx"
+    ]
+  },
+  {
+    "text": "Reviews Management",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/ReviewsPage.jsx"
+    ]
+  },
+  {
+    "text": "Reward",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/CouponCampaignsPage.jsx"
+    ]
+  },
+  {
+    "text": "Reward %",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/CouponCampaignsPage.jsx"
+    ]
+  },
+  {
+    "text": "Reward % (cosmetics & care)",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/CouponCampaignsPage.jsx"
+    ]
+  },
+  {
+    "text": "reward campaigns",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/pharmacies/PharmacyCard.jsx"
+    ]
+  },
+  {
+    "text": "Reward campaigns",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Pharmacies/Details.jsx"
+    ]
+  },
+  {
+    "text": "Reward coupons never apply to medicines or prescription items. Checkout validates pharmacy, customer, and product eligibility.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/ui/HomeRewardCampaignsSection.jsx"
+    ]
+  },
+  {
+    "text": "Rif Dimashq",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/RegisterPage.jsx"
+    ]
+  },
+  {
+    "text": "Role",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/UsersPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/RegisterPage.jsx"
+    ]
+  },
+  {
+    "text": "Rule",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/CouponCampaignsPage.jsx"
+    ]
+  },
+  {
+    "text": "Rule:",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/ui/HomeRewardCampaignsSection.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Marketplace/index.jsx"
+    ]
+  },
+  {
+    "text": "Safer healthcare ordering standards",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx"
+    ]
+  },
+  {
+    "text": "Same-area pharmacies will share one driver delivery task while each pharmacy receives its own order.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Checkout/index.jsx"
+    ]
+  },
+  {
+    "text": "Sara Ahmed",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/data/testimonials.js"
+    ]
+  },
+  {
+    "text": "Save medicines you want to revisit quickly from the marketplace.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Favorites/index.jsx"
+    ]
+  },
+  {
+    "text": "Save Profile",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/ProfilePage.jsx"
+    ]
+  },
+  {
+    "text": "saved",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Favorites/index.jsx"
+    ]
+  },
+  {
+    "text": "Sealed",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx"
+    ]
+  },
+  {
+    "text": "Search",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/admin/AdminModulePage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/ui/HeroSection.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/ui/SearchSection.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Marketplace/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Pharmacies/index.jsx"
+    ]
+  },
+  {
+    "text": "Search by medicine name...",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Medicines/index.jsx"
+    ]
+  },
+  {
+    "text": "Search campaigns or pharmacies...",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Marketplace/index.jsx"
+    ]
+  },
+  {
+    "text": "Search medicines",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Medicines/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Pharmacies/Details.jsx"
+    ]
+  },
+  {
+    "text": "Search medicines or pharmacies...",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/ui/HeroSection.jsx"
+    ]
+  },
+  {
+    "text": "Search medicines...",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/MedicinesPage.jsx"
+    ]
+  },
+  {
+    "text": "Search...",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/admin/AdminModulePage.jsx"
+    ]
+  },
+  {
+    "text": "Search…",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/CouponCampaignsPage.jsx"
+    ]
+  },
+  {
+    "text": "Secure access",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/LoginPage.jsx"
+    ]
+  },
+  {
+    "text": "Secure checkout",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Checkout/index.jsx"
+    ]
+  },
+  {
+    "text": "Secure Payments",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/data/services.js",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx"
+    ]
+  },
+  {
+    "text": "Select area",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Checkout/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx"
+    ]
+  },
+  {
+    "text": "Select governorate",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Checkout/index.jsx"
+    ]
+  },
+  {
+    "text": "Select vehicle",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/RegisterPage.jsx"
+    ]
+  },
+  {
+    "text": "Services",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/layout/Footer.jsx"
+    ]
+  },
+  {
+    "text": "Set Busy",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/SettingsPage.jsx"
+    ]
+  },
+  {
+    "text": "Set Delivered",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/OrdersPage.jsx"
+    ]
+  },
+  {
+    "text": "Set Failed",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/PaymentsPage.jsx"
+    ]
+  },
+  {
+    "text": "Set General",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/CategoriesPage.jsx"
+    ]
+  },
+  {
+    "text": "Set Offline",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/SettingsPage.jsx"
+    ]
+  },
+  {
+    "text": "Set Online",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/SettingsPage.jsx"
+    ]
+  },
+  {
+    "text": "Set Paid",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/PaymentsPage.jsx"
+    ]
+  },
+  {
+    "text": "Set Pending",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/ExchangeRequestsPage.jsx"
+    ]
+  },
+  {
+    "text": "Set Preparing",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/OrdersPage.jsx"
+    ]
+  },
+  {
+    "text": "Set Rejected",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/ExchangeRequestsPage.jsx"
+    ]
+  },
+  {
+    "text": "Settings",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/layouts/DriverLayout.jsx"
+    ]
+  },
+  {
+    "text": "Share your experience to help us improve service quality across pharmacies, order flow, and customer support.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx"
+    ]
+  },
+  {
+    "text": "Shifa",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/layout/DashboardSidebar.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/layout/Footer.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/layout/Navbar.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/LoginPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/RegisterPage.jsx"
+    ]
+  },
+  {
+    "text": "Shifa Central Pharmacy",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/data/pharmacies.js"
+    ]
+  },
+  {
+    "text": "Shifa connects customers with verified pharmacies, transparent cosmetics reward programs, and dependable delivery operations to make healthcare access simpler every day.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx"
+    ]
+  },
+  {
+    "text": "shipment groups.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Orders/index.jsx"
+    ]
+  },
+  {
+    "text": "Showing",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Medicines/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Pharmacies/Details.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Pharmacies/index.jsx"
+    ]
+  },
+  {
+    "text": "Simple journey from search to doorstep.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx"
+    ]
+  },
+  {
+    "text": "Skin Care",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/data/categories.js"
+    ]
+  },
+  {
+    "text": "Skin Repair Cream",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/data/medicines.js"
+    ]
+  },
+  {
+    "text": "Smart Healthcare, Delivered Fast",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/ui/HeroSection.jsx"
+    ]
+  },
+  {
+    "text": "Smart healthcare, delivered fast.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/LoginPage.jsx"
+    ]
+  },
+  {
+    "text": "Sort",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Medicines/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Pharmacies/Details.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Pharmacies/index.jsx"
+    ]
+  },
+  {
+    "text": "Start Delivering",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/ActiveDeliveriesPage.jsx"
+    ]
+  },
+  {
+    "text": "Start Delivery",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/OrdersPage.jsx"
+    ]
+  },
+  {
+    "text": "Start Picking Up",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/ActiveDeliveriesPage.jsx"
+    ]
+  },
+  {
+    "text": "Start Pickup",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/OrdersPage.jsx"
+    ]
+  },
+  {
+    "text": "status",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/DeliveryMissionsPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/ExchangeRequestsPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/PharmaciesPage.jsx"
+    ]
+  },
+  {
+    "text": "Status",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/DeliveryMissionsPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/ExchangeRequestsPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/MedicinesPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/PaymentsPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/PharmaciesPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/UsersPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/HistoryPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/CouponCampaignsPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/OrdersPage.jsx"
+    ]
+  },
+  {
+    "text": "Step",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx"
+    ]
+  },
+  {
+    "text": "Stock",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/MedicinesPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Medicines/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Pharmacies/Details.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/MedicinesPage.jsx"
+    ]
+  },
+  {
+    "text": "Stock quantity",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/pharmacy/MedicineFormModal.jsx"
+    ]
+  },
+  {
+    "text": "Stock:",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Cart/index.jsx"
+    ]
+  },
+  {
+    "text": "Street, building, etc.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/RegisterPage.jsx"
+    ]
+  },
+  {
+    "text": "Street, building, floor, nearby landmark",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Checkout/index.jsx"
+    ]
+  },
+  {
+    "text": "Subject",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx"
+    ]
+  },
+  {
+    "text": "Submit a listing",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx"
+    ]
+  },
+  {
+    "text": "Submit Listing",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/MyCommunityMedicines/index.jsx"
+    ]
+  },
+  {
+    "text": "Submit unused medicines for same-area pharmacy review.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/ui/HomeRewardCampaignsSection.jsx"
+    ]
+  },
+  {
+    "text": "Subtotal",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Cart/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Checkout/index.jsx"
+    ]
+  },
+  {
+    "text": "Successful Deliveries",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/ui/HeroSection.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/ui/StatisticsSection.jsx"
+    ]
+  },
+  {
+    "text": "Suggestion",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx"
+    ]
+  },
+  {
+    "text": "Summary",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Cart/index.jsx"
+    ]
+  },
+  {
+    "text": "Support issue",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx"
+    ]
+  },
+  {
+    "text": "Support Team",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx"
+    ]
+  },
+  {
+    "text": "support@shifa.app",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/layout/Footer.jsx"
+    ]
+  },
+  {
+    "text": "Suwayda",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/RegisterPage.jsx"
+    ]
+  },
+  {
+    "text": "System Alerts",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/ReportsPage.jsx"
+    ]
+  },
+  {
+    "text": "Talk with certified healthcare experts.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/data/services.js"
+    ]
+  },
+  {
+    "text": "Tartous",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/RegisterPage.jsx"
+    ]
+  },
+  {
+    "text": "This medicine belongs to a pharmacy in a different area. Adding it will create a separate delivery group.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/medicines/MedicineCard.jsx"
+    ]
+  },
+  {
+    "text": "This medicine requires a physical prescription and cannot be ordered online.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/layout/GlobalToastListener.jsx"
+    ]
+  },
+  {
+    "text": "Title",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/CouponCampaignsPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/NotificationsPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/CouponCampaignsPage.jsx"
+    ]
+  },
+  {
+    "text": "Today Earnings",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/EarningsPage.jsx"
+    ]
+  },
+  {
+    "text": "Toggle",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/CouponCampaignsPage.jsx"
+    ]
+  },
+  {
+    "text": "Toggle active",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/CouponCampaignsPage.jsx"
+    ]
+  },
+  {
+    "text": "Toggle Active",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/MedicinesPage.jsx"
+    ]
+  },
+  {
+    "text": "Toggle Availability",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/DriversPage.jsx"
+    ]
+  },
+  {
+    "text": "Toggle sidebar",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/layouts/DashboardShell.jsx"
+    ]
+  },
+  {
+    "text": "Toggle status",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/UsersPage.jsx"
+    ]
+  },
+  {
+    "text": "Toggle Used",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/CouponsPage.jsx"
+    ]
+  },
+  {
+    "text": "Token-based authentication (Sanctum)",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/LoginPage.jsx"
+    ]
+  },
+  {
+    "text": "Top Pharmacy Partner",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/AnalyticsPage.jsx"
+    ]
+  },
+  {
+    "text": "Top rated",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Pharmacies/index.jsx"
+    ]
+  },
+  {
+    "text": "Top Selling Medicines",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/DashboardPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/DashboardPage.jsx"
+    ]
+  },
+  {
+    "text": "Total",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/OrdersPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Cart/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Orders/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/OrdersPage.jsx"
+    ]
+  },
+  {
+    "text": "Total Earnings",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/EarningsPage.jsx"
+    ]
+  },
+  {
+    "text": "Total Orders",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/data/statistics.js"
+    ]
+  },
+  {
+    "text": "Total Pharmacies",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx"
+    ]
+  },
+  {
+    "text": "Total Revenue",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/ReportsPage.jsx"
+    ]
+  },
+  {
+    "text": "Total:",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/admin/AdminModulePage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/ActiveDeliveriesPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/OrdersPage.jsx"
+    ]
+  },
+  {
+    "text": "Trusted by millions across Saudi Arabia.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/layout/Footer.jsx"
+    ]
+  },
+  {
+    "text": "Trusted experiences from marketplace users.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Marketplace/index.jsx"
+    ]
+  },
+  {
+    "text": "Trusted Healthcare Marketplace",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/ui/HeroSection.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Marketplace/index.jsx"
+    ]
+  },
+  {
+    "text": "Trusted Pharmacies",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/data/services.js"
+    ]
+  },
+  {
+    "text": "Type",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/ExchangeAdsPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx"
+    ]
+  },
+  {
+    "text": "Type a medicine name...",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Pharmacies/Details.jsx"
+    ]
+  },
+  {
+    "text": "Unit",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Cart/index.jsx"
+    ]
+  },
+  {
+    "text": "Unopened",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx"
+    ]
+  },
+  {
+    "text": "Unread",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Notifications/index.jsx"
+    ]
+  },
+  {
+    "text": "Unread:",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Notifications/index.jsx"
+    ]
+  },
+  {
+    "text": "Updating medicines...",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Pharmacies/Details.jsx"
+    ]
+  },
+  {
+    "text": "Upload your prescription safely.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/data/services.js"
+    ]
+  },
+  {
+    "text": "Usage instructions",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/pharmacy/MedicineFormModal.jsx"
+    ]
+  },
+  {
+    "text": "USD",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Marketplace/index.jsx"
+    ]
+  },
+  {
+    "text": "USD (order total).",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/ui/HomeRewardCampaignsSection.jsx"
+    ]
+  },
+  {
+    "text": "Use your email and password to continue.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/LoginPage.jsx"
+    ]
+  },
+  {
+    "text": "Used",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/CouponsPage.jsx"
+    ]
+  },
+  {
+    "text": "Used Device",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx"
+    ]
+  },
+  {
+    "text": "User",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/NotificationsPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/ReviewsPage.jsx"
+    ]
+  },
+  {
+    "text": "Users",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/layouts/AdminLayout.jsx"
+    ]
+  },
+  {
+    "text": "Users Management",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/UsersPage.jsx"
+    ]
+  },
+  {
+    "text": "Valid until",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/pharmacy/CouponCampaignsPage.jsx"
+    ]
+  },
+  {
+    "text": "Valid Until",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/CouponsPage.jsx"
+    ]
+  },
+  {
+    "text": "Van",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/RegisterPage.jsx"
+    ]
+  },
+  {
+    "text": "Vehicle",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/DriversPage.jsx"
+    ]
+  },
+  {
+    "text": "Vehicle type (optional)",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/RegisterPage.jsx"
+    ]
+  },
+  {
+    "text": "Verification",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/ExchangeAdsPage.jsx"
+    ]
+  },
+  {
+    "text": "Verified",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/ui/HomeRewardCampaignsSection.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Marketplace/index.jsx"
+    ]
+  },
+  {
+    "text": "Verified Pharmacies",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/ui/HeroSection.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/ui/StatisticsSection.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx"
+    ]
+  },
+  {
+    "text": "Verified pharmacy ecosystem",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx"
+    ]
+  },
+  {
+    "text": "View all notifications",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/layout/Navbar.jsx"
+    ]
+  },
+  {
+    "text": "View all pharmacies",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/ui/NearbyPharmaciesSection.jsx"
+    ]
+  },
+  {
+    "text": "View details",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Notifications/index.jsx"
+    ]
+  },
+  {
+    "text": "View Pharmacies",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/ui/HeroSection.jsx"
+    ]
+  },
+  {
+    "text": "View pharmacy",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/ui/HomeRewardCampaignsSection.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Marketplace/index.jsx"
+    ]
+  },
+  {
+    "text": "View Pharmacy",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/medicines/MedicineCard.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/pharmacies/PharmacyCard.jsx"
+    ]
+  },
+  {
+    "text": "Visible",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/admin/ExchangeAdsPage.jsx"
+    ]
+  },
+  {
+    "text": "Vitamin C Boost",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/data/medicines.js"
+    ]
+  },
+  {
+    "text": "Vitamins",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/data/categories.js"
+    ]
+  },
+  {
+    "text": "Waiting for all pharmacies to approve before driver pickup.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/OrdersPage.jsx"
+    ]
+  },
+  {
+    "text": "We will use these details for every delivery group in this checkout.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Checkout/index.jsx"
+    ]
+  },
+  {
+    "text": "Weekly Earnings",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/driver/EarningsPage.jsx"
+    ]
+  },
+  {
+    "text": "Welcome back to Shifa",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/LoginPage.jsx"
+    ]
+  },
+  {
+    "text": "WellCare Pharmacy",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/data/pharmacies.js"
+    ]
+  },
+  {
+    "text": "What customers are saying.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx"
+    ]
+  },
+  {
+    "text": "What Our Customers Say",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/ui/TestimonialsSection.jsx"
+    ]
+  },
+  {
+    "text": "WhatsApp",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx"
+    ]
+  },
+  {
+    "text": "Why customers choose Shifa",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx"
+    ]
+  },
+  {
+    "text": "Workflow timeline",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/MyCommunityMedicines/index.jsx"
+    ]
+  },
+  {
+    "text": "Working hours",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/CommunityMedicines/index.jsx"
+    ]
+  },
+  {
+    "text": "www.shifa.app",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/layout/Footer.jsx"
+    ]
+  },
+  {
+    "text": "x",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Checkout/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Orders/index.jsx"
+    ]
+  },
+  {
+    "text": "You cannot add medicines from another governorate to the current cart.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/components/layout/GlobalToastListener.jsx"
+    ]
+  },
+  {
+    "text": "you@domain.com",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx"
+    ]
+  },
+  {
+    "text": "you@shifa.com",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/LoginPage.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/RegisterPage.jsx"
+    ]
+  },
+  {
+    "text": "Your Cart",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Cart/index.jsx"
+    ]
+  },
+  {
+    "text": "Your cart is empty",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Cart/index.jsx",
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Checkout/index.jsx"
+    ]
+  },
+  {
+    "text": "Your full name",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx"
+    ]
+  },
+  {
+    "text": "Your message has been received. Thank you for helping us improve.",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/About/index.jsx"
+    ]
+  },
+  {
+    "text": "Your name",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/RegisterPage.jsx"
+    ]
+  },
+  {
+    "text": "Your pharmacy name",
+    "files": [
+      "C:/Users/Ryzen Technology/Desktop/versions/‏‏Shifaa - v37/frontend/src/pages/Auth/RegisterPage.jsx"
+    ]
+  }
+]

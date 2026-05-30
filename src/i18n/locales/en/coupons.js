@@ -1,0 +1,31 @@
+const coupons = {
+  "% off eligible cosmetics & care": "% off eligible cosmetics & care",
+  "/ redeemed": "/ redeemed",
+  "Categories:": "Categories:",
+  "Expired": "Expired",
+  "Loading…": "Loading…",
+  "Loyalty": "Loyalty",
+  "Minimum order amount (USD)": "Minimum order amount (USD)",
+  "My coupons": "My coupons",
+  "New campaign": "New campaign",
+  "No active coupons. Shop cosmetics from participating pharmacies to earn rewards.": "No active coupons. Shop cosmetics from participating pharmacies to earn rewards.",
+  "No campaigns yet. Create one above — it will appear here after saving.": "No campaigns yet. Create one above — it will appear here after saving.",
+  "No coupons in this tab yet. Reward coupons appear here after customers meet campaign rules and orders are delivered.": "No coupons in this tab yet. Reward coupons appear here after customers meet campaign rules and orders are delivered.",
+  "No expired unused coupons.": "No expired unused coupons.",
+  "No redemption history yet.": "No redemption history yet.",
+  "Order": "Order",
+  "Pharmacy-issued cosmetics & care discounts. Medicines are never discounted with these codes.": "Pharmacy-issued cosmetics & care discounts. Medicines are never discounted with these codes.",
+  "Redeemed": "Redeemed",
+  "Required delivered orders": "Required delivered orders",
+  "Reward": "Reward",
+  "Reward % (cosmetics & care)": "Reward % (cosmetics & care)",
+  "Rule": "Rule",
+  "Search…": "Search…",
+  "Toggle": "Toggle",
+  "Valid until": "Valid until",
+  "cosmetics, skincare, beauty": "cosmetics, skincare, beauty",
+  "days left": "days left",
+  "orders ≥": "orders ≥"
+};
+
+export default coupons;

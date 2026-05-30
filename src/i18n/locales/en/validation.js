@@ -1,0 +1,15 @@
+export default {
+  emailPasswordRequired: 'Email and password are required.',
+  invalidEmailAddress: 'Please enter a valid email address.',
+  fullNameRequired: 'Full name is required.',
+  emailRequired: 'Email is required.',
+  invalidEmailShort: 'Please enter a valid email.',
+  phoneRequired: 'Phone is required.',
+  passwordRequired: 'Password is required.',
+  passwordMin: 'Password must be at least 6 characters.',
+  passwordMismatch: 'Passwords do not match.',
+  addressRequiredCitizen: 'Address is required for customer accounts.',
+  pharmacyNameRequired: 'Pharmacy name is required.',
+  areaRequiredPharmacy: 'Area is required for pharmacy accounts.',
+  licenseRequired: 'License image is required.',
+}

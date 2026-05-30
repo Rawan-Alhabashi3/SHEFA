@@ -1,0 +1,30 @@
+const donation = {
+  "/ Expires:": "/ Expires:",
+  "Call": "Call",
+  "Governorate": "Governorate",
+  "Handled by": "Handled by",
+  "Images": "Images",
+  "Listing": "Listing",
+  "Listing type": "Listing type",
+  "Medicine Donation Hub": "Medicine Donation Hub",
+  "Medicine name...": "Medicine name...",
+  "Medicine/product name": "Medicine/product name",
+  "My Listings": "My Listings",
+  "No published community medicines": "No published community medicines",
+  "Original package available": "Original package available",
+  "Pharmacies in the same area will review before publication.": "Pharmacies in the same area will review before publication.",
+  "Pharmacist verified": "Pharmacist verified",
+  "Pickup notes": "Pickup notes",
+  "Quantity:": "Quantity:",
+  "Reason": "Reason",
+  "Requested price": "Requested price",
+  "Resale": "Resale",
+  "Reset filters": "Reset filters",
+  "Select area": "Select area",
+  "Submit Listing": "Submit Listing",
+  "Submit a listing": "Submit a listing",
+  "WhatsApp": "WhatsApp",
+  "Working hours": "Working hours"
+};
+
+export default donation;

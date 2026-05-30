@@ -1,0 +1,15 @@
+export default {
+  emailPasswordRequired: 'البريد الإلكتروني وكلمة المرور مطلوبان.',
+  invalidEmailAddress: 'يرجى إدخال عنوان بريد إلكتروني صالح.',
+  fullNameRequired: 'الاسم الكامل مطلوب.',
+  emailRequired: 'البريد الإلكتروني مطلوب.',
+  invalidEmailShort: 'يرجى إدخال بريد إلكتروني صالح.',
+  phoneRequired: 'رقم الهاتف مطلوب.',
+  passwordRequired: 'كلمة المرور مطلوبة.',
+  passwordMin: 'يجب أن تكون كلمة المرور 6 أحرف على الأقل.',
+  passwordMismatch: 'كلمتا المرور غير متطابقتين.',
+  addressRequiredCitizen: 'العنوان مطلوب لحسابات العملاء.',
+  pharmacyNameRequired: 'اسم الصيدلية مطلوب.',
+  areaRequiredPharmacy: 'المنطقة مطلوبة لحسابات الصيدلية.',
+  licenseRequired: 'صورة الرخصة مطلوبة.',
+}

@@ -1,0 +1,203 @@
+const driver = {
+  overview: "نظرة عامة",
+  assignedMissions: "المهام المسندة",
+  activeMissions: "المهام النشطة",
+  missionHistory: "سجل المهام",
+  earnings: "الأرباح",
+  analytics: "التحليلات",
+  notifications: "الإشعارات",
+  profile: "الملف الشخصي",
+  settings: "الإعدادات",
+  dashboard: {
+    title: "لوحة تحكم السائق",
+    description: "سير عمل المهام المباشر، رؤى الأرباح، والأداء التشغيلي.",
+    cards: {
+      totalMissions: "إجمالي المهام",
+      activeMissions: "المهام النشطة",
+      pendingTasks: "المهام المعلقة",
+      completedMissions: "المهام المكتملة",
+      cancelledMissions: "المهام الملغاة",
+      todayEarnings: "أرباح اليوم",
+      monthlyEarnings: "أرباح الشهر",
+      averageRating: "متوسط التقييم",
+      onlineOfflineStatus: "حالة الاتصال",
+    },
+    charts: {
+      earningsLast7Days: "أرباح آخر 7 أيام",
+      missionsPerDay: "المهام لكل يوم",
+      monthlyRevenue: "الإيرادات الشهرية",
+      activeMissions: "المهام النشطة",
+    },
+    status: {
+      online: "متصل",
+      busy: "مشغول",
+      offline: "غير متصل",
+    },
+    errors: {
+      failedToLoad: "فشل تحميل لوحة التحكم.",
+    },
+  },
+  orders: {
+    title: "مهام التوصيل",
+    description: "تصفح المهام المتاحة المجمعة، المطالبة بالمهام الجاهزة، وإدارة عمليات الاستلام من الصيدليات المسندة.",
+    tabs: {
+      available: "متاح",
+      assigned: "مسند",
+      completed: "مكتمل",
+    },
+    mission: {
+      missionNumber: "المهمة #",
+      pharmacies: "الصيدليات:",
+      medicines: "الأدوية:",
+      total: "الإجمالي:",
+      area: "المنطقة:",
+      governorate: "المحافظة:",
+      phone: "الهاتف:",
+      payment: "الدفع:",
+      paymentStatus: "حالة الدفع:",
+      codDue: "الدفع عند الاستلام المستحق:",
+      approved: "مقبول:",
+      address: "العنوان:",
+      notes: "الملاحظات:",
+      waitingForApproval: "بانتظار موافقة جميع الصيدليات قبل استلام السائق.",
+      pickupPharmacies: "صيدليات الاستلام",
+      pickupPoints: "نقاط الاستلام",
+      destination: "الوجهة:",
+      pharmacyNumber: "صيدلية #",
+      noMedicineSummary: "لا يوجد ملخص للأدوية",
+    },
+    steps: {
+      assigned: "مسند",
+      pickedUp: "تم الاستلام",
+      onWay: "في الطريق",
+      delivered: "تم التوصيل",
+    },
+    buttons: {
+      claimAccept: "المطالبة والقبول",
+      acceptMission: "قبول المهمة",
+      startPickup: "بدء الاستلام",
+      startPickingUp: "بدء الاستلام",
+      startDelivery: "بدء التوصيل",
+      startDelivering: "بدء التوصيل",
+      markDelivered: "تحديد كمُسلم",
+      releaseTask: "تحرير المهمة",
+    },
+    emptyStates: {
+      noMissions: "لا توجد",
+      missionsRightNow: "مهام حالياً.",
+    },
+    errors: {
+      failedToLoad: "فشل تحميل مهام التوصيل.",
+      unableToUpdate: "غير قادر على تحديث هذه المهمة.",
+    },
+  },
+  deliveries: {
+    title: "المهام النشطة",
+    description: "كل مهمة يمكن أن تتضمن عمليات استلام متعددة من الصيدليات مع وجهة واحدة.",
+    emptyStates: {
+      noActiveMissions: "لا توجد مهام نشطة حالياً.",
+    },
+    errors: {
+      failedToLoad: "فشل تحميل المهام.",
+      unableToUpdate: "غير قادر على تحديث هذه المهمة.",
+    },
+  },
+  history: {
+    title: "سجل المهام",
+    description: "راجع المهام المكتملة والملغاة.",
+    buttons: {
+      export: "تصدير",
+    },
+    table: {
+      mission: "المهمة",
+      orders: "الطلبات",
+      status: "الحالة",
+      destination: "الوجهة",
+      date: "التاريخ",
+    },
+  },
+  analytics: {
+    title: "تحليلات السائق",
+    description: "رؤى تشغيلية للقبول والإلغاء وسرعة التوصيل وأداء الشركاء.",
+    metrics: {
+      acceptanceRate: "معدل القبول",
+      cancellationRate: "معدل الإلغاء",
+      avgDeliveryTime: "متوسط وقت التوصيل",
+      busiestDay: "أكثر يوم ازدحاماً",
+      topPharmacyPartner: "أفضل شريك صيدلية",
+      completedDeliveriesTrend: "اتجاه التوصيلات المكتملة",
+    },
+  },
+  earnings: {
+    title: "الأرباح",
+    description: "تحليلات شاملة للأرباح واتجاهات إيرادات التوصيل.",
+    cards: {
+      todayEarnings: "أرباح اليوم",
+      weeklyEarnings: "أرباح الأسبوع",
+      monthlyEarnings: "أرباح الشهر",
+      totalEarnings: "إجمالي الأرباح",
+      avgDeliveryFee: "متوسط رسوم التوصيل",
+    },
+    charts: {
+      earningsLast7Days: "أرباح آخر 7 أيام",
+      monthlyRevenue: "الإيرادات الشهرية",
+      deliveriesPerDay: "التوصيلات لكل يوم",
+      deliverySuccessRate: "معدل نجاح التوصيل",
+    },
+  },
+  notifications: {
+    title: "الإشعارات",
+    description: "إسنادات الطلبات وتحديثات التوصيل وأحداث الدفع وتنبيهات الصيدلية والعميل.",
+    buttons: {
+      markRead: "تحديد مقروء",
+    },
+  },
+  profile: {
+    title: "ملف السائق",
+    description: "إدارة معلومات الملف الشخصي وتفاصيل المركبة والحالة وبيانات الدخول.",
+    form: {
+      fullName: "الاسم الكامل",
+      phone: "الهاتف",
+      email: "البريد الإلكتروني",
+      city: "المدينة",
+      vehicleType: "نوع المركبة",
+      vehiclePlateNumber: "رقم لوحة المركبة",
+      availabilityStatus: "حالة التوفر",
+      password: "كلمة المرور",
+      confirmPassword: "تأكيد كلمة المرور",
+    },
+    status: {
+      online: "متصل",
+      busy: "مشغول",
+      offline: "غير متصل",
+    },
+    buttons: {
+      saveProfile: "حفظ الملف الشخصي",
+    },
+    success: {
+      profileUpdated: "تم تحديث الملف الشخصي بنجاح.",
+    },
+  },
+  settings: {
+    title: "إعدادات السائق",
+    description: "التحكم في حالة التوفر وتفضيلات التوصيل.",
+    status: {
+      onlineOfflineStatus: "حالة الاتصال",
+    },
+    buttons: {
+      setOnline: "تعيين متصل",
+      setBusy: "تعيين مشغول",
+      setOffline: "تعيين غير متصل",
+    },
+    success: {
+      availabilityUpdated: "تم تحديث التوفر إلى",
+    },
+  },
+  common: {
+    mission: "المهمة",
+    loading: "جاري التحميل...",
+    no: "لا",
+  },
+};
+
+export default driver;

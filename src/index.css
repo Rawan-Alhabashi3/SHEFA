@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@custom-variant rtl (&:where([dir="rtl"], [dir="rtl"] *));
+@custom-variant ltr (&:where([dir="ltr"], [dir="ltr"] *));
+
+html[dir='rtl'] {
+  text-align: right;
+}
+
+html[dir='ltr'] {
+  text-align: left;
+}
+
+html[dir='rtl'] input,
+html[dir='rtl'] textarea,
+html[dir='rtl'] select {
+  text-align: right;
+}
+
+html[dir='ltr'] input,
+html[dir='ltr'] textarea,
+html[dir='ltr'] select {
+  text-align: left;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --shifa-primary: #1e88e5;
+  --shifa-secondary: #42a5f5;
+  --color-app: #f8fafc;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f1f5f9;
+  --color-border: #e2e8f0;
+  --color-copy: #0f172a;
+  --color-copy-muted: #64748b;
+}
+
+.dark {
+  --color-app: #020617;
+  --color-surface: #0f172a;
+  --color-surface-muted: #1e293b;
+  --color-border: #334155;
+  --color-copy: #f8fafc;
+  --color-copy-muted: #cbd5e1;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 antialiased transition-colors duration-300 dark:bg-slate-950 dark:text-slate-100;
+  font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+@layer components {
+  .theme-surface {
+    @apply border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 shadow-sm dark:shadow-slate-950/20 transition-colors duration-300 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-100;
+  }
+
+  .theme-panel {
+    @apply border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 shadow-sm dark:shadow-slate-950/20 transition-colors duration-300 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-100;
+  }
+
+  .theme-input {
+    @apply border border-slate-200 bg-white text-slate-900 placeholder:text-slate-400 outline-none transition-colors duration-200 focus:border-blue-300 focus:ring-4 focus:ring-blue-100 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:placeholder:text-slate-500 dark:focus:border-blue-500 dark:focus:ring-blue-950;
+  }
+
+  .theme-muted {
+    @apply text-slate-600 dark:text-slate-300;
+  }
+}
