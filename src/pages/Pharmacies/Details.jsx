@@ -8,10 +8,10 @@ import Pagination from '../../components/common/Pagination';
 import MedicineGrid from '../../components/medicines/MedicineGrid';
 import { getMarketplacePharmacy } from '../../services/pharmacyService';
 import { FALLBACK_PHARMACY_IMAGE, resolveImageUrl, withFallback } from '../../utils/image';
+import { getCategoryName } from '../../utils/category';
+
 function PharmacyDetailsPage() {
-  const {
-    t
-  } = useTranslation("pharmacy");
+  const { t, i18n } = useTranslation('pharmacy');
   const {
     id
   } = useParams();
@@ -110,9 +110,15 @@ function PharmacyDetailsPage() {
               <label className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-200">{t('details.filters.category')}</label>
               <select value={category} onChange={handleFilterChange(setCategory)} className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-3 text-sm outline-none transition focus:border-blue-300 dark:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-950">
                 <option value="">{t('details.filters.all')}</option>
-                {categories.map(c => <option key={c} value={c}>
-                    {c}
-                  </option>)}
+                {categories.map(c => {
+                  const value = typeof c === 'string' ? c : c.slug || String(c.id || '');
+                  const label = typeof c === 'string' ? c : getCategoryName(c, i18n.resolvedLanguage || i18n.language);
+                  return (
+                    <option key={value} value={value}>
+                      {label}
+                    </option>
+                  );
+                })}
               </select>
             </div>
             <div>

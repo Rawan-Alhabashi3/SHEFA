@@ -13,27 +13,19 @@ import { contactExchangePharmacy, createExchangeListing, getCommunityMedicines }
 import { listMarketplacePharmacies } from '../../services/pharmacyService';
 import { formatPrice } from '../../utils/format';
 import { FALLBACK_MEDICINE_IMAGE, resolveImageUrl, withFallback } from '../../utils/image';
-import { getStatusBadgeClasses, getStatusLabel } from '../../utils/statusBadge';
+import { getStatusBadgeClasses } from '../../utils/statusBadge';
+import { translateEnum } from '../../utils/translateEnum';
 const categories = ['Medicine', 'Vitamins', 'Medical Supplies', 'Medical Device', 'Skin Care', 'Diabetes Care', 'Mobility Aid'];
-const conditions = [{
-  value: 'unopened',
-  label: 'Unopened'
-}, {
-  value: 'sealed',
-  label: 'Sealed'
-}, {
-  value: 'partially_used',
-  label: 'Partially Used'
-}, {
-  value: 'used_device',
-  label: 'Used Device'
-}, {
-  value: 'excellent',
-  label: 'Excellent'
-}, {
-  value: 'good',
-  label: 'Good'
-}];
+const categoryKeyMap = {
+  'Medicine': 'medicine',
+  'Vitamins': 'vitamins',
+  'Medical Supplies': 'medicalSupplies',
+  'Medical Device': 'medicalDevice',
+  'Skin Care': 'skinCare',
+  'Diabetes Care': 'diabetesCare',
+  'Mobility Aid': 'mobilityAid',
+};
+const conditionValues = ['unopened', 'sealed', 'partially_used', 'used_device', 'excellent', 'good'];
 const inputClass = 'w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-3 text-sm outline-none transition focus:border-blue-300 dark:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-950';
 function getItems(payload) {
   const page = payload?.data || {};
@@ -47,7 +39,8 @@ function ExchangeCard({
 }) {
   const {
     t
-  } = useTranslation("community");
+  } = useTranslation(['community', 'pharmacy']);
+  const conditionLabel = value => translateEnum(t, value, { ns: 'pharmacy', labelKey: 'exchange.statusLabels' });
   const image = item.images?.[0]?.path || item.image;
   const isDonation = item.ad_type === 'donation';
   return <article className="overflow-hidden rounded-2xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm dark:shadow-slate-950/20 transition hover:-translate-y-0.5 hover:shadow-md">
@@ -64,8 +57,8 @@ function ExchangeCard({
         <p className="mt-2 line-clamp-2 text-sm text-slate-600 dark:text-slate-300">{item.description || item.notes}</p>
 
         <div className="mt-4 grid gap-2 text-xs text-slate-500 dark:text-slate-400">
-          <p>{item.category} / {getStatusLabel(item.condition)}</p>
-          <p>{item.governorate} / {item.area}</p>
+          <p>{t(`categories.${categoryKeyMap[item.category] || item.category}`)} / {conditionLabel(item.condition)}</p>
+          <p>{t(`locations.governorates.${item.governorate}`) || item.governorate} / {t(`locations.areas.${item.area}`) || item.area}</p>
           <p>{t('listing.quantity')}{item.quantity}{t('listing.expires')}{item.expiration_date ? new Date(item.expiration_date).toLocaleDateString() : 'N/A'}</p>
           <p>{t('listing.handledBy')}{item.assigned_pharmacy?.pharmacy_name || item.assignedPharmacy?.pharmacy_name || t('listing.verifiedPharmacy')}</p>
         </div>
@@ -155,7 +148,8 @@ function ContactPharmacyModal({
 function CommunityMedicinesPage() {
   const {
     t
-  } = useTranslation("community");
+  } = useTranslation(['community', 'pharmacy']);
+  const conditionLabel = value => translateEnum(t, value, { ns: 'pharmacy', labelKey: 'exchange.statusLabels' });
   const navigate = useNavigate();
   const {
     isAuthenticated,
@@ -334,7 +328,7 @@ function CommunityMedicinesPage() {
           {t('hero.description')}
         </p>
         <div className="mt-6 flex flex-wrap gap-3">
-          <a href="#submit-listing"><Button className="bg-white dark:bg-slate-900 text-blue-700 dark:text-blue-200 hover:bg-blue-50 dark:hover:bg-blue-950/50 dark:bg-blue-950/40">{t('hero.buttons.submitListing')}</Button></a>
+          <a href="#submit-listing"><Button variant="secondary">{t('hero.buttons.submitListing')}</Button></a>
           {isAuthenticated && role === 'citizen' ? <Link to="/my-community-medicines"><Button variant="ghostOnDark">{t('hero.buttons.myListings')}</Button></Link> : null}
         </div>
       </section>
@@ -375,14 +369,14 @@ function CommunityMedicinesPage() {
                 </select>
               </div>
               <div>
-                <label className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-200">Category</label>
+                <label className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-200">{t('filters.category')}</label>
                 <select className={inputClass} value={filters.category} onChange={e => setFilters(p => ({
                 ...p,
                 category: e.target.value,
                 page: 1
               }))}>
                   <option value="">{t('filters.all')}</option>
-                  {categories.map(category => <option key={category} value={category}>{category}</option>)}
+                  {categories.map(category => <option key={category} value={category}>{t(`categories.${categoryKeyMap[category]}`)}</option>)}
                 </select>
               </div>
               <div>
@@ -395,11 +389,11 @@ function CommunityMedicinesPage() {
                 page: 1
               }))}>
                   <option value="">{t('filters.all')}</option>
-                  {GOVERNORATES.map(gov => <option key={gov} value={gov}>{gov}</option>)}
+                  {GOVERNORATES.map(gov => <option key={gov} value={gov}>{t(`locations.governorates.${gov}`)}</option>)}
                 </select>
               </div>
               <div>
-                <label className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-200">Area</label>
+                <label className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-200">{t('filters.area')}</label>
                 <select className={inputClass} value={filters.area} disabled={!filters.governorate} onChange={e => setFilters(p => ({
                 ...p,
                 area: e.target.value,
@@ -407,7 +401,7 @@ function CommunityMedicinesPage() {
                 page: 1
               }))}>
                   <option value="">{t('filters.all')}</option>
-                  {availableFilterAreas.map(area => <option key={area} value={area}>{area}</option>)}
+                  {availableFilterAreas.map(area => <option key={area} value={area}>{t(`locations.areas.${area}`)}</option>)}
                 </select>
               </div>
               <div>
@@ -496,7 +490,7 @@ function CommunityMedicinesPage() {
                 ...p,
                 category: e.target.value
               }))}>
-                  {categories.map(category => <option key={category} value={category}>{category}</option>)}
+                  {categories.map(category => <option key={category} value={category}>{t(`categories.${categoryKeyMap[category]}`)}</option>)}
                 </select>
               </div>
               <div>
@@ -519,7 +513,7 @@ function CommunityMedicinesPage() {
                 ...p,
                 condition: e.target.value
               }))}>
-                  {conditions.map(condition => <option key={condition.value} value={condition.value}>{condition.label}</option>)}
+                  {conditionValues.map(value => <option key={value} value={value}>{conditionLabel(value)}</option>)}
                 </select>
               </div>
               {form.ad_type === 'sale' ? <div>
@@ -536,7 +530,7 @@ function CommunityMedicinesPage() {
                 governorate: e.target.value,
                 area: ''
               }))}>
-                  {GOVERNORATES.map(gov => <option key={gov} value={gov}>{gov}</option>)}
+                  {GOVERNORATES.map(gov => <option key={gov} value={gov}>{t(`locations.governorates.${gov}`)}</option>)}
                 </select>
               </div>
               <div>
@@ -546,7 +540,7 @@ function CommunityMedicinesPage() {
                 area: e.target.value
               }))}>
                   <option value="">{t('form.selectArea')}</option>
-                  {availableFormAreas.map(area => <option key={area} value={area}>{area}</option>)}
+                  {availableFormAreas.map(area => <option key={area} value={area}>{t(`locations.areas.${area}`)}</option>)}
                 </select>
               </div>
             </div>

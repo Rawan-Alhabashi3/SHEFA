@@ -5,10 +5,12 @@ import Button from '../../components/common/Button';
 import Card from '../../components/common/Card';
 import OrdersStatusBadge from '../../components/pharmacy/OrdersStatusBadge';
 import { acceptOrder, getMyOrders, markOrderReadyForPickup, rejectOrder } from '../../services/pharmacyService';
+import { formatPrice } from '../../utils/format';
+import { translateEnum } from '../../utils/translateEnum';
 function PharmacyOrdersPage() {
   const {
     t
-  } = useTranslation("pharmacy");
+  } = useTranslation(["pharmacy", "common"]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [orders, setOrders] = useState([]);
@@ -84,7 +86,7 @@ function PharmacyOrdersPage() {
               </tr>
             </thead>
             <tbody>
-              {loading ? <tr><td className="py-6 text-slate-500 dark:text-slate-400" colSpan={6}>{t('common.loading') || 'Loading...'}</td></tr> : null}
+              {loading ? <tr><td className="py-6 text-slate-500 dark:text-slate-400" colSpan={6}>{t('loading', { ns: 'common' })}</td></tr> : null}
               {!loading && orders.length === 0 ? <tr><td className="py-6 text-slate-500 dark:text-slate-400" colSpan={6}>{t('orders.emptyStates.noActiveOrders')}</td></tr> : null}
               {!loading && orders.map(o => <tr key={o.id} className="border-t">
                   <td className="py-3 font-medium text-slate-800 dark:text-slate-100">#{o.id}</td>
@@ -93,8 +95,8 @@ function PharmacyOrdersPage() {
                     <p className="text-xs text-slate-500 dark:text-slate-400">{o.user?.phone}</p>
                   </td>
                   <td className="py-3 text-slate-600 dark:text-slate-300">
-                    <p className="text-xs">{o.payment?.payment_method}</p>
-                    <p className="text-xs text-slate-500 dark:text-slate-400">{o.payment?.payment_status}</p>
+                    <p className="text-xs">{translateEnum(t, o.payment?.payment_method, { ns: 'common', labelKey: 'paymentMethods' })}</p>
+                    <p className="text-xs text-slate-500 dark:text-slate-400">{translateEnum(t, o.payment?.payment_status, { ns: 'common', labelKey: 'paymentStatuses' })}</p>
                   </td>
                   <td className="py-3">
                     <div className="flex flex-wrap gap-1.5">
@@ -102,7 +104,7 @@ function PharmacyOrdersPage() {
                       <OrdersStatusBadge status={o.delivery_status || o.delivery_approval_status} />
                     </div>
                   </td>
-                  <td className="py-3 font-semibold text-slate-900 dark:text-slate-100">${Number(o.total_price || 0).toFixed(2)}</td>
+                  <td className="py-3 font-semibold text-slate-900 dark:text-slate-100">{formatPrice(o.total_price || 0)}</td>
                   <td className="py-3">
                     {o.ph_approval_status === 'pending' ? <div className="flex justify-end gap-2">
                         <button className="rounded-xl border border-emerald-200 dark:border-emerald-700/70 px-3 py-2 text-emerald-700 dark:text-emerald-200 hover:bg-emerald-50 dark:bg-emerald-950/40" disabled={actingId === o.id} onClick={() => onAccept(o.id)}>

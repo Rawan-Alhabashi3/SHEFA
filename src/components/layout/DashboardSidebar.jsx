@@ -13,7 +13,7 @@ const PROFILE_PLACEHOLDER_KEYS = {
 }
 
 function DashboardSidebar({ title, links, mobileOpen = false, onClose = () => {}, translationNamespace = 'dashboard' }) {
-  const { t } = useTranslation([translationNamespace, 'dashboard'])
+  const { t } = useTranslation([translationNamespace, 'dashboard', 'common'])
   const navigate = useNavigate()
   const { user, role, logout } = useAuth()
   const translateProfileValue = (value, fallbackKey) => {
@@ -28,7 +28,9 @@ function DashboardSidebar({ title, links, mobileOpen = false, onClose = () => {}
   const pharmacyMeta = translateProfileValue(user?.pharmacy_phone || user?.pharmacy_address, 'user.healthcareDashboard')
   const normalizedRole = String(role || '').trim().toLowerCase()
   const roleLabel =
-    normalizedRole && ['admin', 'pharmacy', 'specialist', 'delivery'].includes(normalizedRole) ? t(`role.${normalizedRole}`, { ns: 'dashboard' }) : t('role.teamMember', { ns: 'dashboard' })
+    normalizedRole && ['admin', 'pharmacy', 'specialist', 'delivery', 'citizen'].includes(normalizedRole)
+      ? t(`roles.${normalizedRole}`, { ns: 'common' })
+      : t('roles.teamMember', { ns: 'common' })
 
   const handleLogout = async () => {
     await logout()
@@ -47,9 +49,9 @@ function DashboardSidebar({ title, links, mobileOpen = false, onClose = () => {}
       <div className="flex h-full flex-col overflow-hidden">
         <div className="border-b border-slate-200 dark:border-slate-700 px-5 py-5 dark:border-slate-800">
           <div className="flex items-start justify-between gap-3">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500 dark:text-slate-400">{t('brandShort', { ns: 'dashboard' })}</p>
-              <p className="mt-1 text-lg font-bold text-blue-600 dark:text-blue-300">{title}</p>
+            <div className="flex items-center gap-2">
+              <img src="/images/logo_shifa.jpg" alt="Shifa Logo" className="h-8 w-auto" />
+              <p className="text-lg font-bold text-blue-600 dark:text-blue-300">{title}</p>
             </div>
             <div className="hidden items-center gap-2 md:flex">
               <LanguageSwitcher compact />

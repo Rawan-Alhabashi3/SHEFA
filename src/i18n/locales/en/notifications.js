@@ -1,10 +1,20 @@
 const notifications = {
-  "Mark all as read": "Mark all as read",
-  "Mark read": "Mark read",
-  "No notifications yet": "No notifications yet",
-  "Order updates, delivery events, pharmacy announcements, and coupon rewards.": "Order updates, delivery events, pharmacy announcements, and coupon rewards.",
-  "Unread:": "Unread:",
-  "View details": "View details"
+  title: "Notifications",
+  subtitle: "Order updates, delivery events, pharmacy announcements, and coupon rewards.",
+  markAllRead: "Mark all as read",
+  markRead: "Mark read",
+  emptyTitle: "No notifications yet",
+  unread: "Unread:",
+  viewDetails: "View details",
+  loadError: "Unable to load notifications right now.",
+  tabs: {
+    all: "All",
+    unread: "Unread",
+    read: "Read",
+  },
+  loading: "Loading notifications...",
+  emptyDescription: "You will see updates here once activity starts on your orders and coupons.",
+  deleteAria: "Delete notification",
 };
 
 export default notifications;

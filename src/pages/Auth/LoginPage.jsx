@@ -71,8 +71,8 @@ function LoginPage() {
               <ArrowLeft size={18} className="text-blue-600 dark:text-blue-300 rtl:rotate-180" />
               {t('backToHome')}
             </Link>
-            <Link to="/" className="text-lg font-extrabold tracking-tight text-blue-600 dark:text-blue-300 transition hover:text-blue-700 dark:text-blue-200">
-              {tc('appName')}
+            <Link to="/" className="flex items-center">
+              <img src="/images/logo_shifa.jpg" alt="Shifa Logo" className="h-20 w-auto" />
             </Link>
           </div>
 

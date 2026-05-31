@@ -258,16 +258,19 @@ const admin = {
   },
   categories: {
     title: "إدارة الفئات",
-    description: "إدارة فئات الأدوية من خلال حقول تصنيف كتالوج الأدوية.",
+    description: "إنشاء وترجمة وتنظيم فئات الأدوية القابلة لإعادة الاستخدام في المنصة.",
     columns: {
       id: "المعرف",
-      medicine: "الدواء",
-      category: "الفئة",
-      categoryLabel: "تسمية الفئة",
-      manufacturer: "الشركة المصنعة",
+      slug: "المعرّف اللاتيني",
+      nameEn: "الاسم (إنجليزي)",
+      nameAr: "الاسم (عربي)",
+      icon: "الأيقونة",
+      color: "اللون",
+      sortOrder: "الترتيب",
+      status: "الحالة",
     },
     actions: {
-      setGeneral: "تعيين عام",
+      toggleActive: "تبديل التفعيل",
     },
   },
   reports: {

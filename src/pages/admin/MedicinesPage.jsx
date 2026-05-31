@@ -1,11 +1,10 @@
-import { useTranslation } from "react-i18next";
-import AdminModulePage from '../../components/admin/AdminModulePage';
-import { formatPrice } from '../../utils/format';
+import { useTranslation } from 'react-i18next'
+import AdminModulePage from '../../components/admin/AdminModulePage'
+import { formatPrice } from '../../utils/format'
+import { getCategoryName } from '../../utils/category'
 
 function AdminMedicinesPage() {
-  const {
-    t
-  } = useTranslation("admin");
+  const { t, i18n } = useTranslation('admin')
   return <AdminModulePage title={t('medicines.title')} description={t('medicines.description')} resource="medicines" columns={[
     {
       key: 'id',
@@ -17,7 +16,8 @@ function AdminMedicinesPage() {
     },
     {
       key: 'category',
-      label: t('medicines.columns.category')
+      label: t('medicines.columns.category'),
+      render: row => getCategoryName(row.category, i18n.resolvedLanguage || i18n.language),
     },
     {
       key: 'price',

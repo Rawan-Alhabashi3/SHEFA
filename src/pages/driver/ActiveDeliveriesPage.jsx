@@ -6,11 +6,12 @@ import DriverStatusBadge from '../../components/driver/DriverStatusBadge';
 import Button from '../../components/common/Button';
 import { acceptMission, completeMission, getDriverMissions, startMissionDelivering, startMissionPickingUp } from '../../services/driverService';
 import { formatPrice } from '../../utils/format';
-const summarizeMedicines = order => (order.order_items || order.orderItems || []).map(item => `${item.medicine?.name || `Medicine #${item.medicine_id}`} x${item.desired_quantity || 1}`).join(', ');
+import { translateEnum } from '../../utils/translateEnum';
 function ActiveDeliveriesPage() {
   const {
     t
-  } = useTranslation("driver");
+  } = useTranslation(['driver', 'common']);
+  const summarizeMedicines = order => (order.order_items || order.orderItems || []).map(item => `${item.medicine?.name || t('orders.mission.medicineFallback', { id: item.medicine_id })} x${item.desired_quantity || 1}`).join(', ');
   const [loading, setLoading] = useState(true);
   const [records, setRecords] = useState([]);
   const [error, setError] = useState('');
@@ -56,8 +57,8 @@ function ActiveDeliveriesPage() {
               <p><span className="font-semibold text-slate-800 dark:text-slate-100">{t('orders.mission.pharmacies')}</span> {item.pharmacy_count ?? (item.orders || []).length}</p>
               <p><span className="font-semibold text-slate-800 dark:text-slate-100">{t('orders.mission.medicines')}</span> {item.medicines_count ?? '-'}</p>
               <p><span className="font-semibold text-slate-800 dark:text-slate-100">{t('orders.mission.total')}</span> {formatPrice(item.total_amount || 0)}</p>
-              <p><span className="font-semibold text-slate-800 dark:text-slate-100">{t('orders.mission.payment')}</span> {item.payment_type || '-'}</p>
-              <p><span className="font-semibold text-slate-800 dark:text-slate-100">{t('orders.mission.paymentStatus')}</span> {item.payment_status || '-'}</p>
+              <p><span className="font-semibold text-slate-800 dark:text-slate-100">{t('orders.mission.payment')}</span> {translateEnum(t, item.payment_type, { ns: 'common', labelKey: 'paymentMethods' })}</p>
+              <p><span className="font-semibold text-slate-800 dark:text-slate-100">{t('orders.mission.paymentStatus')}</span> {translateEnum(t, item.payment_status, { ns: 'common', labelKey: 'paymentStatuses' })}</p>
             </div>
 
             <div className="mt-3 rounded-xl border border-dashed border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 p-3 text-xs text-slate-700 dark:text-slate-200">
@@ -76,7 +77,7 @@ function ActiveDeliveriesPage() {
             </div>
 
             <div className="mt-3 grid grid-cols-4 gap-2 text-xs">
-              {[['Assigned', ['accepted', 'picking_up', 'delivering', 'delivered'].includes(item.status)], ['Picked up', ['picking_up', 'delivering', 'delivered'].includes(item.status)], ['On way', ['delivering', 'delivered'].includes(item.status)], ['Delivered', item.status === 'delivered']].map(([label, done]) => <div key={label} className={`rounded-lg px-2 py-2 text-center font-semibold ${done ? 'bg-blue-600 text-white' : 'bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400'}`}>
+              {[[t('orders.steps.assigned'), ['accepted', 'picking_up', 'delivering', 'delivered'].includes(item.status)], [t('orders.steps.pickedUp'), ['picking_up', 'delivering', 'delivered'].includes(item.status)], [t('orders.steps.onWay'), ['delivering', 'delivered'].includes(item.status)], [t('orders.steps.delivered'), item.status === 'delivered']].map(([label, done]) => <div key={label} className={`rounded-lg px-2 py-2 text-center font-semibold ${done ? 'bg-blue-600 text-white' : 'bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400'}`}>
                   {label}
                 </div>)}
             </div>

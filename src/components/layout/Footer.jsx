@@ -10,7 +10,7 @@ function Footer() {
   return <footer className="mt-16 bg-blue-950 py-12 text-slate-200">
       <Container className="grid gap-8 md:grid-cols-4">
         <div>
-          <h3 className="text-xl font-bold text-white">{t('footer.brand')}</h3>
+          <img src="/images/logo_shifa.jpg" alt="Shifa Logo" className="mb-3 h-20 w-auto" />
           <p className="mt-3 text-sm text-slate-300">{t('footer.tagline')}</p>
         </div>
         <div>

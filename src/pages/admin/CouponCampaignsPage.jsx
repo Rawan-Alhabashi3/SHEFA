@@ -28,8 +28,10 @@ function AdminCouponCampaignsPage() {
     {
       key: 'is_active',
       label: t('couponCampaigns.columns.active'),
-      render: row => row.is_active ? t('coupons.statuses.approved') : t('coupons.statuses.pending'),
-      badge: true
+      badge: true,
+      badgeLabelKey: 'campaignStatuses',
+      badgeNs: 'common',
+      badgeValue: row => (row.is_active ? 'active' : 'inactive'),
     }
   ]} editableFields={[
     {

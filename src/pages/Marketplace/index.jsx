@@ -141,7 +141,7 @@ function MarketplacePage() {
             setPage(1);
           }} className="w-full rounded-2xl border border-white/20 bg-white dark:bg-slate-900/95 px-4 py-2.5 text-sm text-slate-700 dark:text-slate-200 outline-none">
               <option value="">{t('hero.filters.allGovernorates')}</option>
-              {GOVERNORATES.map(g => <option key={g} value={g}>{g}</option>)}
+              {GOVERNORATES.map(g => <option key={g} value={g}>{t(`locations.governorates.${g}`)}</option>)}
             </select>
           </div>
           <div>
@@ -151,7 +151,7 @@ function MarketplacePage() {
             setPage(1);
           }} className="w-full rounded-2xl border border-white/20 bg-white px-4 py-2.5 text-sm text-slate-700 outline-none disabled:cursor-not-allowed disabled:bg-slate-200 dark:bg-slate-900/95 dark:text-slate-200 dark:disabled:bg-slate-700">
               <option value="">{governorate ? t('hero.filters.allAreas') : t('hero.filters.selectGovernorateFirst')}</option>
-              {availableAreas.map(a => <option key={a} value={a}>{a}</option>)}
+              {availableAreas.map(a => <option key={a} value={a}>{t(`locations.areas.${a}`)}</option>)}
             </select>
           </div>
           <div className="flex items-end gap-2">

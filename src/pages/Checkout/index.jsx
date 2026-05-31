@@ -317,7 +317,7 @@ function CheckoutPage() {
               }))}>
                   <option value="">{t('selectGovernorate')}</option>
                   {GOVERNORATES.map(gov => <option key={gov} value={gov}>
-                      {ta(`cities.${gov}`)}
+                      {t(`locations.governorates.${gov}`) || gov}
                     </option>)}
                 </select>
               </div>
@@ -329,7 +329,7 @@ function CheckoutPage() {
               }))}>
                     <option value="">{t('selectArea')}</option>
                     {availableAreas.map(area => <option key={area} value={area}>
-                        {area}
+                        {t(`locations.areas.${area}`) || area}
                       </option>)}
                   </select> : <input className={inputClass} value={form.area} onChange={e => setForm(p => ({
                 ...p,

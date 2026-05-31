@@ -9,11 +9,13 @@ import { formatPrice } from '../../utils/format';
 import { FALLBACK_MEDICINE_IMAGE, resolveImageUrl, withFallback } from '../../utils/image';
 import Button from '../common/Button';
 import Modal from '../common/Modal';
+import { getCategoryName } from '../../utils/category';
 function MedicineCard({
   medicine
 }) {
   const {
-    t
+    t,
+    i18n
   } = useTranslation("medicines");
   const {
     isAuthenticated,
@@ -105,8 +107,8 @@ function MedicineCard({
 
       <div className="p-4">
         <h3 className="font-semibold">{medicine?.name || 'Untitled medicine'}</h3>
-        {medicine?.category_label ? <p className="mt-1 inline-flex rounded-full bg-slate-100 dark:bg-slate-800 px-2.5 py-0.5 text-[11px] font-semibold text-slate-700 dark:text-slate-200">
-            {medicine.category_label}
+        {medicine?.category ? <p className="mt-1 inline-flex rounded-full bg-slate-100 dark:bg-slate-800 px-2.5 py-0.5 text-[11px] font-semibold text-slate-700 dark:text-slate-200">
+            {getCategoryName(medicine.category, i18n.resolvedLanguage || i18n.language)}
           </p> : null}
         <p className="mt-1 line-clamp-2 text-sm text-slate-500 dark:text-slate-400">{medicine?.description || '-'}</p>
         <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
@@ -127,16 +129,16 @@ function MedicineCard({
         {isPrescriptionOnly ? <div className="mt-3 rounded-2xl border border-amber-200 dark:border-amber-700/70 bg-amber-50 dark:bg-amber-950/40 px-3 py-2">
             <div className="flex items-center gap-2 text-amber-800">
               <Lock size={14} />
-              <p className="text-xs font-bold uppercase tracking-wide">{t("Prescription Required")}</p>
+              <p className="text-xs font-bold uppercase tracking-wide">{t("prescriptionRequired")}</p>
             </div>
-            <p className="mt-1 text-xs text-amber-700 dark:text-amber-200">Available in pharmacy only. Requires physical prescription.</p>
+            <p className="mt-1 text-xs text-amber-700 dark:text-amber-200">{t("prescriptionRequiredMessage")}</p>
           </div> : null}
 
-        {!inStock ? <p className="mt-3 text-xs font-semibold text-rose-600">Out of stock</p> : Number.isFinite(stock) && stock <= 5 ? <p className="mt-3 text-xs font-semibold text-amber-700 dark:text-amber-200">{t("Low stock:")}{stock}{t("left")}</p> : <p className="mt-3 text-xs font-semibold text-emerald-700 dark:text-emerald-200">In stock</p>}
+        {!inStock ? <p className="mt-3 text-xs font-semibold text-rose-600">{t("outOfStock")}</p> : Number.isFinite(stock) && stock <= 5 ? <p className="mt-3 text-xs font-semibold text-amber-700 dark:text-amber-200">{t("lowStock")}{stock}{t("left")}</p> : <p className="mt-3 text-xs font-semibold text-emerald-700 dark:text-emerald-200">{t("inStock")}</p>}
 
         {isPrescriptionOnly ? <Link to={medicine?.pharmacy_id ? `/pharmacies/${medicine.pharmacy_id}` : '/pharmacies'} className="mt-2 flex w-full items-center justify-center gap-2 rounded-full border border-amber-200 dark:border-amber-700/70 bg-amber-50 dark:bg-amber-950/40 px-5 py-2.5 text-sm font-semibold text-amber-800 transition hover:bg-amber-100">
-            <MapPin size={15} />{t("View Pharmacy")}</Link> : <Button className="mt-2 w-full" disabled={!inStock || !canAddMore} onClick={addMedicineToCart}>
-            {!inStock ? 'Out of Stock' : !canAddMore ? 'Max quantity reached' : justAdded ? 'Added' : 'Add to Cart'}
+            <MapPin size={15} />{t("viewPharmacy")}</Link> : <Button className="mt-2 w-full" disabled={!inStock || !canAddMore} onClick={addMedicineToCart}>
+            {!inStock ? t("outOfStock") : !canAddMore ? t("maxQuantityReached") : justAdded ? t("added") : t("addToCart")}
           </Button>}
       </div>
 

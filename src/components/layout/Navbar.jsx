@@ -143,7 +143,9 @@ function Navbar() {
   return (
     <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/95 backdrop-blur transition-colors duration-300 dark:border-slate-800 dark:bg-slate-950/90">
       <Container className="flex h-16 items-center justify-between">
-        <Link to="/" className="text-xl font-extrabold text-blue-600 dark:text-blue-300">{t('brand')}</Link>
+        <Link to="/" className="flex items-center h-full">
+          <img src="/images/logo_shifa.jpg" alt="Shifa Logo" className="h-full w-auto" />
+        </Link>
         <nav className="hidden gap-6 md:flex">
           {NAV_LINKS.map((l) => (
             <NavLink key={l.to} to={l.to} className={({ isActive }) => `text-sm font-medium transition ${isActive ? 'text-blue-600 dark:text-blue-300' : 'text-slate-600 hover:text-blue-600 dark:text-slate-300 dark:hover:text-blue-300'}`}>

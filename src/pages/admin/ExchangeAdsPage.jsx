@@ -12,10 +12,24 @@ function AdminExchangeAdsPage() {
       columns={[
         { key: 'id', label: t('exchangeAds.columns.id') },
         { key: 'medicine_name', label: t('exchangeAds.columns.medicine') },
-        { key: 'ad_type', label: t('exchangeAds.columns.type'), badge: true },
+        { key: 'ad_type', label: t('exchangeAds.columns.type'), badge: true, badgeLabelKey: 'adTypes', badgeNs: 'common' },
         { key: 'price', label: t('exchangeAds.columns.price'), render: (row) => formatPrice(row.price || 0) },
-        { key: 'security_check_status', label: t('exchangeAds.columns.verification'), render: (row) => (row.security_check_status ? t('exchangeAds.statuses.approved') : t('exchangeAds.statuses.pending')), badge: true },
-        { key: 'is_showing', label: t('exchangeAds.columns.visible'), render: (row) => (row.is_showing ? t('exchangeAds.statuses.active') : t('exchangeAds.statuses.suspended')), badge: true },
+        {
+          key: 'security_check_status',
+          label: t('exchangeAds.columns.verification'),
+          badge: true,
+          badgeLabelKey: 'statusLabels',
+          badgeNs: 'common',
+          badgeValue: row => (row.security_check_status ? 'approved' : 'pending'),
+        },
+        {
+          key: 'is_showing',
+          label: t('exchangeAds.columns.visible'),
+          badge: true,
+          badgeLabelKey: 'accountStatuses',
+          badgeNs: 'common',
+          badgeValue: row => (row.is_showing ? 'active' : 'suspended'),
+        },
       ]}
       editableFields={[
         { name: 'security_check_status', label: t('exchangeAds.actions.approve'), nextValue: () => 1 },

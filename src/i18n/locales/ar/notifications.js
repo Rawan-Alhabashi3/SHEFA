@@ -1,10 +1,20 @@
 const notifications = {
-  "Mark all as read": "تحديد الكل كمقروء",
-  "Mark read": "تحديد مقروء",
-  "No notifications yet": "لا توجد إشعارات بعد",
-  "Order updates, delivery events, pharmacy announcements, and coupon rewards.": "تحديثات الطلبات وأحداث التوصيل وإعلانات الصيدليات ومكافآت القسائم.",
-  "Unread:": ":",
-  "View details": "عرض التفاصيل"
+  title: "الإشعارات",
+  subtitle: "تحديثات الطلبات وأحداث التوصيل وإعلانات الصيدليات ومكافآت القسائم.",
+  markAllRead: "تحديد الكل كمقروء",
+  markRead: "تحديد مقروء",
+  emptyTitle: "لا توجد إشعارات بعد",
+  unread: "غير مقروء:",
+  viewDetails: "عرض التفاصيل",
+  loadError: "تعذر تحميل الإشعارات حالياً.",
+  tabs: {
+    all: "الكل",
+    unread: "غير مقروء",
+    read: "مقروء",
+  },
+  loading: "جاري تحميل الإشعارات...",
+  emptyDescription: "ستظهر التحديثات هنا عند نشاط الطلبات والقسائم.",
+  deleteAria: "حذف الإشعار",
 };
 
 export default notifications;

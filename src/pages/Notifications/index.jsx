@@ -42,7 +42,7 @@ function NotificationsPage() {
         total: Number(paginator?.total || 0)
       });
     } catch (err) {
-      setError(err?.response?.data?.message || 'Unable to load notifications right now.');
+      setError(err?.response?.data?.message || t('loadError'));
       setItems([]);
     } finally {
       setLoading(false);
@@ -92,22 +92,22 @@ function NotificationsPage() {
   };
   const tabs = useMemo(() => [{
     key: 'all',
-    label: 'All'
+    label: t('tabs.all')
   }, {
     key: 'unread',
-    label: 'Unread'
+    label: t('tabs.unread')
   }, {
     key: 'read',
-    label: 'Read'
-  }], []);
+    label: t('tabs.read')
+  }], [t]);
   return <Container className="py-10">
       <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
         <div>
-          <h1 className="text-2xl font-extrabold text-slate-900 dark:text-slate-100">Notifications</h1>
-          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">{t("Order updates, delivery events, pharmacy announcements, and coupon rewards.")}</p>
+          <h1 className="text-2xl font-extrabold text-slate-900 dark:text-slate-100">{t('title')}</h1>
+          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">{t('subtitle')}</p>
         </div>
         <button type="button" onClick={onMarkAllRead} disabled={unreadCount <= 0 || actionLoading} className="inline-flex items-center gap-2 rounded-full border border-blue-200 dark:border-blue-700/70 bg-blue-50 dark:bg-blue-950/40 px-4 py-2 text-sm font-semibold text-blue-700 dark:text-blue-200 transition hover:bg-blue-100 dark:hover:bg-blue-950 dark:bg-blue-950 disabled:cursor-not-allowed disabled:opacity-60">
-          <CheckCheck size={15} />{t("Mark all as read")}</button>
+          <CheckCheck size={15} />{t('markAllRead')}</button>
       </div>
 
       <div className="mb-4 flex flex-wrap items-center gap-2">
@@ -119,7 +119,7 @@ function NotificationsPage() {
           </button>)}
       </div>
 
-      {loading ? <div className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 text-sm text-slate-600 dark:text-slate-300">Loading notifications...</div> : error ? <div className="rounded-2xl border border-rose-100 bg-rose-50 dark:bg-rose-950/40 p-6 text-sm font-medium text-rose-700 dark:text-rose-200">{error}</div> : items.length === 0 ? <EmptyState title={t("No notifications yet")} description="You will see updates here once activity starts on your orders and coupons." /> : <div className="space-y-3">
+      {loading ? <div className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 text-sm text-slate-600 dark:text-slate-300">{t('loading')}</div> : error ? <div className="rounded-2xl border border-rose-100 bg-rose-50 dark:bg-rose-950/40 p-6 text-sm font-medium text-rose-700 dark:text-rose-200">{error}</div> : items.length === 0 ? <EmptyState title={t('emptyTitle')} description={t('emptyDescription')} /> : <div className="space-y-3">
           {items.map(item => <article key={item.id} className={`rounded-2xl border bg-white dark:bg-slate-900 p-4 shadow-sm dark:shadow-slate-950/20 transition ${item.is_read ? 'border-slate-200 dark:border-slate-700' : 'border-blue-200 dark:border-blue-700/70 ring-1 ring-blue-100 dark:ring-blue-950'}`}>
               <div className="flex items-start justify-between gap-3">
                 <div className="min-w-0">
@@ -129,11 +129,11 @@ function NotificationsPage() {
                     <span className="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-0.5 font-semibold">{item.type || 'notification'}</span>
                     <span>{new Date(item.created_at).toLocaleString()}</span>
                   </div>
-                  {item.action_url ? <Link to={item.action_url} className="mt-2 inline-flex text-xs font-semibold text-blue-600 dark:text-blue-300 hover:text-blue-700 dark:text-blue-200">{t("View details")}</Link> : null}
+                  {item.action_url ? <Link to={item.action_url} className="mt-2 inline-flex text-xs font-semibold text-blue-600 dark:text-blue-300 hover:text-blue-700 dark:text-blue-200">{t('viewDetails')}</Link> : null}
                 </div>
                 <div className="flex shrink-0 items-center gap-2">
-                  {!item.is_read ? <button type="button" onClick={() => onMarkRead(item.id)} className="rounded-lg bg-blue-50 dark:bg-blue-950/40 px-2.5 py-1 text-xs font-semibold text-blue-700 dark:text-blue-200 hover:bg-blue-100 dark:hover:bg-blue-950 dark:bg-blue-950" disabled={actionLoading}>{t("Mark read")}</button> : null}
-                  <button type="button" onClick={() => onDelete(item.id)} className="rounded-lg bg-rose-50 dark:bg-rose-950/40 p-2 text-rose-700 dark:text-rose-200 hover:bg-rose-100" disabled={actionLoading} aria-label="Delete notification">
+                  {!item.is_read ? <button type="button" onClick={() => onMarkRead(item.id)} className="rounded-lg bg-blue-50 dark:bg-blue-950/40 px-2.5 py-1 text-xs font-semibold text-blue-700 dark:text-blue-200 hover:bg-blue-100 dark:hover:bg-blue-950 dark:bg-blue-950" disabled={actionLoading}>{t('markRead')}</button> : null}
+                  <button type="button" onClick={() => onDelete(item.id)} className="rounded-lg bg-rose-50 dark:bg-rose-950/40 p-2 text-rose-700 dark:text-rose-200 hover:bg-rose-100" disabled={actionLoading} aria-label={t('deleteAria')}>
                     <Trash2 size={14} />
                   </button>
                 </div>
@@ -144,7 +144,7 @@ function NotificationsPage() {
       {meta.last_page > 1 ? <Pagination currentPage={meta.current_page} totalPages={meta.last_page} onChange={setPage} /> : null}
 
       <div className="mt-4 inline-flex items-center gap-2 rounded-full bg-white dark:bg-slate-900 px-3 py-1 text-xs font-semibold text-slate-600 dark:text-slate-300">
-        <Bell size={14} />{t("Unread:")}{unreadCount}
+        <Bell size={14} />{t('unread')} {unreadCount}
       </div>
     </Container>;
 }

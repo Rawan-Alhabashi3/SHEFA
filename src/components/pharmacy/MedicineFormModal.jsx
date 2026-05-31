@@ -1,13 +1,14 @@
-import { useTranslation } from "react-i18next";
-import { useEffect, useMemo, useState } from 'react';
-import Button from '../common/Button';
-import Modal from '../common/Modal';
+import { useTranslation } from 'react-i18next'
+import { useEffect, useMemo, useState } from 'react'
+import Button from '../common/Button'
+import Modal from '../common/Modal'
+import { listCategories } from '../../services/categoryService'
+
 const emptyForm = {
   name: '',
   scientific_name: '',
   price: '',
-  category: 'medicine',
-  category_label: '',
+  category_id: '',
   manufacturer: '',
   dosage: '',
   quantity_available: '',
@@ -15,66 +16,68 @@ const emptyForm = {
   requires_prescription: false,
   description: '',
   usage_instructions: '',
-  image: null
-};
+  image: null,
+}
+
 const formatDateValue = value => {
-  if (!value) return '';
-  return String(value).slice(0, 10);
-};
+  if (!value) return ''
+  return String(value).slice(0, 10)
+}
+
 const extractValidation = (error, t) => {
-  const data = error?.response?.data;
-  const errors = data?.errors || (typeof data?.message === 'object' ? data.message : {});
-  const first = Object.values(errors || {})?.[0]?.[0];
+  const data = error?.response?.data
+  const errors = data?.errors || (typeof data?.message === 'object' ? data.message : {})
+  const first = Object.values(errors || {})?.[0]?.[0]
   return {
     summary: typeof data?.message === 'string' ? data.message : first || error?.message || t('medicines.modal.errors.unableToSave'),
-    fields: errors || {}
-  };
-};
-function FormSection({
-  title,
-  children,
-  className = ''
-}) {
-  return <section className={`rounded-2xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900/70 p-3 ${className}`}>
+    fields: errors || {},
+  }
+}
+
+function FormSection({ title, children, className = '' }) {
+  return (
+    <section className={`rounded-2xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900/70 p-3 ${className}`}>
       <h4 className="mb-3 text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">{title}</h4>
       {children}
-    </section>;
+    </section>
+  )
 }
-function Field({
-  label,
-  error,
-  children,
-  className = ''
-}) {
-  return <div className={className}>
+
+function Field({ label, error, children, className = '' }) {
+  return (
+    <div className={className}>
       <label className="mb-1 block text-xs font-semibold text-slate-600 dark:text-slate-300">{label}</label>
       {children}
       {error}
-    </div>;
+    </div>
+  )
 }
-function MedicineFormModal({
-  open,
-  mode,
-  initialValue,
-  onClose,
-  onSubmit
-}) {
-  const {
-    t
-  } = useTranslation("pharmacy");
-  const [form, setForm] = useState(emptyForm);
-  const [saving, setSaving] = useState(false);
-  const [error, setError] = useState('');
-  const [fieldErrors, setFieldErrors] = useState({});
+
+function MedicineFormModal({ open, mode, initialValue, onClose, onSubmit }) {
+  const { t, i18n } = useTranslation(['pharmacy', 'common'])
+  const [form, setForm] = useState(emptyForm)
+  const [categories, setCategories] = useState([])
+  const [saving, setSaving] = useState(false)
+  const [error, setError] = useState('')
+  const [fieldErrors, setFieldErrors] = useState({})
+
   useEffect(() => {
-    if (!open) return;
+    if (!open) return
+
+    listCategories({ activeOnly: true })
+      .then(items => setCategories(Array.isArray(items) ? items : []))
+      .catch(() => setCategories([]))
+  }, [open])
+
+  useEffect(() => {
+    if (!open) return
+
     if (initialValue) {
       setForm({
         name: initialValue.name || '',
         scientific_name: initialValue.scientific_name || '',
         price: String(initialValue.price ?? ''),
-        category: initialValue.category || 'medicine',
-        category_label: initialValue.category_label || '',
+        category_id: String(initialValue.category_id || initialValue.category?.id || ''),
         manufacturer: initialValue.manufacturer || '',
         dosage: initialValue.dosage || '',
         quantity_available: String(initialValue.quantity_available ?? ''),
@@ -82,60 +85,78 @@ function MedicineFormModal({
         requires_prescription: Boolean(initialValue.requires_prescription),
         description: initialValue.description || '',
         usage_instructions: initialValue.usage_instructions || '',
-        image: null
-      });
+        image: null,
+      })
     } else {
-      setForm(emptyForm);
+      setForm(emptyForm)
     }
-    setSaving(false);
-    setError('');
-    setFieldErrors({});
-  }, [open, initialValue]);
-  const title = useMemo(() => mode === 'edit' ? t('medicines.modal.editMedicine') : t('medicines.addMedicine'), [mode, t]);
-  const inputClass = name => `h-10 w-full rounded-xl border bg-white dark:bg-slate-950 px-3 text-sm outline-none transition focus:border-blue-300 dark:focus:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-950 ${fieldErrors[name] ? 'border-rose-300 bg-rose-50 dark:bg-rose-950/40' : 'border-slate-200 dark:border-slate-700'}`;
-  const textareaClass = name => `w-full rounded-xl border bg-white dark:bg-slate-950 px-3 py-2 text-sm outline-none transition focus:border-blue-300 dark:focus:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-950 ${fieldErrors[name] ? 'border-rose-300 bg-rose-50 dark:bg-rose-950/40' : 'border-slate-200 dark:border-slate-700'}`;
-  const fieldError = name => fieldErrors[name]?.[0] ? <p className="mt-1 text-xs font-medium text-rose-600">{fieldErrors[name][0]}</p> : null;
+
+    setSaving(false)
+    setError('')
+    setFieldErrors({})
+  }, [open, initialValue])
+
+  const title = useMemo(() => (mode === 'edit' ? t('medicines.modal.editMedicine') : t('medicines.addMedicine')), [mode, t])
+  const inputClass = name =>
+    `h-10 w-full rounded-xl border bg-white dark:bg-slate-950 px-3 text-sm outline-none transition focus:border-blue-300 dark:focus:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-950 ${
+      fieldErrors[name] ? 'border-rose-300 bg-rose-50 dark:bg-rose-950/40' : 'border-slate-200 dark:border-slate-700'
+    }`
+  const textareaClass = name =>
+    `w-full rounded-xl border bg-white dark:bg-slate-950 px-3 py-2 text-sm outline-none transition focus:border-blue-300 dark:focus:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-950 ${
+      fieldErrors[name] ? 'border-rose-300 bg-rose-50 dark:bg-rose-950/40' : 'border-slate-200 dark:border-slate-700'
+    }`
+  const fieldError = name => (fieldErrors[name]?.[0] ? <p className="mt-1 text-xs font-medium text-rose-600">{fieldErrors[name][0]}</p> : null)
+
+  const categoryLabel = category => {
+    const lang = i18n.resolvedLanguage || i18n.language
+    return lang?.startsWith('ar') ? category.name_ar || category.name_en : category.name_en || category.name_ar
+  }
+
   const setField = (name, value) => {
-    setForm(prev => ({
-      ...prev,
-      [name]: value
-    }));
+    setForm(prev => ({ ...prev, [name]: value }))
     if (fieldErrors[name]) {
-      setFieldErrors(prev => ({
-        ...prev,
-        [name]: undefined
-      }));
+      setFieldErrors(prev => ({ ...prev, [name]: undefined }))
     }
-  };
+  }
+
   const handleSubmit = async () => {
-    const localErrors = {};
-    if (!form.name.trim()) localErrors.name = [t('medicines.modal.validation.nameRequired')];
-    if (form.price === '' || Number.isNaN(Number(form.price))) localErrors.price = [t('medicines.modal.validation.priceNumeric')];
-    if (Number(form.price) < 0) localErrors.price = [t('medicines.modal.validation.priceNonNegative')];
-    if (form.quantity_available === '' || !Number.isInteger(Number(form.quantity_available))) localErrors.quantity_available = [t('medicines.modal.validation.stockWholeNumber')];
-    if (Number(form.quantity_available) < 0) localErrors.quantity_available = [t('medicines.modal.validation.stockNonNegative')];
-    if (!form.expiration_date) localErrors.expiration_date = [t('medicines.modal.validation.expirationRequired')];
+    const localErrors = {}
+    if (!form.name.trim()) localErrors.name = [t('medicines.modal.validation.nameRequired')]
+    if (!form.category_id) localErrors.category_id = [t('medicines.modal.validation.categoryRequired')]
+    if (form.price === '' || Number.isNaN(Number(form.price))) localErrors.price = [t('medicines.modal.validation.priceNumeric')]
+    if (Number(form.price) < 0) localErrors.price = [t('medicines.modal.validation.priceNonNegative')]
+    if (form.quantity_available === '' || !Number.isInteger(Number(form.quantity_available))) {
+      localErrors.quantity_available = [t('medicines.modal.validation.stockWholeNumber')]
+    }
+    if (Number(form.quantity_available) < 0) localErrors.quantity_available = [t('medicines.modal.validation.stockNonNegative')]
+    if (!form.expiration_date) localErrors.expiration_date = [t('medicines.modal.validation.expirationRequired')]
+
     if (Object.keys(localErrors).length) {
-      setFieldErrors(localErrors);
-      setError(t('medicines.modal.validation.correctFields'));
-      return;
+      setFieldErrors(localErrors)
+      setError(t('medicines.modal.validation.correctFields'))
+      return
     }
-    setSaving(true);
-    setError('');
-    setFieldErrors({});
+
+    setSaving(true)
+    setError('')
+    setFieldErrors({})
+
     try {
-      await onSubmit(form);
-      onClose();
+      await onSubmit(form)
+      onClose()
     } catch (e) {
-      const validation = extractValidation(e, t);
-      setError(validation.summary);
-      setFieldErrors(validation.fields);
+      const validation = extractValidation(e, t)
+      setError(validation.summary)
+      setFieldErrors(validation.fields)
     } finally {
-      setSaving(false);
+      setSaving(false)
     }
-  };
-  if (!open) return null;
-  return <Modal title={title} onClose={onClose} className="min-w-5xl max-h-[92vh] p-0 overflow-hidden" bodyClassName="flex max-h-[calc(92vh-4rem)] flex-col">
+  }
+
+  if (!open) return null
+
+  return (
+    <Modal title={title} onClose={onClose} className="min-w-5xl max-h-[92vh] p-0 overflow-hidden" bodyClassName="flex max-h-[calc(92vh-4rem)] flex-col">
       <div className="flex-1 overflow-y-auto bg-slate-50/70 dark:bg-slate-950/30 p-4">
         <div className="grid gap-3 xl:grid-cols-2">
           <FormSection title={t('medicines.modal.sections.basicInformation')}>
@@ -146,14 +167,15 @@ function MedicineFormModal({
               <Field label={t('medicines.modal.form.genericName')} error={fieldError('scientific_name')}>
                 <input className={inputClass('scientific_name')} value={form.scientific_name} onChange={e => setField('scientific_name', e.target.value)} />
               </Field>
-              <Field label={t('medicines.modal.form.category')} error={fieldError('category')}>
-                <select className={inputClass('category')} value={form.category} onChange={e => setField('category', e.target.value)}>
-                  <option value="medicine">{t('medicines.category.medicine')}</option>
-                  <option value="cosmetic">{t('medicines.category.cosmetic')}</option>
+              <Field label={t('medicines.modal.form.category')} error={fieldError('category_id')} className="md:col-span-2">
+                <select className={inputClass('category_id')} value={form.category_id} onChange={e => setField('category_id', e.target.value)}>
+                  <option value="">{t('medicines.modal.form.selectCategory')}</option>
+                  {categories.map(category => (
+                    <option key={category.id} value={category.id}>
+                      {categoryLabel(category)}
+                    </option>
+                  ))}
                 </select>
-              </Field>
-              <Field label={t('medicines.modal.form.categoryLabel')} error={fieldError('category_label')}>
-                <input className={inputClass('category_label')} value={form.category_label} onChange={e => setField('category_label', e.target.value)} placeholder={t('medicines.categoryLabelPlaceholder')} />
               </Field>
             </div>
           </FormSection>
@@ -180,49 +202,44 @@ function MedicineFormModal({
               <Field label={t('medicines.modal.form.expirationDate')} error={fieldError('expiration_date')}>
                 <input type="date" className={inputClass('expiration_date')} value={form.expiration_date} onChange={e => setField('expiration_date', e.target.value)} />
               </Field>
-              <div className="flex min-h-[4.25rem] items-end">
-                <label className="flex h-10 w-full items-center gap-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 px-3 text-sm font-medium text-slate-700 dark:text-slate-200">
-                  <input type="checkbox" className="h-4 w-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500" checked={form.requires_prescription} onChange={e => setField('requires_prescription', e.target.checked)} />
-                  {t('medicines.modal.form.prescriptionRequired')}
-                </label>
-              </div>
-              <div className="md:col-span-2">
-                {fieldError('requires_prescription')}
-              </div>
+              <Field label={t('medicines.modal.form.prescriptionRequired')} error={fieldError('requires_prescription')}>
+                <select className={inputClass('requires_prescription')} value={form.requires_prescription ? '1' : '0'} onChange={e => setField('requires_prescription', e.target.value === '1')}>
+                  <option value="0">{t('medicines.no')}</option>
+                  <option value="1">{t('medicines.yes')}</option>
+                </select>
+              </Field>
             </div>
           </FormSection>
 
-          <FormSection title={t('medicines.modal.sections.media')}>
-            <div className="rounded-xl border border-dashed border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 px-3 py-3">
-              <label className="mb-2 block text-xs font-semibold text-slate-600 dark:text-slate-300">{t('medicines.modal.form.image')}</label>
-              <div className="flex flex-wrap items-center gap-3">
-                <input id="medicine-image-upload" type="file" accept="image/png,image/jpeg,image/webp" className="sr-only" onChange={e => setField('image', e.target.files?.[0] || null)} />
-                <label htmlFor="medicine-image-upload" className="inline-flex cursor-pointer items-center justify-center rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-2 text-sm font-semibold text-slate-700 dark:text-slate-200 transition hover:bg-slate-50 dark:hover:bg-slate-800">
-                  {t('medicines.modal.buttons.chooseImage')}
-                </label>
-                <span className="min-w-0 truncate text-sm text-slate-500 dark:text-slate-400">{form.image?.name || t('medicines.modal.form.noImageSelected')}</span>
-              </div>
-              {fieldError('image')}
-            </div>
-          </FormSection>
-
-          <FormSection title={t('medicines.modal.sections.details')} className="xl:col-span-2">
-            <div className="grid gap-3 lg:grid-cols-2">
+          <FormSection title={t('medicines.modal.sections.additionalDetails')} className="xl:col-span-2">
+            <div className="grid gap-3">
               <Field label={t('medicines.modal.form.description')} error={fieldError('description')}>
-                <textarea className={textareaClass('description')} rows={3} value={form.description} onChange={e => setField('description', e.target.value)} />
+                <textarea rows={3} className={textareaClass('description')} value={form.description} onChange={e => setField('description', e.target.value)} />
               </Field>
               <Field label={t('medicines.modal.form.usageInstructions')} error={fieldError('usage_instructions')}>
-                <textarea className={textareaClass('usage_instructions')} rows={3} value={form.usage_instructions} onChange={e => setField('usage_instructions', e.target.value)} />
+                <textarea rows={3} className={textareaClass('usage_instructions')} value={form.usage_instructions} onChange={e => setField('usage_instructions', e.target.value)} />
+              </Field>
+              <Field label={t('medicines.modal.form.image')} error={fieldError('image')}>
+                <input type="file" accept="image/png,image/jpeg,image/webp" className={inputClass('image')} onChange={e => setField('image', e.target.files?.[0] || null)} />
               </Field>
             </div>
           </FormSection>
         </div>
       </div>
-      {error ? <p className="mx-4 mt-3 rounded-xl bg-rose-50 dark:bg-rose-950/40 px-3 py-2 text-sm text-rose-700 dark:text-rose-200">{error}</p> : null}
-      <div className="sticky bottom-0 flex justify-end gap-2 border-t border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 p-4">
-        <Button variant="secondary" onClick={onClose}>{t('medicines.modal.buttons.cancel')}</Button>
-        <Button onClick={handleSubmit} disabled={saving}>{saving ? t('medicines.modal.buttons.saving') : t('medicines.modal.buttons.save')}</Button>
+
+      <div className="border-t border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 p-4">
+        {error ? <p className="mb-3 rounded-xl bg-rose-50 dark:bg-rose-950/40 px-3 py-2 text-sm text-rose-700 dark:text-rose-200">{error}</p> : null}
+        <div className="flex justify-end gap-2">
+          <Button variant="secondary" onClick={onClose}>
+            {t('medicines.modal.buttons.cancel')}
+          </Button>
+          <Button onClick={handleSubmit} disabled={saving}>
+            {saving ? t('medicines.modal.buttons.saving') : t('medicines.modal.buttons.saveMedicine')}
+          </Button>
+        </div>
       </div>
-    </Modal>;
+    </Modal>
+  )
 }
-export default MedicineFormModal;
+
+export default MedicineFormModal

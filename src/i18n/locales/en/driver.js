@@ -20,6 +20,7 @@ const driver = {
       todayEarnings: "Today Earnings",
       monthlyEarnings: "Monthly Earnings",
       averageRating: "Average Rating",
+      averageRatingHint: "Customer satisfaction score",
       onlineOfflineStatus: "Online / Offline Status",
     },
     charts: {
@@ -65,6 +66,7 @@ const driver = {
       destination: "Destination:",
       pharmacyNumber: "Pharmacy #",
       noMedicineSummary: "No medicine summary",
+      medicineFallback: "Medicine #{{id}}",
     },
     steps: {
       assigned: "Assigned",

@@ -21,7 +21,9 @@ function AdminUsersPage() {
     {
       key: 'role',
       label: t('users.columns.role'),
-      badge: true
+      badge: true,
+      badgeLabelKey: 'roles',
+      badgeNs: 'common',
     },
     {
       key: 'governorate',
@@ -30,8 +32,10 @@ function AdminUsersPage() {
     {
       key: 'account_status',
       label: t('users.columns.status'),
-      render: row => row.account_status ? t('users.statuses.active') : t('users.statuses.suspended'),
-      badge: true
+      badge: true,
+      badgeLabelKey: 'accountStatuses',
+      badgeNs: 'common',
+      badgeValue: row => (row.account_status ? 'active' : 'suspended'),
     }
   ]} quickCreate={{
     username: '',

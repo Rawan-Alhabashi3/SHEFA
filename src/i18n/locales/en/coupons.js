@@ -25,7 +25,16 @@ const coupons = {
   "Valid until": "Valid until",
   "cosmetics, skincare, beauty": "cosmetics, skincare, beauty",
   "days left": "days left",
-  "orders ≥": "orders ≥"
+  "orders ≥": "orders ≥",
+  tabs: {
+    active: "Active",
+    expired: "Expired",
+    history: "History",
+  },
+  table: {
+    code: "Code",
+    pharmacy: "Pharmacy",
+  },
 };
 
 export default coupons;

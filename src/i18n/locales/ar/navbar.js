@@ -34,7 +34,14 @@ const navbar = {
 
   "unableLoadNotifications": "تعذر تحميل الإشعارات",
 
-  "viewAllNotifications": "عرض كل الإشعارات"
+  "viewAllNotifications": "عرض كل الإشعارات",
+  "nav": {
+    "home": "الرئيسية",
+    "pharmacies": "الصيدليات",
+    "marketplace": "السوق",
+    "donateResell": "التبرع وإعادة البيع",
+    "about": "من نحن",
+  },
 };
 
 export default navbar;

@@ -38,7 +38,7 @@ function DriverNotificationsPage() {
                 <p className="mt-2 text-[11px] text-slate-400 dark:text-slate-500">{new Date(item.created_at).toLocaleString()}</p>
               </div>
               <div className="flex items-center gap-2">
-                <DriverStatusBadge status={item.is_read ? 'online' : 'pending'} />
+                <DriverStatusBadge status={item.is_read ? 'read' : 'unread'} labelKey="notificationRead" />
                 {!item.is_read ? <button type="button" onClick={() => onRead(item.id)} className="rounded-lg bg-blue-50 dark:bg-blue-950/40 px-2 py-1 text-xs font-semibold text-blue-700 dark:text-blue-200">{t('notifications.buttons.markRead')}</button> : null}
               </div>
             </div>

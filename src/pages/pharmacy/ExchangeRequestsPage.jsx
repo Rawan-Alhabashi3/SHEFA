@@ -7,7 +7,8 @@ import EmptyState from '../../components/common/EmptyState';
 import { approvePharmacyExchangeRequest, completeExchangeListing, getPharmacyExchangeRequests, markExchangeReceived, rejectPharmacyExchangeRequest } from '../../services/exchangeService';
 import { formatPrice } from '../../utils/format';
 import { FALLBACK_MEDICINE_IMAGE, resolveImageUrl } from '../../utils/image';
-import { getStatusBadgeClasses, getStatusLabel } from '../../utils/statusBadge';
+import { getStatusBadgeClasses } from '../../utils/statusBadge';
+import { translateEnum } from '../../utils/translateEnum';
 function requestListing(request) {
   return request.exchange_ad || request.exchangeAd || {};
 }
@@ -30,8 +31,9 @@ function PharmacyExchangeRequestsPage() {
   const [error, setError] = useState('');
   const [actingId, setActingId] = useState(null);
   const [notes, setNotes] = useState({});
-  const statusLabel = value => t(`exchange.statusLabels.${value}`, {
-    defaultValue: getStatusLabel(value)
+  const statusLabel = value => translateEnum(t, value, {
+    ns: 'pharmacy',
+    labelKey: 'exchange.statusLabels',
   });
   const load = async () => {
     setLoading(true);
@@ -112,7 +114,7 @@ function PharmacyExchangeRequestsPage() {
                     <div className="flex flex-wrap items-center gap-2">
                       <span className={getStatusBadgeClasses(listing.listing_status)}>{statusLabel(listing.listing_status)}</span>
                       <span className={getStatusBadgeClasses(request.status)}>{statusLabel(request.status)}</span>
-                      <span className={listing.ad_type === 'donation' ? getStatusBadgeClasses('paid') : getStatusBadgeClasses('pending')}>
+                      <span className={listing.ad_type === 'donation' ? getStatusBadgeClasses('paid') : getStatusBadgeClasses('resale')}>
                         {listing.ad_type === 'donation' ? t('exchange.labels.donation') : t('exchange.labels.resale')}
                       </span>
                     </div>

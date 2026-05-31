@@ -8,11 +8,13 @@ import Container from '../../components/common/Container';
 import EmptyState from '../../components/common/EmptyState';
 import { deletePendingExchangeListing, getMyExchangeListings } from '../../services/exchangeService';
 import { formatPrice } from '../../utils/format';
-import { getStatusBadgeClasses, getStatusLabel } from '../../utils/statusBadge';
+import { getStatusBadgeClasses } from '../../utils/statusBadge';
+import { translateEnum } from '../../utils/translateEnum';
 function MyCommunityMedicinesPage() {
   const {
     t
-  } = useTranslation("community");
+  } = useTranslation(['community', 'pharmacy']);
+  const listingStatusLabel = value => translateEnum(t, value, { ns: 'pharmacy', labelKey: 'exchange.statusLabels' });
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
@@ -86,7 +88,7 @@ function MyCommunityMedicinesPage() {
               <div className="flex flex-wrap items-start justify-between gap-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
-                    <span className={getStatusBadgeClasses(item.listing_status)}>{getStatusLabel(item.listing_status)}</span>
+                    <span className={getStatusBadgeClasses(item.listing_status)}>{listingStatusLabel(item.listing_status)}</span>
                     <span className={item.ad_type === 'donation' ? getStatusBadgeClasses('paid') : getStatusBadgeClasses('pending')}>
                       {item.ad_type === 'donation' ? t('myListings.donation') : t('myListings.resale')}
                     </span>
@@ -120,7 +122,7 @@ function MyCommunityMedicinesPage() {
                   <PackageCheck size={16} className="text-blue-600 dark:text-blue-300" />{t('myListings.workflowTimeline')}</div>
                 <div className="mt-3 grid gap-2 md:grid-cols-4">
                   {(item.status_history || item.statusHistory || []).slice(0, 4).map(history => <div key={history.id} className="rounded-xl bg-slate-50 dark:bg-slate-950 p-2">
-                      <p className="text-xs font-semibold text-slate-900 dark:text-slate-100">{getStatusLabel(history.status)}</p>
+                      <p className="text-xs font-semibold text-slate-900 dark:text-slate-100">{listingStatusLabel(history.status)}</p>
                       <p className="mt-1 line-clamp-2 text-[11px] text-slate-500 dark:text-slate-400">{history.notes}</p>
                     </div>)}
                 </div>

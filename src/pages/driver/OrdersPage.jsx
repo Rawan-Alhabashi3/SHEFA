@@ -5,12 +5,8 @@ import Button from '../../components/common/Button';
 import Loader from '../../components/common/Loader';
 import DriverStatusBadge from '../../components/driver/DriverStatusBadge';
 import { formatPrice } from '../../utils/format';
+import { translateEnum } from '../../utils/translateEnum';
 import { acceptMission, completeMission, getAvailableMissions, getDriverMissions, rejectMission, startMissionDelivering, startMissionPickingUp } from '../../services/driverService';
-const summarizeMedicines = order => (order.order_items || order.orderItems || []).map(item => {
-  const name = item.medicine?.name || `Medicine #${item.medicine_id}`;
-  const qty = item.desired_quantity || 1;
-  return `${name} x${qty}`;
-}).join(', ');
 const paymentAmountDue = mission => {
   const orders = mission.orders || [];
   const cashTotal = orders.filter(order => (order.payment?.payment_method || mission.payment_type) === 'cash' && (order.payment?.payment_status || mission.payment_status) !== 'paid').reduce((sum, order) => sum + Number(order.payment?.amount ?? order.total_price ?? 0), 0);
@@ -19,7 +15,12 @@ const paymentAmountDue = mission => {
 function DriverOrdersPage() {
   const {
     t
-  } = useTranslation("driver");
+  } = useTranslation(['driver', 'common']);
+  const summarizeMedicines = order => (order.order_items || order.orderItems || []).map(item => {
+    const name = item.medicine?.name || t('orders.mission.medicineFallback', { id: item.medicine_id });
+    const qty = item.desired_quantity || 1;
+    return `${name} x${qty}`;
+  }).join(', ');
   const [loading, setLoading] = useState(true);
   const [tab, setTab] = useState('available');
   const [missions, setMissions] = useState([]);
@@ -82,8 +83,8 @@ function DriverOrdersPage() {
                 <p><span className="font-semibold text-slate-800 dark:text-slate-100">{t('orders.mission.area')}</span> {mission.area || '-'}</p>
                 <p><span className="font-semibold text-slate-800 dark:text-slate-100">{t('orders.mission.governorate')}</span> {mission.governorate}</p>
                 <p><span className="font-semibold text-slate-800 dark:text-slate-100">{t('orders.mission.phone')}</span> {mission.phone_number}</p>
-                <p><span className="font-semibold text-slate-800 dark:text-slate-100">{t('orders.mission.payment')}</span> {mission.payment_type || '-'}</p>
-                <p><span className="font-semibold text-slate-800 dark:text-slate-100">{t('orders.mission.paymentStatus')}</span> {mission.payment_status || '-'}</p>
+                <p><span className="font-semibold text-slate-800 dark:text-slate-100">{t('orders.mission.payment')}</span> {translateEnum(t, mission.payment_type, { ns: 'common', labelKey: 'paymentMethods' })}</p>
+                <p><span className="font-semibold text-slate-800 dark:text-slate-100">{t('orders.mission.paymentStatus')}</span> {translateEnum(t, mission.payment_status, { ns: 'common', labelKey: 'paymentStatuses' })}</p>
                 <p><span className="font-semibold text-slate-800 dark:text-slate-100">{t('orders.mission.codDue')}</span> {formatPrice(paymentAmountDue(mission))}</p>
                 <p><span className="font-semibold text-slate-800 dark:text-slate-100">{t('orders.mission.approved')}</span> {mission.approval_summary?.approved ?? 0}/{mission.approval_summary?.total ?? (mission.orders || []).length}</p>
                 <p className="sm:col-span-2"><span className="font-semibold text-slate-800 dark:text-slate-100">{t('orders.mission.address')}</span> {mission.address}</p>
@@ -106,7 +107,7 @@ function DriverOrdersPage() {
               </div>
 
               <div className="mt-3 grid grid-cols-4 gap-2 text-xs">
-                {[['Assigned', ['accepted', 'picking_up', 'delivering', 'delivered'].includes(mission.status)], ['Picked up', ['picking_up', 'delivering', 'delivered'].includes(mission.status)], ['On way', ['delivering', 'delivered'].includes(mission.status)], ['Delivered', mission.status === 'delivered']].map(([label, done]) => <div key={label} className={`rounded-lg px-2 py-2 text-center font-semibold ${done ? 'bg-blue-600 text-white' : 'bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400'}`}>
+                {[[t('orders.steps.assigned'), ['accepted', 'picking_up', 'delivering', 'delivered'].includes(mission.status)], [t('orders.steps.pickedUp'), ['picking_up', 'delivering', 'delivered'].includes(mission.status)], [t('orders.steps.onWay'), ['delivering', 'delivered'].includes(mission.status)], [t('orders.steps.delivered'), mission.status === 'delivered']].map(([label, done]) => <div key={label} className={`rounded-lg px-2 py-2 text-center font-semibold ${done ? 'bg-blue-600 text-white' : 'bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400'}`}>
                     {label}
                   </div>)}
               </div>

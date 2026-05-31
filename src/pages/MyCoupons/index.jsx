@@ -11,7 +11,7 @@ function CouponCard({
 }) {
   const {
     t
-  } = useTranslation("coupons");
+  } = useTranslation(['coupons', 'common']);
   return <div className={`rounded-2xl border p-4 ${expired ? 'border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-950' : 'border-emerald-200 dark:border-emerald-700/70 bg-emerald-50 dark:bg-emerald-950/40'}`}>
       <div className="flex flex-wrap items-start justify-between gap-2">
         <div>
@@ -30,7 +30,7 @@ function CouponCard({
 export default function MyCouponsPage() {
   const {
     t
-  } = useTranslation("coupons");
+  } = useTranslation(['coupons', 'common']);
   const [active, setActive] = useState([]);
   const [expired, setExpired] = useState([]);
   const [history, setHistory] = useState([]);
@@ -64,15 +64,15 @@ export default function MyCouponsPage() {
       <div className="flex gap-2">
         {[{
         id: 'active',
-        label: 'Active',
+        label: t('tabs.active', { defaultValue: 'Active' }),
         icon: Tag
       }, {
         id: 'expired',
-        label: 'Expired',
+        label: t('tabs.expired', { defaultValue: 'Expired' }),
         icon: Tag
       }, {
         id: 'history',
-        label: 'History',
+        label: t('tabs.history', { defaultValue: 'History' }),
         icon: History
       }].map(({
         id,
@@ -84,15 +84,15 @@ export default function MyCouponsPage() {
       </div>
 
       <Card className="p-6">
-        {loading ? <p className="text-sm text-slate-500 dark:text-slate-400">Loading your coupons…</p> : null}
+        {loading ? <p className="text-sm text-slate-500 dark:text-slate-400">{t('loading', { ns: 'common' })}</p> : null}
         {!loading && tab === 'active' ? active.length === 0 ? <p className="text-sm text-slate-600 dark:text-slate-300">{t("No active coupons. Shop cosmetics from participating pharmacies to earn rewards.")}</p> : <div className="space-y-3">{active.map(row => <CouponCard key={row.id} row={row} expired={false} />)}</div> : null}
         {!loading && tab === 'expired' ? expired.length === 0 ? <p className="text-sm text-slate-600 dark:text-slate-300">{t("No expired unused coupons.")}</p> : <div className="space-y-3">{expired.map(row => <CouponCard key={row.id} row={row} expired />)}</div> : null}
         {!loading && tab === 'history' ? history.length === 0 ? <p className="text-sm text-slate-600 dark:text-slate-300">{t("No redemption history yet.")}</p> : <div className="overflow-x-auto">
               <table className="min-w-full text-start text-sm">
                 <thead>
                   <tr className="border-b text-xs uppercase text-slate-500 dark:text-slate-400">
-                    <th className="py-2 pe-3">Code</th>
-                    <th className="py-2 pe-3">Pharmacy</th>
+                    <th className="py-2 pe-3">{t('table.code', { defaultValue: 'Code' })}</th>
+                    <th className="py-2 pe-3">{t('table.pharmacy', { defaultValue: 'Pharmacy' })}</th>
                     <th className="py-2 pe-3">{t("Order")}</th>
                     <th className="py-2">{t("Redeemed")}</th>
                   </tr>

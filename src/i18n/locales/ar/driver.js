@@ -20,6 +20,7 @@ const driver = {
       todayEarnings: "أرباح اليوم",
       monthlyEarnings: "أرباح الشهر",
       averageRating: "متوسط التقييم",
+      averageRatingHint: "درجة رضا العملاء",
       onlineOfflineStatus: "حالة الاتصال",
     },
     charts: {
@@ -65,6 +66,7 @@ const driver = {
       destination: "الوجهة:",
       pharmacyNumber: "صيدلية #",
       noMedicineSummary: "لا يوجد ملخص للأدوية",
+      medicineFallback: "دواء #{{id}}",
     },
     steps: {
       assigned: "مسند",

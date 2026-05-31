@@ -3,16 +3,17 @@ import { useState } from 'react';
 import Card from '../../components/common/Card';
 import Button from '../../components/common/Button';
 import { updateDriverAvailability } from '../../services/driverService';
+import { translateEnum } from '../../utils/translateEnum';
 function SettingsPage() {
   const {
     t
-  } = useTranslation("driver");
+  } = useTranslation(['driver', 'common']);
   const [notice, setNotice] = useState('');
   const setMode = async mode => {
     await updateDriverAvailability({
       availability_mode: mode
     });
-    setNotice(`${t('settings.success.availabilityUpdated')} ${mode}.`);
+    setNotice(`${t('settings.success.availabilityUpdated')} ${translateEnum(t, mode, { ns: 'common', labelKey: 'statusLabels' })}`);
   };
   return <section className="space-y-4">
       <div>

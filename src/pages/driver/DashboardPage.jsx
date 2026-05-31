@@ -62,7 +62,7 @@ function DriverDashboardPage() {
         <DashboardStatCard icon={XCircle} label={t('dashboard.cards.cancelledMissions')} value={kpis.cancelled_missions ?? kpis.cancelled_deliveries ?? 0} />
         <DashboardStatCard icon={Banknote} label={t('dashboard.cards.todayEarnings')} value={formatPrice(kpis.today_earnings || 0)} className="bg-gradient-to-r from-blue-50 to-cyan-50" />
         <DashboardStatCard icon={TrendingUp} label={t('dashboard.cards.monthlyEarnings')} value={formatPrice(kpis.monthly_earnings || 0)} className="bg-gradient-to-r from-indigo-50 to-blue-50" />
-        <DashboardStatCard icon={UserRoundCheck} label={t('dashboard.cards.averageRating')} value={kpis.average_rating || 0} hint="Customer satisfaction score" />
+        <DashboardStatCard icon={UserRoundCheck} label={t('dashboard.cards.averageRating')} value={kpis.average_rating || 0} hint={t('dashboard.cards.averageRatingHint')} />
         <DashboardStatCard icon={PackageCheck} label={t('dashboard.cards.onlineOfflineStatus')} value={<DriverStatusBadge status={kpis.status || 'offline'} />} />
       </div>
 

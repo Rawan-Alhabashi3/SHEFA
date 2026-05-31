@@ -23,7 +23,7 @@ function PharmacyReviewsPage() {
 
       <Card className="p-5">
         {error ? <p className="mb-3 rounded-xl bg-rose-50 dark:bg-rose-950/40 px-3 py-2 text-sm text-rose-700 dark:text-rose-200">{error}</p> : null}
-        {loading ? <p className="text-sm text-slate-500 dark:text-slate-400">{t('common.loading') || 'Loading...'}</p> : null}
+        {loading ? <p className="text-sm text-slate-500 dark:text-slate-400">{t('loading', { ns: 'common' })}</p> : null}
         {!loading && reviews.length === 0 ? <p className="text-sm text-slate-500 dark:text-slate-400">{t('reviews.emptyStates.noReviewsYet')}</p> : null}
         <div className="space-y-3">
           {reviews.map(r => <div key={r.id} className="rounded-2xl border border-slate-100 dark:border-slate-800 p-4">

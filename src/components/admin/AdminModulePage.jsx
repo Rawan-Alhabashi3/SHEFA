@@ -94,7 +94,7 @@ function AdminModulePage({
             {Object.keys(quickCreate).map(field => <input key={field} value={form[field] ?? ''} onChange={event => setForm(prev => ({
           ...prev,
           [field]: event.target.value
-        }))} placeholder={field} className="h-10 rounded-xl border border-slate-200 dark:border-slate-700 px-3 text-sm outline-none focus:border-blue-300 dark:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-950" />)}
+        }))} placeholder={t(`common.fields.${field}`, { defaultValue: field })} className="h-10 rounded-xl border border-slate-200 dark:border-slate-700 px-3 text-sm outline-none focus:border-blue-300 dark:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-950" />)}
             <Button type="submit" className="!rounded-xl px-4 py-2">{t('common.create')}</Button>
           </form>
         </Card> : null}
@@ -114,9 +114,18 @@ function AdminModulePage({
               <tbody>
                 {rows.map(row => <tr key={row.id} className="border-t border-slate-100 dark:border-slate-800">
                     {columns.map(column => {
-                const value = column.render ? column.render(row) : row[column.key];
+                const rawValue = column.badgeValue ? column.badgeValue(row) : row[column.badgeKey || column.key]
+                const value = column.render ? column.render(row) : row[column.key]
                 return <td key={column.key} className="px-4 py-3 align-top">
-                          {column.badge ? <StatusBadge value={value} /> : value ?? '-'}
+                          {column.badge ? (
+                            <StatusBadge
+                              value={rawValue ?? value}
+                              ns={column.badgeNs || 'common'}
+                              labelKey={column.badgeLabelKey || 'statusLabels'}
+                            />
+                          ) : (
+                            value ?? '-'
+                          )}
                         </td>;
               })}
                     <td className="px-4 py-3">

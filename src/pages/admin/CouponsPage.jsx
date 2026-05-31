@@ -12,7 +12,14 @@ function AdminCouponsPage() {
         { key: 'id', label: t('coupons.columns.id') },
         { key: 'code', label: t('coupons.columns.code') },
         { key: 'discount_percentage', label: t('coupons.columns.discountPercentage') },
-        { key: 'is_used', label: t('coupons.columns.used'), render: (row) => (row.is_used ? t('coupons.statuses.approved') : t('coupons.statuses.pending')), badge: true },
+        {
+          key: 'is_used',
+          label: t('coupons.columns.used'),
+          badge: true,
+          badgeLabelKey: 'couponStatuses',
+          badgeNs: 'common',
+          badgeValue: row => (row.is_used ? 'used' : 'unused'),
+        },
         { key: 'valid_until', label: t('coupons.columns.validUntil') },
       ]}
       editableFields={[

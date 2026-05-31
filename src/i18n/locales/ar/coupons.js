@@ -25,7 +25,16 @@ const coupons = {
   "Valid until": "صالح ",
   "cosmetics, skincare, beauty": "مستحضرات العناية, العناية بالبشرة, الجمال",
   "days left": "أيام متبقية",
-  "orders ≥": "الطلبات ≥"
+  "orders ≥": "الطلبات ≥",
+  tabs: {
+    active: "نشط",
+    expired: "منتهي",
+    history: "السجل",
+  },
+  table: {
+    code: "الرمز",
+    pharmacy: "الصيدلية",
+  },
 };
 
 export default coupons;

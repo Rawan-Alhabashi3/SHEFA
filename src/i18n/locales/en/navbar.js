@@ -18,7 +18,14 @@ const navbar = {
   "open": "open",
   "read": "read",
   "unableLoadNotifications": "unableLoadNotifications",
-  "viewAllNotifications": "viewAllNotifications"
+  "viewAllNotifications": "viewAllNotifications",
+  "nav": {
+    "home": "Home",
+    "pharmacies": "Pharmacies",
+    "marketplace": "Marketplace",
+    "donateResell": "Donate Resell",
+    "about": "About",
+  },
 };
 
 export default navbar;

@@ -135,7 +135,7 @@ function SearchSection() {
     }
 
     navigate(
-      `/medicines?category=${encodeURIComponent(item.name)}`
+      `/medicines?category=${encodeURIComponent(item.slug || item.name)}`
     )
   }
 

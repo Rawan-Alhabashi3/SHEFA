@@ -258,16 +258,19 @@ const admin = {
   },
   categories: {
     title: "Categories Management",
-    description: "Manage medicine categories through the medicines catalog taxonomy fields.",
+    description: "Create, translate, and organize reusable medicine categories for the whole platform.",
     columns: {
       id: "ID",
-      medicine: "Medicine",
-      category: "Category",
-      categoryLabel: "Category Label",
-      manufacturer: "Manufacturer",
+      slug: "Slug",
+      nameEn: "Name (EN)",
+      nameAr: "Name (AR)",
+      icon: "Icon",
+      color: "Color",
+      sortOrder: "Sort",
+      status: "Status",
     },
     actions: {
-      setGeneral: "Set General",
+      toggleActive: "Toggle active",
     },
   },
   reports: {

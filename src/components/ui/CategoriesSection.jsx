@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next'
+import { getCategoryName } from '../../utils/category'
 import {
   Activity,
   Baby,
@@ -28,7 +29,8 @@ function CategoriesSection({
   categories = [],
   loading = false,
 }) {
-  const { t } = useTranslation('home')
+  const { t, i18n } = useTranslation('home')
+  const language = i18n.resolvedLanguage || i18n.language
 
   return (
     <Container className="py-16">
@@ -51,9 +53,9 @@ function CategoriesSection({
 
             return (
               <Link
-                key={category.id || category.name}
+                key={category.id || category.slug}
                 to={`/medicines?category=${encodeURIComponent(
-                  category.name
+                  category.slug || category.name || ''
                 )}`}
                 className="card-lift rounded-xl bg-white p-4 text-center shadow-sm dark:bg-slate-900 dark:shadow-slate-950/20"
               >
@@ -63,7 +65,7 @@ function CategoriesSection({
                 />
 
                 <p className="mt-2 text-sm font-medium">
-                  {category.name}
+                  {getCategoryName(category, language)}
                 </p>
 
                 <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">

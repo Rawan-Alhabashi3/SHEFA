@@ -22,7 +22,7 @@ function AdminReviewsPage() {
     {
       key: 'rate',
       label: t('reviews.columns.rating'),
-      badge: true
+      render: row => row.rate ?? '-',
     },
     {
       key: 'comment',

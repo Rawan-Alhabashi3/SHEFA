@@ -1,4 +1,8 @@
-function DriverStatusBadge({ status }) {
+import { useTranslation } from 'react-i18next'
+import { translateEnum } from '../../utils/translateEnum'
+
+function DriverStatusBadge({ status, labelKey = 'statusLabels' }) {
+  const { t } = useTranslation('common')
   const key = String(status || '').toLowerCase()
   const colors = {
     pending: 'bg-amber-100 text-amber-700 dark:text-amber-200',
@@ -17,11 +21,15 @@ function DriverStatusBadge({ status }) {
     online: 'bg-emerald-100 text-emerald-700 dark:text-emerald-200',
     offline: 'bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200',
     busy: 'bg-orange-100 text-orange-700',
+    read: 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300',
+    unread: 'bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-200',
   }
+
+  const label = translateEnum(t, status, { ns: 'common', labelKey })
 
   return (
     <span className={`inline-flex rounded-full px-2.5 py-1 text-xs font-semibold ${colors[key] || 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200'}`}>
-      {String(status || '-').replaceAll('_', ' ')}
+      {label}
     </span>
   )
 }
