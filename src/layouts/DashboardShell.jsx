@@ -7,7 +7,7 @@ import ThemeToggle from '../components/common/ThemeToggle'
 import LanguageSwitcher from '../components/common/LanguageSwitcher'
 
 function DashboardShell({ title, links, translationNamespace = 'admin' }) {
-  const { t } = useTranslation(translationNamespace)
+  const { t } = useTranslation([translationNamespace, 'dashboard'])
   const [mobileOpen, setMobileOpen] = useState(false)
 
   return (
@@ -19,7 +19,7 @@ function DashboardShell({ title, links, translationNamespace = 'admin' }) {
             type="button"
             onClick={() => setMobileOpen((prev) => !prev)}
             className="rounded-lg border border-slate-200 bg-white p-2 text-slate-700 transition hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800"
-            aria-label={t('common.toggleSidebar')}
+            aria-label={t('shell.toggleSidebar', { ns: 'dashboard' })}
           >
             {mobileOpen ? <X size={18} /> : <Menu size={18} />}
           </button>
@@ -40,7 +40,7 @@ function DashboardShell({ title, links, translationNamespace = 'admin' }) {
           type="button"
           onClick={() => setMobileOpen(false)}
           className="fixed inset-0 z-30 bg-slate-900/40 md:hidden"
-          aria-label={t('common.closeOverlay')}
+          aria-label={t('shell.closeOverlay', { ns: 'dashboard' })}
         />
       ) : null}
     </div>

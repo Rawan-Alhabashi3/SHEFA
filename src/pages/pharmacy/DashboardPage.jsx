@@ -119,7 +119,7 @@ function PharmacyDashboardPage() {
         <DashboardStatCard icon={Boxes} label={t('dashboard.cards.totalMedicines')} value={loading ? '-' : cards.total_medicines ?? 0} />
         <DashboardStatCard icon={Undo2} label={t('dashboard.cards.pendingOrders')} value={loading ? '-' : cards.pending_orders ?? 0} />
         <DashboardStatCard icon={PackageX} label={t('dashboard.cards.outOfStock')} value={loading ? '-' : cards.out_of_stock ?? 0} />
-        <DashboardStatCard icon={Star} label={t('dashboard.cards.averageRating')} value={loading ? '-' : Number(cards.avg_rating || 0).toFixed(1)} hint={`${cards.reviews_count || 0} reviews`} />
+        <DashboardStatCard icon={Star} label={t('dashboard.cards.averageRating')} value={loading ? '-' : Number(cards.avg_rating || 0).toFixed(1)} hint={`${cards.reviews_count || 0} ${t('dashboard.reviews')}`} />
         <DashboardStatCard icon={ClipboardList} label={t('dashboard.cards.completedOrders')} value={loading ? '-' : cards.completed_orders ?? 0} />
       </div>
 
@@ -147,12 +147,12 @@ function PharmacyDashboardPage() {
               fontSize: 12,
               fill: '#64748b'
             }} width={34} />
-              <Tooltip content={<ChartTooltip valueFormatter={value => `${value} orders`} />} />
+              <Tooltip content={<ChartTooltip valueFormatter={value => `${value} ${t('dashboard.orders')}`} />} />
               <Legend iconType="circle" wrapperStyle={{
               fontSize: 12,
               paddingTop: 6
             }} />
-              <Area type="monotone" dataKey="orders" name="Orders" stroke="#2563eb" fill="url(#ordersFill)" strokeWidth={3} activeDot={{
+              <Area type="monotone" dataKey="orders" name={t('dashboard.charts.orders')} stroke="#2563eb" fill="url(#ordersFill)" strokeWidth={3} activeDot={{
               r: 5
             }} isAnimationActive />
             </AreaChart>
@@ -181,7 +181,7 @@ function PharmacyDashboardPage() {
               fontSize: 12,
               paddingTop: 6
             }} />
-              <Line type="monotone" dataKey="revenue" name="Revenue" stroke="#16a34a" strokeWidth={3} dot={{
+              <Line type="monotone" dataKey="revenue" name={t('dashboard.charts.revenue')} stroke="#16a34a" strokeWidth={3} dot={{
               r: 3
             }} activeDot={{
               r: 6
@@ -232,12 +232,12 @@ function PharmacyDashboardPage() {
               fontSize: 12,
               fill: '#334155'
             }} width={126} />
-              <Tooltip content={<ChartTooltip valueFormatter={(value, entry) => entry.dataKey === 'sold' ? `${value} units` : formatPrice(value)} />} />
+              <Tooltip content={<ChartTooltip valueFormatter={(value, entry) => entry.dataKey === 'sold' ? `${value} ${t('dashboard.units')}` : formatPrice(value)} />} />
               <Legend iconType="circle" wrapperStyle={{
               fontSize: 12,
               paddingTop: 6
             }} />
-              <Bar dataKey="sold" name={t('dashboard.charts.unitsSold') || 'Units Sold'} fill="#2563eb" radius={[0, 8, 8, 0]} barSize={18} isAnimationActive />
+              <Bar dataKey="sold" name={t('dashboard.charts.unitsSold')} fill="#2563eb" radius={[0, 8, 8, 0]} barSize={18} isAnimationActive />
             </BarChart>
           </ResponsiveContainer>
         </ChartCard>

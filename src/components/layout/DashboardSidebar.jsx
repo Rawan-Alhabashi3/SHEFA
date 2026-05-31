@@ -5,17 +5,30 @@ import { useAuth } from '../../context/AuthContext'
 import ThemeToggle from '../common/ThemeToggle'
 import LanguageSwitcher from '../common/LanguageSwitcher'
 
+const PROFILE_PLACEHOLDER_KEYS = {
+  'Account User': 'user.accountUser',
+  'Default Pharmacy': 'user.defaultPharmacy',
+  'Healthcare Dashboard': 'user.healthcareDashboard',
+  Pharmacy: 'role.pharmacy',
+}
+
 function DashboardSidebar({ title, links, mobileOpen = false, onClose = () => {}, translationNamespace = 'dashboard' }) {
-  const { t } = useTranslation(translationNamespace)
+  const { t } = useTranslation([translationNamespace, 'dashboard'])
   const navigate = useNavigate()
   const { user, role, logout } = useAuth()
+  const translateProfileValue = (value, fallbackKey) => {
+    const raw = String(value || '').trim()
+    const key = PROFILE_PLACEHOLDER_KEYS[raw] || fallbackKey
+    return key ? t(key, { ns: 'dashboard' }) : raw
+  }
 
-  const displayName = user?.name || user?.full_name || t('user.accountUser')
-  const displayEmail = user?.email || t('user.noEmail')
-  const pharmacyName = user?.pharmacy_name || user?.pharmacy?.name || t('user.defaultPharmacy')
-  const pharmacyMeta = user?.pharmacy_phone || user?.pharmacy_address || t('user.healthcareDashboard')
+  const displayName = translateProfileValue(user?.name || user?.full_name, 'user.accountUser')
+  const displayEmail = user?.email || t('user.noEmail', { ns: 'dashboard' })
+  const pharmacyName = translateProfileValue(user?.pharmacy_name || user?.pharmacy?.name, 'user.defaultPharmacy')
+  const pharmacyMeta = translateProfileValue(user?.pharmacy_phone || user?.pharmacy_address, 'user.healthcareDashboard')
+  const normalizedRole = String(role || '').trim().toLowerCase()
   const roleLabel =
-    role && ['admin', 'pharmacy', 'specialist', 'delivery'].includes(role) ? t(`role.${role}`) : t('role.teamMember')
+    normalizedRole && ['admin', 'pharmacy', 'specialist', 'delivery'].includes(normalizedRole) ? t(`role.${normalizedRole}`, { ns: 'dashboard' }) : t('role.teamMember', { ns: 'dashboard' })
 
   const handleLogout = async () => {
     await logout()
@@ -35,7 +48,7 @@ function DashboardSidebar({ title, links, mobileOpen = false, onClose = () => {}
         <div className="border-b border-slate-200 dark:border-slate-700 px-5 py-5 dark:border-slate-800">
           <div className="flex items-start justify-between gap-3">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500 dark:text-slate-400">{t('brandShort')}</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500 dark:text-slate-400">{t('brandShort', { ns: 'dashboard' })}</p>
               <p className="mt-1 text-lg font-bold text-blue-600 dark:text-blue-300">{title}</p>
             </div>
             <div className="hidden items-center gap-2 md:flex">
@@ -62,7 +75,7 @@ function DashboardSidebar({ title, links, mobileOpen = false, onClose = () => {}
                 }
               >
                 {Icon ? <Icon size={17} className="shrink-0" /> : null}
-                <span className="truncate">{link.labelKey ? t(link.labelKey) : link.label}</span>
+                <span className="truncate">{link.labelKey ? t(link.labelKey, { ns: translationNamespace }) : link.label}</span>
               </NavLink>
             )
           })}
@@ -96,7 +109,7 @@ function DashboardSidebar({ title, links, mobileOpen = false, onClose = () => {}
             className="mt-3 flex w-full items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-sm font-semibold text-slate-700 transition hover:border-rose-200 hover:bg-rose-50 hover:text-rose-700 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:border-rose-500/40 dark:hover:bg-rose-950/40 dark:hover:text-rose-200"
           >
             <LogOut size={16} />
-            {t('logout')}
+            {t('logout', { ns: 'dashboard' })}
           </button>
         </div>
       </div>

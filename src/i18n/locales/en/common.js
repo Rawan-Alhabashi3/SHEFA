@@ -54,10 +54,11 @@ const common = {
   "panels.pharmacy": "panels.pharmacy",
   "saved": "saved",
   "support@shifa.app": "support@shifa.app",
-  "ui.close": "ui.close",
+  "ui.close": "Close",
   "ui.next": "ui.next",
   "ui.previous": "ui.previous",
-  "you@domain.com": "you@domain.com"
+  "you@domain.com": "you@domain.com",
+  "loading": "Loading..."
 };
 
 export default common;

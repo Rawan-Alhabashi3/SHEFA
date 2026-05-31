@@ -144,7 +144,9 @@ const common = {
 
   "ui.previous": "السابق",
 
-  "you@domain.com": "you@domain.com"
+  "you@domain.com": "you@domain.com",
+
+  "loading": "جاري التحميل..."
 };
 
 export default common;

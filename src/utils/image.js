@@ -12,6 +12,7 @@ export function resolveImageUrl(value) {
   if (/^https?:\/\//i.test(raw)) return raw
   if (raw.startsWith('/storage/')) return `${API_ORIGIN}${raw}`
   if (raw.startsWith('storage/')) return `${API_ORIGIN}/${raw}`
+  if (raw.startsWith('exchangeAds/')) return `${API_ORIGIN}/storage/${raw}`
   return raw.replace(/\\/g, '/')
 }
 

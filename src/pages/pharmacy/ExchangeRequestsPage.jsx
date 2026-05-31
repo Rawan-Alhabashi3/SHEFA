@@ -1,14 +1,25 @@
 import { useTranslation } from "react-i18next";
-import { CheckCircle2, Phone, RefreshCw, ShieldCheck, Store, XCircle } from 'lucide-react';
+import { CheckCircle2, MapPin, RefreshCw, ShieldCheck, Store, XCircle } from 'lucide-react';
 import { useEffect, useMemo, useState } from 'react';
 import { toast } from 'sonner';
 import Button from '../../components/common/Button';
 import EmptyState from '../../components/common/EmptyState';
 import { approvePharmacyExchangeRequest, completeExchangeListing, getPharmacyExchangeRequests, markExchangeReceived, rejectPharmacyExchangeRequest } from '../../services/exchangeService';
 import { formatPrice } from '../../utils/format';
+import { FALLBACK_MEDICINE_IMAGE, resolveImageUrl } from '../../utils/image';
 import { getStatusBadgeClasses, getStatusLabel } from '../../utils/statusBadge';
 function requestListing(request) {
   return request.exchange_ad || request.exchangeAd || {};
+}
+function listingImages(listing) {
+  const images = Array.isArray(listing.images) ? listing.images.map(image => image.path || image.url || image.image || image).filter(Boolean) : [];
+  return [...new Set([...images, listing.image].filter(Boolean))];
+}
+function DetailItem({ label, value }) {
+  return <div className="rounded-2xl bg-slate-50 dark:bg-slate-950 p-3">
+      <p className="text-xs font-semibold text-slate-500 dark:text-slate-400">{label}</p>
+      <p className="mt-2 text-sm font-bold text-slate-900 dark:text-slate-100">{value}</p>
+    </div>;
 }
 function PharmacyExchangeRequestsPage() {
   const {
@@ -19,6 +30,9 @@ function PharmacyExchangeRequestsPage() {
   const [error, setError] = useState('');
   const [actingId, setActingId] = useState(null);
   const [notes, setNotes] = useState({});
+  const statusLabel = value => t(`exchange.statusLabels.${value}`, {
+    defaultValue: getStatusLabel(value)
+  });
   const load = async () => {
     setLoading(true);
     setError('');
@@ -63,8 +77,8 @@ function PharmacyExchangeRequestsPage() {
       </div>
 
       <div className="grid gap-4 md:grid-cols-3">
-        {[['Pending review', stats.pending], ['Awaiting drop-off', stats.awaiting], ['Published', stats.published]].map(([label, value]) => <div key={label} className="rounded-2xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 p-5 shadow-sm dark:shadow-slate-950/20">
-            <p className="text-sm text-slate-500 dark:text-slate-400">{label === 'Pending review' ? t('exchange.stats.pendingReview') : label === 'Awaiting drop-off' ? t('exchange.stats.awaitingDropoff') : t('exchange.stats.published')}</p>
+        {[['Pending review', stats.pending, 'pendingReview'], ['Awaiting drop-off', stats.awaiting, 'awaitingDropoff'], ['Published', stats.published, 'published']].map(([label, value, key]) => <div key={label} className="rounded-2xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 p-5 shadow-sm dark:shadow-slate-950/20">
+            <p className="text-sm text-slate-500 dark:text-slate-400">{t(`exchange.stats.${key}`)}</p>
             <p className="mt-2 text-3xl font-extrabold text-slate-900 dark:text-slate-100">{value}</p>
           </div>)}
       </div>
@@ -78,53 +92,67 @@ function PharmacyExchangeRequestsPage() {
         const canApprove = request.status === 'pending' && listing.listing_status === 'pending';
         const canReceive = listing.listing_status === 'awaiting_dropoff';
         const canComplete = listing.listing_status === 'published';
+        const images = listingImages(listing);
+        const mainImage = resolveImageUrl(images[0]) || FALLBACK_MEDICINE_IMAGE;
         return <article key={request.id} className="rounded-2xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 p-5 shadow-sm dark:shadow-slate-950/20">
-                <div className="flex flex-wrap items-start justify-between gap-3">
+                <div className="grid gap-5 lg:grid-cols-[260px_minmax(0,1fr)]">
                   <div>
+                    <img src={mainImage} onError={event => {
+                event.currentTarget.src = FALLBACK_MEDICINE_IMAGE;
+              }} alt={listing.medicine_name || t('exchange.labels.productImage')} className="h-52 w-full rounded-2xl border border-slate-100 dark:border-slate-800 object-cover" />
+                    {images.length > 1 ? <div className="mt-3 grid grid-cols-4 gap-2">
+                        {images.slice(0, 4).map((image, index) => <img key={`${image}-${index}`} src={resolveImageUrl(image) || FALLBACK_MEDICINE_IMAGE} onError={event => {
+                  event.currentTarget.src = FALLBACK_MEDICINE_IMAGE;
+                }} alt={t('exchange.labels.productImage')} className="h-14 w-full rounded-xl border border-slate-100 dark:border-slate-800 object-cover" />)}
+                      </div> : null}
+                  </div>
+                  <div className="min-w-0">
+                    <div className="flex flex-wrap items-start justify-between gap-3">
+                      <div>
                     <div className="flex flex-wrap items-center gap-2">
-                      <span className={getStatusBadgeClasses(listing.listing_status)}>{getStatusLabel(listing.listing_status)}</span>
+                      <span className={getStatusBadgeClasses(listing.listing_status)}>{statusLabel(listing.listing_status)}</span>
+                      <span className={getStatusBadgeClasses(request.status)}>{statusLabel(request.status)}</span>
                       <span className={listing.ad_type === 'donation' ? getStatusBadgeClasses('paid') : getStatusBadgeClasses('pending')}>
-                        {listing.ad_type === 'donation' ? 'Donation' : t('exchange.labels.resale')}
+                        {listing.ad_type === 'donation' ? t('exchange.labels.donation') : t('exchange.labels.resale')}
                       </span>
                     </div>
                     <h2 className="mt-3 text-lg font-bold text-slate-900 dark:text-slate-100">{listing.medicine_name}</h2>
-                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">{listing.category} / {listing.governorate} / {listing.area}</p>
-                  </div>
-                  <div className="text-end">
-                    <p className="text-xs text-slate-500 dark:text-slate-400">{t('exchange.labels.requestedPrice')}</p>
-                    <p className="text-xl font-extrabold text-slate-900 dark:text-slate-100">{listing.ad_type === 'donation' ? t('exchange.labels.free') : formatPrice(listing.price || 0)}</p>
+                    <p className="mt-1 flex flex-wrap items-center gap-1 text-sm text-slate-500 dark:text-slate-400"><MapPin size={14} /> {listing.category || t('exchange.labels.notApplicable')} / {listing.governorate || t('exchange.labels.notApplicable')} / {listing.area || t('exchange.labels.notApplicable')}</p>
+                      </div>
+                      <div className="text-end">
+                        <p className="text-xs text-slate-500 dark:text-slate-400">{t('exchange.labels.requestedPrice')}</p>
+                        <p className="text-xl font-extrabold text-slate-900 dark:text-slate-100">{listing.ad_type === 'donation' ? t('exchange.labels.free') : formatPrice(listing.price || 0)}</p>
+                      </div>
+                    </div>
+
+                    <div className="mt-4 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+                      <DetailItem label={t('exchange.cards.customer')} value={customer.username || t('exchange.labels.customerDefault')} />
+                      <DetailItem label={t('exchange.cards.customerPhone')} value={customer.phone || t('exchange.labels.noPhone')} />
+                      <DetailItem label={t('exchange.cards.condition')} value={statusLabel(listing.condition)} />
+                      <DetailItem label={t('exchange.cards.quantity')} value={listing.quantity || t('exchange.labels.notApplicable')} />
+                      <DetailItem label={t('exchange.cards.expiration')} value={listing.expiration_date ? new Date(listing.expiration_date).toLocaleDateString() : t('exchange.labels.notApplicable')} />
+                      <DetailItem label={t('exchange.cards.originalPackage')} value={listing.original_package_available ? t('exchange.labels.yes') : t('exchange.labels.no')} />
+                      <DetailItem label={t('exchange.cards.createdDate')} value={listing.created_at ? new Date(listing.created_at).toLocaleDateString() : t('exchange.labels.notApplicable')} />
+                      <DetailItem label={t('exchange.cards.securityCheck')} value={listing.security_check_status === null || listing.security_check_status === undefined ? t('exchange.labels.pending') : listing.security_check_status ? t('exchange.labels.passed') : t('exchange.labels.failed')} />
+                    </div>
                   </div>
                 </div>
 
-                <div className="mt-4 grid gap-3 lg:grid-cols-4">
-                  <div className="rounded-2xl bg-slate-50 dark:bg-slate-950 p-3">
-                    <p className="text-xs font-semibold text-slate-500 dark:text-slate-400">{t('exchange.cards.customer')}</p>
-                    <p className="mt-2 text-sm font-bold text-slate-900 dark:text-slate-100">{customer.username || t('exchange.labels.customerDefault')}</p>
-                    <p className="mt-1 flex items-center gap-1 text-xs text-slate-500 dark:text-slate-400"><Phone size={13} /> {customer.phone || t('exchange.labels.noPhone')}</p>
-                  </div>
-                  <div className="rounded-2xl bg-slate-50 dark:bg-slate-950 p-3">
-                    <p className="text-xs font-semibold text-slate-500 dark:text-slate-400">{t('exchange.cards.condition')}</p>
-                    <p className="mt-2 text-sm font-bold text-slate-900 dark:text-slate-100">{getStatusLabel(listing.condition)}</p>
-                  </div>
-                  <div className="rounded-2xl bg-slate-50 dark:bg-slate-950 p-3">
-                    <p className="text-xs font-semibold text-slate-500 dark:text-slate-400">{t('exchange.cards.quantity')}</p>
-                    <p className="mt-2 text-sm font-bold text-slate-900 dark:text-slate-100">{listing.quantity}</p>
-                  </div>
-                  <div className="rounded-2xl bg-slate-50 dark:bg-slate-950 p-3">
-                    <p className="text-xs font-semibold text-slate-500 dark:text-slate-400">{t('exchange.cards.expiration')}</p>
-                    <p className="mt-2 text-sm font-bold text-slate-900 dark:text-slate-100">{listing.expiration_date ? new Date(listing.expiration_date).toLocaleDateString() : t('exchange.labels.notApplicable')}</p>
-                  </div>
-                </div>
-
-                <div className="mt-4 grid gap-3 lg:grid-cols-2">
+                <div className="mt-4 grid gap-3 lg:grid-cols-3">
                   <div className="rounded-2xl border border-slate-100 dark:border-slate-800 p-3">
                     <p className="text-sm font-bold text-slate-900 dark:text-slate-100">{t('exchange.cards.description')}</p>
-                    <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">{listing.description || listing.notes}</p>
+                    <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">{listing.description || t('exchange.labels.notApplicable')}</p>
                   </div>
                   <div className="rounded-2xl border border-slate-100 dark:border-slate-800 p-3">
                     <p className="text-sm font-bold text-slate-900 dark:text-slate-100">{t('exchange.cards.reasonAndPickupNotes')}</p>
                     <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">{listing.reason || t('exchange.labels.noReasonProvided')}</p>
                     <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">{listing.pickup_notes || t('exchange.labels.noPickupNotes')}</p>
+                  </div>
+                  <div className="rounded-2xl border border-slate-100 dark:border-slate-800 p-3">
+                    <p className="text-sm font-bold text-slate-900 dark:text-slate-100">{t('exchange.cards.moderation')}</p>
+                    <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">{t('exchange.cards.listingStatus')}: {statusLabel(listing.listing_status)}</p>
+                    <p className="mt-1 text-sm text-slate-600 dark:text-slate-300">{t('exchange.cards.requestStatus')}: {statusLabel(request.status)}</p>
+                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">{request.pharmacy_notes || listing.notes || listing.rejection_reason || t('exchange.labels.noPharmacyNotes')}</p>
                   </div>
                 </div>
 
@@ -143,7 +171,7 @@ function PharmacyExchangeRequestsPage() {
                       </Button>
                       <button type="button" disabled={actingId === request.id} onClick={() => act(request.id, () => rejectPharmacyExchangeRequest({
                 request_id: request.id,
-                notes: notes[request.id] || 'Rejected by pharmacy review.'
+                notes: notes[request.id] || t('exchange.messages.rejectedByPharmacyReview')
               }), t('exchange.messages.requestRejected'))} className="inline-flex items-center gap-2 rounded-full border border-rose-200 dark:border-rose-700/70 px-5 py-2.5 text-sm font-semibold text-rose-700 dark:text-rose-200 transition hover:bg-rose-50 dark:hover:bg-rose-950/50 dark:bg-rose-950/40 disabled:opacity-60">
                         <XCircle size={16} /> {t('exchange.actions.reject')}
                       </button>
