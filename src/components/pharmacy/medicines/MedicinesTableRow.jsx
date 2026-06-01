@@ -13,12 +13,14 @@ function MedicinesTableRow({ medicine, onEdit, onDelete }) {
     <tr className="border-b border-slate-100 transition-colors hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-900/50">
       <td className="py-4">
         <div className="flex items-center gap-3">
-          <img
-            src={resolveImageUrl(medicine.image) || FALLBACK_MEDICINE_IMAGE}
-            onError={withFallback(FALLBACK_MEDICINE_IMAGE)}
-            alt={medicine.name}
-            className="h-12 w-12 flex-shrink-0 rounded-lg object-cover border border-slate-200 dark:border-slate-700"
-          />
+          <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+            <img
+              src={resolveImageUrl(medicine.image) || FALLBACK_MEDICINE_IMAGE}
+              onError={withFallback(FALLBACK_MEDICINE_IMAGE)}
+              alt={medicine.name}
+              className="h-10 w-10 object-contain"
+            />
+          </div>
           <div className="min-w-0 flex-1">
             <p className="font-semibold text-slate-900 dark:text-slate-100 truncate">{medicine.name}</p>
             {medicine.scientific_name ? (

@@ -55,8 +55,8 @@ const common = {
   "saved": "saved",
   "support@shifa.app": "support@shifa.app",
   "ui.close": "Close",
-  "ui.next": "ui.next",
-  "ui.previous": "ui.previous",
+  "ui.next": "Next",
+  "ui.previous": "Previous",
   "you@domain.com": "you@domain.com",
   loading: "Loading...",
   favorites: {

@@ -92,20 +92,22 @@ function CommunityCard({ item }) {
 
   return (
     <article className="overflow-hidden rounded-2xl bg-white shadow-sm dark:bg-slate-900 dark:shadow-slate-950/20">
-      <img
-        src={
-          resolveImageUrl(image) ||
-          FALLBACK_MEDICINE_IMAGE
-        }
-        alt={item.medicine_name}
-        className="h-32 w-full object-cover"
-        onError={(event) =>
-          withFallback(
-            event,
+      <div className="relative h-32 w-full bg-slate-50 dark:bg-slate-800">
+        <img
+          src={
+            resolveImageUrl(image) ||
             FALLBACK_MEDICINE_IMAGE
-          )
-        }
-      />
+          }
+          alt={item.medicine_name}
+          className="h-full w-full object-contain p-4"
+          onError={(event) =>
+            withFallback(
+              event,
+              FALLBACK_MEDICINE_IMAGE
+            )
+          }
+        />
+      </div>
 
       <div className="p-4">
         <div className="mb-2 flex flex-wrap gap-2">

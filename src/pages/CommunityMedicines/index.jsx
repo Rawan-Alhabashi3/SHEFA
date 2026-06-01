@@ -44,7 +44,9 @@ function ExchangeCard({
   const image = item.images?.[0]?.path || item.image;
   const isDonation = item.ad_type === 'donation';
   return <article className="overflow-hidden rounded-2xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm dark:shadow-slate-950/20 transition hover:-translate-y-0.5 hover:shadow-md">
-      <img src={resolveImageUrl(image) || FALLBACK_MEDICINE_IMAGE} alt={item.medicine_name} className="h-44 w-full object-cover" onError={event => withFallback(event, FALLBACK_MEDICINE_IMAGE)} />
+      <div className="relative h-44 w-full bg-slate-50 dark:bg-slate-800">
+        <img src={resolveImageUrl(image) || FALLBACK_MEDICINE_IMAGE} alt={item.medicine_name} className="h-full w-full object-contain p-4" onError={event => withFallback(event, FALLBACK_MEDICINE_IMAGE)} />
+      </div>
       <div className="p-4">
         <div className="flex flex-wrap items-center gap-2">
           <span className={isDonation ? getStatusBadgeClasses('paid') : getStatusBadgeClasses('pending')}>

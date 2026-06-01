@@ -117,7 +117,7 @@ const home = {
       couponValid: 'صلاحية الكوبون',
       daysCareOnly: 'يوما - لمنتجات التجميل والعناية فقط',
       ordersOver: 'طلبات من هذه الصيدلية بقيمة تتجاوز',
-      usdOrderTotal: 'دولار أمريكي إجمالي الطلب',
+      usdOrderTotal: 'ليرة سورية إجمالي الطلب',
       viewPharmacy: 'عرض الصيدلية',
     },
     community: {

@@ -8,10 +8,10 @@ import EmptyState from '../../components/common/EmptyState';
 import Pagination from '../../components/common/Pagination';
 import SectionTitle from '../../components/common/SectionTitle';
 import PharmacyCard from '../../components/pharmacies/PharmacyCard';
-import { GOVERNORATE_AREAS, GOVERNORATES } from '../../constants/locations';
 import { getPublicFeedback } from '../../services/feedbackService';
 import { listMarketplacePharmacies, listMarketplaceRewardCampaigns } from '../../services/pharmacyService';
 import { FALLBACK_PHARMACY_IMAGE, resolveImageUrl, withFallback } from '../../utils/image';
+import marketplaceBackground from '../../assets/images/healthcare_marketplace_background.png';
 function RewardCampaignDiscoveryCard({
   campaign
 }) {
@@ -62,27 +62,27 @@ function MarketplacePage() {
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
-  const availableAreas = useMemo(() => governorate ? GOVERNORATE_AREAS[governorate] || [] : [], [governorate]);
+
   useEffect(() => {
     let mounted = true;
     setLoading(true);
     setError('');
     Promise.all([listMarketplaceRewardCampaigns({
-      governorate: governorate || undefined,
-      area: area || undefined,
+      governororate_id: governororateId || undefined,
+      area_id: areaId || undefined,
       search: search || undefined,
       page,
       per_page: 12,
       sort: 'newest'
     }), listMarketplacePharmacies({
-      governorate: governorate || undefined,
-      area: area || undefined,
+      governororate_id: governororateId || undefined,
+      area_id: areaId || undefined,
       search: search || undefined,
       sort: 'rating_desc',
       per_page: 6
     }), listMarketplacePharmacies({
-      governorate: governorate || undefined,
-      area: area || undefined,
+      governororate_id: governororateId || undefined,
+      area_id: areaId || undefined,
       search: search || undefined,
       sort: 'campaigns_desc',
       per_page: 6
@@ -116,56 +116,75 @@ function MarketplacePage() {
   }, [governorate, area, search, page]);
   const topRewardCampaigns = useMemo(() => [...campaigns].sort((a, b) => Number(b.reward_percentage || 0) - Number(a.reward_percentage || 0)).slice(0, 4), [campaigns]);
   return <Container className="py-10">
-      <section className="rounded-3xl bg-gradient-to-br from-blue-700 via-blue-600 to-sky-500 p-7 text-white shadow-sm dark:shadow-slate-950/20 md:p-10">
-        <p className="text-sm font-semibold text-blue-100">{t('hero.badge')}</p>
-        <h1 className="mt-3 text-3xl font-extrabold leading-tight md:text-5xl">{t('hero.title')}</h1>
-        <p className="mt-4 max-w-3xl text-sm text-blue-100 md:text-base">
-          {t('hero.description')}
-        </p>
-        <div className="mt-6 grid gap-3 rounded-2xl border border-white/15 bg-white/10 p-4 backdrop-blur md:grid-cols-5">
-          <div className="md:col-span-2">
-            <label className="mb-1 block text-sm font-medium text-blue-100">{t('hero.filters.search')}</label>
-            <div className="flex items-center gap-2 rounded-2xl border border-white/20 bg-white dark:bg-slate-900/95 px-3 py-2 text-slate-700 dark:text-slate-200">
-              <Search size={16} className="text-slate-400 dark:text-slate-500" />
-              <input value={search} onChange={e => {
+      <section className="relative overflow-hidden rounded-3xl p-7 text-white shadow-sm dark:shadow-slate-950/20 md:p-10">
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${marketplaceBackground})` }}
+        />
+
+        {/* Dark Blue Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/85 via-blue-800/80 to-sky-700/75" />
+
+        {/* Subtle Radial Light Effects for Depth */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.12)_0%,transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(255,255,255,0.08)_0%,transparent_40%)]" />
+
+        {/* Hero Content */}
+        <div className="relative z-10">
+          <p className="text-sm font-semibold text-blue-100">{t('hero.badge')}</p>
+          <h1 className="mt-3 text-3xl font-extrabold leading-tight md:text-5xl">{t('hero.title')}</h1>
+          <p className="mt-4 max-w-3xl text-sm text-blue-100 md:text-base">
+            {t('hero.description')}
+          </p>
+          <div className="mt-6 grid gap-3 rounded-2xl border border-white/20 bg-white/15 p-4 backdrop-blur-md shadow-xl md:grid-cols-5">
+            <div className="md:col-span-2">
+              <label className="mb-1 block text-sm font-medium text-blue-100">{t('hero.filters.search')}</label>
+              <div className="flex items-center gap-2 rounded-2xl border border-white/30 bg-white/95 px-3 py-2 text-slate-700 shadow-lg backdrop-blur-sm dark:bg-slate-900/95 dark:text-slate-200">
+                <Search size={16} className="text-slate-400 dark:text-slate-500" />
+                <input value={search} onChange={e => {
               setSearch(e.target.value);
               setPage(1);
             }} placeholder={t('hero.filters.searchPlaceholder')} className="w-full bg-transparent text-sm outline-none" />
+              </div>
             </div>
-          </div>
-          <div>
-            <label className="mb-1 block text-sm font-medium text-blue-100">{t('hero.filters.governorate')}</label>
-            <select value={governorate} onChange={e => {
-            setGovernorate(e.target.value);
-            setArea('');
-            setPage(1);
-          }} className="w-full rounded-2xl border border-white/20 bg-white dark:bg-slate-900/95 px-4 py-2.5 text-sm text-slate-700 dark:text-slate-200 outline-none">
-              <option value="">{t('hero.filters.allGovernorates')}</option>
-              {GOVERNORATES.map(g => <option key={g} value={g}>{t(`locations.governorates.${g}`)}</option>)}
-            </select>
-          </div>
-          <div>
-            <label className="mb-1 block text-sm font-medium text-blue-100">{t('hero.filters.area')}</label>
-            <select value={area} disabled={!governorate} onChange={e => {
-            setArea(e.target.value);
-            setPage(1);
-          }} className="w-full rounded-2xl border border-white/20 bg-white px-4 py-2.5 text-sm text-slate-700 outline-none disabled:cursor-not-allowed disabled:bg-slate-200 dark:bg-slate-900/95 dark:text-slate-200 dark:disabled:bg-slate-700">
-              <option value="">{governorate ? t('hero.filters.allAreas') : t('hero.filters.selectGovernorateFirst')}</option>
-              {availableAreas.map(a => <option key={a} value={a}>{t(`locations.areas.${a}`)}</option>)}
-            </select>
-          </div>
-          <div className="flex items-end gap-2">
-            <button type="button" onClick={() => {
+            <div>
+              <label className="mb-1 block text-sm font-medium text-blue-100">{t('hero.filters.governorate')}</label>
+              <input 
+                value={governorate}
+                onChange={e => {
+                  setGovernorate(e.target.value);
+                  setPage(1);
+                }}
+                placeholder={t('hero.filters.governoratePlaceholder')}
+                className="w-full rounded-2xl border border-white/30 bg-white/95 px-4 py-2.5 text-sm text-slate-700 outline-none shadow-lg backdrop-blur-sm dark:bg-slate-900/95 dark:text-slate-200"
+              />
+            </div>
+            <div>
+              <label className="mb-1 block text-sm font-medium text-blue-100">{t('hero.filters.area')}</label>
+              <input 
+                value={area}
+                onChange={e => {
+                  setArea(e.target.value);
+                  setPage(1);
+                }}
+                placeholder={t('hero.filters.areaPlaceholder')}
+                className="w-full rounded-2xl border border-white/30 bg-white/95 px-4 py-2.5 text-sm text-slate-700 outline-none shadow-lg backdrop-blur-sm dark:bg-slate-900/95 dark:text-slate-200"
+              />
+            </div>
+            <div className="flex items-end gap-2">
+              <button type="button" onClick={() => {
             setGovernorate('');
             setArea('');
             setSearch('');
             setPage(1);
-          }} className="w-full rounded-full border border-white/30 bg-white/10 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-white/20">{t('hero.buttons.reset')}</button>
+          }} className="w-full rounded-full border border-white/30 bg-white/20 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-white/30 shadow-md backdrop-blur-sm">{t('hero.buttons.reset')}</button>
+            </div>
           </div>
-        </div>
-        <div className="mt-4 flex flex-wrap gap-3">
-          <Link to="/pharmacies"><Button variant="light">{t('hero.buttons.browsePharmacies')}</Button></Link>
-          <Link to="/about"><Button variant="ghostOnDark">{t('hero.buttons.healthcareCampaigns')}</Button></Link>
+          <div className="mt-4 flex flex-wrap gap-3">
+            <Link to="/pharmacies"><Button variant="light">{t('hero.buttons.browsePharmacies')}</Button></Link>
+            <Link to="/about"><Button variant="ghostOnDark">{t('hero.buttons.healthcareCampaigns')}</Button></Link>
+          </div>
         </div>
       </section>
 

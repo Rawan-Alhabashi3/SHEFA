@@ -137,7 +137,7 @@ const marketplace = {
   "Search campaigns or pharmacies...": "بحث الحملات or الصيدليات",
   "Trusted Healthcare Marketplace": "موثوقة الرعاية الصحية السوق",
   "Trusted experiences from marketplace users.": "موثوقة التجارب من السوق المستخدمون.",
-  "USD": "دولار",
+  "USD": "ل.س",
   "Verified": "موثق",
   "View pharmacy": "عرض الصيدلية",
   "orders ≥": "الطلبات ≥"

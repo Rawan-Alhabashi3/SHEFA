@@ -1,1 +1,1 @@
-export const formatPrice = (value) => `$${Number(value).toFixed(2)}`
+export const formatPrice = (value) => `${Number(value).toFixed(0)} SYP`

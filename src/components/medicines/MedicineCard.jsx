@@ -98,8 +98,8 @@ function MedicineCard({
     addToCart(medicine, 1);
   };
   return <article className="card-lift overflow-hidden rounded-2xl bg-white dark:bg-slate-900 shadow-sm dark:shadow-slate-950/20">
-      <div className="relative">
-        <img src={imageSrc} alt={medicine?.name || t("Medicine")} className="h-44 w-full object-cover transition duration-300 hover:scale-105" onError={event => withFallback(event, FALLBACK_MEDICINE_IMAGE)} />
+      <div className="relative h-44 w-full bg-slate-50 dark:bg-slate-800">
+        <img src={imageSrc} alt={medicine?.name || t("Medicine")} className="h-full w-full object-contain p-4 transition duration-300 hover:scale-105" onError={event => withFallback(event, FALLBACK_MEDICINE_IMAGE)} />
         {isCustomer ? <button type="button" className={`absolute end-3 top-3 rounded-full bg-white dark:bg-slate-900 p-2 transition ${isFavoriteLoading ? 'opacity-60' : 'hover:scale-105'}`} onClick={handleFavoriteToggle} disabled={isFavoriteLoading} aria-label={isFavorited ? 'Remove from favorites' : 'Add to favorites'}>
             <Heart size={16} className={isFavorited ? 'fill-rose-500 text-rose-500' : 'text-slate-600 dark:text-slate-300'} />
           </button> : null}

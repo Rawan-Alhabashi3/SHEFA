@@ -106,12 +106,14 @@ function CartPage() {
                     return (
                       <article key={item.id} className="overflow-hidden rounded-2xl bg-white dark:bg-slate-900 shadow-sm dark:shadow-slate-950/20">
                         <div className="flex flex-col gap-4 p-4 sm:flex-row sm:items-center">
-                          <img
-                            src={imageSrc}
-                            alt={medicine.name || t('medicineAlt')}
-                            className="h-24 w-full rounded-xl object-cover sm:h-20 sm:w-24"
-                            onError={(event) => withFallback(event, FALLBACK_MEDICINE_IMAGE)}
-                          />
+                          <div className="flex h-24 w-full shrink-0 items-center justify-center rounded-xl bg-slate-50 dark:bg-slate-800 sm:h-20 sm:w-24">
+                            <img
+                              src={imageSrc}
+                              alt={medicine.name || t('medicineAlt')}
+                              className="h-20 w-20 object-contain p-2 sm:h-16 sm:w-16"
+                              onError={(event) => withFallback(event, FALLBACK_MEDICINE_IMAGE)}
+                            />
+                          </div>
 
                           <div className="min-w-0 flex-1">
                             <div className="flex items-start justify-between gap-3">

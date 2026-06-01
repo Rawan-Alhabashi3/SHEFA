@@ -424,7 +424,7 @@ const pharmacy = {
         campaignTitle: "Campaign title",
         description: "Description",
         requiredDeliveredOrders: "Required delivered orders",
-        minimumOrderAmount: "Minimum order amount (USD)",
+        minimumOrderAmount: "Minimum order amount (SYP)",
         rewardPercentage: "Reward % (cosmetics & care)",
         couponValidDays: "Coupon valid for (days)",
         eligibleCategories: "Eligible product categories (comma-separated)",

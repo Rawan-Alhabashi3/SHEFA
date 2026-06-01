@@ -137,7 +137,7 @@ const marketplace = {
   "Search campaigns or pharmacies...": "Search campaigns or pharmacies...",
   "Trusted Healthcare Marketplace": "Trusted Healthcare Marketplace",
   "Trusted experiences from marketplace users.": "Trusted experiences from marketplace users.",
-  "USD": "USD",
+  "USD": "SYP",
   "Verified": "Verified",
   "View pharmacy": "View pharmacy",
   "orders ≥": "orders ≥"

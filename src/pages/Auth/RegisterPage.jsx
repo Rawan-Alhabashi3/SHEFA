@@ -1,12 +1,12 @@
 import { ArrowLeft, Eye, EyeOff, Upload } from 'lucide-react';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Button from '../../components/common/Button';
 import Container from '../../components/common/Container';
 import { useAuth } from '../../context/AuthContext';
 import { registerRequest } from '../../services/authService';
-const GOVERNORATES = ['Damascus', 'Aleppo', 'Homs', 'Hama', 'Lattakia', 'Tartous', 'Daraa', 'Deir ez-Zor', 'Hasakah', 'Raqqa', 'Suwayda', 'Quneitra', 'Rif Dimashq'];
+
 function RegisterPage() {
   const {
     t
@@ -33,7 +33,7 @@ function RegisterPage() {
     phone: '',
     password: '',
     password_confirmation: '',
-    governorate: 'Damascus',
+    governorate: '',
     address: '',
     pharmacy_name: '',
     pharmacy_address: '',
@@ -43,6 +43,8 @@ function RegisterPage() {
     license_image: null,
     is_specialist: false
   });
+
+
   const isValidEmail = useMemo(() => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim()), [form.email]);
 
   /** @returns {string} validation message key or empty string */
@@ -54,6 +56,7 @@ function RegisterPage() {
     if (!form.password) return 'passwordRequired';
     if (form.password.length < 6) return 'passwordMin';
     if (form.password !== form.password_confirmation) return 'passwordMismatch';
+    if (!form.governorate.trim()) return 'governorateRequired';
     if (role === 'citizen') {
       if (!form.address.trim()) return 'addressRequiredCitizen';
     }
@@ -85,7 +88,7 @@ function RegisterPage() {
       if (role === 'citizen') payload.append('address', form.address);
       if (role === 'pharmacy') {
         payload.append('pharmacy_name', form.pharmacy_name);
-        payload.append('area', form.area.trim());
+        payload.append('area', form.area);
         if (form.pharmacy_address) payload.append('pharmacy_address', form.pharmacy_address);
         if (form.pharmacy_phone) payload.append('pharmacy_phone', form.pharmacy_phone);
         payload.append('license_image', form.license_image);
@@ -198,14 +201,15 @@ function RegisterPage() {
                   </div>
                   <div>
                     <label className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-200">{t('register.city')}</label>
-                    <select value={form.governorate} onChange={e => setForm(p => ({
-                    ...p,
-                    governorate: e.target.value
-                  }))} className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 px-4 py-3 text-sm outline-none transition focus:border-blue-300 dark:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-950">
-                      {GOVERNORATES.map(g => <option key={g} value={g}>
-                          {t(`cities.${g}`)}
-                        </option>)}
-                    </select>
+                    <input 
+                      className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 px-4 py-3 text-sm outline-none transition focus:border-blue-300 dark:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-950"
+                      placeholder={t('register.cityPlaceholder')}
+                      value={form.governorate}
+                      onChange={e => setForm(p => ({
+                        ...p,
+                        governorate: e.target.value
+                      }))}
+                    />
                   </div>
                 </div>
 
@@ -228,10 +232,15 @@ function RegisterPage() {
                       </div>
                       <div>
                         <label className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-200">{t('register.area')}</label>
-                        <input className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 px-4 py-3 text-sm outline-none transition focus:border-blue-300 dark:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-950" placeholder={t('register.areaPlaceholder')} value={form.area} onChange={e => setForm(p => ({
-                      ...p,
-                      area: e.target.value
-                    }))} />
+                        <input
+                          className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 px-4 py-3 text-sm outline-none transition focus:border-blue-300 dark:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-950"
+                          placeholder={t('register.areaPlaceholder')}
+                          value={form.area}
+                          onChange={e => setForm(p => ({
+                            ...p,
+                            area: e.target.value
+                          }))}
+                        />
                       </div>
                       <div>
                         <label className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-200">{t('register.pharmacyPhone')}</label>

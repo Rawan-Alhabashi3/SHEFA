@@ -22,7 +22,7 @@ const shortDate = value => new Intl.DateTimeFormat('en', {
 }).format(new Date(value));
 const compactCurrency = value => new Intl.NumberFormat('en', {
   style: 'currency',
-  currency: 'USD',
+  currency: 'SYP',
   maximumFractionDigits: 0
 }).format(Number(value || 0));
 function ChartTooltip({

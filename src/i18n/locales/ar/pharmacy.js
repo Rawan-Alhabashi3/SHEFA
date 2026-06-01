@@ -424,7 +424,7 @@ const pharmacy = {
         campaignTitle: "عنوان الحملة",
         description: "الوصف",
         requiredDeliveredOrders: "الطلبات المسلمة المطلوبة",
-        minimumOrderAmount: "الحد الأدنى لمبلغ الطلب (دولار أمريكي)",
+        minimumOrderAmount: "الحد الأدنى لمبلغ الطلب (ل.س)",
         rewardPercentage: "نسبة المكافأة (مستحضرات تجميلية وعناية)",
         couponValidDays: "القسيمة صالحة لمدة (أيام)",
         eligibleCategories: "فئات المنتجات المؤهلة (مفصولة بفواصل)",

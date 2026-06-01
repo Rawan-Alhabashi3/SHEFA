@@ -99,13 +99,17 @@ function PharmacyExchangeRequestsPage() {
         return <article key={request.id} className="rounded-2xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 p-5 shadow-sm dark:shadow-slate-950/20">
                 <div className="grid gap-5 lg:grid-cols-[260px_minmax(0,1fr)]">
                   <div>
-                    <img src={mainImage} onError={event => {
+                    <div className="relative h-52 w-full rounded-2xl border border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-800">
+                      <img src={mainImage} onError={event => {
                 event.currentTarget.src = FALLBACK_MEDICINE_IMAGE;
-              }} alt={listing.medicine_name || t('exchange.labels.productImage')} className="h-52 w-full rounded-2xl border border-slate-100 dark:border-slate-800 object-cover" />
+              }} alt={listing.medicine_name || t('exchange.labels.productImage')} className="h-full w-full object-contain p-4" />
+                    </div>
                     {images.length > 1 ? <div className="mt-3 grid grid-cols-4 gap-2">
-                        {images.slice(0, 4).map((image, index) => <img key={`${image}-${index}`} src={resolveImageUrl(image) || FALLBACK_MEDICINE_IMAGE} onError={event => {
+                        {images.slice(0, 4).map((image, index) => <div key={`${image}-${index}`} className="flex h-14 w-full items-center justify-center rounded-xl border border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-800">
+                          <img src={resolveImageUrl(image) || FALLBACK_MEDICINE_IMAGE} onError={event => {
                   event.currentTarget.src = FALLBACK_MEDICINE_IMAGE;
-                }} alt={t('exchange.labels.productImage')} className="h-14 w-full rounded-xl border border-slate-100 dark:border-slate-800 object-cover" />)}
+                }} alt={t('exchange.labels.productImage')} className="h-10 w-10 object-contain" />
+                        </div>)}
                       </div> : null}
                   </div>
                   <div className="min-w-0">

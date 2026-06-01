@@ -9,7 +9,6 @@ import Pagination from '../../components/common/Pagination';
 import SectionTitle from '../../components/common/SectionTitle';
 import { listMarketplacePharmacies } from '../../services/pharmacyService';
 import { getAllMedicines } from '../../services/medicineService';
-import { GOVERNORATES } from '../../constants/locations';
 function MedicinesPage() {
   const {
     t
@@ -23,12 +22,13 @@ function MedicinesPage() {
   const filters = useMemo(() => ({
     name: (searchParams.get('search') || '').trim(),
     category: searchParams.get('category') || '',
-    governorate: searchParams.get('governorate') || searchParams.get('city') || '',
+    governorate: searchParams.get('governorate') || '',
     pharmacy_id: searchParams.get('pharmacy_id') || '',
     stock: searchParams.get('stock') || 'all',
     sort: searchParams.get('sort') || 'newest',
     page: Number(searchParams.get('page') || '1') || 1
   }), [searchParams]);
+
   useEffect(() => {
     let mounted = true;
     listMarketplacePharmacies({
@@ -130,15 +130,14 @@ function MedicinesPage() {
 
         <div>
           <label className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-200">{t('governorate')}</label>
-          <select value={filters.governorate} onChange={e => updateQuery({
-            governorate: e.target.value,
-            city: ''
-          }, true)} className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-3 text-sm outline-none transition focus:border-blue-300 dark:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-950">
-            <option value="">{t('allGovernorates')}</option>
-            {GOVERNORATES.map(gov => <option key={gov} value={gov}>
-                {gov}
-              </option>)}
-          </select>
+          <input 
+            value={filters.governorate} 
+            onChange={e => updateQuery({
+              governorate: e.target.value
+            }, true)} 
+            className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-3 text-sm outline-none transition focus:border-blue-300 dark:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-950"
+            placeholder={t('governoratePlaceholder')}
+          />
         </div>
 
         <div>
