@@ -53,6 +53,8 @@ const auth = {
   "register.uploadLicense": "رفع الترخيص",
   "register.vehicleSelect": "اختر نوع المركبة",
   "register.vehicleType": "نوع المركبة",
+  "register.participateAsSpecialist": "المشاركة كصيدلية أخصائية",
+  "register.participateAsSpecialistDescription": "استقبال طلبات التبرع وإعادة البيع والمساهمة في مراجعة المنتجات المجتمعية.",
 
   "roles.citizen": "مستخدم",
   "roles.delivery": "سائق توصيل",

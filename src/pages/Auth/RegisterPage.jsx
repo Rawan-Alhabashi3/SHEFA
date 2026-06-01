@@ -40,7 +40,8 @@ function RegisterPage() {
     pharmacy_phone: '',
     vehicle_type: '',
     area: '',
-    license_image: null
+    license_image: null,
+    is_specialist: false
   });
   const isValidEmail = useMemo(() => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim()), [form.email]);
 
@@ -88,6 +89,7 @@ function RegisterPage() {
         if (form.pharmacy_address) payload.append('pharmacy_address', form.pharmacy_address);
         if (form.pharmacy_phone) payload.append('pharmacy_phone', form.pharmacy_phone);
         payload.append('license_image', form.license_image);
+        payload.append('is_specialist', form.is_specialist ? '1' : '0');
       }
       if (role === 'delivery') {
         if (form.vehicle_type) payload.append('vehicle_type', form.vehicle_type);
@@ -255,6 +257,20 @@ function RegisterPage() {
                       ...p,
                       license_image: e.target.files?.[0] || null
                     }))} />
+                      </label>
+                    </div>
+                    <div className="rounded-2xl border border-blue-200 dark:border-blue-700/40 bg-blue-50 dark:bg-blue-950/30 p-4">
+                      <label className="flex items-start gap-3 cursor-pointer">
+                        <input 
+                          type="checkbox" 
+                          checked={form.is_specialist} 
+                          onChange={e => setForm(p => ({...p, is_specialist: e.target.checked}))}
+                          className="mt-1 h-4 w-4 rounded border border-blue-300 dark:border-blue-600 bg-white dark:bg-slate-950 accent-blue-600 dark:accent-blue-500"
+                        />
+                        <div className="flex-1">
+                          <div className="font-medium text-blue-900 dark:text-blue-100">{t('register.participateAsSpecialist')}</div>
+                          <p className="mt-1 text-sm text-blue-700 dark:text-blue-300">{t('register.participateAsSpecialistDescription')}</p>
+                        </div>
                       </label>
                     </div>
                   </div> : null}

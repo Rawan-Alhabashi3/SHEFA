@@ -549,8 +549,21 @@ const pharmacy = {
     errors: {
       failedToLoadReviews: "فشل تحميل التقييمات.",
     },
-  },
-  // Legacy keys for backward compatibility
+  },  // Pharmacy Profile/Settings
+  profile: {
+    title: "إعدادات الصيدلية",
+    description: "إدارة معلومات صيدليتك والمشاركة كصيدلية أخصائية.",
+    form: {
+      pharmacyName: "اسم الصيدلية",
+      pharmacyAddress: "عنوان الصيدلية",
+      pharmacyPhone: "هاتف الصيدلية",
+      participateAsSpecialist: "المشاركة كصيدلية أخصائية",
+      participateAsSpecialistDescription: "قم بتفعيل هذا لاستقبال طلبات التبرع وإعادة البيع في منطقتك.",
+    },
+    error: {
+      updateFailed: "فشل تحديث ملف تعريف الصيدلية.",
+    },
+  },  // Legacy keys for backward compatibility
   "12 medicines per page": "12 دواء في الصفحة",
   "500mg": "500mg",
   "Dosage": "الجرعة",

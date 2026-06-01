@@ -550,6 +550,21 @@ const pharmacy = {
       failedToLoadReviews: "Failed to load reviews.",
     },
   },
+  // Pharmacy Profile/Settings
+  profile: {
+    title: "Pharmacy Settings",
+    description: "Manage your pharmacy information and specialist participation.",
+    form: {
+      pharmacyName: "Pharmacy Name",
+      pharmacyAddress: "Pharmacy Address",
+      pharmacyPhone: "Pharmacy Phone",
+      participateAsSpecialist: "Participate as Specialist Pharmacy",
+      participateAsSpecialistDescription: "Enable this to receive donation and resale review requests in your area.",
+    },
+    error: {
+      updateFailed: "Failed to update pharmacy profile.",
+    },
+  },
   // Legacy keys for backward compatibility
   "12 medicines per page": "12 medicines per page",
   "500mg": "500mg",

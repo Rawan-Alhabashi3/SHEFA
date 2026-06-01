@@ -17,6 +17,11 @@ export const contactExchangePharmacy = async (ad_id) => {
   return data
 }
 
+export const getSpecialistAreas = async (governorate) => {
+  const { data } = await apiClient.get('/exchange/specialist-areas', { params: governorate ? { governorate } : {} })
+  return data
+}
+
 export const getMyExchangeListings = async () => {
   const { data } = await apiClient.get('/get-all-my-ads')
   return data

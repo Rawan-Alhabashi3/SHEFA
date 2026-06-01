@@ -56,6 +56,8 @@ const auth = {
     uploadLicense: "Upload License",
     vehicleSelect: "Select Vehicle Type",
     vehicleType: "Vehicle Type",
+    participateAsSpecialist: "Participate as Specialist Pharmacy",
+    participateAsSpecialistDescription: "Receive donation and resale review requests and help verify community exchange products.",
   },
 
   roles: {
