@@ -5,7 +5,7 @@ const coupons = {
   "Expired": "Expired",
   "Loading…": "Loading…",
   "Loyalty": "Loyalty",
-  "Minimum order amount (USD)": "Minimum order amount (SYP)",
+  "Minimum order amount": "Minimum order amount",
   "My coupons": "My coupons",
   "New campaign": "New campaign",
   "No active coupons. Shop cosmetics from participating pharmacies to earn rewards.": "No active coupons. Shop cosmetics from participating pharmacies to earn rewards.",

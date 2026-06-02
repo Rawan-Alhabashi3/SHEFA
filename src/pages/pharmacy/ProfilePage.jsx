@@ -1,8 +1,9 @@
 import { useTranslation } from "react-i18next";
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Card from '../../components/common/Card';
 import Button from '../../components/common/Button';
 import { useAuth } from '../../context/AuthContext';
+import { GOVERNORATE_AREAS, GOVERNORATES } from '../../constants/locations';
 import { updateMyProfile } from '../../services/driverService';
 
 function PharmacyProfilePage() {
@@ -21,6 +22,7 @@ function PharmacyProfilePage() {
     phone: '',
     email: '',
     governorate: '',
+    area: '',
     pharmacy_name: '',
     pharmacy_address: '',
     pharmacy_phone: '',
@@ -30,6 +32,20 @@ function PharmacyProfilePage() {
   });
   const [notice, setNotice] = useState('');
   const [error, setError] = useState('');
+
+  const availableAreas = useMemo(() => {
+    if (!form.governorate) return [];
+    return GOVERNORATE_AREAS[form.governorate] || [];
+  }, [form.governorate]);
+
+  const handleGovernorateChange = (e) => {
+    const newGovernorate = e.target.value;
+    setForm(prev => ({
+      ...prev,
+      governorate: newGovernorate,
+      area: ''
+    }));
+  };
   
   useEffect(() => {
     if (user?.pharmacy) {
@@ -39,6 +55,7 @@ function PharmacyProfilePage() {
         phone: user?.phone || '',
         email: user?.email || '',
         governorate: user?.governorate || '',
+        area: user?.area || '',
         pharmacy_name: user?.pharmacy?.pharmacy_name || '',
         pharmacy_address: user?.pharmacy?.address || '',
         pharmacy_phone: user?.pharmacy?.phone || '',
@@ -76,7 +93,6 @@ function PharmacyProfilePage() {
             ['username', tProfile('form.fullName')],
             ['phone', tProfile('form.phone')],
             ['email', tProfile('form.email')],
-            ['governorate', tProfile('form.city')],
             ['pharmacy_name', t('profile.form.pharmacyName')],
             ['pharmacy_address', t('profile.form.pharmacyAddress')],
             ['pharmacy_phone', t('profile.form.pharmacyPhone')]
@@ -91,6 +107,35 @@ function PharmacyProfilePage() {
                 }))} 
               />
             </div>)}
+          
+          <div>
+            <label className="mb-1 block text-xs font-semibold text-slate-600 dark:text-slate-300">{tProfile('form.city')}</label>
+            <select
+              className="h-10 w-full rounded-xl border border-slate-200 dark:border-slate-700 px-3 text-sm outline-none transition focus:border-blue-300 dark:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-950"
+              value={form.governorate}
+              onChange={handleGovernorateChange}
+            >
+              <option value="">{tProfile('form.selectCity')}</option>
+              {GOVERNORATES.map(gov => (
+                <option key={gov} value={gov}>{t(`locations.governorates.${gov}`)}</option>
+              ))}
+            </select>
+          </div>
+
+          <div>
+            <label className="mb-1 block text-xs font-semibold text-slate-600 dark:text-slate-300">{tProfile('form.area')}</label>
+            <select
+              className="h-10 w-full rounded-xl border border-slate-200 dark:border-slate-700 px-3 text-sm outline-none transition focus:border-blue-300 dark:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-950"
+              value={form.area}
+              onChange={e => setForm(p => ({...p, area: e.target.value}))}
+              disabled={!form.governorate}
+            >
+              <option value="">{tProfile('form.selectArea')}</option>
+              {availableAreas.map(area => (
+                <option key={area} value={area}>{t(`locations.areas.${area}`)}</option>
+              ))}
+            </select>
+          </div>
           
           <div className="md:col-span-2 rounded-xl border border-blue-200 dark:border-blue-700/40 bg-blue-50 dark:bg-blue-950/30 p-4">
             <label className="flex items-center gap-3 cursor-pointer">

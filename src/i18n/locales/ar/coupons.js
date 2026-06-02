@@ -5,7 +5,7 @@ const coupons = {
   "Expired": "منتهية",
   "Loading…": "جار تحميل ...",
   "Loyalty": "الولاء",
-  "Minimum order amount (USD)": "الحد الأدنى الطلب المبلغ (ل.س)",
+  "Minimum order amount": "الحد الأدنى لمبلغ الطلب",
   "My coupons": "My القسائم",
   "New campaign": "حملة جديدة",
   "No active coupons. Shop cosmetics from participating pharmacies to earn rewards.": "لا توجد قسائم نشطة. تسوق مستحضرات العناية من الصيدليات المشاركة لكسب المكافآت.",

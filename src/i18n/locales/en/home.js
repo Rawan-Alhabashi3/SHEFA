@@ -117,7 +117,7 @@ const home = {
       couponValid: 'Coupon valid for',
       daysCareOnly: 'days - cosmetics & care only',
       ordersOver: 'orders from this pharmacy over',
-      usdOrderTotal: 'SYP order total',
+      orderTotal: 'order total',
       viewPharmacy: 'View Pharmacy',
     },
     community: {

@@ -6,7 +6,7 @@ import Button from '../../components/common/Button';
 import Container from '../../components/common/Container';
 import { useAuth } from '../../context/AuthContext';
 import { registerRequest } from '../../services/authService';
-const GOVERNORATES = ['Damascus', 'Aleppo', 'Homs', 'Hama', 'Lattakia', 'Tartous', 'Daraa', 'Deir ez-Zor', 'Hasakah', 'Raqqa', 'Suwayda', 'Quneitra', 'Rif Dimashq'];
+import { GOVERNORATE_AREAS, GOVERNORATES } from '../../constants/locations';
 function RegisterPage() {
   const {
     t
@@ -43,6 +43,19 @@ function RegisterPage() {
     license_image: null,
     is_specialist: false
   });
+
+  const availableAreas = useMemo(() => {
+    return GOVERNORATE_AREAS[form.governorate] || [];
+  }, [form.governorate]);
+
+  const handleGovernorateChange = (e) => {
+    const newGovernorate = e.target.value;
+    setForm(p => ({
+      ...p,
+      governorate: newGovernorate,
+      area: '' // Reset area when governorate changes
+    }));
+  };
   const isValidEmail = useMemo(() => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim()), [form.email]);
 
   /** @returns {string} validation message key or empty string */
@@ -198,10 +211,7 @@ function RegisterPage() {
                   </div>
                   <div>
                     <label className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-200">{t('register.city')}</label>
-                    <select value={form.governorate} onChange={e => setForm(p => ({
-                    ...p,
-                    governorate: e.target.value
-                  }))} className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 px-4 py-3 text-sm outline-none transition focus:border-blue-300 dark:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-950">
+                    <select value={form.governorate} onChange={handleGovernorateChange} className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 px-4 py-3 text-sm outline-none transition focus:border-blue-300 dark:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-950">
                       {GOVERNORATES.map(g => <option key={g} value={g}>
                           {t(`cities.${g}`)}
                         </option>)}
@@ -228,10 +238,19 @@ function RegisterPage() {
                       </div>
                       <div>
                         <label className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-200">{t('register.area')}</label>
-                        <input className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 px-4 py-3 text-sm outline-none transition focus:border-blue-300 dark:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-950" placeholder={t('register.areaPlaceholder')} value={form.area} onChange={e => setForm(p => ({
-                      ...p,
-                      area: e.target.value
-                    }))} />
+                        <select
+                          value={form.area}
+                          onChange={e => setForm(p => ({ ...p, area: e.target.value }))}
+                          disabled={!form.governorate}
+                          className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 px-4 py-3 text-sm outline-none transition focus:border-blue-300 dark:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-950 disabled:opacity-50 disabled:cursor-not-allowed"
+                        >
+                          <option value="">{t('register.areaPlaceholder')}</option>
+                          {availableAreas.map(area => (
+                            <option key={area} value={area}>
+                              {t(`areas.${area}`)}
+                            </option>
+                          ))}
+                        </select>
                       </div>
                       <div>
                         <label className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-200">{t('register.pharmacyPhone')}</label>

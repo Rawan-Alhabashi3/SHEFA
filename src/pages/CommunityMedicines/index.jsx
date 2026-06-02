@@ -7,9 +7,9 @@ import Button from '../../components/common/Button';
 import Container from '../../components/common/Container';
 import EmptyState from '../../components/common/EmptyState';
 import Pagination from '../../components/common/Pagination';
-import { GOVERNORATES } from '../../constants/locations';
+import { GOVERNORATE_AREAS, GOVERNORATES } from '../../constants/locations';
 import { useAuth } from '../../context/AuthContext';
-import { contactExchangePharmacy, createExchangeListing, getCommunityMedicines, getSpecialistAreas } from '../../services/exchangeService';
+import { contactExchangePharmacy, createExchangeListing, getCommunityMedicines } from '../../services/exchangeService';
 import { listMarketplacePharmacies } from '../../services/pharmacyService';
 import { formatPrice } from '../../utils/format';
 import { FALLBACK_MEDICINE_IMAGE, resolveImageUrl, withFallback } from '../../utils/image';
@@ -198,35 +198,14 @@ function CommunityMedicinesPage() {
     notes: '',
     images: []
   });
-  const [availableFilterAreas, setAvailableFilterAreas] = useState([]);
-  const [availableFormAreas, setAvailableFormAreas] = useState([]);
-
-  useEffect(() => {
-    let mounted = true;
-    if (!filters.governorate) {
-      setAvailableFilterAreas([]);
-      return;
-    }
-    getSpecialistAreas(filters.governorate).then(response => {
-      if (!mounted) return;
-      const areas = Array.isArray(response?.data) ? response.data : Array.isArray(response) ? response : [];
-      setAvailableFilterAreas(areas);
-    }).catch(() => setAvailableFilterAreas([]));
-    return () => { mounted = false };
+  const availableFilterAreas = useMemo(() => {
+    if (!filters.governorate) return [];
+    return GOVERNORATE_AREAS[filters.governorate] || [];
   }, [filters.governorate]);
 
-  useEffect(() => {
-    let mounted = true;
-    if (!form.governorate) {
-      setAvailableFormAreas([]);
-      return;
-    }
-    getSpecialistAreas(form.governorate).then(response => {
-      if (!mounted) return;
-      const areas = Array.isArray(response?.data) ? response.data : Array.isArray(response) ? response : [];
-      setAvailableFormAreas(areas);
-    }).catch(() => setAvailableFormAreas([]));
-    return () => { mounted = false };
+  const availableFormAreas = useMemo(() => {
+    if (!form.governorate) return [];
+    return GOVERNORATE_AREAS[form.governorate] || [];
   }, [form.governorate]);
   const load = async () => {
     setLoading(true);
