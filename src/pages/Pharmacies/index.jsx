@@ -7,6 +7,7 @@ import EmptyState from '../../components/common/EmptyState';
 import SectionTitle from '../../components/common/SectionTitle';
 import PharmacyGrid from '../../components/pharmacies/PharmacyGrid';
 import { listMarketplacePharmacies } from '../../services/pharmacyService';
+import { GOVERNORATE_AREAS, GOVERNORATES } from '../../constants/locations';
 function PharmaciesPage() {
   const {
     t
@@ -29,7 +30,6 @@ function PharmaciesPage() {
   });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
-
   useEffect(() => {
     const governorate = searchParams.get('governorate') || '';
     const area = searchParams.get('area') || '';
@@ -102,6 +102,10 @@ function PharmaciesPage() {
     };
   }, [location.governorate, location.area, searchInput, sort, page]);
   const filteredPharmacies = useMemo(() => pharmacies, [pharmacies]);
+  const availableAreas = useMemo(() => {
+    if (!location.governorate) return [];
+    return GOVERNORATE_AREAS[location.governorate] || [];
+  }, [location.governorate]);
   return <Container className="py-10">
       <div ref={sectionRef}>
         <SectionTitle title={t('listing.title')} />
@@ -109,25 +113,26 @@ function PharmaciesPage() {
       <div className="mb-6 grid gap-3 rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-4 md:grid-cols-2 lg:grid-cols-5">
         <div>
           <label className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-200">{t('listing.filters.governorate')}</label>
-          <input 
-            value={location.governorate} 
-            onChange={e => updateParams({
-              governorate: e.target.value
-            }, true)} 
-            className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-3 text-sm outline-none transition focus:border-blue-300 dark:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-950"
-            placeholder={t('listing.filters.governoratePlaceholder')}
-          />
+          <select value={location.governorate} onChange={e => updateParams({
+          governorate: e.target.value,
+          area: ''
+        }, true)} className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-3 text-sm outline-none transition focus:border-blue-300 dark:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-950">
+            <option value="">{t('listing.filters.all')}</option>
+            {GOVERNORATES.map(g => <option key={g} value={g}>
+                {t(`locations.governorates.${g}`) || g}
+              </option>)}
+          </select>
         </div>
         <div>
           <label className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-200">{t('listing.filters.area')}</label>
-          <input 
-            value={location.area || ''} 
-            onChange={e => updateParams({
-              area: e.target.value
-            }, true)} 
-            className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-3 text-sm outline-none transition focus:border-blue-300 dark:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-950"
-            placeholder={t('listing.filters.areaPlaceholder')}
-          />
+          <select value={location.area || ''} disabled={!location.governorate} onChange={e => updateParams({
+          area: e.target.value
+        }, true)} className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-3 text-sm outline-none transition focus:border-blue-300 dark:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-950 disabled:cursor-not-allowed disabled:bg-slate-100 dark:disabled:bg-slate-800">
+            <option value="">{location.governorate ? t('listing.filters.allAreas') : t('listing.filters.selectGovernorateFirst')}</option>
+            {availableAreas.map(a => <option key={a} value={a}>
+                {t(`locations.areas.${a}`) || a}
+              </option>)}
+          </select>
         </div>
         <div>
           <label className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-200">{t('listing.filters.search')}</label>

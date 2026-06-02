@@ -128,8 +128,3 @@ export const togglePharmacyCouponCampaign = async (campaignId) => {
   const { data } = await apiClient.post(`/pharmacy/coupon-campaigns/${campaignId}/toggle`)
   return data
 }
-
-export const listPharmacyCouponCampaignCategories = async () => {
-  const { data } = await apiClient.get('/pharmacy/coupon-campaigns/categories')
-  return data
-}

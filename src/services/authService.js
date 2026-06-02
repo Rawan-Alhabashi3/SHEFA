@@ -29,13 +29,3 @@ export const getMyProfileRequest = async (token) => {
   })
   return data
 }
-
-export const getGovernorates = async () => {
-  const { data } = await apiClient.get('/governorates')
-  return data?.data || []
-}
-
-export const getAreasByGovernorate = async (governorateId) => {
-  const { data } = await apiClient.get(`/governorates/${governorateId}/areas`)
-  return data?.data || []
-}

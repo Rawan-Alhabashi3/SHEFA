@@ -21,7 +21,6 @@ function PharmacyProfilePage() {
     phone: '',
     email: '',
     governorate: '',
-    area: '',
     pharmacy_name: '',
     pharmacy_address: '',
     pharmacy_phone: '',
@@ -32,7 +31,6 @@ function PharmacyProfilePage() {
   const [notice, setNotice] = useState('');
   const [error, setError] = useState('');
   
-
   useEffect(() => {
     if (user?.pharmacy) {
       setForm(prev => ({
@@ -40,8 +38,7 @@ function PharmacyProfilePage() {
         username: user?.username || '',
         phone: user?.phone || '',
         email: user?.email || '',
-        governorate: user?.pharmacy?.governorate || '',
-        area: user?.pharmacy?.area || '',
+        governorate: user?.governorate || '',
         pharmacy_name: user?.pharmacy?.pharmacy_name || '',
         pharmacy_address: user?.pharmacy?.address || '',
         pharmacy_phone: user?.pharmacy?.phone || '',
@@ -49,7 +46,6 @@ function PharmacyProfilePage() {
       }));
     }
   }, [user]);
-
 
   const onSubmit = async event => {
     event.preventDefault();
@@ -80,6 +76,7 @@ function PharmacyProfilePage() {
             ['username', tProfile('form.fullName')],
             ['phone', tProfile('form.phone')],
             ['email', tProfile('form.email')],
+            ['governorate', tProfile('form.city')],
             ['pharmacy_name', t('profile.form.pharmacyName')],
             ['pharmacy_address', t('profile.form.pharmacyAddress')],
             ['pharmacy_phone', t('profile.form.pharmacyPhone')]
@@ -94,30 +91,6 @@ function PharmacyProfilePage() {
                 }))} 
               />
             </div>)}
-          
-          <div>
-            <label className="mb-1 block text-xs font-semibold text-slate-600 dark:text-slate-300">{tProfile('form.city')}</label>
-            <input 
-              className="h-10 w-full rounded-xl border border-slate-200 dark:border-slate-700 px-3 text-sm outline-none transition focus:border-blue-300 dark:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-950"
-              value={form.governorate}
-              onChange={e => setForm(p => ({
-                ...p,
-                governorate: e.target.value
-              }))}
-            />
-          </div>
-
-          <div>
-            <label className="mb-1 block text-xs font-semibold text-slate-600 dark:text-slate-300">{t('profile.form.area')}</label>
-            <input 
-              className="h-10 w-full rounded-xl border border-slate-200 dark:border-slate-700 px-3 text-sm outline-none transition focus:border-blue-300 dark:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-950"
-              value={form.area}
-              onChange={e => setForm(p => ({
-                ...p,
-                area: e.target.value
-              }))}
-            />
-          </div>
           
           <div className="md:col-span-2 rounded-xl border border-blue-200 dark:border-blue-700/40 bg-blue-50 dark:bg-blue-950/30 p-4">
             <label className="flex items-center gap-3 cursor-pointer">

@@ -8,6 +8,7 @@ import EmptyState from '../../components/common/EmptyState';
 import Pagination from '../../components/common/Pagination';
 import SectionTitle from '../../components/common/SectionTitle';
 import PharmacyCard from '../../components/pharmacies/PharmacyCard';
+import { GOVERNORATE_AREAS, GOVERNORATES } from '../../constants/locations';
 import { getPublicFeedback } from '../../services/feedbackService';
 import { listMarketplacePharmacies, listMarketplaceRewardCampaigns } from '../../services/pharmacyService';
 import { FALLBACK_PHARMACY_IMAGE, resolveImageUrl, withFallback } from '../../utils/image';
@@ -62,27 +63,27 @@ function MarketplacePage() {
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
-
+  const availableAreas = useMemo(() => governorate ? GOVERNORATE_AREAS[governorate] || [] : [], [governorate]);
   useEffect(() => {
     let mounted = true;
     setLoading(true);
     setError('');
     Promise.all([listMarketplaceRewardCampaigns({
-      governororate_id: governororateId || undefined,
-      area_id: areaId || undefined,
+      governorate: governorate || undefined,
+      area: area || undefined,
       search: search || undefined,
       page,
       per_page: 12,
       sort: 'newest'
     }), listMarketplacePharmacies({
-      governororate_id: governororateId || undefined,
-      area_id: areaId || undefined,
+      governorate: governorate || undefined,
+      area: area || undefined,
       search: search || undefined,
       sort: 'rating_desc',
       per_page: 6
     }), listMarketplacePharmacies({
-      governororate_id: governororateId || undefined,
-      area_id: areaId || undefined,
+      governorate: governorate || undefined,
+      area: area || undefined,
       search: search || undefined,
       sort: 'campaigns_desc',
       per_page: 6
@@ -150,27 +151,24 @@ function MarketplacePage() {
             </div>
             <div>
               <label className="mb-1 block text-sm font-medium text-blue-100">{t('hero.filters.governorate')}</label>
-              <input 
-                value={governorate}
-                onChange={e => {
-                  setGovernorate(e.target.value);
-                  setPage(1);
-                }}
-                placeholder={t('hero.filters.governoratePlaceholder')}
-                className="w-full rounded-2xl border border-white/30 bg-white/95 px-4 py-2.5 text-sm text-slate-700 outline-none shadow-lg backdrop-blur-sm dark:bg-slate-900/95 dark:text-slate-200"
-              />
+              <select value={governorate} onChange={e => {
+            setGovernorate(e.target.value);
+            setArea('');
+            setPage(1);
+          }} className="w-full rounded-2xl border border-white/30 bg-white/95 px-4 py-2.5 text-sm text-slate-700 outline-none shadow-lg backdrop-blur-sm dark:bg-slate-900/95 dark:text-slate-200">
+              <option value="">{t('hero.filters.allGovernorates')}</option>
+              {GOVERNORATES.map(g => <option key={g} value={g}>{t(`locations.governorates.${g}`)}</option>)}
+            </select>
             </div>
             <div>
               <label className="mb-1 block text-sm font-medium text-blue-100">{t('hero.filters.area')}</label>
-              <input 
-                value={area}
-                onChange={e => {
-                  setArea(e.target.value);
-                  setPage(1);
-                }}
-                placeholder={t('hero.filters.areaPlaceholder')}
-                className="w-full rounded-2xl border border-white/30 bg-white/95 px-4 py-2.5 text-sm text-slate-700 outline-none shadow-lg backdrop-blur-sm dark:bg-slate-900/95 dark:text-slate-200"
-              />
+              <select value={area} disabled={!governorate} onChange={e => {
+            setArea(e.target.value);
+            setPage(1);
+          }} className="w-full rounded-2xl border border-white/30 bg-white/95 px-4 py-2.5 text-sm text-slate-700 outline-none shadow-lg backdrop-blur-sm disabled:cursor-not-allowed disabled:bg-slate-300 dark:bg-slate-900/95 dark:text-slate-200 dark:disabled:bg-slate-700">
+              <option value="">{governorate ? t('hero.filters.allAreas') : t('hero.filters.selectGovernorateFirst')}</option>
+              {availableAreas.map(a => <option key={a} value={a}>{t(`locations.areas.${a}`)}</option>)}
+            </select>
             </div>
             <div className="flex items-end gap-2">
               <button type="button" onClick={() => {

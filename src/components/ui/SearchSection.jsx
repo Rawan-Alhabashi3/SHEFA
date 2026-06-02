@@ -7,7 +7,24 @@ import SearchBar from '../common/SearchBar'
 import SearchDropdown from '../common/SearchDropdown'
 
 import useDebounce from '../../hooks/useDebounce'
+import { GOVERNORATES } from '../../constants/locations'
 import { searchMarketplace } from '../../services/searchService'
+
+const governorateTranslationKeys = {
+  Damascus: 'damascus',
+  'Rif Dimashq': 'rifDimashq',
+  Aleppo: 'aleppo',
+  Homs: 'homs',
+  Hama: 'hama',
+  Lattakia: 'lattakia',
+  Tartous: 'tartous',
+  Daraa: 'daraa',
+  'Deir ez-Zor': 'deirEzZor',
+  Hasakah: 'hasakah',
+  Raqqa: 'raqqa',
+  Suwayda: 'suwayda',
+  Quneitra: 'quneitra',
+}
 
 const defaultResults = {
   medicines: [],
@@ -29,7 +46,6 @@ function SearchSection() {
   const [open, setOpen] = useState(false)
 
   const debouncedQuery = useDebounce(query, 400)
-
 
   const hasAnyResult = useMemo(
     () =>
@@ -72,7 +88,7 @@ function SearchSection() {
 
     searchMarketplace({
       query: normalized,
-      city: city || undefined,
+      city,
       signal: controller.signal,
     })
       .then((data) => {
@@ -128,7 +144,7 @@ function SearchSection() {
 
     navigate(
       `/medicines?search=${encodeURIComponent(query.trim())}${city
-        ? `&city=${encodeURIComponent(city)}`
+        ? `&governorate=${encodeURIComponent(city)}`
         : ''
       }`
     )
@@ -157,12 +173,26 @@ function SearchSection() {
             }}
           />
 
-          <input
+          <select
             value={city}
             onChange={(event) => setCity(event.target.value)}
-            placeholder={t('search.cityPlaceholder')}
             className="rounded-full border border-slate-200 px-4 py-3 text-sm dark:border-slate-700"
-          />
+          >
+            <option value="">
+              {t('search.allCities')}
+            </option>
+
+            {GOVERNORATES.map((governorate) => (
+              <option
+                key={governorate}
+                value={governorate}
+              >
+                {t(
+                  `search.governorates.${governorateTranslationKeys[governorate]}`
+                )}
+              </option>
+            ))}
+          </select>
 
           <button
             type="button"

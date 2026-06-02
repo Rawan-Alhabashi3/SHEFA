@@ -104,13 +104,3 @@ export const updateMyProfile = async (payload) => {
   const { data } = await apiClient.post('/update-my-profile', payload)
   return data
 }
-
-export const getGovernorates = async () => {
-  const { data } = await apiClient.get('/governorates')
-  return data?.data || []
-}
-
-export const getAreasByGovernorate = async (governorateId) => {
-  const { data } = await apiClient.get(`/governorates/${governorateId}/areas`)
-  return data?.data || []
-}
