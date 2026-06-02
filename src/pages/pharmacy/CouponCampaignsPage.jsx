@@ -1,10 +1,10 @@
 import { useTranslation } from "react-i18next";
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { Gift, Pencil, Plus, Search, Tag, Trash2, ToggleLeft, ToggleRight, X } from 'lucide-react';
+import { Gift, Pencil, Plus, Search, Tag, Trash2, ToggleLeft, ToggleRight, X, ChevronDown, Check } from 'lucide-react';
 import Button from '../../components/common/Button';
 import Card from '../../components/common/Card';
 import DashboardStatCard from '../../components/common/DashboardStatCard';
-import { createPharmacyCouponCampaign, deletePharmacyCouponCampaign, getPharmacyCouponCampaignAnalytics, listPharmacyCouponCampaigns, listPharmacyIssuedCoupons, togglePharmacyCouponCampaign, updatePharmacyCouponCampaign } from '../../services/pharmacyService';
+import { createPharmacyCouponCampaign, deletePharmacyCouponCampaign, getPharmacyCouponCampaignAnalytics, listPharmacyCouponCampaigns, listPharmacyIssuedCoupons, togglePharmacyCouponCampaign, updatePharmacyCouponCampaign, listPharmacyCouponCampaignCategories } from '../../services/pharmacyService';
 import { formatPrice } from '../../utils/format';
 
 /**
@@ -25,10 +25,119 @@ const emptyForm = {
   required_purchase_count: 2,
   minimum_order_amount: 50,
   reward_percentage: 20,
-  eligible_categories: 'cosmetics, skincare, beauty, personal care',
+  eligible_categories: [],
   expiration_days: 30,
   is_active: true
 };
+
+function CategoryMultiSelect({ categories, selectedIds, onChange, disabled }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [search, setSearch] = useState('');
+  const { i18n } = useTranslation();
+
+  const filteredCategories = categories.filter(cat =>
+    cat.name.toLowerCase().includes(search.toLowerCase())
+  );
+
+  const selectedCategories = categories.filter(cat => selectedIds.includes(cat.id));
+
+  const toggleCategory = (categoryId) => {
+    if (selectedIds.includes(categoryId)) {
+      onChange(selectedIds.filter(id => id !== categoryId));
+    } else {
+      onChange([...selectedIds, categoryId]);
+    }
+  };
+
+  const removeCategory = (categoryId) => {
+    onChange(selectedIds.filter(id => id !== categoryId));
+  };
+
+  return (
+    <div className="relative">
+      <div className="flex flex-wrap gap-2 mb-2">
+        {selectedCategories.map(cat => (
+          <span
+            key={cat.id}
+            className="inline-flex items-center gap-1 px-3 py-1.5 bg-blue-50 dark:bg-blue-950/40 text-blue-700 dark:text-blue-200 rounded-full text-sm font-medium"
+          >
+            {cat.name}
+            {!disabled && (
+              <button
+                type="button"
+                onClick={() => removeCategory(cat.id)}
+                className="hover:text-blue-900 dark:hover:text-blue-100"
+              >
+                <X size={14} />
+              </button>
+            )}
+          </span>
+        ))}
+        {selectedCategories.length === 0 && (
+          <span className="text-sm text-slate-400 dark:text-slate-500">
+            {i18n.language === 'ar' ? 'اختر الفئات' : 'Select categories'}
+          </span>
+        )}
+      </div>
+
+      {!disabled && (
+        <div className="relative">
+          <button
+            type="button"
+            onClick={() => setIsOpen(!isOpen)}
+            className="w-full flex items-center justify-between px-3 py-2 border rounded-xl text-sm bg-white dark:bg-slate-900 dark:border-slate-700"
+          >
+            <span>{i18n.language === 'ar' ? 'إضافة فئات' : 'Add categories'}</span>
+            <ChevronDown size={16} className={`transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+          </button>
+
+          {isOpen && (
+            <div className="absolute z-10 w-full mt-1 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl shadow-lg max-h-60 overflow-hidden">
+              <div className="p-2 border-b border-slate-200 dark:border-slate-700">
+                <input
+                  type="text"
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                  placeholder={i18n.language === 'ar' ? 'بحث...' : 'Search...'}
+                  className="w-full px-3 py-2 text-sm border rounded-lg dark:bg-slate-800 dark:border-slate-600"
+                  onClick={(e) => e.stopPropagation()}
+                />
+              </div>
+              <div className="max-h-48 overflow-y-auto">
+                {filteredCategories.length === 0 ? (
+                  <div className="p-3 text-sm text-slate-500 dark:text-slate-400 text-center">
+                    {i18n.language === 'ar' ? 'لا توجد فئات' : 'No categories found'}
+                  </div>
+                ) : (
+                  filteredCategories.map(cat => (
+                    <button
+                      key={cat.id}
+                      type="button"
+                      onClick={() => {
+                        toggleCategory(cat.id);
+                        setSearch('');
+                      }}
+                      className="w-full flex items-center gap-2 px-3 py-2 text-sm hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+                    >
+                      <div className={`w-5 h-5 rounded border flex items-center justify-center ${
+                        selectedIds.includes(cat.id)
+                          ? 'bg-blue-600 border-blue-600 text-white'
+                          : 'border-slate-300 dark:border-slate-600'
+                      }`}>
+                        {selectedIds.includes(cat.id) && <Check size={12} />}
+                      </div>
+                      <span className="flex-1 text-left">{cat.name}</span>
+                    </button>
+                  ))
+                )}
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
 function CampaignModal({
   mode,
   campaign,
@@ -38,6 +147,8 @@ function CampaignModal({
   const {
     t
   } = useTranslation("pharmacy");
+  const [categories, setCategories] = useState([]);
+  const [loadingCategories, setLoadingCategories] = useState(true);
   const [form, setForm] = useState(() => {
     if (!campaign) return emptyForm;
     return {
@@ -46,13 +157,30 @@ function CampaignModal({
       required_purchase_count: campaign.required_purchase_count ?? 2,
       minimum_order_amount: campaign.minimum_order_amount ?? 0,
       reward_percentage: campaign.reward_percentage ?? 15,
-      eligible_categories: Array.isArray(campaign.eligible_categories) ? campaign.eligible_categories.join(', ') : '',
+      eligible_categories: Array.isArray(campaign.eligible_categories) 
+        ? campaign.eligible_categories.filter(id => typeof id === 'number')
+        : [],
       expiration_days: campaign.expiration_days ?? 30,
       is_active: Boolean(campaign.is_active)
     };
   });
   const [errors, setErrors] = useState({});
   const [saving, setSaving] = useState(false);
+
+  useEffect(() => {
+    const loadCategories = async () => {
+      try {
+        const response = await listPharmacyCouponCampaignCategories();
+        setCategories(response?.data?.data ?? response?.data ?? []);
+      } catch (error) {
+        console.error('Failed to load categories:', error);
+      } finally {
+        setLoadingCategories(false);
+      }
+    };
+    loadCategories();
+  }, []);
+
   const setField = (k, v) => setForm(p => ({
     ...p,
     [k]: v
@@ -64,22 +192,20 @@ function CampaignModal({
     if (Number(form.minimum_order_amount) < 0) next.minimum_order_amount = t('coupons.modal.validation.minimumOrderAmountNegative');
     if (Number(form.reward_percentage) < 1 || Number(form.reward_percentage) > 90) next.reward_percentage = t('coupons.modal.validation.rewardPercentageRange');
     if (Number(form.expiration_days) < 1) next.expiration_days = t('coupons.modal.validation.expirationDaysMin');
-    const cats = form.eligible_categories.split(',').map(s => s.trim()).filter(Boolean);
-    if (cats.length === 0) next.eligible_categories = t('coupons.modal.validation.eligibleCategoriesRequired');
+    if (form.eligible_categories.length === 0) next.eligible_categories = t('coupons.modal.validation.eligibleCategoriesRequired');
     setErrors(next);
     return Object.keys(next).length === 0;
   };
   const submit = async e => {
     e.preventDefault();
     if (!validate()) return;
-    const cats = form.eligible_categories.split(',').map(s => s.trim()).filter(Boolean);
     const payload = {
       title: form.title.trim(),
       description: form.description.trim() || null,
       required_purchase_count: Number(form.required_purchase_count),
       minimum_order_amount: Number(form.minimum_order_amount),
       reward_percentage: Number(form.reward_percentage),
-      eligible_categories: cats,
+      eligible_categories: form.eligible_categories,
       expiration_days: Number(form.expiration_days),
       is_active: form.is_active
     };
@@ -141,7 +267,16 @@ function CampaignModal({
           </div>
           <label>
             <span className="text-sm font-semibold text-slate-700 dark:text-slate-200">{t('coupons.modal.form.eligibleCategories')}</span>
-            <input className="mt-1 w-full rounded-xl border px-3 py-2 text-sm" value={form.eligible_categories} onChange={e => setField('eligible_categories', e.target.value)} placeholder={t('coupons.modal.form.eligibleCategoriesPlaceholder')} />
+            {loadingCategories ? (
+              <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">Loading categories...</p>
+            ) : (
+              <CategoryMultiSelect
+                categories={categories}
+                selectedIds={form.eligible_categories}
+                onChange={(ids) => setField('eligible_categories', ids)}
+                disabled={saving}
+              />
+            )}
             {errors.eligible_categories ? <p className="mt-1 text-xs text-rose-600">{errors.eligible_categories}</p> : null}
           </label>
           <label className="flex items-center gap-2 text-sm font-semibold text-slate-700 dark:text-slate-200">
@@ -163,12 +298,26 @@ export default function PharmacyCouponCampaignsPage() {
   const [analytics, setAnalytics] = useState(null);
   const [campaigns, setCampaigns] = useState([]);
   const [issued, setIssued] = useState([]);
+  const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
   const [issuedStatus, setIssuedStatus] = useState('active');
   const [page, setPage] = useState(1);
   const [issuedPage, setIssuedPage] = useState(1);
   const [search, setSearch] = useState('');
   const [modal, setModal] = useState(null);
+
+  useEffect(() => {
+    const loadCategories = async () => {
+      try {
+        const response = await listPharmacyCouponCampaignCategories();
+        setCategories(response?.data?.data ?? response?.data ?? []);
+      } catch (error) {
+        console.error('Failed to load categories:', error);
+      }
+    };
+    loadCategories();
+  }, []);
+
   const load = useCallback(async () => {
     setLoading(true);
     try {
@@ -212,6 +361,23 @@ export default function PharmacyCouponCampaignsPage() {
       icon: Gift
     }];
   }, [analytics]);
+  const getCategoryNames = (eligibleCategories) => {
+    if (!eligibleCategories) return [];
+    
+    // Handle backward compatibility: if it's an array of strings (old format), display as is
+    if (Array.isArray(eligibleCategories) && eligibleCategories.length > 0) {
+      if (typeof eligibleCategories[0] === 'string') {
+        return eligibleCategories;
+      }
+      // New format: array of category IDs
+      return eligibleCategories
+        .map(id => categories.find(cat => cat.id === id)?.name)
+        .filter(Boolean);
+    }
+    
+    return [];
+  };
+
   const onDelete = async id => {
     if (!window.confirm(t('coupons.modal.confirmDelete'))) return;
     await deletePharmacyCouponCampaign(id);
@@ -277,6 +443,18 @@ export default function PharmacyCouponCampaignsPage() {
                     {row.description ? <div className="mt-0.5 max-w-xs truncate text-xs text-slate-500 dark:text-slate-400" title={row.description}>
                         {row.description}
                       </div> : null}
+                    <div className="mt-1 flex flex-wrap gap-1">
+                      {getCategoryNames(row.eligible_categories).slice(0, 3).map((catName, idx) => (
+                        <span key={idx} className="inline-flex items-center px-2 py-0.5 bg-blue-50 dark:bg-blue-950/40 text-blue-700 dark:text-blue-200 rounded-full text-xs font-medium">
+                          {catName}
+                        </span>
+                      ))}
+                      {getCategoryNames(row.eligible_categories).length > 3 && (
+                        <span className="text-xs text-slate-500 dark:text-slate-400">
+                          +{getCategoryNames(row.eligible_categories).length - 3} more
+                        </span>
+                      )}
+                    </div>
                   </td>
                   <td className="py-2 pe-3 text-slate-600 dark:text-slate-300">{row.reward_percentage}%</td>
                   <td className="py-2 pe-3 text-slate-600 dark:text-slate-300">{row.coupons_count ?? 0}{t('coupons.labels.redeemedSlash')}{row.redeemed_coupons_count ?? 0}</td>
