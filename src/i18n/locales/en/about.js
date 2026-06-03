@@ -110,6 +110,8 @@ const about = {
       submitted: "Your message has been received. Thank you for helping us improve.",
       unableToSubmit: "Unable to submit your message right now.",
     },
+    redirectBanner: "You were redirected here to request adding a new area for pharmacy registration.",
+    dismiss: "Dismiss",
     reviews: {
       eyebrow: "Public Reviews",
       title: "What customers are saying.",

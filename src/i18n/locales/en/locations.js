@@ -1,85 +1,7 @@
-const auth = {
-  backToHome: "Back to Home",
-
-  login: {
-    continueGuest: "Continue as Guest",
-    createAccount: "Create Account",
-    email: "Email Address",
-    emailPlaceholder: "Enter your email address",
-    forgotPassword: "Forgot Password?",
-    heroBody: "Access your healthcare marketplace account securely and manage orders, deliveries, and pharmacy services.",
-    heroEyebrow: "Welcome Back",
-    heroTitle: "Sign In to Shifa",
-    loginFailed: "Login failed. Please check your credentials.",
-    noAccount: "Don’t have an account?",
-    password: "Password",
-    passwordPlaceholder: "Enter your password",
-    rememberMe: "Remember Me",
-    secureHint: "Your data is protected with secure authentication.",
-    secureTitle: "Secure Access",
-    signingIn: "Signing In...",
-    submit: "Sign In",
-    subtitle: "Access your account to continue.",
-    title: "Login",
-  },
-
-  register: {
-    address: "Address",
-    addressPlaceholder: "Enter your full address",
-    addressShortPlaceholder: "Enter address",
-    area: "Area",
-    areaPlaceholder: "Select Area",
-    city: "City",
-    confirmPassword: "Confirm Password",
-    creatingAccount: "Creating Account...",
-    email: "Email Address",
-    fullName: "Full Name",
-    fullNamePlaceholder: "Enter your full name",
-    hasAccount: "Already have an account?",
-    heroBody: "Create your Shifa account and connect with pharmacies, healthcare providers, and delivery services.",
-    heroEyebrow: "Join Shifa",
-    heroTitle: "Create Your Account",
-    licenseImage: "License Image",
-    loginLink: "Sign In",
-    password: "Password",
-    pharmacyAddress: "Pharmacy Address",
-    pharmacyName: "Pharmacy Name",
-    pharmacyNamePlaceholder: "Enter pharmacy name",
-    pharmacyPhone: "Pharmacy Phone",
-    phone: "Phone Number",
-    phonePlaceholder: "Enter phone number",
-    registerFailed: "Registration failed. Please try again.",
-    role: "Role",
-    submit: "Create Account",
-    subtitle: "Register to access Shifa healthcare services.",
-    title: "Register",
-    uploadLicense: "Upload License",
-    storefrontImage: "Pharmacy Storefront Image",
-    optional: "Optional",
-    uploadStorefront: "Upload Storefront Image",
-    vehicleSelect: "Select Vehicle Type",
-    vehicleType: "Vehicle Type",
-    participateAsSpecialist: "Participate as Specialist Pharmacy",
-    participateAsSpecialistDescription: "Receive donation and resale review requests and help verify community exchange products.",
-    cantFindArea: "Can't find your area?",
-    requestNewArea: "Request New Area",
-    requestNewAreaSubject: "Request New Area",
-  },
-
-  roles: {
-    citizen: "Citizen",
-    delivery: "Delivery Driver",
-    pharmacy: "Pharmacy",
-  },
-
-  vehicles: {
-    car: "Car",
-    motorbike: "Motorbike",
-    van: "Van",
-  },
-
-  cities: {
+const locations = {
+  governorates: {
     Damascus: "Damascus",
+    "Rif Dimashq": "Rif Dimashq",
     Aleppo: "Aleppo",
     Homs: "Homs",
     Hama: "Hama",
@@ -91,9 +13,7 @@ const auth = {
     Raqqa: "Raqqa",
     Suwayda: "Suwayda",
     Quneitra: "Quneitra",
-    "Rif Dimashq": "Rif Dimashq",
   },
-
   areas: {
     "Abu Rummaneh": "Abu Rummaneh",
     "Al Maliki": "Al Maliki",
@@ -348,4 +268,4 @@ const auth = {
   },
 };
 
-export default auth;
+export default locations;

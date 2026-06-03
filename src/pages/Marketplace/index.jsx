@@ -11,6 +11,7 @@ import PharmacyCard from '../../components/pharmacies/PharmacyCard';
 import { GOVERNORATE_AREAS, GOVERNORATES } from '../../constants/locations';
 import { getPublicFeedback } from '../../services/feedbackService';
 import { listMarketplacePharmacies, listMarketplaceRewardCampaigns } from '../../services/pharmacyService';
+import { formatPrice } from '../../utils/format';
 import { FALLBACK_PHARMACY_IMAGE, resolveImageUrl, withFallback } from '../../utils/image';
 import marketplaceBackground from '../../assets/images/healthcare_marketplace_background.png';
 function RewardCampaignDiscoveryCard({
@@ -32,7 +33,7 @@ function RewardCampaignDiscoveryCard({
         <div className="mt-3 space-y-1 text-xs text-slate-500 dark:text-slate-400">
           <p>{p?.pharmacy_name || t('campaigns.card.pharmacyLabel')}</p>
           <p>{[p?.governorate, p?.area].filter(Boolean).join(' • ')}</p>
-          <p>{t('campaigns.card.rule')}{campaign.required_purchase_count}{t('campaigns.card.ordersGte')}{Number(campaign.minimum_order_amount).toFixed(2)}{t('campaigns.card.currency')}</p>
+          <p>{t('campaigns.card.rule')}{campaign.required_purchase_count}{t('campaigns.card.ordersGte')}{formatPrice(campaign.minimum_order_amount)}</p>
           {cats ? <p>{t('campaigns.card.eligible')}{cats}</p> : null}
         </div>
         <div className="mt-4 flex gap-2">

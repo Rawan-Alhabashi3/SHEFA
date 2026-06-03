@@ -87,7 +87,7 @@ function PharmacyDetailsPage() {
 
       {loading ? <div className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 text-sm text-slate-600 dark:text-slate-300">{t('details.loading')}</div> : error ? <div className="rounded-2xl border border-rose-100 bg-rose-50 dark:bg-rose-950/40 p-6 text-sm text-rose-700 dark:text-rose-200">{error}</div> : !pharmacy ? <EmptyState title={t('details.notFound')} description={t('details.notFoundDescription')} /> : <>
           <div className="mb-6 grid gap-4 rounded-2xl bg-white dark:bg-slate-900 p-5 shadow-sm dark:shadow-slate-950/20 md:grid-cols-[88px_1fr]">
-            <img src={resolveImageUrl(pharmacy.logo) || FALLBACK_PHARMACY_IMAGE} alt={pharmacy.pharmacy_name} className="h-20 w-20 rounded-2xl object-cover" onError={event => withFallback(event, FALLBACK_PHARMACY_IMAGE)} />
+            <img src={resolveImageUrl(pharmacy.storefront_image || pharmacy.logo) || FALLBACK_PHARMACY_IMAGE} alt={pharmacy.pharmacy_name} className="h-20 w-20 rounded-2xl object-cover" onError={event => withFallback(event, FALLBACK_PHARMACY_IMAGE)} />
             <div>
               <div className="flex flex-wrap items-center justify-between gap-2">
                 <h2 className="text-xl font-bold text-slate-900 dark:text-slate-100">{pharmacy.pharmacy_name}</h2>

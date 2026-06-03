@@ -51,6 +51,7 @@ import AdminDeliveryMissionsPage from '../pages/admin/DeliveryMissionsPage'
 import AdminCouponsPage from '../pages/admin/CouponsPage'
 import AdminReportsPage from '../pages/admin/ReportsPage'
 import AdminCategoriesPage from '../pages/admin/CategoriesPage'
+import AdminFeedbackPage from '../pages/admin/FeedbackPage'
 
 function AppRouter() {
   return (
@@ -116,6 +117,7 @@ function AppRouter() {
             <Route path="/admin/coupon-campaigns" element={<AdminCouponCampaignsPage />} />
             <Route path="/admin/payments" element={<AdminPaymentsPage />} />
             <Route path="/admin/notifications" element={<AdminNotificationsPage />} />
+            <Route path="/admin/feedback" element={<AdminFeedbackPage />} />
             <Route path="/admin/reviews" element={<AdminReviewsPage />} />
             <Route path="/admin/exchange-ads" element={<AdminExchangeAdsPage />} />
             <Route path="/admin/exchange-requests" element={<AdminExchangeRequestsPage />} />

@@ -1,13 +1,14 @@
 import { useTranslation } from "react-i18next";
 import { BadgeCheck, Clock3, CreditCard, Headset, HeartPulse, Pill, ShieldCheck, Sparkles, Star, Store, Truck } from 'lucide-react';
-import { useEffect, useMemo, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { toast } from 'sonner';
 import Button from '../../components/common/Button';
 import Container from '../../components/common/Container';
 import SectionTitle from '../../components/common/SectionTitle';
 import { useAuth } from '../../context/AuthContext';
 import { getAboutOverview, getPublicFeedback, submitFeedback } from '../../services/feedbackService';
+import aboutHeroBanner from '../../assets/images/About_hero_banner.png';
 function StarPicker({
   value,
   hoverValue,
@@ -33,16 +34,19 @@ function AboutPage() {
   const {
     t
   } = useTranslation("about");
+  const location = useLocation();
   const {
     isAuthenticated,
     user
   } = useAuth();
+  const feedbackSectionRef = useRef(null);
   const [overview, setOverview] = useState(null);
   const [testimonials, setTestimonials] = useState([]);
   const [loadingOverview, setLoadingOverview] = useState(true);
   const [loadingTestimonials, setLoadingTestimonials] = useState(true);
   const [submitting, setSubmitting] = useState(false);
   const [hoverRating, setHoverRating] = useState(0);
+  const [showRedirectBanner, setShowRedirectBanner] = useState(false);
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -52,6 +56,28 @@ function AboutPage() {
     rating: 0,
     order_reference: ''
   });
+
+  useEffect(() => {
+    if (location.state?.prefilled) {
+      setForm(prev => ({
+        ...prev,
+        ...location.state.prefilled
+      }));
+      setShowRedirectBanner(true);
+    }
+  }, [location.state]);
+
+  useEffect(() => {
+    if (location.state?.scrollToFeedback) {
+      const timer = setTimeout(() => {
+        if (feedbackSectionRef.current) {
+          feedbackSectionRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, [location.state]);
+
   useEffect(() => {
     if (!isAuthenticated || !user) return;
     setForm(prev => ({
@@ -189,28 +215,34 @@ function AboutPage() {
   };
   return <div className="bg-slate-50 dark:bg-slate-950">
       <Container className="py-10">
-        <section className="grid gap-6 rounded-3xl bg-gradient-to-br from-blue-700 via-blue-600 to-sky-500 p-8 text-white shadow-sm dark:shadow-slate-950/20 md:grid-cols-[1.1fr_0.9fr] md:p-10">
-          <div>
-            <p className="text-sm font-semibold text-blue-100">{t('hero.badge')}</p>
-            <h1 className="mt-3 text-3xl font-extrabold leading-tight md:text-5xl">{t('hero.title')}</h1>
-            <p className="mt-4 max-w-xl text-sm text-blue-100 md:text-base">{t('hero.description')}</p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <Link to="/medicines">
-                <Button variant="light">{t('hero.buttons.browseMedicines')}</Button>
-              </Link>
-              <Link to="/pharmacies">
-                <Button variant="ghostOnDark">
-                  {t('hero.buttons.explorePharmacies')}
-                </Button>
-              </Link>
-            </div>
+        <section className="relative overflow-hidden rounded-3xl text-white shadow-sm dark:shadow-slate-950/20">
+          <div className="absolute inset-0">
+            <img src={aboutHeroBanner} alt="" className="h-full w-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-900/85 via-blue-800/80 to-sky-700/75"></div>
           </div>
-          <div className="rounded-2xl border border-white/20 bg-white/10 p-6 text-white backdrop-blur">
-            <h3 className="text-lg font-bold">{t('hero.whyChoose.title')}</h3>
-            <div className="mt-4 space-y-3 text-sm text-blue-50">
-              <p className="flex items-center gap-2"><Clock3 size={16} /> {t('hero.whyChoose.fastFulfillment')}</p>
-              <p className="flex items-center gap-2"><BadgeCheck size={16} />{t('hero.whyChoose.verifiedEcosystem')}</p>
-              <p className="flex items-center gap-2"><ShieldCheck size={16} />{t('hero.whyChoose.saferStandards')}</p>
+          <div className="relative z-10 grid gap-6 p-8 md:grid-cols-[1.1fr_0.9fr] md:p-10">
+            <div>
+              <p className="text-sm font-semibold text-blue-100">{t('hero.badge')}</p>
+              <h1 className="mt-3 text-3xl font-extrabold leading-tight md:text-5xl">{t('hero.title')}</h1>
+              <p className="mt-4 max-w-xl text-sm text-blue-100 md:text-base">{t('hero.description')}</p>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <Link to="/medicines">
+                  <Button variant="light">{t('hero.buttons.browseMedicines')}</Button>
+                </Link>
+                <Link to="/pharmacies">
+                  <Button variant="ghostOnDark">
+                    {t('hero.buttons.explorePharmacies')}
+                  </Button>
+                </Link>
+              </div>
+            </div>
+            <div className="rounded-2xl border border-white/20 bg-white/10 p-6 text-white backdrop-blur">
+              <h3 className="text-lg font-bold">{t('hero.whyChoose.title')}</h3>
+              <div className="mt-4 space-y-3 text-sm text-blue-50">
+                <p className="flex items-center gap-2"><Clock3 size={16} /> {t('hero.whyChoose.fastFulfillment')}</p>
+                <p className="flex items-center gap-2"><BadgeCheck size={16} />{t('hero.whyChoose.verifiedEcosystem')}</p>
+                <p className="flex items-center gap-2"><ShieldCheck size={16} />{t('hero.whyChoose.saferStandards')}</p>
+              </div>
             </div>
           </div>
         </section>
@@ -271,10 +303,23 @@ function AboutPage() {
           </div>
         </section>
 
-        <section className="mt-12 grid gap-6 lg:grid-cols-[1fr_1fr]">
+        <section className="mt-12 grid gap-6 lg:grid-cols-[1fr_1fr]" ref={feedbackSectionRef}>
           <div className="rounded-3xl bg-white dark:bg-slate-900 p-7 shadow-sm dark:shadow-slate-950/20 md:p-9">
             <SectionTitle eyebrow={t('feedback.eyebrow')} title={t('feedback.title')} />
             <p className="mb-5 text-sm text-slate-600 dark:text-slate-300">{t('feedback.description')}</p>
+
+            {showRedirectBanner && (
+              <div className="mb-4 rounded-2xl border border-blue-200 dark:border-blue-700/40 bg-blue-50 dark:bg-blue-950/30 p-4">
+                <p className="text-sm font-medium text-blue-900 dark:text-blue-100">{t('feedback.redirectBanner')}</p>
+                <button
+                  type="button"
+                  onClick={() => setShowRedirectBanner(false)}
+                  className="mt-2 text-xs font-semibold text-blue-600 dark:text-blue-300 hover:text-blue-700 dark:text-blue-200"
+                >
+                  {t('feedback.dismiss')}
+                </button>
+              </div>
+            )}
 
             <form onSubmit={onSubmit} className="space-y-4">
               <div className="grid gap-3 sm:grid-cols-2">

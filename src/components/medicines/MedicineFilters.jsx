@@ -21,6 +21,7 @@ function MedicineFilters({ categories = [] }) {
     ...categories.map(category => ({
       label: getCategoryName(category, language),
       value: category.slug || String(category.id || ''),
+      color: category.color,
     })),
   ]
 
@@ -28,6 +29,7 @@ function MedicineFilters({ categories = [] }) {
     <div className="mb-6 flex flex-wrap items-center gap-2">
       {filterOptions.map(filter => {
         const isActive = current === filter.value || (!current && !filter.value)
+        const category = categories.find(c => (c.slug || String(c.id || '')) === filter.value)
 
         return (
           <button
@@ -36,9 +38,14 @@ function MedicineFilters({ categories = [] }) {
             onClick={() => setCategory(filter.value)}
             className={`rounded-full border bg-white dark:bg-slate-900 px-4 py-2 text-sm transition ${
               isActive
-                ? 'border-blue-200 dark:border-blue-700/70 text-blue-700 dark:text-blue-200'
-                : 'border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:border-blue-200 dark:border-blue-700/70 hover:text-blue-600 dark:text-blue-300'
+                ? 'border-slate-200 dark:border-slate-700 text-slate-900 dark:text-slate-100'
+                : 'border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:border-slate-300 dark:hover:border-slate-600'
             }`}
+            style={isActive && category ? {
+              backgroundColor: `${category.color}15`,
+              borderColor: category.color,
+              color: category.color,
+            } : undefined}
           >
             {filter.label}
           </button>

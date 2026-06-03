@@ -12,7 +12,11 @@ function AdminModulePage({
   resource,
   columns,
   quickCreate = null,
-  editableFields = []
+  editableFields = [],
+  onDataLoaded = null,
+  onCreateButton = null,
+  onEditRow = null,
+  onRefresh = null
 }) {
   const {
     t
@@ -42,6 +46,12 @@ function AdminModulePage({
         last_page: response?.data?.last_page || 1,
         total: response?.data?.total || 0
       });
+      if (onDataLoaded) {
+        onDataLoaded(response?.data?.data || []);
+      }
+      if (onRefresh) {
+        onRefresh();
+      }
     } catch (err) {
       setError(err?.response?.data?.message || t('common.failedToLoad'));
     } finally {
@@ -85,7 +95,12 @@ function AdminModulePage({
         <form onSubmit={onSearch} className="flex flex-wrap items-center gap-2">
           <input value={search} onChange={event => setSearch(event.target.value)} placeholder={t('common.search')} className="h-10 min-w-[220px] rounded-xl border border-slate-200 dark:border-slate-700 px-3 text-sm outline-none focus:border-blue-300 dark:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-950" />
           <Button type="submit" className="!rounded-xl px-4 py-2">{t('common.searchButton')}</Button>
-          <span className="ms-auto text-xs font-medium text-slate-500 dark:text-slate-400">{t('common.total')}{meta.total}</span>
+          {onCreateButton && (
+            <Button type="button" onClick={onCreateButton} className="!rounded-xl px-4 py-2 ms-auto">
+              {t('common.create')}
+            </Button>
+          )}
+          <span className="text-xs font-medium text-slate-500 dark:text-slate-400">{t('common.total')}{meta.total}</span>
         </form>
       </Card>
 
@@ -130,6 +145,11 @@ function AdminModulePage({
               })}
                     <td className="px-4 py-3">
                       <div className="flex gap-2">
+                        {onEditRow && (
+                          <button type="button" onClick={() => onEditRow(row)} className="rounded-lg bg-slate-100 dark:bg-slate-800 px-2 py-1 text-xs font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700">
+                            {t('common.edit')}
+                          </button>
+                        )}
                         {editableFields.map(field => <button key={field.name} type="button" onClick={() => onQuickUpdate(row.id, field.name, field.nextValue(row))} className="rounded-lg bg-blue-50 dark:bg-blue-950/40 px-2 py-1 text-xs font-semibold text-blue-700 dark:text-blue-200 hover:bg-blue-100 dark:hover:bg-blue-950 dark:bg-blue-950">
                             {field.label}
                           </button>)}

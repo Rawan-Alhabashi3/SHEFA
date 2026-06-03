@@ -11,20 +11,12 @@ import { GOVERNORATE_AREAS, GOVERNORATES } from '../../constants/locations';
 import { useAuth } from '../../context/AuthContext';
 import { contactExchangePharmacy, createExchangeListing, getCommunityMedicines } from '../../services/exchangeService';
 import { listMarketplacePharmacies } from '../../services/pharmacyService';
+import { listMedicineExchangeCategories } from '../../services/categoryService';
 import { formatPrice } from '../../utils/format';
 import { FALLBACK_MEDICINE_IMAGE, resolveImageUrl, withFallback } from '../../utils/image';
 import { getStatusBadgeClasses } from '../../utils/statusBadge';
 import { translateEnum } from '../../utils/translateEnum';
-const categories = ['Medicine', 'Vitamins', 'Medical Supplies', 'Medical Device', 'Skin Care', 'Diabetes Care', 'Mobility Aid'];
-const categoryKeyMap = {
-  'Medicine': 'medicine',
-  'Vitamins': 'vitamins',
-  'Medical Supplies': 'medicalSupplies',
-  'Medical Device': 'medicalDevice',
-  'Skin Care': 'skinCare',
-  'Diabetes Care': 'diabetesCare',
-  'Mobility Aid': 'mobilityAid',
-};
+import donateResellBanner from '../../assets/images/donate&Resell_banner.png';
 const conditionValues = ['unopened', 'sealed', 'partially_used', 'used_device', 'excellent', 'good'];
 const inputClass = 'w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-3 text-sm outline-none transition focus:border-blue-300 dark:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-950';
 function getItems(payload) {
@@ -59,7 +51,7 @@ function ExchangeCard({
         <p className="mt-2 line-clamp-2 text-sm text-slate-600 dark:text-slate-300">{item.description || item.notes}</p>
 
         <div className="mt-4 grid gap-2 text-xs text-slate-500 dark:text-slate-400">
-          <p>{t(`categories.${categoryKeyMap[item.category] || item.category}`)} / {conditionLabel(item.condition)}</p>
+          <p>{item.category_name || item.category} / {conditionLabel(item.condition)}</p>
           <p>{t(`locations.governorates.${item.governorate}`) || item.governorate} / {t(`locations.areas.${item.area}`) || item.area}</p>
           <p>{t('listing.quantity')}{item.quantity}{t('listing.expires')}{item.expiration_date ? new Date(item.expiration_date).toLocaleDateString() : 'N/A'}</p>
           <p>{t('listing.handledBy')}{item.assigned_pharmacy?.pharmacy_name || item.assignedPharmacy?.pharmacy_name || t('listing.verifiedPharmacy')}</p>
@@ -170,6 +162,7 @@ function CommunityMedicinesPage() {
   });
   const [items, setItems] = useState([]);
   const [pharmacies, setPharmacies] = useState([]);
+  const [categories, setCategories] = useState([]);
   const [pagination, setPagination] = useState({
     currentPage: 1,
     lastPage: 1,
@@ -183,7 +176,7 @@ function CommunityMedicinesPage() {
   const [contactDetails, setContactDetails] = useState(null);
   const [form, setForm] = useState({
     medicine_name: '',
-    category: 'Medicine',
+    category: '',
     description: '',
     reason: '',
     quantity: 1,
@@ -241,6 +234,22 @@ function CommunityMedicinesPage() {
     load();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filters]);
+
+  useEffect(() => {
+    let mounted = true;
+    listMedicineExchangeCategories().then(response => {
+      if (!mounted) return;
+      const payload = response?.data || response;
+      setCategories(Array.isArray(payload) ? payload : []);
+    }).catch(() => {
+      if (!mounted) return;
+      setCategories([]);
+    });
+    return () => {
+      mounted = false;
+    };
+  }, []);
+
   useEffect(() => {
     let mounted = true;
     listMarketplacePharmacies({
@@ -330,15 +339,21 @@ function CommunityMedicinesPage() {
     }
   };
   return <Container className="py-8 md:py-10">
-      <section className="rounded-3xl bg-gradient-to-br from-blue-700 via-blue-600 to-sky-500 p-7 text-white shadow-sm dark:shadow-slate-950/20 md:p-10">
-        <p className="text-sm font-semibold text-blue-100">{t('hero.badge')}</p>
-        <h1 className="mt-3 text-3xl font-extrabold leading-tight md:text-5xl">{t('hero.title')}</h1>
-        <p className="mt-4 max-w-3xl text-sm text-blue-100 md:text-base">
-          {t('hero.description')}
-        </p>
-        <div className="mt-6 flex flex-wrap gap-3">
-          <a href="#submit-listing"><Button variant="secondary">{t('hero.buttons.submitListing')}</Button></a>
-          {isAuthenticated && role === 'citizen' ? <Link to="/my-community-medicines"><Button variant="ghostOnDark">{t('hero.buttons.myListings')}</Button></Link> : null}
+      <section className="relative overflow-hidden rounded-3xl text-white shadow-sm dark:shadow-slate-950/20">
+        <div className="absolute inset-0">
+          <img src={donateResellBanner} alt="" className="h-full w-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/85 via-blue-800/80 to-sky-700/75"></div>
+        </div>
+        <div className="relative z-10 p-7 md:p-10">
+          <p className="text-sm font-semibold text-blue-100">{t('hero.badge')}</p>
+          <h1 className="mt-3 text-3xl font-extrabold leading-tight md:text-5xl">{t('hero.title')}</h1>
+          <p className="mt-4 max-w-3xl text-sm text-blue-100 md:text-base">
+            {t('hero.description')}
+          </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <a href="#submit-listing"><Button variant="secondary">{t('hero.buttons.submitListing')}</Button></a>
+            {isAuthenticated && role === 'citizen' ? <Link to="/my-community-medicines"><Button variant="ghostOnDark">{t('hero.buttons.myListings')}</Button></Link> : null}
+          </div>
         </div>
       </section>
 
@@ -385,7 +400,7 @@ function CommunityMedicinesPage() {
                 page: 1
               }))}>
                   <option value="">{t('filters.all')}</option>
-                  {categories.map(category => <option key={category} value={category}>{t(`categories.${categoryKeyMap[category]}`)}</option>)}
+                  {categories.map(category => <option key={category.slug} value={category.slug}>{category.name}</option>)}
                 </select>
               </div>
               <div>
@@ -499,7 +514,8 @@ function CommunityMedicinesPage() {
                 ...p,
                 category: e.target.value
               }))}>
-                  {categories.map(category => <option key={category} value={category}>{t(`categories.${categoryKeyMap[category]}`)}</option>)}
+                  <option value="">{t('form.selectCategory')}</option>
+                  {categories.map(category => <option key={category.slug} value={category.slug}>{category.name}</option>)}
                 </select>
               </div>
               <div>

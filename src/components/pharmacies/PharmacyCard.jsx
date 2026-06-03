@@ -11,7 +11,7 @@ function PharmacyCard({
     t
   } = useTranslation("pharmacy");
   return <article className="card-lift overflow-hidden rounded-2xl bg-white dark:bg-slate-900 shadow-sm dark:shadow-slate-950/20">
-      <img src={resolveImageUrl(pharmacy.logo || pharmacy.image) || FALLBACK_PHARMACY_IMAGE} alt={pharmacy.pharmacy_name || pharmacy.name} className="h-36 w-full object-cover" onError={event => withFallback(event, FALLBACK_PHARMACY_IMAGE)} />
+      <img src={resolveImageUrl(pharmacy.storefront_image || pharmacy.logo || pharmacy.image) || FALLBACK_PHARMACY_IMAGE} alt={pharmacy.pharmacy_name || pharmacy.name} className="h-36 w-full object-cover" onError={event => withFallback(event, FALLBACK_PHARMACY_IMAGE)} />
       <div className="p-4">
         <div className="mb-2 flex items-center justify-between gap-3">
           <h3 className="truncate font-semibold">{pharmacy.pharmacy_name || pharmacy.name}</h3>

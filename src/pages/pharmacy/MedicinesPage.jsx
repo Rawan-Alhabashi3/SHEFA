@@ -2,11 +2,12 @@ import { useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Card from '../../components/common/Card';
 import MedicineFormModal from '../../components/pharmacy/MedicineFormModal';
-import { addMedicine, deleteMedicine, getMyInventory, updateMedicine } from '../../services/pharmacyService';
+import { addMedicine, deleteMedicine, downloadMedicineImportTemplate, getMyInventory, updateMedicine } from '../../services/pharmacyService';
 import { listCategories } from '../../services/categoryService';
 import MedicinesPageHeader from '../../components/pharmacy/medicines/MedicinesPageHeader';
 import MedicinesFiltersBar from '../../components/pharmacy/medicines/MedicinesFiltersBar';
 import MedicinesTable from '../../components/pharmacy/medicines/MedicinesTable';
+import MedicineBulkImportModal from '../../components/pharmacy/medicines/MedicineBulkImportModal';
 
 const appendMedicineForm = (fd, form, { includeOptionalDate = true } = {}) => {
   const fields = ['name', 'scientific_name', 'price', 'quantity_available', 'category_id', 'manufacturer', 'dosage', 'description', 'usage_instructions'];
@@ -32,6 +33,7 @@ function PharmacyMedicinesPage() {
   const [category, setCategory] = useState('');
   const [modalOpen, setModalOpen] = useState(false);
   const [editing, setEditing] = useState(null);
+  const [bulkImportOpen, setBulkImportOpen] = useState(false);
 
   useEffect(() => {
     listCategories({ activeOnly: true })
@@ -96,11 +98,32 @@ function PharmacyMedicinesPage() {
     setModalOpen(true);
   };
 
+  const handleDownloadTemplate = async () => {
+    try {
+      await downloadMedicineImportTemplate();
+    } catch (err) {
+      console.error('Failed to download template:', err);
+    }
+  };
+
+  const handleBulkImport = () => {
+    setBulkImportOpen(true);
+  };
+
+  const handleBulkImportComplete = () => {
+    setBulkImportOpen(false);
+    load();
+  };
+
   const isFiltered = search.trim() !== '' || category !== '';
 
   return (
     <section>
-      <MedicinesPageHeader onAdd={handleAdd} />
+      <MedicinesPageHeader
+        onAdd={handleAdd}
+        onDownloadTemplate={handleDownloadTemplate}
+        onBulkImport={handleBulkImport}
+      />
 
       <Card className="p-5">
         <MedicinesFiltersBar
@@ -129,6 +152,12 @@ function PharmacyMedicinesPage() {
         initialValue={editing}
         onClose={() => setModalOpen(false)}
         onSubmit={editing ? onEdit : onCreate}
+      />
+
+      <MedicineBulkImportModal
+        open={bulkImportOpen}
+        onClose={() => setBulkImportOpen(false)}
+        onComplete={handleBulkImportComplete}
       />
     </section>
   );

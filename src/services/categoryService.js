@@ -16,3 +16,9 @@ export const listCategoryFilters = async (params = {}) => {
 
   return data?.data ?? data ?? []
 }
+
+export const listMedicineExchangeCategories = async () => {
+  const { data } = await apiClient.get('/categories/medicine-exchange')
+
+  return data?.data ?? data ?? []
+}

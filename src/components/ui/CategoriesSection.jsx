@@ -59,10 +59,16 @@ function CategoriesSection({
                 )}`}
                 className="card-lift rounded-xl bg-white p-4 text-center shadow-sm dark:bg-slate-900 dark:shadow-slate-950/20"
               >
-                <Icon
-                  className="mx-auto text-blue-600 dark:text-blue-300"
-                  size={20}
-                />
+                <div 
+                  className="mx-auto inline-flex rounded-full p-2"
+                  style={{ backgroundColor: `${category.color}20` }}
+                >
+                  <Icon
+                    className="text-blue-600 dark:text-blue-300"
+                    size={20}
+                    style={{ color: category.color }}
+                  />
+                </div>
 
                 <p className="mt-2 text-sm font-medium">
                   {getCategoryName(category, language)}

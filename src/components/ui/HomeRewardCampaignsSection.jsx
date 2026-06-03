@@ -36,7 +36,7 @@ function CampaignCard({ campaign }) {
           {campaign.title}
         </h3>
 
-        <span className="rounded-full bg-violet-50 px-2 py-1 text-[11px] font-semibold text-violet-700">
+        <span className="whitespace-nowrap rounded-full bg-violet-50 px-2 py-1 text-[11px] font-semibold text-violet-700">
           {campaign.reward_percentage}
           {t('campaigns.card.percentCare')}
         </span>
@@ -51,8 +51,7 @@ function CampaignCard({ campaign }) {
         {t('campaigns.card.rule')}
         {campaign.required_purchase_count}{' '}
         {t('campaigns.card.ordersOver')}{' '}
-        {Number(campaign.minimum_order_amount).toFixed(2)}{' '}
-        {t('campaigns.card.usdOrderTotal')}
+        {formatPrice(campaign.minimum_order_amount)}
       </p>
 
       {cats ? (

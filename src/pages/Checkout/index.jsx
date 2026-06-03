@@ -117,6 +117,13 @@ function CheckoutPage() {
       address: prev.address || user.address || ''
     }));
   }, [user]);
+
+  useEffect(() => {
+    setForm(prev => ({
+      ...prev,
+      area: ''
+    }));
+  }, [form.governorate]);
   const groupedCheckout = useMemo(() => {
     const governorates = new Set();
     const areaGroups = new Map();
@@ -170,7 +177,10 @@ function CheckoutPage() {
       pharmacyCount: pharmacyIds.size
     };
   }, [orderableCart, t]);
-  const availableAreas = form.governorate ? GOVERNORATE_AREAS[form.governorate] || [] : [];
+  const availableAreas = useMemo(() => {
+    const areas = form.governorate ? [...(GOVERNORATE_AREAS[form.governorate] || [])] : [];
+    return areas;
+  }, [form.governorate]);
   const canCheckout = orderableCart.length > 0;
   const hasMultipleAreaGroups = groupedCheckout.areas.length > 1;
   const orderSummaryLine = useMemo(() => {
@@ -317,19 +327,19 @@ function CheckoutPage() {
               }))}>
                   <option value="">{t('selectGovernorate')}</option>
                   {GOVERNORATES.map(gov => <option key={gov} value={gov}>
-                      {t(`locations.governorates.${gov}`) || gov}
+                      {gov}
                     </option>)}
                 </select>
               </div>
               <div>
                 <label className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-200">{t('area')}</label>
-                {availableAreas.length > 0 ? <select className={inputClass} value={form.area} onChange={e => setForm(p => ({
+                {availableAreas.length > 0 ? <select key={`area-select-${form.governorate}`} className={inputClass} value={form.area} onChange={e => setForm(p => ({
                 ...p,
                 area: e.target.value
               }))}>
                     <option value="">{t('selectArea')}</option>
                     {availableAreas.map(area => <option key={area} value={area}>
-                        {t(`locations.areas.${area}`) || area}
+                        {area}
                       </option>)}
                   </select> : <input className={inputClass} value={form.area} onChange={e => setForm(p => ({
                 ...p,

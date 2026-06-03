@@ -107,9 +107,18 @@ function MedicineCard({
 
       <div className="p-4">
         <h3 className="font-semibold">{medicine?.name || 'Untitled medicine'}</h3>
-        {medicine?.category ? <p className="mt-1 inline-flex rounded-full bg-slate-100 dark:bg-slate-800 px-2.5 py-0.5 text-[11px] font-semibold text-slate-700 dark:text-slate-200">
+        {medicine?.category ? (
+          <p 
+            className="mt-1 inline-flex rounded-full px-2.5 py-0.5 text-[11px] font-semibold"
+            style={{
+              backgroundColor: `${medicine.category.color}20`,
+              color: medicine.category.color,
+              border: `1px solid ${medicine.category.color}40`
+            }}
+          >
             {getCategoryName(medicine.category, i18n.resolvedLanguage || i18n.language)}
-          </p> : null}
+          </p>
+        ) : null}
         <p className="mt-1 line-clamp-2 text-sm text-slate-500 dark:text-slate-400">{medicine?.description || '-'}</p>
         <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
           {medicine?.pharmacy?.pharmacy_name || 'Pharmacy unavailable'}

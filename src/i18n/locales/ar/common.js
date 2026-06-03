@@ -76,7 +76,21 @@ const common = {
 
   "footer.quickLinks": "روابط سريعة",
 
+  "footer.linkMedicines": "الأدوية",
+
+  "footer.linkPharmacies": "الصيدليات",
+
+  "footer.linkRewards": "المكافآت",
+
+  "footer.linkConsultation": "الاستشارة",
+
   "footer.servicesTitle": "الخدمات",
+
+  "footer.serviceOrdering": "طلب الأدوية",
+
+  "footer.serviceDelivery": "خدمة التوصيل",
+
+  "footer.servicePrescription": "دعم الوصفات الطبية",
 
   "footer.tagline":
     "منصة الرعاية الصحية والصيدليات الموثوقة.",

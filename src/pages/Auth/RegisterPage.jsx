@@ -1,4 +1,4 @@
-import { ArrowLeft, Eye, EyeOff, Upload } from 'lucide-react';
+import { ArrowLeft, Eye, EyeOff, Upload, X } from 'lucide-react';
 import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -41,7 +41,10 @@ function RegisterPage() {
     vehicle_type: '',
     area: '',
     license_image: null,
-    is_specialist: false
+    storefront_image: null,
+    storefront_image_preview: null,
+    is_specialist: false,
+    requested_area: ''
   });
 
   const availableAreas = useMemo(() => {
@@ -102,6 +105,7 @@ function RegisterPage() {
         if (form.pharmacy_address) payload.append('pharmacy_address', form.pharmacy_address);
         if (form.pharmacy_phone) payload.append('pharmacy_phone', form.pharmacy_phone);
         payload.append('license_image', form.license_image);
+        if (form.storefront_image) payload.append('storefront_image', form.storefront_image);
         payload.append('is_specialist', form.is_specialist ? '1' : '0');
       }
       if (role === 'delivery') {
@@ -119,7 +123,19 @@ function RegisterPage() {
       });
     } catch (err) {
       const backend = err?.response?.data;
-      setError(typeof backend?.message === 'string' ? backend.message : t('register.registerFailed'));
+      // Check for validation errors (Laravel returns 422 with errors object)
+      if (backend?.errors && typeof backend.errors === 'object') {
+        // Get the first error message from the validation errors
+        const firstErrorKey = Object.keys(backend.errors)[0];
+        const firstErrorMessage = backend.errors[firstErrorKey]?.[0];
+        if (firstErrorMessage) {
+          setError(firstErrorMessage);
+        } else {
+          setError(typeof backend?.message === 'string' ? backend.message : t('register.registerFailed'));
+        }
+      } else {
+        setError(typeof backend?.message === 'string' ? backend.message : t('register.registerFailed'));
+      }
     } finally {
       setLoading(false);
     }
@@ -251,6 +267,30 @@ function RegisterPage() {
                             </option>
                           ))}
                         </select>
+                        <div className="mt-2 flex items-center justify-between gap-2">
+                          <p className="text-xs text-slate-500 dark:text-slate-400">{t('register.cantFindArea')}</p>
+                          <button
+                            type="button"
+                            onClick={() => {
+                              const message = `Hello,\n\nI would like to request adding a new area to the pharmacy registration system.\n\nGovernorate: ${form.governorate}\n\nRequested Area:\n${form.requested_area || 'Not specified'}\n\nPlease review and add this area if possible.\n\nThank you.`;
+                              navigate('/about', {
+                                state: {
+                                  prefilled: {
+                                    type: 'support_issue',
+                                    subject: t('register.requestNewAreaSubject'),
+                                    message: message,
+                                    name: form.name,
+                                    email: form.email
+                                  },
+                                  scrollToFeedback: true
+                                }
+                              });
+                            }}
+                            className="text-xs font-semibold text-blue-600 dark:text-blue-300 hover:text-blue-700 dark:hover:text-blue-200 transition-colors"
+                          >
+                            {t('register.requestNewArea')}
+                          </button>
+                        </div>
                       </div>
                       <div>
                         <label className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-200">{t('register.pharmacyPhone')}</label>
@@ -277,6 +317,45 @@ function RegisterPage() {
                       license_image: e.target.files?.[0] || null
                     }))} />
                       </label>
+                    </div>
+                    <div>
+                      <label className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-200">{t('register.storefrontImage')} <span className="text-slate-400 dark:text-slate-500">({t('register.optional')})</span></label>
+                      {form.storefront_image_preview ? (
+                        <div className="relative rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden">
+                          <img src={form.storefront_image_preview} alt="Storefront preview" className="h-32 w-full object-cover" />
+                          <button
+                            type="button"
+                            onClick={() => setForm(p => ({ ...p, storefront_image: null, storefront_image_preview: null }))}
+                            className="absolute top-2 right-2 rounded-full bg-white/90 dark:bg-slate-900/90 p-1.5 text-slate-600 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-900 shadow-sm"
+                          >
+                            <X size={16} />
+                          </button>
+                        </div>
+                      ) : (
+                        <label className="flex cursor-pointer items-center gap-2 rounded-2xl border border-dashed border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 px-4 py-3 text-sm text-slate-600 dark:text-slate-300 hover:border-blue-200 dark:border-blue-700/70 hover:bg-blue-50 dark:hover:bg-blue-950/50 dark:bg-blue-950/40">
+                          <Upload size={16} className="text-blue-600 dark:text-blue-300" />
+                          <span>{t('register.uploadStorefront')}</span>
+                          <input
+                            type="file"
+                            accept="image/*"
+                            className="hidden"
+                            onChange={e => {
+                              const file = e.target.files?.[0];
+                              if (file) {
+                                const reader = new FileReader();
+                                reader.onloadend = () => {
+                                  setForm(p => ({
+                                    ...p,
+                                    storefront_image: file,
+                                    storefront_image_preview: reader.result
+                                  }));
+                                };
+                                reader.readAsDataURL(file);
+                              }
+                            }}
+                          />
+                        </label>
+                      )}
                     </div>
                     <div className="rounded-2xl border border-blue-200 dark:border-blue-700/40 bg-blue-50 dark:bg-blue-950/30 p-4">
                       <label className="flex items-start gap-3 cursor-pointer">

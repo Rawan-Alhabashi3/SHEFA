@@ -133,3 +133,40 @@ export const listPharmacyCouponCampaignCategories = async () => {
   const { data } = await apiClient.get('/pharmacy/coupon-campaigns/categories')
   return data
 }
+
+export const downloadMedicineImportTemplate = async () => {
+  const response = await apiClient.get('/medicines/bulk-import/template', {
+    responseType: 'blob'
+  })
+  const url = window.URL.createObjectURL(new Blob([response.data]))
+  const link = document.createElement('a')
+  link.href = url
+  link.setAttribute('download', 'medicines_import_template.csv')
+  document.body.appendChild(link)
+  link.click()
+  link.remove()
+  window.URL.revokeObjectURL(url)
+}
+
+export const previewMedicineImport = async (zipFile) => {
+  const formData = new FormData()
+  formData.append('zip_file', zipFile)
+  formData.append('preview_only', '1')
+  const { data } = await apiClient.post('/medicines/bulk-import', formData, {
+    headers: {
+      'Content-Type': 'multipart/form-data'
+    }
+  })
+  return data
+}
+
+export const executeMedicineImport = async (zipFile) => {
+  const formData = new FormData()
+  formData.append('zip_file', zipFile)
+  const { data } = await apiClient.post('/medicines/bulk-import', formData, {
+    headers: {
+      'Content-Type': 'multipart/form-data'
+    }
+  })
+  return data
+}
