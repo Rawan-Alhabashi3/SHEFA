@@ -1,8 +1,8 @@
-import { Download, FileDown, Plus, Upload } from 'lucide-react';
+import { Plus } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import Button from '../../common/Button';
 
-function MedicinesPageHeader({ onAdd, onDownloadTemplate, onBulkImport }) {
+function MedicinesPageHeader({ onAdd }) {
   const { t } = useTranslation('pharmacy');
 
   return (
@@ -15,23 +15,11 @@ function MedicinesPageHeader({ onAdd, onDownloadTemplate, onBulkImport }) {
           {t('medicinesPage.header.description')}
         </p>
       </div>
-      <div className="flex flex-wrap gap-2">
-        <Button variant="secondary" onClick={onDownloadTemplate}>
-          <span className="inline-flex items-center gap-2">
-            <Download size={16} /> Download Template
-          </span>
-        </Button>
-        <Button variant="secondary" onClick={onBulkImport}>
-          <span className="inline-flex items-center gap-2">
-            <Upload size={16} /> Import Medicines
-          </span>
-        </Button>
-        <Button onClick={onAdd}>
-          <span className="inline-flex items-center gap-2">
-            <Plus size={16} /> {t('medicinesPage.buttons.add')}
-          </span>
-        </Button>
-      </div>
+      <Button onClick={onAdd}>
+        <span className="inline-flex items-center gap-2">
+          <Plus size={16} /> {t('medicinesPage.buttons.add')}
+        </span>
+      </Button>
     </div>
   );
 }
