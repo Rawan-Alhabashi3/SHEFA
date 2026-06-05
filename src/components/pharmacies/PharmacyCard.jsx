@@ -1,7 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { Clock3, Package, Percent, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import PharmacyBadge from './PharmacyBadge';
 import Button from '../common/Button';
 import { FALLBACK_PHARMACY_IMAGE, resolveImageUrl, withFallback } from '../../utils/image';
 function PharmacyCard({
@@ -15,7 +14,6 @@ function PharmacyCard({
       <div className="p-4">
         <div className="mb-2 flex items-center justify-between gap-3">
           <h3 className="truncate font-semibold">{pharmacy.pharmacy_name || pharmacy.name}</h3>
-          <PharmacyBadge status={pharmacy.status || t('cards.status.open')} />
         </div>
         <p className="text-sm text-slate-500 dark:text-slate-400">{[pharmacy.governorate, pharmacy.area].filter(Boolean).join(' • ')}</p>
         {pharmacy.address ? <p className="mt-1 line-clamp-1 text-xs text-slate-400 dark:text-slate-500">{pharmacy.address}</p> : null}

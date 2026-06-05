@@ -113,6 +113,23 @@ function RegisterPage() {
       }
       const response = await registerRequest(payload);
       const data = response?.data || {};
+
+      // For pharmacies, show awaiting review message instead of logging in
+      if (data.requires_approval && data.role === 'pharmacy') {
+        setError('');
+        setLoading(false);
+        // Show success message for pharmacy registration
+        const successDiv = document.createElement('div');
+        successDiv.className = 'rounded-2xl bg-green-50 dark:bg-green-950/40 px-4 py-3 text-sm text-green-700 dark:text-green-200';
+        successDiv.textContent = data.message || 'Your pharmacy registration request has been submitted successfully and is awaiting administrative review.';
+        const form = document.querySelector('form');
+        if (form) {
+          form.innerHTML = '';
+          form.appendChild(successDiv);
+        }
+        return;
+      }
+
       login({
         token: data.token,
         role: data.role,
@@ -219,7 +236,7 @@ function RegisterPage() {
                 <div className="grid gap-3 md:grid-cols-2">
                   <div>
                     <label className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-200">{t('register.role')}</label>
-                    <select value={role} onChange={e => setRole(e.target.value)} className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 px-4 py-3 text-sm outline-none transition focus:border-blue-300 dark:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-950">
+                    <select value={role} onChange={e => setRole(e.target.value)} className="theme-select">
                       <option value="citizen">{t('roles.citizen')}</option>
                       <option value="pharmacy">{t('roles.pharmacy')}</option>
                       <option value="delivery">{t('roles.delivery')}</option>
@@ -227,7 +244,7 @@ function RegisterPage() {
                   </div>
                   <div>
                     <label className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-200">{t('register.city')}</label>
-                    <select value={form.governorate} onChange={handleGovernorateChange} className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 px-4 py-3 text-sm outline-none transition focus:border-blue-300 dark:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-950">
+                    <select value={form.governorate} onChange={handleGovernorateChange} className="theme-select">
                       {GOVERNORATES.map(g => <option key={g} value={g}>
                           {t(`cities.${g}`)}
                         </option>)}
@@ -258,7 +275,7 @@ function RegisterPage() {
                           value={form.area}
                           onChange={e => setForm(p => ({ ...p, area: e.target.value }))}
                           disabled={!form.governorate}
-                          className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 px-4 py-3 text-sm outline-none transition focus:border-blue-300 dark:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-950 disabled:opacity-50 disabled:cursor-not-allowed"
+                          className="theme-select"
                         >
                           <option value="">{t('register.areaPlaceholder')}</option>
                           {availableAreas.map(area => (
@@ -378,7 +395,7 @@ function RegisterPage() {
                     <select value={form.vehicle_type} onChange={e => setForm(p => ({
                   ...p,
                   vehicle_type: e.target.value
-                }))} className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 px-4 py-3 text-sm outline-none transition focus:border-blue-300 dark:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-950">
+                }))} className="theme-select">
                       <option value="">{t('register.vehicleSelect')}</option>
                       <option value="motorbike">{t('vehicles.motorbike')}</option>
                       <option value="car">{t('vehicles.car')}</option>

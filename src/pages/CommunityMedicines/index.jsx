@@ -19,6 +19,7 @@ import { translateEnum } from '../../utils/translateEnum';
 import donateResellBanner from '../../assets/images/donate&Resell_banner.png';
 const conditionValues = ['unopened', 'sealed', 'partially_used', 'used_device', 'excellent', 'good'];
 const inputClass = 'w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-3 text-sm outline-none transition focus:border-blue-300 dark:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-950';
+const selectClass = 'theme-select';
 function getItems(payload) {
   const page = payload?.data || {};
   return Array.isArray(page?.data) ? page.data : Array.isArray(payload?.data) ? payload.data : [];
@@ -382,7 +383,7 @@ function CommunityMedicinesPage() {
               </div>
               <div>
                 <label className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-200">{t('filters.type')}</label>
-                <select className={inputClass} value={filters.ad_type} onChange={e => setFilters(p => ({
+                <select className={selectClass} value={filters.ad_type} onChange={e => setFilters(p => ({
                 ...p,
                 ad_type: e.target.value,
                 page: 1
@@ -394,7 +395,7 @@ function CommunityMedicinesPage() {
               </div>
               <div>
                 <label className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-200">{t('filters.category')}</label>
-                <select className={inputClass} value={filters.category} onChange={e => setFilters(p => ({
+                <select className={selectClass} value={filters.category} onChange={e => setFilters(p => ({
                 ...p,
                 category: e.target.value,
                 page: 1
@@ -405,7 +406,7 @@ function CommunityMedicinesPage() {
               </div>
               <div>
                 <label className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-200">{t("Governorate")}</label>
-                <select className={inputClass} value={filters.governorate} onChange={e => setFilters(p => ({
+                <select className={selectClass} value={filters.governorate} onChange={e => setFilters(p => ({
                 ...p,
                 governorate: e.target.value,
                 area: '',
@@ -418,7 +419,7 @@ function CommunityMedicinesPage() {
               </div>
               <div>
                 <label className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-200">{t('filters.area')}</label>
-                <select className={inputClass} value={filters.area} disabled={!filters.governorate} onChange={e => setFilters(p => ({
+                <select className={selectClass} value={filters.area} disabled={!filters.governorate} onChange={e => setFilters(p => ({
                 ...p,
                 area: e.target.value,
                 pharmacy_id: '',
@@ -430,7 +431,7 @@ function CommunityMedicinesPage() {
               </div>
               <div>
                 <label className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-200">{t('filters.pharmacy')}</label>
-                <select className={inputClass} value={filters.pharmacy_id} onChange={e => setFilters(p => ({
+                <select className={selectClass} value={filters.pharmacy_id} onChange={e => setFilters(p => ({
                 ...p,
                 pharmacy_id: e.target.value,
                 page: 1
@@ -510,7 +511,7 @@ function CommunityMedicinesPage() {
               </div>
               <div>
                 <label className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-200">{t('form.category')}</label>
-                <select className={inputClass} value={form.category} onChange={e => setForm(p => ({
+                <select className={selectClass} value={form.category} onChange={e => setForm(p => ({
                 ...p,
                 category: e.target.value
               }))}>
@@ -534,7 +535,7 @@ function CommunityMedicinesPage() {
               </div>
               <div>
                 <label className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-200">{t('form.condition')}</label>
-                <select className={inputClass} value={form.condition} onChange={e => setForm(p => ({
+                <select className={selectClass} value={form.condition} onChange={e => setForm(p => ({
                 ...p,
                 condition: e.target.value
               }))}>
@@ -550,7 +551,7 @@ function CommunityMedicinesPage() {
                 </div> : null}
               <div>
                 <label className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-200">{t('form.governorate')}</label>
-                <select className={inputClass} value={form.governorate} onChange={e => setForm(p => ({
+                <select className={selectClass} value={form.governorate} onChange={e => setForm(p => ({
                 ...p,
                 governorate: e.target.value,
                 area: ''
@@ -560,7 +561,7 @@ function CommunityMedicinesPage() {
               </div>
               <div>
                 <label className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-200">{t('form.area')}</label>
-                <select className={inputClass} value={form.area} onChange={e => setForm(p => ({
+                <select className={selectClass} value={form.area} onChange={e => setForm(p => ({
                 ...p,
                 area: e.target.value
               }))}>

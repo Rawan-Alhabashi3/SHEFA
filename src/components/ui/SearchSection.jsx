@@ -176,7 +176,7 @@ function SearchSection() {
           <select
             value={city}
             onChange={(event) => setCity(event.target.value)}
-            className="rounded-full border border-slate-200 px-4 py-3 text-sm dark:border-slate-700"
+            className="theme-select rounded-full"
           >
             <option value="">
               {t('search.allCities')}

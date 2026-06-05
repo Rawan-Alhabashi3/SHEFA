@@ -136,7 +136,7 @@ function AdminFeedbackPage() {
           <select
             value={typeFilter}
             onChange={(e) => setTypeFilter(e.target.value)}
-            className="h-10 rounded-xl border border-slate-200 dark:border-slate-700 px-3 text-sm outline-none focus:border-blue-300 dark:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-950"
+            className="theme-select"
           >
             {typeOptions.map((opt) => (
               <option key={opt.value} value={opt.value}>
@@ -147,7 +147,7 @@ function AdminFeedbackPage() {
           <select
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value)}
-            className="h-10 rounded-xl border border-slate-200 dark:border-slate-700 px-3 text-sm outline-none focus:border-blue-300 dark:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-950"
+            className="theme-select"
           >
             <option value="all">{t('common.allStatuses')}</option>
             {statusOptions.map((opt) => (
@@ -233,7 +233,7 @@ function AdminFeedbackPage() {
                         <select
                           value={row.status}
                           onChange={(e) => onStatusChange(row.id, e.target.value)}
-                          className="rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-2 py-1 text-xs font-semibold text-slate-700 dark:text-slate-200 hover:border-blue-300 dark:hover:border-blue-500"
+                          className="rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-2 py-1 text-xs font-semibold text-slate-700 dark:text-slate-200 hover:border-blue-300 dark:hover:border-blue-500 dark:bg-slate-900 dark:text-slate-100"
                         >
                           {statusOptions.map((opt) => (
                             <option key={opt.value} value={opt.value}>

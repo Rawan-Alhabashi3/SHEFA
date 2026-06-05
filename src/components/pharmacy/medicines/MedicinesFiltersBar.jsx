@@ -14,7 +14,7 @@ function MedicinesFiltersBar({ search, category, categoryOptions, onSearchChange
         onChange={(e) => onSearchChange(e.target.value)}
       />
       <select
-        className="w-full cursor-pointer rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:focus:border-blue-400 dark:focus:ring-blue-400/20"
+        className="theme-select rounded-xl"
         value={category}
         onChange={(e) => onCategoryChange(e.target.value)}
       >

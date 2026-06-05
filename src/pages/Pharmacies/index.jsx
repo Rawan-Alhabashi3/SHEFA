@@ -116,7 +116,7 @@ function PharmaciesPage() {
           <select value={location.governorate} onChange={e => updateParams({
           governorate: e.target.value,
           area: ''
-        }, true)} className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-3 text-sm outline-none transition focus:border-blue-300 dark:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-950">
+        }, true)} className="theme-select">
             <option value="">{t('listing.filters.all')}</option>
             {GOVERNORATES.map(g => <option key={g} value={g}>
                 {t(`locations.governorates.${g}`) || g}
@@ -127,7 +127,7 @@ function PharmaciesPage() {
           <label className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-200">{t('listing.filters.area')}</label>
           <select value={location.area || ''} disabled={!location.governorate} onChange={e => updateParams({
           area: e.target.value
-        }, true)} className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-3 text-sm outline-none transition focus:border-blue-300 dark:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-950 disabled:cursor-not-allowed disabled:bg-slate-100 dark:disabled:bg-slate-800">
+        }, true)} className="theme-select">
             <option value="">{location.governorate ? t('listing.filters.allAreas') : t('listing.filters.selectGovernorateFirst')}</option>
             {availableAreas.map(a => <option key={a} value={a}>
                 {t(`locations.areas.${a}`) || a}
@@ -144,7 +144,7 @@ function PharmaciesPage() {
           <label className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-200">{t('listing.filters.sort')}</label>
           <select value={sort} onChange={e => updateParams({
           sort: e.target.value
-        }, true)} className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-3 text-sm outline-none transition focus:border-blue-300 dark:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-950">
+        }, true)} className="theme-select">
             <option value="name_asc">{t('listing.sortOptions.nameAsc')}</option>
             <option value="name_desc">{t('listing.sortOptions.nameDesc')}</option>
             <option value="rating_desc">{t('listing.sortOptions.topRated')}</option>

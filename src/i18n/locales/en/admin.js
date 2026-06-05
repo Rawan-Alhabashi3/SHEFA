@@ -5,6 +5,7 @@ const admin = {
     medicines: "Medicines",
     orders: "Orders",
     deliveryMissions: "Delivery Missions",
+    pharmacyApplications: "Pharmacy Applications",
     pharmacies: "Pharmacies",
     drivers: "Drivers",
     couponCampaigns: "Coupon Campaigns",

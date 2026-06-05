@@ -5,6 +5,7 @@ const admin = {
     medicines: "الأدوية",
     orders: "الطلبات",
     deliveryMissions: "مهام التوصيل",
+    pharmacyApplications: "طلبات تسجيل الصيدليات",
     pharmacies: "الصيدليات",
     drivers: "السائقون",
     couponCampaigns: "حملات القسائم",

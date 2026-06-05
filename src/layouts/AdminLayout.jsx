@@ -1,6 +1,7 @@
 import {
   Bell,
   Building2,
+  ClipboardCheck,
   ClipboardList,
   CreditCard,
   LayoutDashboard,
@@ -28,6 +29,7 @@ function AdminLayout() {
       { to: '/admin/medicines', labelKey: 'sidebar.medicines', icon: Pill },
       { to: '/admin/orders', labelKey: 'sidebar.orders', icon: ClipboardList },
       { to: '/admin/delivery-missions', labelKey: 'sidebar.deliveryMissions', icon: Route },
+      { to: '/admin/pharmacy-applications', labelKey: 'sidebar.pharmacyApplications', icon: ClipboardCheck },
       { to: '/admin/pharmacies', labelKey: 'sidebar.pharmacies', icon: Building2 },
       { to: '/admin/drivers', labelKey: 'sidebar.drivers', icon: Truck },
       { to: '/admin/coupon-campaigns', labelKey: 'sidebar.couponCampaigns', icon: Tags },

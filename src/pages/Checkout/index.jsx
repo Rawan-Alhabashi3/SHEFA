@@ -12,6 +12,7 @@ import useAppStore from '../../context/useAppStore';
 import { marketplaceCheckout } from '../../services/marketplaceCheckoutService';
 import { formatPrice } from '../../utils/format';
 const inputClass = 'w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-3 text-sm outline-none transition focus:border-blue-300 dark:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-950';
+const selectClass = 'theme-select';
 function getFriendlyError(err, tErrors) {
   const message = err?.response?.data?.message;
   if (typeof message === 'string') return message;
@@ -320,7 +321,7 @@ function CheckoutPage() {
               </div>
               <div>
                 <label className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-200">{t('governorate')}</label>
-                <select className={inputClass} value={form.governorate} onChange={e => setForm(p => ({
+                <select className={selectClass} value={form.governorate} onChange={e => setForm(p => ({
                 ...p,
                 governorate: e.target.value,
                 area: ''

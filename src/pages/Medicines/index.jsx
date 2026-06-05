@@ -133,7 +133,7 @@ function MedicinesPage() {
           <select value={filters.governorate} onChange={e => updateQuery({
             governorate: e.target.value,
             city: ''
-          }, true)} className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-3 text-sm outline-none transition focus:border-blue-300 dark:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-950">
+          }, true)} className="theme-select">
             <option value="">{t('allGovernorates')}</option>
             {GOVERNORATES.map(gov => <option key={gov} value={gov}>
                 {gov}
@@ -145,7 +145,7 @@ function MedicinesPage() {
           <label className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-200">{t('pharmacy')}</label>
           <select value={filters.pharmacy_id} onChange={e => updateQuery({
             pharmacy_id: e.target.value
-          }, true)} className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-3 text-sm outline-none transition focus:border-blue-300 dark:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-950">
+          }, true)} className="theme-select">
             <option value="">{t('allPharmacies')}</option>
             {pharmacies.map(pharmacy => <option key={pharmacy.id} value={pharmacy.id}>
                 {pharmacy.pharmacy_name}
@@ -157,7 +157,7 @@ function MedicinesPage() {
           <label className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-200">{t('stock')}</label>
           <select value={filters.stock} onChange={e => updateQuery({
             stock: e.target.value
-          }, true)} className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-3 text-sm outline-none transition focus:border-blue-300 dark:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-950">
+          }, true)} className="theme-select">
             <option value="all">{t('stockFilters.all', { ns: 'common' })}</option>
             <option value="in_stock">{t('stockFilters.in_stock', { ns: 'common' })}</option>
             <option value="low_stock">{t('stockFilters.low_stock', { ns: 'common' })}</option>
@@ -168,7 +168,7 @@ function MedicinesPage() {
           <label className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-200">{t('sort')}</label>
           <select value={filters.sort} onChange={e => updateQuery({
             sort: e.target.value
-          }, true)} className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-3 text-sm outline-none transition focus:border-blue-300 dark:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-950">
+          }, true)} className="theme-select">
             <option value="newest">{t('newest')}</option>
             <option value="price_asc">{t('priceAsc')}</option>
             <option value="price_desc">{t('priceDesc')}</option>

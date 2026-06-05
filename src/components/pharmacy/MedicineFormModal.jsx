@@ -101,6 +101,10 @@ function MedicineFormModal({ open, mode, initialValue, onClose, onSubmit }) {
     `h-10 w-full rounded-xl border bg-white dark:bg-slate-950 px-3 text-sm outline-none transition focus:border-blue-300 dark:focus:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-950 ${
       fieldErrors[name] ? 'border-rose-300 bg-rose-50 dark:bg-rose-950/40' : 'border-slate-200 dark:border-slate-700'
     }`
+  const selectClass = name =>
+    `theme-select rounded-xl ${
+      fieldErrors[name] ? 'border-rose-300 bg-rose-50 dark:bg-rose-950/40' : ''
+    }`
   const textareaClass = name =>
     `w-full rounded-xl border bg-white dark:bg-slate-950 px-3 py-2 text-sm outline-none transition focus:border-blue-300 dark:focus:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-950 ${
       fieldErrors[name] ? 'border-rose-300 bg-rose-50 dark:bg-rose-950/40' : 'border-slate-200 dark:border-slate-700'
@@ -168,7 +172,7 @@ function MedicineFormModal({ open, mode, initialValue, onClose, onSubmit }) {
                 <input className={inputClass('scientific_name')} value={form.scientific_name} onChange={e => setField('scientific_name', e.target.value)} />
               </Field>
               <Field label={t('medicines.modal.form.category')} error={fieldError('category_id')} className="md:col-span-2">
-                <select className={inputClass('category_id')} value={form.category_id} onChange={e => setField('category_id', e.target.value)}>
+                <select className={selectClass('category_id')} value={form.category_id} onChange={e => setField('category_id', e.target.value)}>
                   <option value="">{t('medicines.modal.form.selectCategory')}</option>
                   {categories.map(category => (
                     <option key={category.id} value={category.id}>
@@ -203,7 +207,7 @@ function MedicineFormModal({ open, mode, initialValue, onClose, onSubmit }) {
                 <input type="date" className={inputClass('expiration_date')} value={form.expiration_date} onChange={e => setField('expiration_date', e.target.value)} />
               </Field>
               <Field label={t('medicines.modal.form.prescriptionRequired')} error={fieldError('requires_prescription')}>
-                <select className={inputClass('requires_prescription')} value={form.requires_prescription ? '1' : '0'} onChange={e => setField('requires_prescription', e.target.value === '1')}>
+                <select className={selectClass('requires_prescription')} value={form.requires_prescription ? '1' : '0'} onChange={e => setField('requires_prescription', e.target.value === '1')}>
                   <option value="0">{t('medicines.no')}</option>
                   <option value="1">{t('medicines.yes')}</option>
                 </select>

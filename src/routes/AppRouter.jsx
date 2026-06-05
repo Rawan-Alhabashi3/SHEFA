@@ -52,6 +52,7 @@ import AdminCouponsPage from '../pages/admin/CouponsPage'
 import AdminReportsPage from '../pages/admin/ReportsPage'
 import AdminCategoriesPage from '../pages/admin/CategoriesPage'
 import AdminFeedbackPage from '../pages/admin/FeedbackPage'
+import PharmacyApplicationsPage from '../pages/admin/PharmacyApplicationsPage'
 
 function AppRouter() {
   return (
@@ -112,6 +113,7 @@ function AppRouter() {
             <Route path="/admin/orders" element={<AdminOrdersPage />} />
             <Route path="/admin/delivery-missions" element={<AdminDeliveryMissionsPage />} />
             <Route path="/admin/pharmacies" element={<AdminPharmaciesPage />} />
+            <Route path="/admin/pharmacy-applications" element={<PharmacyApplicationsPage />} />
             <Route path="/admin/drivers" element={<AdminDriversPage />} />
             <Route path="/admin/medicines" element={<AdminMedicinesPage />} />
             <Route path="/admin/coupon-campaigns" element={<AdminCouponCampaignsPage />} />

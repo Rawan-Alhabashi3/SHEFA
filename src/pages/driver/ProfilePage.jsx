@@ -59,7 +59,7 @@ function ProfilePage() {
             </div>)}
           <div>
             <label className="mb-1 block text-xs font-semibold text-slate-600 dark:text-slate-300">{t('profile.form.availabilityStatus')}</label>
-            <select className="h-10 w-full rounded-xl border border-slate-200 dark:border-slate-700 px-3 text-sm" value={form.availability_mode} onChange={e => setForm(p => ({
+            <select className="theme-select" value={form.availability_mode} onChange={e => setForm(p => ({
             ...p,
             availability_mode: e.target.value
           }))}>

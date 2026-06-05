@@ -108,7 +108,7 @@ function PharmacyDetailsPage() {
             </div>
             <div>
               <label className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-200">{t('details.filters.category')}</label>
-              <select value={category} onChange={handleFilterChange(setCategory)} className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-3 text-sm outline-none transition focus:border-blue-300 dark:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-950">
+              <select value={category} onChange={handleFilterChange(setCategory)} className="theme-select">
                 <option value="">{t('details.filters.all')}</option>
                 {categories.map(c => {
                   const value = typeof c === 'string' ? c : c.slug || String(c.id || '');
@@ -123,7 +123,7 @@ function PharmacyDetailsPage() {
             </div>
             <div>
               <label className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-200">{t('details.filters.stock')}</label>
-              <select value={stock} onChange={handleFilterChange(setStock)} className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-3 text-sm outline-none transition focus:border-blue-300 dark:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-950">
+              <select value={stock} onChange={handleFilterChange(setStock)} className="theme-select">
                 <option value="all">{t('details.filters.allStock')}</option>
                 <option value="in_stock">{t('details.filters.inStock')}</option>
                 <option value="low_stock">{t('details.filters.lowStock')}</option>
@@ -131,7 +131,7 @@ function PharmacyDetailsPage() {
             </div>
             <div>
               <label className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-200">{t('details.filters.sort')}</label>
-              <select value={sort} onChange={handleFilterChange(setSort)} className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-3 text-sm outline-none transition focus:border-blue-300 dark:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-950">
+              <select value={sort} onChange={handleFilterChange(setSort)} className="theme-select">
                 <option value="name_asc">{t('details.sortOptions.nameAsc')}</option>
                 <option value="name_desc">{t('details.sortOptions.nameDesc')}</option>
                 <option value="price_asc">{t('details.sortOptions.priceLowToHigh')}</option>

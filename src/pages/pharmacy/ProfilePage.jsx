@@ -111,7 +111,7 @@ function PharmacyProfilePage() {
           <div>
             <label className="mb-1 block text-xs font-semibold text-slate-600 dark:text-slate-300">{tProfile('form.city')}</label>
             <select
-              className="h-10 w-full rounded-xl border border-slate-200 dark:border-slate-700 px-3 text-sm outline-none transition focus:border-blue-300 dark:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-950"
+              className="theme-select"
               value={form.governorate}
               onChange={handleGovernorateChange}
             >
@@ -125,7 +125,7 @@ function PharmacyProfilePage() {
           <div>
             <label className="mb-1 block text-xs font-semibold text-slate-600 dark:text-slate-300">{tProfile('form.area')}</label>
             <select
-              className="h-10 w-full rounded-xl border border-slate-200 dark:border-slate-700 px-3 text-sm outline-none transition focus:border-blue-300 dark:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-950"
+              className="theme-select"
               value={form.area}
               onChange={e => setForm(p => ({...p, area: e.target.value}))}
               disabled={!form.governorate}

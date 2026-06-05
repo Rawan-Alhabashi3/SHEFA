@@ -336,7 +336,7 @@ function AboutPage() {
               <div className="grid gap-3 sm:grid-cols-2">
                 <div>
                   <label className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-200">{t('feedback.form.type')}</label>
-                  <select value={form.type} onChange={e => onFormChange('type', e.target.value)} className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-3 text-sm outline-none transition focus:border-blue-300 dark:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-950">
+                  <select value={form.type} onChange={e => onFormChange('type', e.target.value)} className="theme-select">
                     <option value="feedback">{t('feedback.form.feedback')}</option>
                     <option value="complaint">{t('feedback.form.complaint')}</option>
                     <option value="suggestion">{t('feedback.form.suggestion')}</option>
